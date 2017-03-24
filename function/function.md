@@ -29,6 +29,8 @@ return_type function_name(parameter list)
 在调用函数时，有两种向函数传递参数的方式。
 
 #### Call by Value
+
+复制参数的真实值给函数的函数的正式变量：
 #### Call by References
 在函数中，地址是在调用（函数）中用来获取(access)真实参数(arguments)的，这意味着对参数的改动影响传递的参数。
 
