@@ -1,9 +1,12 @@
 #include<stdio.h>
 #include<assert.h>
+/* conditionally compiled macro that compares its argument to zero */
 #include<stdlib.h>
 #include<errno.h>
+/* macro reporting error conditions */
 #include<string.h>
-
+/* <stdio.h>  General utilities: memory management, program utilities, 
+ * string conversions, random numbers */
 #define MAX_DATA 512
 #define MAX_ROWS 100
 
@@ -13,9 +16,11 @@ struct Address{
 	char name[MAX_DATA];
 	char email[MAX_DATA];
 };
+
 struct Database{
 	struct Address rows[MAX_ROWS];
 };
+/* It seems that struct Database is same with struct Address*/
 struct Connection{
 	FILE *file;
 	struct Database *db;
@@ -37,7 +42,15 @@ void Address_print(struct Address *addr)
 {
 	printf("%d %s %s \n", addr->id, addr->name, addr->email);
 }
+/* addr is a pointer to a structure
+ * We acess structure's member through pointer. 2 ways
+ * 1. Referencing pointer to another address memory
+ * 2. Using dynamic memory allocation */
 
+
+/*if a is a pointer to a structure in which b is a member 
+ * then you access b with (*a).b
+ * This is such a common occurrence in C that a shorthand exists: a->b   */
 void Database_load(struct Connection * conn)
 {
 	int rc = fread(conn->db, sizeof(struct Database), 1, conn->file);
@@ -72,9 +85,13 @@ struct Connection *Database_open(const char *filename, char mode)
 void Database_close(struct Connection *conn)
 {
 	if(conn){
-	if(conn->file)fclose(conn->file);
-	if(conn->db) free(conn->db);
-	free(conn);
+		if(conn->file){
+			fclose(conn->file);
+		}
+		if(conn->db) {
+			free(conn->db);
+		}
+		free(conn);
 	}
 }
 
@@ -83,36 +100,43 @@ void Database_write(struct Connection *conn)
 	rewind(conn->file);
 	int rc = fwrite(conn->db, sizeof(struct Database), 1, conn->file);
 
-	if(rc != 1)die ("Failed to write database.");
+	if(rc != 1)
+		die ("Failed to write database.");
 
 	rc = fflush(conn-> file);
-	if(rc ==-1) die("Cannot flush database.");
+	if(rc ==-1)
+		die("Cannot flush database.");
 }
 
 void Database_create(struct Connection *conn)
 {
 	int i = 0;
+
 	for(i = 0; i < MAX_ROWS; i++){
 
 		struct Address addr = {.id = i, .set = 0};
+
 		conn ->db ->rows[i] = addr;
 	}
 }
 
-void Database_set (struct Connection *conn, int id, const char * name, const char * email)
+void Database_set (struct Connection *conn, int id, const char *name, 
+		const char * email)
 {
-
 	struct Address *addr = &conn->db->rows[id];
-	if(addr->set)die("Already set, delete it first");
+	if(addr->set)
+		die("Already set, delete it first");
 
 	addr->set = 1;
+
 	char *res = strncpy(addr->name, name, MAX_DATA);
-	if(!res)die("Name copy failed");
+
+	if(!res)
+		die("Name copy failed");
 
 	res = strncpy(addr->email, email, MAX_DATA);
 	if(!res) die("Email copy failed");
 }
-
 void Database_get(struct Connection *conn, int id)
 {
 	struct Address *addr = &conn->db->rows[id];
@@ -146,7 +170,8 @@ void Database_list(struct Connection *conn)
 
 int main(int argc, char *argv[])
 {
-	if(argc < 3) die("USAGE: stack <dbfile> <action> [action params]");
+	if(argc < 3)
+		die("USAGE: stack <dbfile> <action> [action params]");
 
 	char *filename = argv[1];
 	char action = argv[2][0];
@@ -162,13 +187,16 @@ int main(int argc, char *argv[])
 			Database_write(conn);
 			break;
 		case 'g':
-			if(argc != 4) die("Need an id to get ");
+			if(argc != 4) 
+				die("Need an id to get ");
 
 			Database_get(conn, id);
 			break;
 		case 's':
-			if(argc != 6)die ("Need id , name, email to set");
+			if(argc != 6)
+				die ("Need id , name, email to set");
 			Database_set(conn, id , argv[4], argv[5]);
+			Database_write(conn);
 			break;
 		case 'd':
 			if(argc != 4) die("Need id to delete");
@@ -176,6 +204,7 @@ int main(int argc, char *argv[])
 			Database_delete(conn, id);
 			Database_write(conn);
 			break;
+
 		case 'l':
 			Database_list(conn);
 			break;
@@ -184,5 +213,6 @@ int main(int argc, char *argv[])
 	}
 
 	Database_close(conn);
+
 	return 0;
 }
