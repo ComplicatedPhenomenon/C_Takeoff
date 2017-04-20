@@ -29,5 +29,17 @@ int main()
 	}
 /*-------------------------------------------------------*/
 
+	int j;
+	char legacy[10][15];
+	printf("Anything new? \n");
+	for(j = 0; j < 10; j++){
+		scanf("%s\n", legacy[j]);
+	}
+
+	printf("okay,you said :\n");
+	for(j = 0; j < 10; j++){
+
+	printf("%s\n",legacy[j]);
+	}
 	return 0;
 }

@@ -1,7 +1,9 @@
 #include<stdio.h>
 
 /* function declaration */
-int max(int , int ,int );
+int max(int, int, int);
+/* parameters names are not important in function declaration,
+ * only their type is required, so the above is a valid declaration*/
 
 int main()
 {
