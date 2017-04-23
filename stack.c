@@ -62,10 +62,17 @@ struct Connection *Database_open(const char *filename, char mode)
 {
 	struct Connection *conn = malloc(sizeof(struct Connection));
 	if(!conn)die("Memory error");
+/*If conn is NULL, !conn will be non-NULL and the condition will be true.*/
 	
 	conn->db = malloc(sizeof(struct Database));
+/* conn->db fetches the value of the member variable db 
+ * * if conn->db is NULL(for pointers, NULL is falsy). !conn->db will be 
+ * non-NULL and the condition will be true
+ * * vice versa */
 	if(!conn->db) die("Memory error");
-
+/*The if (!conn->db) means the same as if (conn->db == 0) 
+ * or if (conn->db == NULL)*/
+/*  It works with any numeric or pointer type when you compare to 0 */
 	if(mode == 'c')
 	{
 		conn -> file = fopen(filename, "w");
