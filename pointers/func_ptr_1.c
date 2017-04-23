@@ -17,18 +17,17 @@ int main(void){
     ptr[3] = div;
    
     printf("Enter 2 numbers : ");
-    scanf("%d %d ", &i, &j);
+    scanf("%d %d", &i, &j);
+/*1st. scanf() is quirky and clumsy and hard to use correctly
+ * why have to write `&i` when &i is an `int*` but %d specifiers an int
+ * &i is indeed a pointer to int, however, the %d specifiers does NOT 
+ * mean that "you must pass an int for this argument". %d is a library-
+ * defined notions that tells scanf() to scan an integer, and put it into 
+ * the next argument. In order scanf() to be able to modify your argument, 
+ * you need to pass a pointer to it, and indeed this function expects that 
+ * you pass a pointer to it*/
     printf("0: Add, 1: Subtract, 2: Mul, 3: Div\n");
 
-/*    do{
-        printf("Enter number of operation: ");
-        scanf("%d",&op);
-    }while (op < 0 || op > 3);*/
-/*To call one of these function pointers*/
-/*    printf("Enter two numbers: ");
-    scanf("%d %d", &i, &j);
-			  
-    printf("0: Add, 1: Subtract, 2: Multiply, 3:Divide\n");i*/
     do {
 	 printf("Enter number of operation: ");
 	 scanf("%d", &op);
