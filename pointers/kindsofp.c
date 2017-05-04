@@ -2,8 +2,8 @@
 
 int main()
 {
-	char* s = "asd";
-	char** p = &s;
+	char *s = "asd";
+	char **p = &s;
 
 	printf("The value of s is: %p\n", s);
 	printf("The address of s is: %p\n", &s);

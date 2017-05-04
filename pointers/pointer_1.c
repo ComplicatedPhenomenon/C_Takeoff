@@ -8,16 +8,17 @@ int main(){
 	pta = &Pixar[0];
 	memcpy(Disney, (char[]) {'D', 'i','s','n','e','y','l','a','n','d'}, sizeof(Disney));
 
-	printf("Address of var variable: %p\n", &var);
-	printf("Address stored in ip variable: %p\n", ip);
-	printf("Value of *ip variable:%d\n", *ip);
+	printf("&var = %p\n", &var);
+	printf("ip = %p\n", ip);
+	printf("*ip = %d\n", *ip);
 	
 	printf("We have declare an array named Pixar, let's see what's in Pixar.\n");
 	for(i = 0; i < sizeof(Pixar); i++){
 		printf("Pixar[%d] = %c\n",i, Pixar[i]);
 		printf("*pta+%d = %c\n",i, *pta+i);
+		printf("pta[%d] = %c\n",i, pta[i]);
 	}
-	printf("What about Disney\n");
+	printf("What about Disney?\n");
 	for(i = 0; i < 10; i++){
 		printf("Disney[%d]=%c\n",i,Disney[i]);
 	}

@@ -1,13 +1,12 @@
 #include<stdio.h>
-
 void foo(int i)
 {
 	i = 20;/* the change is local to the function*/
 }
 
-void oop(int * j)
+void oop(int *j)
 {
-       * j = 4; /* The change is visible in the calling of the function*/
+       *j = 4; /* The change is visible in the calling of the function*/
 }
 
 void bar()

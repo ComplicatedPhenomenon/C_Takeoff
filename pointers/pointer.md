@@ -57,3 +57,9 @@ Now `cp` point to `c`, that is , it contains the address of `c`(which is 58). We
 const *** cpp = &cp
 ```
 Now `cpp`stores the address of `cp`, so it has value 55(based on the example above),and you guessed it, itself stored at address 60
+
+#### Data types
+Data types is used for declaring variable or functions of different types.
+The type of a variable determines how much space it occupies in storage and how the bit pattern stored is interpreted.
+#### Variable
+A  variable is nothing but a name given to a storage area that our programs can manipulate.
