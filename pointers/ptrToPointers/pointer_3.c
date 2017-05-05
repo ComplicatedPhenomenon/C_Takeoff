@@ -2,9 +2,10 @@
 
 int main(){
 
-	char name[] = "complicatephenomenon";
+	char name[] = "ComplicatedPhenomenon";
 	int i ;
 	i = 0;
+
 	printf("------------------------------\n");
         printf("The lenth of name is %lu\n bytes",sizeof(name));
 	printf("------------------------------\n");

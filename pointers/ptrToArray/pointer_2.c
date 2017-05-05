@@ -2,9 +2,10 @@
 
 const int max = 3;
 const int min = 4;
+
 int main()
 {
-	int var[] = {10,20,30};
+	int var[] = {10,20,30}; 
 	int *pt[max]; /*each element in pt holds a pointer to an int value */
 	int i;
 
@@ -22,5 +23,9 @@ int main()
 	}
 
 
+	for(int i = 0; i < min; i++)
+	{
+		printf("name[%d]=%p\n",i,*name+i);
+	}
 	return 0;
 }
