@@ -116,13 +116,13 @@ int Map_init(void *self)
     Map *map = self;
 
     // make some rooms for a small map
-    Room *hall = NEW(Room, "The great Hall");
-    Room *throne = NEW(Room, "The throne room");
-    Room *arena = NEW(Room, "The arena, with the minotaur");
-    Room *kitchen = NEW(Room, "Kitchen, you have the knife now");
+    Room *hall = _(NEW)(Room, "The great Hall");
+    Room *throne = _(NEW)(Room, "The throne room");
+    Room *arena = _(NEW)(Room, "The arena, with the minotaur");
+    Room *kitchen = _(NEW)(Room, "Kitchen, you have the knife now");
 
     // put the bad guy in the arena
-    arena->bad_guy = NEW(Monster, "The evil minotaur");
+    arena->bad_guy = _(NEW)(Monster, "The evil minotaur");
 
     // setup the map rooms
     hall->north = throne;
