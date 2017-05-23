@@ -15,7 +15,7 @@ int main()
 
 	printf("Input two integers\n");
 	scanf("%d%d",&m,&n);
-	printf("The result is %d\n", addInt(m,n));
+	printf("Adding them together we get is %d\n", addInt(m,n));
 	printf("(*functionPtr)(%d, %d) is %d\n", m, n,(*functionPtr)(m,n));        
 	return 0;
 }

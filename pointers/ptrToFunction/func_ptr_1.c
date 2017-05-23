@@ -16,7 +16,7 @@ int main(void){
     ptr[2] = mul;
     ptr[3] = div;
    
-    printf("Enter 2 numbers : ");
+    printf("Enter 2 numbers : \n");
     scanf("%d %d", &i, &j);
 /*1st. scanf() is quirky and clumsy and hard to use correctly
  * why have to write `&i` when &i is an `int*` but %d specifiers an int
