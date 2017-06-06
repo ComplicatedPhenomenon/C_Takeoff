@@ -26,9 +26,9 @@ int main()
 void swap(int *x, int *y)
 {
 	int temp;
-        temp = *x;/* save the address of variable x  */
-	*x = *y;
-	*y = temp;
+        temp = *x; /* save the contents of var x in tem */
+	*x = *y;   /* the contents of x become ys'*/
+	*y = temp; /* the contents of y become xs'*/
 	
 	return; 
 }

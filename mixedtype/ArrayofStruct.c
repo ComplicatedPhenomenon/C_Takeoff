@@ -36,3 +36,9 @@ int main(){
   return 0;
 }
 
+
+/**********************************************************
+ *  First A is an array consisted of n elements
+ *  Every element has a body type described by 
+ *  four differnt characters
+ **********************************************************

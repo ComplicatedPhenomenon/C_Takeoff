@@ -11,6 +11,7 @@ typedef struct{
 void print(place A);
 void input(place A);
 void fprint(FILE *f, place A);
+
 int main(){
   place A;
 
