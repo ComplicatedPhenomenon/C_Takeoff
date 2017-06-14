@@ -10,7 +10,7 @@ struct person{
 	int   weight;
 };
 /* the return type of function person_create is a structure */ 
-struct person * person_create(char *name, int age, int height, int weight)
+struct person *person_create(char *name, int age, int height, int weight)
 {
 	struct person *who = malloc(sizeof(struct person));
 /* create a structure by applying a piece of raw memory from OS 
@@ -21,9 +21,11 @@ struct person * person_create(char *name, int age, int height, int weight)
 	who->age = age;
 	who->height = height;
 	who->weight=weight;
-/* initialize the members in struct person , use `strdup` to copy string 
- * name, in order to make sure the struct really own it*/
-/* x->y is short for (*x).y */
+/**************************************************************************
+ * Initialize the members in struct person , use `strdup` to copy string 
+ * name, in order to make sure the struct really own it x->y is short for
+ * (*x).y                                                             
+ **************************************************************************/
 	return who;
 	}
 

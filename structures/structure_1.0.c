@@ -16,17 +16,13 @@ struct people
         char description[300];
 };
 /*------------------------------------------------------------*/
-/*                                                            */
 /*        sturct is a derived data type, so is array          */
-/*                                                            */
 /*------------------------------------------------------------*/
 int main()
 {
 
 /*------------------------------------------------------------*/
-/*                                                            */
 /*  access the element in struct                              */
-/*                                                            */
 /*------------------------------------------------------------*/
    	struct book book1;
         struct people wm;
@@ -36,12 +32,10 @@ int main()
 	strcpy(book1.subject,"tutorial for a beginner");
 	/* "()" not "{}" is followed by function "*/
 	book1.units = 42;
-/*------------------------------------------------------------*/
-/*                                                            */
-/*  in an interactive programm, we get the required           */
-/*   arguments from keyboard input                            */
-/*                                                            */
-/*------------------------------------------------------------*/
+/*------------------------------------------------------------*
+*  In an interactive programm, we get the required            *
+*  arguments from keyboard input                              *
+*-------------------------------------------------------------*/
 
         strcpy(wm.name, "wang maio");
 	strcpy(wm.disease, "depression");
