@@ -8,12 +8,19 @@ typedef struct{
   double velocity[m];
   double accleration[m];
   double mass;
-}body;
+} body;
+
+typedef enum{
+   Lorentz_T, Poincare_T, SO_T
+} group;
 
 body A[n];
+group transformation_type; 
 
 int main(){
   int i, j;
+  transformation_type = SO_T;
+  printf("trnasformation type is %d\n",transformation_type);
   FILE *f = fopen("file.txt","w");
   if (f == NULL){
     printf("Error opening file!\n");
@@ -41,4 +48,4 @@ int main(){
  *  First A is an array consisted of n elements
  *  Every element has a body type described by 
  *  four differnt characters
- **********************************************************
+ **********************************************************/

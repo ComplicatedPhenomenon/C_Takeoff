@@ -21,8 +21,7 @@ void *Object_move(void *self, Direction direction);
 int Object_attack(void *self, int damage);
 void *Object_new(size_t size, Object proto, char *description);
 
-#define New(T,N) Object_new(sizeof(T), T##Proto, N)
-/* Contruct a macro, build a shortcut for Object_new to avoid potential error in recall */
-#define _(N) proto.N /*syntax candy, obj->proto.blah can be replace as obj->_(blah)*/
+#define NEW(T,N) Object_new(sizeof(T), T##Proto, N)
+#define _(N) proto.N 
 #endif
 
