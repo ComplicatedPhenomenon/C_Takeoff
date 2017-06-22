@@ -20,7 +20,7 @@ int main(void)
 
 - [] a function that expects no arguments. Return an integer representing the    application software status.
 
-int main(int argc, char *argv[])
+int main(int argc, char \*argv[])
 
 - [] a function that expects argc number of arguments and argv[] arguments.      Return an integer representing the application software status.
 
@@ -32,6 +32,13 @@ int main()
 -[] you need to use this function when your program needs no initial parametes
   to run/load (parameters received from the OS - out of the program itself)
 
-int main (int argc, char *argv[])
+int main (int argc, char \*argv[])
 
 - [] you need to use this function when your program needs initial parameters     to load (parameters received from the OS - out of the program itself)
+
+A qick way to look up the way that preprocessor to deal with things
+```bash
+cpp examplecode.c | less
+```
+
+The function called at program startup is named `main`. The implementation  declares no prototype for this function. It can be defined with no parameters:`int main(void){/*...*/}` or with two parameters (referred to here as `argc` and  `argv`, though any names can be used, as they are local to the function in whichthey are declared): `int main(int argc, char *argv[]}{/*...*/}`

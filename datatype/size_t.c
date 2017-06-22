@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdint.h>
 #include<stddef.h>
 #include<stdbool.h>
 #include<string.h>
@@ -16,6 +17,8 @@ int main(){
    printf("a1-a2 = %d\n\n",a);
    printf("%e\n\n",b);
    printf("%d\n", c);
+   printf("SIZE_MAX+1 = %zu\n", SIZE_MAX+1);
+   printf("SIZE_MAX = %zu\n", SIZE_MAX);
    return 0;
 }
 
