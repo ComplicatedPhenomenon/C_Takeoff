@@ -12,7 +12,7 @@ void f()
    printf("hey.\n");
 }
 
-oop new_oop()
+oop new_oop(void)
 {
    oop o;
    o.method = &f;
