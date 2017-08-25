@@ -4,3 +4,5 @@ char name[length] = {' ',' ',' ',...};
 
 char name[ ] = "..."
 ```
+
+[what does sizeof array return?](https://stackoverflow.com/questions/15177420/what-does-sizeofarray-return)

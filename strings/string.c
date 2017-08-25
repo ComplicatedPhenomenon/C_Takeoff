@@ -1,3 +1,7 @@
+/**
+ * version 2.0 
+ * sizeof(butterfly) = 10?
+ **/
 #include<stdio.h>
 
 int main()
@@ -11,8 +15,8 @@ int main()
 /*							 */
 /*-------------------------------------------------------*/
 	int i;
-	char *name[] = {"wm","complicatephenomenon"};
-	for(i = 0; i < 2; i++)
+	char *name[] = {"wm","ComplicatedPhenomenon", "wangmiao"};
+	for(i = 0; i < 3; i++)
 	{
 		printf("name[%d] = %s\n",i,name[i]);
 	}
@@ -21,8 +25,9 @@ int main()
 /* 不用指针，直接用数组储存字符串怎么就行不通？          */
 /*							 */
 /*-------------------------------------------------------*/
-        char word[] = "bufferfly";
-	int parameter = sizeof word -1;
+        char word[] = "butterfly";
+	int parameter = sizeof(word)-1;
+	printf("sizeof(butterfly) = %d\n", parameter);
 	for(i = 0; i < parameter; i++)
 	{
 		printf("word[%d] = %c, \n",i,word[i]);
@@ -31,8 +36,8 @@ int main()
 
 	int j;
 	char legacy[10][15];
-	printf("Anything new? \n");
-	for(j = 0; j < 10; j++){
+	printf("Anything new? I will store what you said in a 2 dimension array, row 10, column 15 \n");
+	for(j = 0; j < 9; j++){
 		scanf("%s\n", legacy[j]);
 	}
 

@@ -1,3 +1,4 @@
+/* problem : printf("%c",*(joe->name))*/
 #include<stdio.h>
 #include<assert.h>
 #include<stdlib.h>
@@ -18,7 +19,7 @@ typedef struct PERSON person;
 
 void person_print(person* who)
 {
-	printf("Name: %s\n", who->name);
+	printf("Name: %p\n", who->name);
 	printf("Age: %d\n", who->age);
 	printf("Height: %d\n", who->height);
 	printf("Weight: %d\n", who->weight);
@@ -52,6 +53,12 @@ person *person_create(char *name, int age, int height, int weight)
 int main(int argc, char *argv[])
 {
         person *joe = person_create("Joe Alex", 32, 64, 140);
+	printf("Accessing the information of the object directly\n");
+	printf("joe->name : %p\n",*(joe->name));
+	printf("joe->age : %d\n",joe->age);
+	printf("joe->height : %d\n",joe->height);
+	printf("joe->weight : %d\n",joe->weight);
+	printf("Accessing the information of the object through method\n");
 	person_print(joe);                /*calling the print function directly */
 
 	/*Declaration is void (*print)(struct PERSON *self);. Type is void (*)(struct PERSON*). It expects a pointer to struct PERSON*/
