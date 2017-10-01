@@ -30,6 +30,7 @@ int Monster_init(void *self)
     return 1;
 }
 
+/*        */
 Object MonsterProto = {
     .init = Monster_init,
     .attack = Monster_attack
@@ -207,6 +208,10 @@ int main(int argc, char *argv[])
 
     // make our map to work with
     Map *game = NEW(Map, "The Hall of the Minotaur.");
+
+    printf("This game seems quiet stupid, with an very confusing interface\n");
+    printf("Like playing with dice\n");
+    printf("\n");
 
     printf("You enter the ");
     game->location->_(describe)(game->location);

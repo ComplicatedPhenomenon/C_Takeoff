@@ -23,14 +23,14 @@ void *Object_new(size_t size, Object proto, char *description);
 
 #define NEW(T,N) Object_new(sizeof(T), T##Proto, N)
 /*****
- * #define new(T,N) This statement construct a macro.  What you write on the LHS will expand as LHS
+ * #define new(T,N) This statement construct a macro.  What you write on the RHS will expand as LHS
  *                                                                                              ****/
 
 #define _(N) proto.N   
 /***********
  *  It can simplify obj->proto.blah 
  *  as obj->_(blah). Just an abstract 
- *  prototype. different and similar 
+ *  prototype. different but similar 
  *  with `typedef`
  *                                    ********/
 #endif
