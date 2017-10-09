@@ -13,7 +13,7 @@ void List_destroy(List *list)
             free(cur->prev);
 	}
     }
-    free(list->list);
+    free(list->last);
     free(list);
 }
 
@@ -107,7 +107,7 @@ void *List_remove(List *list, ListNode *node)
 	list->last->next = NULL;
     }else{
 	ListNode *after = node->next;
-	LsitNode *before = node->prev;
+	ListNode *before = node->prev;
 	after->prev = before;
 	before->next = after;
     }
