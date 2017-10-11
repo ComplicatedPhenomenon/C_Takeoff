@@ -19,7 +19,7 @@ in a reference node known as "front"(some times it is also known as *head*)
 
 #### Operations with SLL
 
-* insertion
+* Insertion
 * Deletion
 * Display
     * 1. Check whether list is **Empty** (head == NULL)
@@ -43,3 +43,14 @@ struct Node
 ```
 
 [singlelist.c](https://stackoverflow.com/a/588729/7583919)
+
+### Memory Leak
+To understand the list implementation. What variable sits what section of the memory. **What goes where?**
+* Stack is used to store all the information about function call executions , to store all the local variables,
+* Static/Globe store the global values that lives the entire lifetime of the program of that application.
+* Code(Text) is to store all the instructions to be executed.
+
+These three sections of the memory is decided at compile time.
+
+* Heap is not fixed, we can request memory from heap during run time. And that's what we do when we use `malloc()` or new operator etc.
+[linked list implementation in C/C++](https://m.youtube.com/watch?v=vcQIFT79_50)
