@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 int main(){
-   printf("%d",RAND_MAX);
+   printf("%d\n",RAND_MAX);
    return 0;
 }
 
