@@ -34,8 +34,9 @@ When I want first try with `gsl`, the difficulty I met is
 ```
 ./a.out: error while loading shared libraries: libgsl.so.23: cannot open shared object file: No such file or directory
 ```
-Then I ask it on [StackOverflow](https://stackoverflow.com/q/45665878/7583919) in a rush when no one at least I knew had asked such question. I missed out for
+Then I asked it on [StackOverflow](https://stackoverflow.com/q/45665878/7583919) in a rush when no one at least I knew had asked such question. I missed out for
 looking up the official help documentation.
+> To avoid this error, either modify the system daynamic linker configuration ordefine the shell variable `LD_LIBARY_PATH` to include the directory where the library is installed.
 
 Again unnecessary information generated in the online world because of me.
 
