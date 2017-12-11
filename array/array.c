@@ -3,14 +3,14 @@
 int main(){
 
 	int n[10];
-	int i,j;
+	int i;
 
 	for (i = 0; i < 10; i++){
 	    n[i] = i + 100;
 	}
 	
-	for (j = 0; j < 10; j++){
-	    printf("Elements[%d] = %d\n", j, n[j]);
+	for (i = 0; i < 10; i++){
+	    printf("Elements[%d] = %d\n", i, n[i]);
 	}
 
 	return 0;
