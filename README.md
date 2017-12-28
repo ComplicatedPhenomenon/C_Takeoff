@@ -3,3 +3,10 @@ It's a repo mainly about C, few may involve C++. [Difference between g++ and gcc
 * `lcthw` is the handy practice on the book `Learn C the Hard way` by [Zed A Shaw](https://zedshaw.com)
 * `test_tools` is the recommend tools used during your C programming career.
 * `GSL` is used to do scientific computation by [GNU Scientific Library](http://www.gnu.org/software/gsl/).	
+
+
+---
+Pick up a text editor suite for you.
+
+* Vim. Set it up for C. [A reference for beginner](https://stackoverflow.com/questions/14533877/ideal-c-setup-for-vim)
+* Atom. 
