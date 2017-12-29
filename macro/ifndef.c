@@ -7,9 +7,7 @@
 #define YEARS_OLD 10
 #endif
 
-int main()
-{
+int main(){
     printf("TechOnTheNet is over %d years old.\n", YEARS_OLD);
-
     return 0;
 }

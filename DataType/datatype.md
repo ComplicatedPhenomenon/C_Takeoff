@@ -25,6 +25,7 @@ Note that this is one place that `printf` format strings differ substantially fr
 |long double|10 byte| |
 #### Enumerated Types
 #### The Type Void
+---
 ### Derived Data Type
 * Pointer types
 * Array types

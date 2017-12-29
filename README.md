@@ -12,4 +12,4 @@ Pick up a text editor suite for you.
 * Atom. 
 
 ---
-Today's complete program contains small amount of code is tomorrow's building block in a larger project. So avoid every program being ugly, think it  over and make it exquisite. 
+The plain program containing small amount of code is tomorrow's building block in a larger project. So avoid every program being ugly, think it over and make it exquisite. 
