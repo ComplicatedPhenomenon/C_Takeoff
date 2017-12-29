@@ -1,18 +1,30 @@
 #include<stdio.h>
 
-int main(){
+int * getRandom()
+{
+    static int r[10];
+    int i;
 
-	int n[10];
-	int i;
-
-	for (i = 0; i < 10; i++){
-	    n[i] = i + 100;
-	}
-	
-	for (i = 0; i < 10; i++){
-	    printf("Elements[%d] = %d\n", i, n[i]);
-	}
-
-	return 0;
+    srand( (unsigned)time( NULL));
+    for (i=0; i < 10; ++i)
+    {
+	r[i] = rand();
+	printf("r[%d] = %d\n", i, r[i]);
+    }
+    return r;
 }
 
+int main()
+{
+    /* a pointer to an int */
+    int *p;
+    int i;
+
+    p = getRandom();
+    for(i=0; i < 10; i++)
+    {
+	printf ("*(p + %d) : %d\n",i ,*(p+i));
+    }
+
+    return 0;
+}

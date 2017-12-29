@@ -7,7 +7,6 @@ int div(int a, int b);
 
 int (* ptr[4]) (int x, int y);
 int main(void){
-
     int result;
     int i, j, op;
 
@@ -32,24 +31,22 @@ int main(void){
     return 0;
 }
 
-    int sum(int a, int b)
-{
-	return a + b;
-}
-    int subtract(int a, int b)
-{
-	return a - b;
+int sum(int a, int b){
+    return a + b;
 }
 
-    int mul(int a, int b)
-{ 
+int subtract(int a, int b){
+    return a - b;
+}
+
+int mul(int a, int b){ 
 	return a * b;
 }
-    int div(int a, int b)
-{       
-	if (b) 
-	     return a / b ;
-	else
-	     return 0;
+
+int div(int a, int b){       
+    if (b) 
+	return a / b ;
+    else
+	return 0;
 }
 

@@ -3,24 +3,25 @@
 
 int main()
 {
-	char a[10];
-	char b[10];
-        char c[10];
-	strcpy(a, "Alive");
-	strcpy(b, "Dead");
-	/*assignment to expression with array type*/
+    char a[10];
+    char b[10];
+    char c[10];
 
-	printf("before exchanging, a is : %s\n", a);
-	printf("before exchanging, b is : %s\n", b);
-	printf("---------------------------\n");
+    strcpy(a, "Alive");
+    strcpy(b, "Dead");
+    /*assignment to expression with array type*/
 
-	strcpy(c, a);
-	strcpy(a, b);
-	strcpy(b, c); 
-	printf("After exchanging, a is : %s\n", a);
-	printf("After exchanging, b is : %s\n", b);
+    printf("before exchanging, a is : %s\n", a);
+    printf("before exchanging, b is : %s\n", b);
+    printf("---------------------------\n");
+
+    strcpy(c, a);
+    strcpy(a, b);
+    strcpy(b, c); 
+    printf("After exchanging, a is : %s\n", a);
+    printf("After exchanging, b is : %s\n", b);
 	
-	return 0;
+    return 0;
 }
 
 

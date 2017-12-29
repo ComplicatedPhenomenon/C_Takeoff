@@ -3,9 +3,9 @@
 #include<string.h>
 
 typedef struct{
-  char country[20];
-  char city[20];
-  char school[30];
+    char country[20];
+    char city[20];
+    char school[30];
 }place;
 
 void print(place A);
@@ -13,29 +13,30 @@ void input(place A);
 void fprint(FILE *f, place A);
 
 int main(){
-  place A;
+    place A;
 
-//Avoid assignment to expression with array type when initialize A
-  strcpy(A.country,"UK");
-  strcpy(A.city,"Cambridge");
-  strcpy(A.school,"Cambridge University");
+    //Avoid assignment to expression with array type when initialize A
+    strcpy(A.country,"UK");
+    strcpy(A.city,"Cambridge");
+    strcpy(A.school,"Cambridge University");
 
-//Initialize B
-  place B = {"US", "New Jersy", "Princeton University"};
-  place C;
-  FILE *f = fopen("file.txt","w");
-  if (f == NULL){
-    printf("Error opening file!\n");
-    exit(1);
-  }
-  fprintf(f,"%s","hello, WM\n");
-  //fprint(FILE *f, place A);
-  fclose(f);
-  print(A);
-  print(B);
-  input(C);
+    //Initialize B
+    place B = {"US", "New Jersy", "Princeton University"};
+    place C;
+    FILE *f = fopen("file.txt","w");
+    if (f == NULL){
+	printf("Error opening file!\n");
+	exit(1);
+    }
 
-return 0;
+    fprintf(f,"%s","hello, WM\n");
+    //fprint(FILE *f, place A);
+    fclose(f);
+    print(A);
+    print(B);
+    input(C);
+    
+    return 0;
 }
 
 void print(place A){

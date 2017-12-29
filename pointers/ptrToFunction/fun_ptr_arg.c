@@ -1,20 +1,21 @@
 /* Function pointer as an argument*/
 #include<stdio.h>
+
 void easyf0(){
-   printf(" \n");
-   printf("I am from planet Earth\n");
+    printf(" \n");
+    printf("I am from planet Earth\n");
 }
 void foo(void (*a)()){
-   a();
+    a();
 }
 
 void easyf1(){
-   printf("Hello world\n");
+    printf("Hello world\n");
 }
 
 void easyf2(){
-   printf(" \n");
-   printf("An advanced version of Hello World\n");
+    printf(" \n");
+    printf("An advanced version of Hello World\n");
 }
 
 int main(){

@@ -10,3 +10,6 @@ Pick up a text editor suite for you.
 
 * Vim. Set it up for C. [A reference for beginner](https://stackoverflow.com/questions/14533877/ideal-c-setup-for-vim)
 * Atom. 
+
+---
+Today's complete program contains small amount of code is tomorrow's building block in a larger project. So avoid every program being ugly, think it  over and make it exquisite. 
