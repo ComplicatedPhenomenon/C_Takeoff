@@ -1,51 +1,46 @@
 #include"DoubleListLink.h"
 #include"dbg.h"
 
-List *List_create()
-{
+List *List_create(){
     return calloc(1, sizeof(int));
 }
 
-void List_destroy(List *list)
-{
+void List_destroy(List *list){
     LIST_FOREACH(list, first, next, cur){
-	if(cur->prev){
-            free(cur->prev);
-	}
+      if(cur->prev){
+        free(cur->prev);
+      }
     }
     free(list->last);
     free(list);
 }
 
-void Lis_clear(List *list)
-{
-    LIST_FOREACH(list, first, next, cur){
-	free(cur->value);
+void Lis_clear(List *list){
+  LIST_FOREACH(list, first, next, cur){
+    free(cur->value);
     }
 }
 
 
-void List_clear_destroy(List *list)
-{
+void List_clear_destroy(List *list){
      List_clear(list);
      List_destroy(list);
 }
 
-void List_push(List *list, void *value)
-{
+void List_push(List *list, void *value){
     ListNode *node = calloc(1, sizeof(ListNode));
     check_mem(node);
 
     node->value = value;
 
     if(list->last == NULL){
-	list->first = node;
-	list->last = node;
+      list->first = node;
+      list->last = node;
     }else{
-	list->last->next = node;
-	node->prev = list->last;
-	list->last = node;
-    }
+      list->last->next = node;
+      node->prev = list->last;
+      list->last = node;
+      }
 
     list->count++;
 
@@ -53,27 +48,25 @@ error:
     return;
 }
 
-void *list_pop(List *list)
-{
+void *list_pop(List *list){
     ListNode *node = list->last;
     return node != NULL ? List_remove(list, node) : NULL;
 }
 
-void List_unshift(List *list, void *value)
-{
+void List_unshift(List *list, void *value){
     ListNode *node = calloc(1, sizeof(ListNode));
     check_mem(node);
 
     node->value = value;
 
     if(list->first == NULL){
-	list->first = node;
-	list->last = node;
+      list->first = node;
+      list->last = node;
     }else{
-	node->next = list-> first;
-	list->first->prev = node;
-	list->first = node;
-         }
+      node->next = list-> first;
+      list->first->prev = node;
+      list->first = node;
+    }
 
     list->count++;
 error:
@@ -94,22 +87,21 @@ void *List_remove(List *list, ListNode *node)
     check(node, "node can't be NULL");
 
     if( node == list->first && list->last){
-	list->first = NULL;
-	list->last = NULL;
+      list->first = NULL;
+      list->last = NULL;
     } else if(node == list->first){
-	list->first = node-> next;
-	check(list -> first != NULL,"Invalid list, somehow got a first that is NULL.");
-	list->first->prev = NULL;
+      list->first = node-> next;
+      check(list -> first != NULL,"Invalid list, somehow got a first that is NULL.");
+      list->first->prev = NULL;
     }else if(node == list->last){
-	list->last = node->prev;
-	check(list->last != NULL, "Invalid list, somehow got a next that is NULL.");
-
-	list->last->next = NULL;
+      list->last = node->prev;
+      check(list->last != NULL, "Invalid list, somehow got a next that is NULL.");
+      list->last->next = NULL;
     }else{
-	ListNode *after = node->next;
-	ListNode *before = node->prev;
-	after->prev = before;
-	before->next = after;
+      ListNode *after = node->next;
+      ListNode *before = node->prev;
+      after->prev = before;
+      before->next = after;
     }
 
     list->count--;

@@ -31,4 +31,7 @@ Note that this is one place that `printf` format strings differ substantially fr
 * Array types
 * Structure types
 * Union types
-* Function types
+
+###
+* stack and heap(堆)
+* ...

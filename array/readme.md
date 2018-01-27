@@ -1,0 +1,1 @@
+[Gcc option](https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html)

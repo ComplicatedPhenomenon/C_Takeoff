@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 # compile the lib file and make the .so
 
