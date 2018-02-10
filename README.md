@@ -2,14 +2,32 @@ It's a repo mainly about C, few may involve C++. [Difference between g++ and gcc
 
 * `lcthw` is the handy practice on the book `Learn C the Hard way` by [Zed A Shaw](https://zedshaw.com)
 * `test_tools` is the recommend tools used during your C programming career.
-* `GSL` is used to do scientific computation by [GNU Scientific Library](http://www.gnu.org/software/gsl/).	
+* `GSL` is used to do scientific computation by [GNU Scientific Library](http://www.gnu.org/software/gsl/).
 
 
 ---
 Pick up a text editor suite for you.
 
 * Vim. Set it up for C. [A reference for beginner](https://stackoverflow.com/questions/14533877/ideal-c-setup-for-vim)
-* Atom. 
+* Atom.
 
 ---
-The plain program containing small amount of code is tomorrow's building block in a larger project. So avoid every program being ugly, think it over and make it exquisite. 
+The plain program containing small amount of code is tomorrow's building block in a larger project. So avoid every program being ugly, think it over and make it exquisite.
+
+
+---
+There are some standards to test whether or not you are qualifed to do the programming job. You won't say "I have no idea of how to be a qualified programmer" again.
+
+It not hard to be a good programmer compared with to be a good physicist.
+
+There are many resources already available online. You need to go through several tests. You can clearly see different stages which you are in along the way towarding realizing what you long for.
+
+
+* What basics you are supposed to know.
+
+* There are many problems for you to take a try. Tackling down the problems help
+you to understand how things work better.  
+
+[When you can ask for an interview?](https://youtu.be/ko-KkSmp-Lk)
+
+[Code Jam: Advanced level to  ](https://code.google.com/codejam/)
