@@ -1,4 +1,24 @@
-###[Single Linked List](http://btechsmartclass.com/DS/U1_T10.html)
+### [Single Linked List](http://btechsmartclass.com/DS/U1_T10.html)
+[self referential struct definition?](https://stackoverflow.com/a/588631)
+
+> Clearly a Cell cannot contain another Cell as it becomes a never-ending recursion.
+
+> However a Cell can contain a pointer to another Cell
+```
+typedef struct Cell {
+  bool isParent;
+  struct Cell* child;
+} Cell;
+```
+
+
+> In C (as opposed to C++ where it may be possible, I haven't checked), you cannot reference the `typedef` that you're creating within the structure itself. You have to use the structure name, as in the following test program:
+
+`singleListLink.c`
+
+
+> Although it's probably a lot more complicated than this in the standard, you can think of it as the compiler knowing about struct Cell on the first line of the typedef but not knowing about tCell until the last line :-) That's how I remember that rule.
+
 
 #### Basic
 
@@ -9,12 +29,12 @@ values, we use a linked list. It is a *linear data structure* that contains
 sequence of elements such that each element links to its next element in the
 sequence. Each element in a linked list is called as **Node**.
 
-Every **Node** contains 2 field, **data** and **next**, the data field is 
+Every **Node** contains 2 field, **data** and **next**, the data field is
 used to actual value of that node and next field is used to store the
 address of the next node in the sequence. (So **next** is a pointer)
 
-* In a single linked list, the address of the first node is always stored
-in a reference node known as "front"(some times it is also known as *head*)
+* In a single linked list, **the address of the first node** is always stored
+in a reference node known as "front" (some times it is also known as *head*)
 * Always next part(reference part) of the last node must be *NULL*.
 
 #### Operations with SLL
@@ -31,7 +51,7 @@ in a reference node known as "front"(some times it is also known as *head*)
 Before we implement actual operations, first we need to set up empty list.
 * **Step1** Define a **Node** structure with 2 members **data** and **next**
 * **Step2** Define a Node pointer `head` and set it to `NULL`
-* **Step3** Implement the **main** method by displaying operations menu 
+* **Step3** Implement the **main** method by displaying operations menu
 and make suitable function calls in the main method to perform user selected
 operations.
 ```C
@@ -43,6 +63,11 @@ struct Node
 ```
 
 [singlelist.c](https://stackoverflow.com/a/588729/7583919)
+
+### Priority queue
+### Binary three
+### Hashtable
+### Sorting Algorithm
 
 ### Memory Leak
 To understand the list implementation. What variable sits what section of the memory. **What goes where?**

@@ -12,11 +12,11 @@
 /*##__VA_ARGS__ tell the preprocess to replace what's in ##__VA_ARGS__ with what's in the position ...
  * log_err("Age: %d, name:%s", age, name); expand into
  * fprintf(stderr,"[ERROR](%s :%d: errno:%s Age: %d, name: %s \n", __FILE__, __LINE__, clean_errno(), age, name */
-#endif  
+#endif
 
-#define clean_errno()(errno == 0? "None": strerror(errno)) 
-/* use strerror() get an human-readable string to the error number 
- * a ? b : c if a is logically true (does not evaluate to zero) then 
+#define clean_errno()(errno == 0? "None": strerror(errno))
+/* use strerror() get an human-readable string to the error number
+ * a ? b : c if a is logically true (does not evaluate to zero) then
  * evaluate expression b, otherwise evaluate expression c */
 
 #define log_err(arg,...)fprintf(stderr, "[ERROR] (%s :%d: errno: %s)" arg "\n", __FILE__, __LINE__, clean_errno(),##__VA_ARGS__)
@@ -34,4 +34,3 @@
 #define check_debug(A,arg, ...) if(!(A)){ debug(arg, ##__VA_ARGS__); errno = 0; goto error; }
 
 #endif
-
