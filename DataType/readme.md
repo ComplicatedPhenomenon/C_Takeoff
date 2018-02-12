@@ -8,12 +8,14 @@ Reference
 [C Programming Boot Camp](https://www.gribblelab.org/CBootCamp/)
 ---
 
-#### Print Formatter
+### Print Formatter
 `"%f"` is the (or at least one) correct format for a double. There is no format for a `float`, because if you attempt to pass a `float` to `printf`, it'll be promoted to double before printf receives it1. `"%lf"` is also acceptable under the current standard -- the `l` is specified as having no effect if followed by the f conversion specifier (among others).
 
 Note that this is one place that `printf` format strings differ substantially from `scanf` (and `fscanf`, etc.) format strings. For output, you're passing a value, which will be promoted from float to `double` when passed as a variadic parameter. For input you're passing a pointer, which is not promoted, so you have to tell `scanf` whether you want to read a `float` or a `double`, so for `scanf`, `%f` means you want to read a float and `%lf` means you want to read a `double` (and, for what it's worth, for a long double, you use `%Lf` for either printf or scanf).
-#### Basic Data Types
-* integer types
+
+### Data Type
+* Basic Data Types
+  * integer types
 
 | Type |Storage size|Value range|
 |-------|
@@ -26,32 +28,38 @@ Note that this is one place that `printf` format strings differ substantially fr
 |long|4byte|...|
 |unsigned long|4 byte}|  ...|
 
-* floating-point types
+  * floating-point types
 
 | Type |Storage size|Value range|
 |-------|
 |float|4byte |  |
 |long |8byte | |
 |long double|10 byte| | |
-#### Enumerated Types
-#### The Type Void
----
-### Derived Data Type
-* Pointer types
-* Array types
-  * Array is created as one contiguous block of memory
-* Linked list
-* Structure types
-* Union types
-* ADT(abstract data type)
-  * List(implementation detail)
-    * insert
-    * remove
-    * count
-    * read/modify
-    * ...
+* Enumerated Types
+* The Type Void
+* Derived Data Type
 
+  Derived types include
+  * Pointer types
+  * Array types
+  * Structure types
+  * Union types
+  * Function types
 
-###
-* stack and heap(堆)
-* ...
+### Data structure
+[An overview of data structures and algorithm](https://www.tutorialspoint.com/data_structures_algorithms/)
+
+* Linked List
+* Stack & Queue
+* Graph Data structure
+* Tree Data structure
+
+Implementing Types with Structures
+
+You can generally implement:
+
+* any sequence type with an array
+* stacks and queues with singly-linked lists
+* lists and deques with doubly-linked lists
+* Trees and priority queues with arrays
+*  etc. 
