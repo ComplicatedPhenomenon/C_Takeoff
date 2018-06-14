@@ -1,11 +1,7 @@
-/**
- * version 2.0 
- * sizeof(butterfly) = 10?
- **/
 #include<stdio.h>
 
 int main()
-{	
+{
 
 /*-------------------------------------------------------*/
 /*  use an array of pointers to character to store a 	 */

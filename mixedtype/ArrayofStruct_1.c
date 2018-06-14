@@ -24,7 +24,7 @@ int main(){
 	    A[i].mass = 12+i;
 	}
     }
-    
+
     for(i = 0; i < 2; i++){
         for(j = 0; j < 3; j++){
   	    B[i].position[j] = i/11.1;
@@ -47,7 +47,19 @@ int main(){
     }
 
     fclose(f);
+#include<stdlib.h>
+#include<time.h>
 
+int *getRandom()
+{
+    static int r[10];
+    int i;
+
+    srand( (unsigned)time( NULL));
+    for (i=0; i < 10; ++i){
+      r[i] = rand();
+      printf("r[%d] = %d\n", i, r[i]);
+    }
     for(i = 0; i < 2; i++){
        	for(j = 0; j < 3; j++){
 	    printf("%f\n%f\n%f\n%f\n\n\n",B[i].position[j], B[i].velocity[j], B[i].position[j], B[i].mass);
@@ -58,7 +70,7 @@ int main(){
 }
 
 /********************************************************************
- * 1. Global variable A and Local variable B, What's the diffierence 
+ * 1. Global variable A and Local variable B, What's the diffierence
  * between them?
  * 2. computation among diffirent data type
  ********************************************************************/
