@@ -1,4 +1,4 @@
-### Dynamical memory allocation 
+### Dynamical memory allocation
 DMA allows your program to obtain memory space while running, or to release it
 if it's not required.
          usage    
@@ -16,4 +16,8 @@ Even if the OS take care for you when the program close, for sure you still don'
 * > A principal problem with never freeing memory is running out of memory.
 * > Associated with this is the problem of finding these memory leakage.(a "memory leak" is the term used to describe memory that you have lost the pointer to and thus cannot delete, even if you wanted to)
 
+[Explanation](https://stackoverflow.com/a/1957125)
 
+### Example
+* ./oop/callmethod.
+* ./lcthw/LinkedList/stackImp_1.c

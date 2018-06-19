@@ -45,21 +45,3 @@ Note that this is one place that `printf` format strings differ substantially fr
   * Structure types
   * Union types
   * Function types
-
-### Data structure
-[An overview of data structures and algorithm](https://www.tutorialspoint.com/data_structures_algorithms/)
-
-* Linked List
-* Stack & Queue
-* Graph Data structure
-* Tree Data structure
-
-Implementing Types with Structures
-
-You can generally implement:
-
-* any sequence type with an array
-* stacks and queues with singly-linked lists
-* lists and deques with doubly-linked lists
-* Trees and priority queues with arrays
-*  etc. 

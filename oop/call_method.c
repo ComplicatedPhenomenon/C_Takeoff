@@ -12,7 +12,7 @@ struct PERSON{
 	void (*print)(struct PERSON *self);
 	void(*destroy)(struct PERSON *self);
 
-} ;
+};
 
 
 typedef struct PERSON person;
@@ -28,17 +28,16 @@ void person_print(person* who)
 void person_destroy(person *who)
 {
 	assert(who != NULL);
-
 	free(who->name);
-//	free(who->age);
+	//	free(who->age);
 	free(who);
 	}
 
 person *person_create(char *name, int age, int height, int weight)
 {
-        person *who = malloc(sizeof(person));
+    person *who = malloc(sizeof(person));
 	assert(who != NULL);
-        /* who->name is the short version of (*who).name */
+    /* who->name is the short version of (*who).name */
 	who->name = strdup(name);
 	who->age = age;
 	who->height = height;
@@ -52,7 +51,7 @@ person *person_create(char *name, int age, int height, int weight)
 
 int main(int argc, char *argv[])
 {
-        person *joe = person_create("Joe Alex", 32, 64, 140);
+	person *joe = person_create("Joe Alex", 32, 64, 140);
 	printf("Accessing the information of the object directly\n");
 	printf("joe->name : %p\n",*(joe->name));
 	printf("joe->age : %d\n",joe->age);
@@ -62,10 +61,9 @@ int main(int argc, char *argv[])
 	person_print(joe);                /*calling the print function directly */
 
 	/*Declaration is void (*print)(struct PERSON *self);. Type is void (*)(struct PERSON*). It expects a pointer to struct PERSON*/
-        joe->print(joe);
-
+    joe->print(joe);
 	joe->destroy(joe);
-        joe->print(joe);
+    joe->print(joe);
 
 	return 0;
 }
