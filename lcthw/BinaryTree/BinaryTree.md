@@ -1,4 +1,5 @@
-### What is Time Complexity?
+> What is Time Complexity?
+
 **Time complexity** is a description of the asymptotic behavior(渐进行为) of running time as input size tends to infinity.
 
 If you had a function that takes:
