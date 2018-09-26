@@ -10,12 +10,12 @@ int main()
     printf("The lenth of name is %lu\n bytes",sizeof(name));
     printf("------------------------------\n");
     for(i = 0;i < sizeof(name) - 1; i++){
-	printf("name[%d] = %c \n",i,name[i]);
+	      printf("name[%d] = %c \n",i,name[i]);
     }
 
     while(i < sizeof(name) - 1 ){
-	printf("name[%d] = %c \n",i,name[i]);
-	i ++;
+	      printf("name[%d] = %c \n",i,name[i]);
+	      i ++;
     }
     printf("------------------------------\n");
 
@@ -23,24 +23,24 @@ int main()
     cp = name;
     /* it need explaination! a pointer cp point to an array */
     for(i = 0; i < sizeof(name) - 1; i++){
-	printf("name[%d] = %p \n",i,cp+i);
-	printf("name[%d] = %c \n",i,*(cp+i));
+	      printf("name[%d] = %p \n",i,cp+i);
+	      printf("name[%d] = %c \n",i,*(cp+i));
     }
 
     printf("------------------------------\n");
-    printf("---here is a more difficult example---\n"); 
+    printf("---here is a more difficult example---\n");
     printf("--- a pointer point to an array    ---\n");
     printf("------------------------------\n");
 
 
     char *names[] = {"Harry","Ron","Hermione","Harry Potter"};
    /************************************************
-    *  Array of pointers is abstracted.            
-    *  names here is an arry of 4 char * pointers. 
+    *  Array of pointers is abstracted.
+    *  names here is an arry of 4 char * pointers.
     ***********************************************/
     int len = sizeof(names) / sizeof(char);
     char *char_pointer;
-	
+
 
     printf("length of names is %d  bytes\n", len);
     printf("sizeof names is %lu  bytes\n", sizeof(names));
@@ -48,7 +48,7 @@ int main()
     printf("sizeof char_pointer is %lu  bytes\n", sizeof(char_pointer));
     printf("------------------------------\n");
     for(i = 0; i < 4; i++){
-	printf("names[%d] = %s\n",i, names[i]);
+	    printf("names[%d] = %s\n",i, names[i]);
     }
     printf("------------------------------\n");
 
@@ -60,8 +60,8 @@ int main()
      *  the contents it contained                   *
      ************************************************/
     for(i = 0; i < 4; i++){
-	printf("&names[%d] = %p\n",i,&names[i]);
-	printf("HP[%d] = %p \n",i,HP+i);
+	      printf("&names[%d] = %p\n",i,&names[i]);
+	      printf("HP[%d] = %p \n",i,HP+i);
     }
     printf("&HP = %p\n",&HP);
     /*************************************************
@@ -70,8 +70,8 @@ int main()
      *************************************************/
     printf("------------------------------\n");
     for(i = 0; i < 4; i++){
-	printf("*(HP+%d) = %s \n",i,*(HP+i));
-	printf("names[%d] = %s\n",i,names[i]);
+	      printf("*(HP+%d) = %s \n",i,*(HP+i));
+	      printf("names[%d] = %s\n",i,names[i]);
     }
     printf("------------------------------\n");
 

@@ -20,6 +20,7 @@ pvar->y = 3.2 // It's just the dot version when you want to access elements of a
 <hr>
 
 > In C, you can't reference to the typedef that you're creating within the structure itself, You have to use the structure name, as in the following this program
+
 ```c
 #include<stdio.h>
 #include<stdlib.h>
@@ -62,4 +63,4 @@ int main(void)
 }
 ```
 <hr>
-### [With C, you have to pass your "object" explicitly as the first parameter of the method, there is no automatism for OOP. And you only need to make it a member as function pointer when you want to implement virtual methods.](https://stackoverflow.com/questions/45230835/call-method-in-c-oop)
+[With C, you have to pass your "object" explicitly as the first parameter of the method, there is no automatism for OOP. And you only need to make it a member as function pointer when you want to implement virtual methods.](https://stackoverflow.com/questions/45230835/call-method-in-c-oop)

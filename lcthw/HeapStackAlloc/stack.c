@@ -1,3 +1,7 @@
+/**
+ * What and where are the stack and heap?
+ * https://stackoverflow.com/q/79923/7583919
+ **/
 #include<stdio.h>
 #include<assert.h>
 #include<stdlib.h>

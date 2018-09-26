@@ -15,8 +15,8 @@ int main(){
 
     int i;
     for(i = 0; i < a-1; i++){
-	printf("(cp+%d) = %p\n",i,cp+i);
-	printf("*(cp+%d) = %c\n",i,*(cp+i));
-	printf("(cpp+%d) = %p\n",i,cpp+i);
+        printf("(cp+%d) = %p\n",i,cp+i);
+	      printf("*(cp+%d) = %c\n",i,*(cp+i));
+	      printf("(cpp+%d) = %p\n",i,cpp+i);
     }
 }

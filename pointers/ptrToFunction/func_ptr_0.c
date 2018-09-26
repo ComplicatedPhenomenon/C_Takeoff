@@ -7,7 +7,7 @@ int addInt(int m, int n){
 int main()
 {
     int m, n;
-    /* 1st, let's pointer to a function which receive 2 integers and return an integer */
+    /* 1st, let's define a pointer `functionPtr` to a function which receive 2 integers and return an integer */
     int (*functionPtr) (int, int);
     /* now we can safely point to ourfunction.*/
     functionPtr = &addInt ;
@@ -15,6 +15,6 @@ int main()
     printf("Input two integers\n");
     scanf("%d%d",&m,&n);
     printf("Adding them together we get is %d\n", addInt(m,n));
-    printf("(*functionPtr)(%d, %d) is %d\n", m, n,(*functionPtr)(m,n));        
+    printf("(*functionPtr)(%d, %d) is %d\n", m, n,(*functionPtr)(m,n));
     return 0;
 }

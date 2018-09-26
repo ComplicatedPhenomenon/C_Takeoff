@@ -16,7 +16,10 @@ struct PERSON{
 
 
 typedef struct PERSON person;
-
+/**
+ * C programming allows passing a pointer to a function. To do so, simply declare
+ * the function parameter as a pointer type.
+ **/
 void person_print(person* who)
 {
 	printf("Name: %p\n", who->name);
@@ -35,9 +38,9 @@ void person_destroy(person *who)
 
 person *person_create(char *name, int age, int height, int weight)
 {
-    person *who = malloc(sizeof(person));
+  person *who = malloc(sizeof(person));
 	assert(who != NULL);
-    /* who->name is the short version of (*who).name */
+  /* who->name is the short version of (*who).name */
 	who->name = strdup(name);
 	who->age = age;
 	who->height = height;
@@ -61,9 +64,9 @@ int main(int argc, char *argv[])
 	person_print(joe);                /*calling the print function directly */
 
 	/*Declaration is void (*print)(struct PERSON *self);. Type is void (*)(struct PERSON*). It expects a pointer to struct PERSON*/
-    joe->print(joe);
+  joe->print(joe);
 	joe->destroy(joe);
-    joe->print(joe);
+  joe->print(joe);
 
 	return 0;
 }
