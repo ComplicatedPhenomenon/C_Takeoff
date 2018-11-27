@@ -62,5 +62,7 @@ Now `cpp`stores the address of `cp`, so it has value 55(based on the example abo
 #### Data types
 Data types is used for declaring variable or functions of different types.
 The type of a variable determines how much space it occupies in storage and how the bit pattern stored is interpreted.
+
+The type of a function determines? (how much space the return value occupies in storage) and ?
 #### Variable
 A  variable is nothing but a name given to a storage area that our programs can manipulate.

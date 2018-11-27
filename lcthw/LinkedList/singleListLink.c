@@ -3,14 +3,14 @@
 
 typedef struct Cell {
   int data;
-  struct Cell* next; /* tCell *next will not work here */
+  struct Cell * next; /* tCell *next will not work here */
 } tCell;
 
 int main(void) {
   int i;
-  tCell *curr;
-  tCell *first;
-  tCell *last;
+  tCell * curr;
+  tCell * first;
+  tCell * last;
 
   /* Construct linked list, 100 down to 80. */
   first = (tCell *) malloc (sizeof (tCell));
@@ -19,7 +19,7 @@ int main(void) {
   first->next = NULL;                         /* 1 node in the linked list */
 
   for (i = 0; i < 20; i++) {
-    curr = malloc (sizeof (tCell));         /* create a block in the memory to store a node */
+    curr = (tCell *) malloc (sizeof (tCell));         /* create a block in the memory to store a node */
     curr->data = last->data - 1;            /* modify the value of this latest allocated address */
 	  curr->next = NULL;
 	  last->next = curr;                      /* link the 2nd one with the 1st one */

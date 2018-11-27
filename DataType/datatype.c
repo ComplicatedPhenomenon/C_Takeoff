@@ -11,7 +11,7 @@ int main()
     long double sum_2;
     long double Sum1;
     long double Sum2;
-
+    
     printf("Size of float  :%lu \n",sizeof(float));
     printf("Size of long   :%lu \n",sizeof(double));
     printf("Size of long   :%lu \n",sizeof(long));

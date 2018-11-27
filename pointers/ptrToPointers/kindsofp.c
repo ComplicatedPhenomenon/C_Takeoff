@@ -12,8 +12,8 @@ int main()
     printf("p = %p\n", p);
     printf("The address of p is: %p\n", &p);
 
-    for(i =0; i < 3; i++){	
-	printf("&s[%d] = %p; *(s+%d) = %c \n", i, &s[i], i, *(s+i));
+    for(i =0; i < 3; i++){
+	      printf("&s[%d] = %p; *(s+%d) = %c \n", i, &s[i], i, *(s+i));
     }
 
     return 0;

@@ -12,12 +12,15 @@ int main()
     for(i = 0;i < sizeof(name) - 1; i++){
 	      printf("name[%d] = %c \n",i,name[i]);
     }
-
+    printf ("%d", i);
+    // While loop won't executed
+    /*
     while(i < sizeof(name) - 1 ){
 	      printf("name[%d] = %c \n",i,name[i]);
 	      i ++;
     }
     printf("------------------------------\n");
+    */
 
     char *cp ;
     cp = name;
@@ -27,10 +30,10 @@ int main()
 	      printf("name[%d] = %c \n",i,*(cp+i));
     }
 
-    printf("------------------------------\n");
-    printf("---here is a more difficult example---\n");
-    printf("--- a pointer point to an array    ---\n");
-    printf("------------------------------\n");
+    printf("--------------------------------------\n");
+    printf("- here is a more difficult example   -\n");
+    printf("-     a pointer point to an array    -\n");
+    printf("--------------------------------------\n");
 
 
     char *names[] = {"Harry","Ron","Hermione","Harry Potter"};
