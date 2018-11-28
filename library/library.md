@@ -5,7 +5,7 @@ I can only see the header file such as `stdio.h` is included, I don't know how `
 
 > Those are called function prototypes. They tell the compiler that the function exists, but not where (yet). The compiler uses this to make sure that you're calling the function correctly, but that's it.
 
-> Once the compiler is done, the linker gets called. This is where the magic happens. The linker determines which library has the actual implementation of the function. In this case it's probably going to be in the standard library, which is automatically pulled in. The linker does its thing, and your calls to that function are the handled by the library.
+> Once the compiler is done, the linker gets called. This is where the magic happens. The linker determines which library has the actual implementation of the function. In this case it's probably going to be in the standard library, which is automatically pulled in. The linker does its thing, and your calls to that function are handled by the library.
 
 On Linux system, library files are under `/usr/lib`.   
 

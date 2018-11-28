@@ -123,3 +123,75 @@ Top element is 7
 ==25366== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
 At first time, I don't know how to address this question, then I realize I made a similar mistake as before. Then I re-understand each block of memory that was allocated, must be freed again.
+
+<br>
+```c
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct nodestructure{
+    int data;
+    struct nodestructure * next;
+} node;
+node * head;
+// Implementation of single linkde list.
+node * insertSLL(node * head, int item){
+    head = NULL;
+    node * tail;
+    if (head==NULL){
+        head = (node *) malloc(sizeof(node));
+        head->data = item;
+        head->next = NULL;
+        tail = head;
+    }
+    else{
+        node * temp = (node *) malloc(sizeof(node));
+        temp->data = item;
+        temp->next = NULL;
+        tail->next = temp;
+        tail = temp;
+    }
+    return head;
+}
+
+void display(node * head){
+    node * curr;
+    curr = head;
+    printf("%s", "Single Linked List:");
+    while(curr != NULL)
+    {
+        printf("%d", curr->data);
+        curr = curr->next;
+    }
+    printf("\n");
+
+}
+
+
+void freeMemory(node * head){
+    node * curr;
+    while((curr=head) != NULL){
+        head = head->next;
+        free(curr);
+    }
+}
+
+
+int main(){
+    insertSLL(head, 2);
+    if(!head){
+        printf("Something is wrong, because head is still none after calling insertSLL\n");
+    }
+    /*insertSLL(head, 3);
+    insertSLL(head, -3);
+    insertSLL(head, 13);
+    insertSLL(head, 31);*/
+    display(head);
+    freeMemory(head);
+    return 0;
+}
+
+```
+It's not working, head is NULL out side of `insertSLL`.
+<br>
+`inserttoSSL.c` has a similar situation as `pointers/ptrToBasicDataType/difference.c`

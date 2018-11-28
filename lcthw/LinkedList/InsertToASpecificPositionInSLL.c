@@ -27,7 +27,7 @@ void insert(int data, int n){
    * temp1                              --- The name of variable
    * */
 
-  if(n = 1){
+  if(n == 1){
     temp1->next = head;
     head = temp1;
     return;
