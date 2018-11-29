@@ -43,18 +43,18 @@ you to understand how things work better.
 * New features on C. Obey the new standard as much as possible. <a href = "https://en.wikipedia.org/wiki/C_(programming_language)#C11"> C11 <a>
 * Informative
   - [x] Objected-oriented programming
-  - [ ]
-  - [ ]
+  - [ ] Library
   - [ ] Array
   - [ ] Pointer
   - [ ] Data structure
     - [ ] Linked List
-    - [ ] Heap
     - [ ] Stack
+    - [ ] Queue
+    - [ ] Heap
+    - [ ] Hash table
     - [ ] tree
     - [ ] Graph
   - [ ] Data Algorithm
     - [ ] Bubble sort
-    - [ ]
 
 Aim to make this project not a work report, but a collection of useful libraries.

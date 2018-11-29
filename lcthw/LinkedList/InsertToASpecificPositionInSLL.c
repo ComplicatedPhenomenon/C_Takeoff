@@ -28,7 +28,7 @@ void insert(int data, int n){
    * */
 
   if(n == 1){
-    temp1->next = head;
+    //temp1->next = head;
     head = temp1;
     return;
   }
@@ -62,7 +62,7 @@ void insert(int data, int n){
 }
 
 int main(){
-  head = NULL;
+  head = NULL; //Initialization?
   insert(2,1);
   insert(3,2);
   insert(4,1);

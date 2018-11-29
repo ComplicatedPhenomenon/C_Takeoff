@@ -1,4 +1,4 @@
-Dynamical memory allocation
+### Dynamical memory allocation
 
 DMA allows your program to obtain memory space while running, or to release it
 if it's not required.
@@ -8,7 +8,7 @@ if it's not required.
 `realloc`
 free
 
-<hr>
+
 ### [Why do we need to free memory?](http://www.cplusplus.com/forum/beginner/186031/)
 
 Your stupid operation might introduce some behaviour you don't know for sure.
@@ -20,5 +20,5 @@ Even if the OS take care for you when the program close, for sure you still don'
 [Explanation](https://stackoverflow.com/a/1957125)
 
 ### Example
-* ./oop/callmethod.
-* ./lcthw/LinkedList/stackImp_1.c
+* `./oop/callmethod.`
+* `./lcthw/LinkedList/*`

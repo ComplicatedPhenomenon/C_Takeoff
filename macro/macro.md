@@ -1,8 +1,8 @@
-Differences between *header files* , *macros* and *preprocessor*?
+Differences between `header files` , `macros` and `preprocessor`?
 
 * preprocessor
 
-  Lines that start with `#` are _preprocessing directives_.  They are directives that tell the preprocessor to do something.
+  Lines that start with `#` are \_preprocessing directives_.  They are directives that tell the preprocessor to do something.
 
   `#include`, `#if`, `#ifdef`, `#ifndef`, `#else`, `#elif`, `#endif`, `#define`, `#undef`, `#line`, `#error`, and `#pragma` are all preprocessing directives.  (A line containing only `#` is also a preprocessing directive, but it has no effect.)
 
@@ -28,5 +28,5 @@ You don't have to figure the value of `size_max` out yourself to write *portable
 
 * [MACRO](https://gcc.gnu.org/onlinedocs/cpp/Macros.html).[1](https://www.quora.com/What-are-macros-in-C)
 
-  * *object-like macros* (Several object-like macros are predefined; you use them without supplying their definitions. They fall into three classes: `standard`, `common`, and `system-specific`. )
-  * *function-like macros* (Is it like a prototype?)
+  * `object-like macros` (Several object-like macros are predefined; you use them without supplying their definitions. They fall into three classes: `standard`, `common`, and `system-specific`. )
+  * `function-like macros` (Is it like a prototype?)

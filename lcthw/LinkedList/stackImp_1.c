@@ -56,7 +56,7 @@ void push(Stack *S,int element)
     printf("Stack is Full\n");
     }
     else{
-    S->elements[S->size++] = element;
+    S->elements[S->size++] = element; //Implement stack using array.
   }
   return;
 }

@@ -1,5 +1,48 @@
-# `func2.md`
+## Call by reference
+```c
+/**
+   ________   ________   ________
+   | 102  |   |  102 |   | 103  |
+     temp         x         y
 
+     ________   ________   ________
+     | 102  |   |  103 |   | 103  |
+       temp         x         y
+
+       ________   ________   ________
+       | 102  |   |  103 |   | 102  |
+         temp         x         y
+
+**/
+
+void swap(int * x, int * y){
+    int * temp;
+    temp = x;
+    x = y;
+    y = temp;
+
+    return ;
+}
+```
+Function `swap` above doesn't work.
+```c
+...
+int main(void){
+    int x = 3, y = 4;
+    swap(&x, &y, sizeof(int));
+    ...
+}
+void Swap (void * x, void * y, size_t bytes){
+    void * tmp = malloc(bytes);
+    memcpy(tmp, x, bytes);
+    memcpy(x, y, bytes);
+    memcpy(y, tmp, bytes);
+    free(tmp);
+}
+
+```
+
+# Function pointer
 ```C
 #include<stdio.h>
 

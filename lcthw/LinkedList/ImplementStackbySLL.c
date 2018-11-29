@@ -1,3 +1,7 @@
+/**
+  Author: ComplicatedPhenomenon
+  Modified Date: 11/29/2018
+**/
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -5,15 +9,31 @@ typedef struct nodestructure{
     int data;
     struct nodestructure * next;
 } node;
-
 node * head;
+void display();
+void freeMemory();
+void insertSLL( int item);
 
-void display(node * head);
+int main(){
+    head  = NULL;
+    insertSLL(2);
 
-void freeMemory(node * head);
+    // check if head == NULL.
+    if(!head){
+        printf("Something is wrong, because head is still none after calling insertSLL\n");
+    }
 
-// Implementation of single linkde list.
-void insertSLL(node * head, int item){
+    insertSLL(3);
+    insertSLL(-3);
+    insertSLL(13);
+    insertSLL(31);
+    freeMemory();
+
+    return 0;
+}
+
+
+void insertSLL( int item){
     node * tail;
     if (head==NULL){
         head = (node *) malloc(sizeof(node));
@@ -28,40 +48,23 @@ void insertSLL(node * head, int item){
         tail->next = temp;
         tail = temp;
     }
-    display(head);
-    freeMemory(head);
+    display();
 }
 
-int main(){
-
-    insertSLL(head, 2);
-    /*if(!head){
-        printf("Something is wrong, because head is still none after calling insertSLL\n");
-    }*/
-    insertSLL(head, 3);
-    insertSLL(head, -3);
-    insertSLL(head, 13);
-    insertSLL(head, 31);
-    /*display(head);
-    freeMemory(head);*/
-    return 0;
-}
-
-
-void display(node * head){
+void display(){
     node * curr;
     curr = head;
     printf("%s", "Single Linked List:");
     while(curr != NULL)
     {
-        printf("%d", curr->data);
+        printf("%d  　", curr->data);
         curr = curr->next;
     }
     printf("\n");
 
 }
 
-void freeMemory(node * head){
+void freeMemory(){
     node * curr;
     while((curr=head) != NULL){
         head = head->next;

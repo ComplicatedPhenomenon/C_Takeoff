@@ -38,11 +38,11 @@ in a reference node known as "front" (some times it is also known as *head*)
 * Insertion
 * Deletion
 * Display
-    * 1. Check whether list is **Empty** (head == NULL)
-    * 2. If it is **Empty** then display `list is empty` and terminate the function
-    * 3. If it is **Not Empty** then define a Node pointer `temp` and initialize with `head`.
-    * 4. Keep displaying `temp->data` with an arrow until `temp` reached to the last node,
-    * 5. Finally display `temp->data` with arrow pointing to `NULL`.
+     1. Check whether list is **Empty** (head == NULL)
+     2. If it is **Empty** then display `list is empty` and terminate the function
+     3. If it is **Not Empty** then define a Node pointer `temp` and initialize with `head`.
+     4. Keep displaying `temp->data` with an arrow until `temp` reached to the last node,
+     5. Finally display `temp->data` with arrow pointing to `NULL`.
 
 Before we implement actual operations, first we need to set up empty list.
 * **Step1** Define a **Node** structure with 2 members **data** and **next**
@@ -88,43 +88,9 @@ These three sections of the memory is decided at compile time.
 ### Hash table
 ### Sorting Algorithm
 ### Memory Leak
-* When `stack_1.c`  leave out the free statement.
-```
-assert(S != NULL);
-free(S->elements);
-free(S);
-```
-It will cause memory leakage
-```
-$ gcc stack_1.c ; valgrind ./a.out
-==25366== Memcheck, a memory error detector
-==25366== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==25366== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==25366== Command: ./a.out
-==25366==
-Top element is -1
-Top element is 21
-Top element is 5
-Top element is 7
-==25366==
-==25366== HEAP SUMMARY:
-==25366==     in use at exit: 36 bytes in 2 blocks
-==25366==   total heap usage: 3 allocs, 1 frees, 1,060 bytes allocated
-==25366==
-==25366== LEAK SUMMARY:
-==25366==    definitely lost: 16 bytes in 1 blocks
-==25366==    indirectly lost: 20 bytes in 1 blocks
-==25366==      possibly lost: 0 bytes in 0 blocks
-==25366==    still reachable: 0 bytes in 0 blocks
-==25366==         suppressed: 0 bytes in 0 blocks
-==25366== Rerun with --leak-check=full to see details of leaked memory
-==25366==
-==25366== For counts of detected and suppressed errors, rerun with: -v
-==25366== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-```
-At first time, I don't know how to address this question, then I realize I made a similar mistake as before. Then I re-understand each block of memory that was allocated, must be freed again.
+Dynamic memory is allocated from heap. You allocate it using `malloc` ...
 
-<br>
+**Remember each block of memory that was allocated, must be freed again.**
 ```c
 #include<stdio.h>
 #include<stdlib.h>
@@ -195,3 +161,44 @@ int main(){
 It's not working, head is NULL out side of `insertSLL`.
 <br>
 `inserttoSSL.c` has a similar situation as `pointers/ptrToBasicDataType/difference.c`
+
+```sh
+wm@vampire:$ gcc ImplementStackbySLL.c
+wm@vampire:$ valgrind ./a.out
+==7155== Memcheck, a memory error detector
+==7155== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==7155== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==7155== Command: ./a.out
+==7155==
+Single Linked List:2  　
+==7155== Use of uninitialised value of size 8
+==7155==    at 0x108885: insertSLL (in /home/wm/Playground/GH/C_Takeoff/lcthw/LinkedList/a.out)
+==7155==    by 0x1087DA: main (in /home/wm/Playground/GH/C_Takeoff/lcthw/LinkedList/a.out)
+==7155==
+Single Linked List:2  　3  　
+==7155== Use of uninitialised value of size 8
+==7155==    at 0x108885: insertSLL (in /home/wm/Playground/GH/C_Takeoff/lcthw/LinkedList/a.out)
+==7155==    by 0x1087E4: main (in /home/wm/Playground/GH/C_Takeoff/lcthw/LinkedList/a.out)
+==7155==
+Single Linked List:2  　3  　-3  　
+==7155== Use of uninitialised value of size 8
+==7155==    at 0x108885: insertSLL (in /home/wm/Playground/GH/C_Takeoff/lcthw/LinkedList/a.out)
+==7155==    by 0x1087EE: main (in /home/wm/Playground/GH/C_Takeoff/lcthw/LinkedList/a.out)
+==7155==
+Single Linked List:2  　3  　-3  　13  　
+==7155== Use of uninitialised value of size 8
+==7155==    at 0x108885: insertSLL (in /home/wm/Playground/GH/C_Takeoff/lcthw/LinkedList/a.out)
+==7155==    by 0x1087F8: main (in /home/wm/Playground/GH/C_Takeoff/lcthw/LinkedList/a.out)
+==7155==
+Single Linked List:2  　3  　-3  　13  　31  　
+==7155==
+==7155== HEAP SUMMARY:
+==7155==     in use at exit: 0 bytes in 0 blocks
+==7155==   total heap usage: 6 allocs, 6 frees, 1,104 bytes allocated
+==7155==
+==7155== All heap blocks were freed -- no leaks are possible
+==7155==
+==7155== For counts of detected and suppressed errors, rerun with: -v
+==7155== Use --track-origins=yes to see where uninitialised values come from
+==7155== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)
+```

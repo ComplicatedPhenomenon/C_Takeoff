@@ -1,24 +1,7 @@
 # About Printing pointers
-
- format `%x` expects argument of type `unsigned int`, but argument 3 has type `char \*`
-
- To refer, C11 standard, chapter §7.21.6.1
-
->  o,u,x,X  
-The unsigned int argument is converted to unsigned octal (o), unsigned decimal (u), or unsigned hexadecimal notation (x or X) in the style dddd; [...]
-
-Supplying invalid argument invokes undefined behavior.
-
-You should be using `%p` to print the address
-
-> p The argument shall be a pointer to void.[...]
-
-and cast the argument to `void *`, because for pointer types no default argument promotion takes place.
-
-Having said that,
-
-1. main() should be int main(void), at least, to conform to the standard.
-2. You need to forward declare your function bo() because implicit declarations are bad and non-standard now.
+```sh
+format `%x` expects argument of type `unsigned int`, but argument 3 has type `char \*`
+```
 
 # Rules of Using Pointers
 A string is composed of characters. A sentence is composed of strings. `char *strings[]`can be used to store sentences. so strings here is an array of pointers pointer pointing to a int 1D array.   
@@ -86,3 +69,13 @@ The type of a function determines? (how much space the return value occupies in 
 A  variable is nothing but a name given to a storage area that our programs can manipulate.
 
 # Pointer as function argument.
+```c
+int sum(int *, int *);
+int main(){
+    int a, b;
+    a = 3;
+    b = 4;
+    sum{&a,&b}
+}
+```
+It is `call by reference`. When executing main function, it pause at `b = 4`, and go to another stack frame to execute sum function, when done, this stack frame collapse. When back to main function, a a  
