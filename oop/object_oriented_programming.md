@@ -44,19 +44,18 @@ int main(void)
     last = first;
     first->cellSeq = 100;
     first->next = NULL;
-    for(i = 0; i < 20; i++)
-    {
+    for(i = 0; i < 20; i++){
         curr = malloc(sizeof(tCell));
-	curr->cellSeq = last->cellSeq-1;
-	curr-> next = NULL;
-	last->next = curr;
-	last = curr;
+	      curr->cellSeq = last->cellSeq-1;
+	      curr-> next = NULL;
+	      last->next = curr;
+	      last = curr;
     }
 
     curr = first;
     while(curr != NULL){
-	printf("Sequence = %d\n",curr->cellSeq);
-	curr = curr->next;
+	      printf("Sequence = %d\n",curr->cellSeq);
+	      curr = curr->next;
     }
 
     return 0;

@@ -12,13 +12,12 @@ int *getRandom()
       r[i] = rand();
       printf("r[%d] = %d\n", i, r[i]);
     }
-    
+
     return r;
 }
 
 int main()
 {
-    /* a pointer to an int */
     int *p;
     int i;
 

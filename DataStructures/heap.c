@@ -1,7 +1,7 @@
 /**
-    File:   maxHeap.c
-    Desc:   Program showing various operations on a binary max heap along with their time complexities
-*/
+ *   Modified Date:
+ *   Description:
+ **/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -50,6 +50,7 @@ void swap(node *n1, node *n2) {
 */
 void heapify(maxHeap *hp, int i) {
     int largest = (LCHILD(i) < hp->size && hp->elem[LCHILD(i)].data > hp->elem[i].data) ? LCHILD(i) : i ;
+    // hp->elem[LCHILD(i)].data
     if(RCHILD(i) < hp->size && hp->elem[RCHILD(i)].data > hp->elem[largest].data) {
         largest = RCHILD(i) ;
     }

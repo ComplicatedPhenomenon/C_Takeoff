@@ -25,8 +25,8 @@ int main(){
     place C;
     FILE *f = fopen("file.txt","w");
     if (f == NULL){
-	printf("Error opening file!\n");
-	exit(1);
+	    printf("Error opening file!\n");
+	    exit(1);
     }
 
     fprintf(f,"%s","hello, WM\n");
@@ -35,7 +35,7 @@ int main(){
     print(A);
     print(B);
     input(C);
-    
+
     return 0;
 }
 
@@ -62,7 +62,7 @@ void input(place A){
 }
 
 /*-------------------------------------------
- * what you do is undefined behaviour is a 
+ * what you do is undefined behaviour is a
  * very common problem for a beginner, so
  * it's unfair to say programming is diiffcult
  * ----------------------------------------*/

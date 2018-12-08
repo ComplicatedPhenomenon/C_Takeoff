@@ -1,3 +1,8 @@
+/**
+ *   Modified Date:
+ *   Description:  C Program to implement a queue using two stacks
+ **/
+
 #include<stdio.h>
 #include<string.h>
 
@@ -37,6 +42,6 @@ int main(){
     wm.age = 25;
     printf("The book <%s> is written by %s,\n %s, It has %d units,\n", book1.name,book1.author,book1.subject,book1.units);
     printf("I am %s, %d years old,\n I feel I have got %s,\n %s\n", wm.name, wm.age, wm.disease, wm.description);
-	
+
     return 0;
 }

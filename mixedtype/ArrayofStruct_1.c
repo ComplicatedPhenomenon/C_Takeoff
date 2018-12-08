@@ -17,12 +17,12 @@ int main(){
     body B[n];
 
     for(i = 0; i < n; i++){
-	for(j = 0; j < m; j++){
-	    A[i].position[j] = i/11;
-	    A[i].velocity[j] = i/3;
+	      for(j = 0; j < m; j++){
+	          A[i].position[j] = i/11;
+	          A[i].velocity[j] = i/3;
             A[i].position[j] = i/7;
-	    A[i].mass = 12+i;
-	}
+	          A[i].mass = 12+i;
+	      }
     }
 
     for(i = 0; i < 2; i++){
@@ -37,16 +37,18 @@ int main(){
     FILE *f = fopen("file.txt","w");
     if (f == NULL){
        	printf("Error opening file!\n");
-	exit(1);
+	      exit(1);
     }
 
     for(i = 0; i < n; i++){
-    	for(j = 0; j < m; j++){
-	    fprintf(f,"%f\n%f\n%f\n%f\n\n\n",A[i].position[j], A[i].velocity[j], A[i].position[j], A[i].mass);
-       	}
+    	  for(j = 0; j < m; j++){
+	      fprintf(f,"%f\n%f\n%f\n%f\n\n\n",A[i].position[j], A[i].velocity[j], A[i].position[j], A[i].mass);
+        }
     }
 
     fclose(f);
+}
+/**
 #include<stdlib.h>
 #include<time.h>
 
@@ -68,7 +70,7 @@ int *getRandom()
 
     return 0;
 }
-
+*/
 /********************************************************************
  * 1. Global variable A and Local variable B, What's the diffierence
  * between them?

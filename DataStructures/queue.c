@@ -1,4 +1,8 @@
-/* C Program to implement a queue using two stacks */
+/**
+ *   Modified Date:
+ *   Description:  C Program to implement a queue using two stacks
+ **/
+ 
 #include <stdio.h>
 #include <stdlib.h>
 

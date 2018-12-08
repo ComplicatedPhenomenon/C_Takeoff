@@ -1,3 +1,8 @@
+/**
+ *   Modified Date:
+ *   Description:
+ **/
+ 
 #include<stdio.h>
 #include<assert.h>
 #include<stdlib.h>
@@ -13,10 +18,10 @@ typedef struct person{
     int height;
     int weight;
 } Person;
-/* the return type of function person_create is a structure */ 
+/* the return type of function person_create is a structure */
 Person *person_create(char *name, int age, int height, int weight){
     Person *who = malloc(sizeof(Person));
-    /* create a structure by applying a piece of raw memory from OS 
+    /* create a structure by applying a piece of raw memory from OS
      * pass the parameter of struct person to malloc */
     assert(who != NULL);
     /* make sure get an effective piece of memory. */
@@ -25,8 +30,8 @@ Person *person_create(char *name, int age, int height, int weight){
     who->height = height;
     who->weight=weight;
     /**********************************************************************
-     * Initialize the members in struct person , use `strdup` to copy string	 * name, in order to make sure the struct really own it x->y is short 
-     * for  (*x).y                                                      
+     * Initialize the members in struct person , use `strdup` to copy string	 * name, in order to make sure the struct really own it x->y is short
+     * for  (*x).y
      * ********************************************************************/
     return who;
 }

@@ -12,7 +12,7 @@ int main()
     char *name[] = {"wm","ComplicatedPhenomenon", "wangmiao"};
 
     for(i = 0; i < 3; i++){
-	printf("name[%d] = %s\n",i,name[i]);
+	      printf("name[%d] = %s\n",i,name[i]);
     }
 /*-------------------------------------------------------*/
 /* 不用指针，直接用数组储存字符串怎么就行不通？          */
@@ -21,19 +21,19 @@ int main()
     int parameter = sizeof(word)-1;
     printf("sizeof(butterfly) = %d\n", parameter);
     for(i = 0; i < parameter; i++){
-	printf("word[%d] = %c, \n",i,word[i]);
+	      printf("word[%d] = %c, \n",i,word[i]);
     }
 
     int j;
     char legacy[10][15];
     printf("Anything new? I will store what you said in a 2 dimension array, row 10, column 15 \n");
     for(j = 0; j < 9; j++){
-	scanf("%s\n", legacy[j]);
+	      scanf("%s\n", legacy[j]);
     }
 
     printf("okay,you said :\n");
     for(j = 0; j < 10; j++){
-	printf("%s\n",legacy[j]);
+	      printf("%s\n",legacy[j]);
     }
 
     return 0;

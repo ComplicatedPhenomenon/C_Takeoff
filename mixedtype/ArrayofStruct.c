@@ -15,7 +15,7 @@ typedef enum{
 } group;
 
 body A[n];
-group transformation_type; 
+group transformation_type;
 
 int main(){
     int i, j;
@@ -28,11 +28,11 @@ int main(){
         exit(1);
     }
     for(i = 0; i < n; i++){
-	for(j = 0; j < m; j++){
-	    A[i].position[j] = i/11;
-	    A[i].velocity[j] = i/3;
-	    A[i].position[j] = i/7;
-	    A[i].mass = 12+i;
+        for(j = 0; j < m; j++){
+	          A[i].position[j] = i/11;
+	          A[i].velocity[j] = i/3;
+	          A[i].position[j] = i/7;
+	          A[i].mass = 12+i;
        	}
     }
 
@@ -41,7 +41,7 @@ int main(){
 	    fprintf(f,"%f\n%f\n%f\n%f\n\n\n",A[i].position[j], A[i].velocity[j], A[i].position[j], A[i].mass);
 	}
     }
-    
+
     fclose(f);
   return 0;
 }
@@ -49,6 +49,6 @@ int main(){
 
 /**********************************************************
  *  First A is an array consisted of n elements
- *  Every element has a body type described by 
+ *  Every element has a body type described by
  *  four differnt characters
  **********************************************************/
