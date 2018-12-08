@@ -34,6 +34,7 @@ you to understand how things work better.
 
 <hr>
 # Features
+
 * Documentation.
 
   Doxygen is not idea for me, it's bad.
@@ -42,7 +43,7 @@ you to understand how things work better.
 
 * New features on C. Obey the new standard as much as possible. <a href = "https://en.wikipedia.org/wiki/C_(programming_language)#C11"> C11 <a>
 * Informative
-  - [x] Objected-oriented programming
+  - [ ] Objected-oriented programming
   - [ ] Library
   - [ ] Array
   - [ ] Pointer
