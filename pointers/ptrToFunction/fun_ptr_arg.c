@@ -1,4 +1,8 @@
-/* Function pointer as an argument*/
+/**
+ *   Modified Date: 9/12/2018
+ *   Description: Function pointers are useful for passing functions as parameters to other functions
+ **/
+
 #include<stdio.h>
 
 void easyf0(){

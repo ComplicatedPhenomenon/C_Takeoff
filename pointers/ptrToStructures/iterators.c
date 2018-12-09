@@ -1,3 +1,8 @@
+/**
+ *   Modified Date: 9/12/2018
+ *   Description:
+ **/
+
 #include <stdio.h>
 #define MAX_COLORS  256
 
@@ -9,9 +14,10 @@ typedef struct {
 } Color;
 
 Color Colors[MAX_COLORS];
-/*Array of structure variables and single structure variable Color color*/
+// An array of structure variables
 
-void eachColor (void (*fp)(Color *c)) {
+void eachColor (void (*fp)(Color *)) {
+    // 'void (*fp)(Color *)' represents a declaration of function
     int i;
     for (i=0; i<MAX_COLORS; i++)
         (*fp)(&Colors[i]);
@@ -22,7 +28,7 @@ void printColor(Color* c) {
         printf("%s = %i,%i,%i\n", c->name, c->red, c->green, c->blue);
 }
 
-int main() 
+int main()
 {
     Colors[0].name = "red";
     Colors[0].red = 255;
@@ -38,5 +44,8 @@ int main()
     Colors[2].red = 0;
     Colors[2].green = 0;
     Colors[2].blue = 0;
-    eachColor(printColor);
-}i
+    eachColor(printColor); // How about 'eachColor(&printColor);'?
+    eachColor(&printColor);
+
+    return 0;
+}

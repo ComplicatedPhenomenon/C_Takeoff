@@ -6,8 +6,12 @@ int main()
     int i;
     char Pixar[3]={'s', 'o' , 's'};
     char *pta;
-    char *name[] = {"wm","wangmiao","complicatephenomenon","czfzdxx"};
-    //char Name[] = {"wm","wangmiao","complicatephenomenon","czfzdxx"};
+    /**
+     * 不用指针，直接用数组储存多个字符串怎么就行不通？
+     * char Name[] = {"wm","wangmiao","complicatephenomenon","czfzdxx"};
+     **/
+    char *name[] = {"wm","wangmiao","complicatephenomenon","czfzdxx"}; //  指向字符数据型的指针数组构成的数组
+    
     pta = &Pixar[0];
 
     printf("We define 2 variable, an array called Pixar stored the string 'sos', a pointer pointing to Pixar.\nThe variable 'Pixar' actually resolves to the address of its first element ('&Pixar[0]),\n");

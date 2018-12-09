@@ -1,6 +1,5 @@
->  what's the use of pointers in c?
-
-[ref(1)](https://www.quora.com/Why-do-we-need-pointers-in-a-C-program)
+* [Why do we need pointers in C program?](https://www.quora.com/Why-do-we-need-pointers-in-a-C-program)
+* [How do function pointers work in C work?](https://stackoverflow.com/questions/840501/how-do-function-pointers-in-c-work)
 
 We usually use pointer as a reference to another variable. For such cases, we could argue that there is no need to expose the memory address and a programming without pointers will do fine with just references (like Java)
 
@@ -13,8 +12,8 @@ printf("%p \n", *pointer);
 * An array is a block of contiguous memory that has been allocated with a specific type. You can use pointers to navigate arrays
 
 <br>
-[A simple example](https://stackoverflow.com/a/20374957/7583919)
-Lets say you have these declarations:
+[A simple example](https://stackoverflow.com/a/20374957/7583919).
+ Let's say you have these declarations:
 ```c
 int i;
 int *p = &i;

@@ -4,7 +4,7 @@
 typedef struct Cell
 {
     int tCellSeq;
-    struct Cell *next; /*tCell will not work here*/
+    struct Cell *next; // tcell will cause infinity loop
 } tCell;
 
 int main(void)
@@ -20,20 +20,19 @@ int main(void)
     last = first;
     first->tCellSeq = 100;
     first->next = NULL;
-    for(i = 0; i < 20; i++)
-    {
+    for(i = 0; i < 20; i++){
         curr = malloc(sizeof(tCell));
-	curr->tCellSeq = last->tCellSeq-1;
-	curr-> next = NULL;
-	last->next = curr;
-	last = curr;
+	      curr->tCellSeq = last->tCellSeq-1;
+	      curr-> next = NULL;
+	      last->next = curr;
+        last = curr;
     }
 
     curr = first;
     while(curr != NULL){
-	printf("Sequence = %d\n",curr->tCellSeq);
-	curr = curr->next;
+	      printf("Sequence = %d\n",curr->tCellSeq);
+	      curr = curr->next;
     }
-    
+
     return 0;
 }
