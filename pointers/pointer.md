@@ -1,3 +1,4 @@
+## The intention of inventing pointer and its usage
 * [Why do we need pointers in C program?](https://www.quora.com/Why-do-we-need-pointers-in-a-C-program)
 * [How do function pointers work in C work?](https://stackoverflow.com/questions/840501/how-do-function-pointers-in-c-work)
 
@@ -11,7 +12,7 @@ printf("%p \n", *pointer);
 ```
 * An array is a block of contiguous memory that has been allocated with a specific type. You can use pointers to navigate arrays
 
-<br>
+
 [A simple example](https://stackoverflow.com/a/20374957/7583919).
  Let's say you have these declarations:
 ```c
@@ -35,3 +36,37 @@ If you then use `&p` you get a pointer to `p`, so you have this:
 ```
 
 So the value of `p` is the address of `i`, and the value of `&p` is the address of `p`. That's why you get different values.
+
+## Null pointers
+
+When pointer is null
+
+* Declare a pointer but didn't use.
+
+* Declare and malloc but not initialize.
+
+I think the first situation is straightforward.
+
+Some of the most common use cases for NULL are
+- To initialize a pointer variable when that pointer variable isn’t assigned any valid memory address yet.
+  ```c
+  int * pInt = NULL;
+  ```
+- To check for null pointer before accessing any pointer variable. By doing so, we can perform error handling in pointer related code e.g. dereference pointer variable only if it’s not NULL.
+  ```c
+  if(pInt != NULL) /*We could use if(pInt) as well*/
+    { /*Some code*/}
+  else
+    { /*Some code*/}
+  ```
+
+- To pass a null pointer to a function argument when we don’t want to pass any valid memory address.
+  ```c
+  int fun(int *ptr)
+  {
+      /*Fun specific stuff is done with ptr here*/
+      return 10;
+  }
+  fun(NULL);
+  ```
+[Differences between for loop and while loop in C](https://www.quora.com/Difference-between-while-loops-and-for-loops-in-c-programming-language)

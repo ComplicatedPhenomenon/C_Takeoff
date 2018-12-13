@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include"dbg.h"
+#include"../dbg.h"
 #include"ex22.h"
 
 int THE_SIZE = 1000;

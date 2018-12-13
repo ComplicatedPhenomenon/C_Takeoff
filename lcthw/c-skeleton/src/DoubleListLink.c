@@ -1,5 +1,5 @@
 #include"DoubleListLink.h"
-#include"dbg.h"
+#include"../../dbg.h"
 
 List *List_create(){
     return calloc(1, sizeof(int));

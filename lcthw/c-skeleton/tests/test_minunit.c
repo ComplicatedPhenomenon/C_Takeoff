@@ -1,4 +1,4 @@
-#include "minunit.h"
+#include "../../minunit.h"
 
 char *test_dlopen(){
   return NULL;
@@ -16,7 +16,7 @@ char *test_dlclose(){
   return NULL;
 }
 
-char *all_tests() {
+char *all_tests(){
   mu_suite_start();
   mu_run_test(test_dlopen);
   mu_run_test(test_functions);

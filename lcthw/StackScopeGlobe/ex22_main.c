@@ -1,4 +1,4 @@
-#include"dbg.h"
+#include"../dbg.h"
 #include"ex22.h"
 
 const char *MY_NAME = "Zed A. Shaw";
@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
     set_age(100);
 
     log_info("My age is now: %d", get_age());
-    
+
     //Test out THE_SIZE extern
     log_info("The size is : %d", THE_SIZE);
     print_size();

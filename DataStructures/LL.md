@@ -1,33 +1,307 @@
-Null pointers
+# Big O complexcity
+<h2 id="data-structures">Common Data Structure Operations</h2>
+<table class="table table-bordered table-striped">
 
-When pointer is null
+    <tr>
+      <th>Data Structure</th>
+      <th colspan="8">Time Complexity</th>
+      <th>Space Complexity</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="4">Average</th>
+      <th colspan="4">Worst</th>
+      <th>Worst</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Access</th>
+      <th>Search</th>
+      <th>Insertion</th>
+      <th>Deletion</th>
+      <th>Access</th>
+      <th>Search</th>
+      <th>Insertion</th>
+      <th>Deletion</th>
+      <th></th>
+    </tr>
 
-* Declare a pointer but didn't use.
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Array_data_structure">Array</a></td>
+      <td><code class="green">&Theta;(1)</code></td>
+      <td><code class="yellow">&Theta;(n)</code></td>
+      <td><code class="yellow">&Theta;(n)</code></td>
+      <td><code class="yellow">&Theta;(n)</code></td>
+      <td><code class="green">O(1)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Stack_(abstract_data_type)">Stack</a></td>
+      <td><code class="yellow">&Theta;(n)</code></td>
+      <td><code class="yellow">&Theta;(n)</code></td>
+      <td><code class="green">&Theta;(1)</code></td>
+      <td><code class="green">&Theta;(1)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="green">O(1)</code></td>
+      <td><code class="green">O(1)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Queue_(abstract_data_type)">Queue</a></td>
+      <td><code class="yellow">&Theta;(n)</code></td>
+      <td><code class="yellow">&Theta;(n)</code></td>
+      <td><code class="green">&Theta;(1)</code></td>
+      <td><code class="green">&Theta;(1)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="green">O(1)</code></td>
+      <td><code class="green">O(1)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Singly_linked_list#Singly_linked_lists">Singly-Linked List</a></td>
+      <td><code class="yellow">&Theta;(n)</code></td>
+      <td><code class="yellow">&Theta;(n)</code></td>
+      <td><code class="green">&Theta;(1)</code></td>
+      <td><code class="green">&Theta;(1)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="green">O(1)</code></td>
+      <td><code class="green">O(1)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Doubly_linked_list">Doubly-Linked List</a></td>
+      <td><code class="yellow">&Theta;(n)</code></td>
+      <td><code class="yellow">&Theta;(n)</code></td>
+      <td><code class="green">&Theta;(1)</code></td>
+      <td><code class="green">&Theta;(1)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="green">O(1)</code></td>
+      <td><code class="green">O(1)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Skip_list">Skip List</a></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="orange">O(n log(n))</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Hash_table">Hash Table</a></td>
+      <td><code class="gray">N/A</code></td>
+      <td><code class="green">&Theta;(1)</code></td>
+      <td><code class="green">&Theta;(1)</code></td>
+      <td><code class="green">&Theta;(1)</code></td>
+      <td><code class="gray">N/A</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Binary_search_tree">Binary Search Tree</a></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://en.wikipedia.org/wiki/Cartesian_tree">Cartesian Tree</a></td>
+      <td><code class="gray">N/A</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="gray">N/A</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/B_tree">B-Tree</a></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Red-black_tree">Red-Black Tree</a></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://en.wikipedia.org/wiki/Splay_tree">Splay Tree</a></td>
+      <td><code class="gray">N/A</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="gray">N/A</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/AVL_tree">AVL Tree</a></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/K-d_tree">KD Tree</a></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow-green">&Theta;(log(n))</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
 
-* Declare and malloc but not initialize.
+</table>
 
-I think it's clear, the first situation.
+<h2 id="sorting">Array Sorting Algorithms</h2>
+<table class="table table-bordered table-striped">
+    <tr>
+      <th>Algorithm</th>
+      <th colspan="3">Time Complexity</th>
+      <th>Space Complexity</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Best</th>
+      <th>Average</th>
+      <th>Worst</th>
+      <th>Worst</th>
+    </tr>
 
-Some of the most common use cases for NULL are
-- To initialize a pointer variable when that pointer variable isn’t assigned any valid memory address yet.
-  ```c
-  int * pInt = NULL;
-  ```
-- To check for null pointer before accessing any pointer variable. By doing so, we can perform error handling in pointer related code e.g. dereference pointer variable only if it’s not NULL.
-  ```c
-  if(pInt != NULL) /*We could use if(pInt) as well*/
-    { /*Some code*/}
-  else
-    { /*Some code*/}
-  ```
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Quicksort">Quicksort</a></td>
+      <td><code class="orange">&Omega;(n log(n))</code></td>
+      <td><code class="orange">&Theta;(n log(n))</code></td>
+      <td><code class="red">O(n^2)</code></td>
+      <td><code class="yellow-green">O(log(n))</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Merge_sort">Mergesort</a></td>
+      <td><code class="orange">&Omega;(n log(n))</code></td>
+      <td><code class="orange">&Theta;(n log(n))</code></td>
+      <td><code class="orange">O(n log(n))</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Timsort">Timsort</a></td>
+      <td><code class="yellow">&Omega;(n)</code></td>
+      <td><code class="orange">&Theta;(n log(n))</code></td>
+      <td><code class="orange">O(n log(n))</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Heapsort">Heapsort</a></td>
+      <td><code class="orange">&Omega;(n log(n))</code></td>
+      <td><code class="orange">&Theta;(n log(n))</code></td>
+      <td><code class="orange">O(n log(n))</code></td>
+      <td><code class="green">O(1)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Bubble_sort">Bubble Sort</a></td>
+      <td><code class="yellow">&Omega;(n)</code></td>
+      <td><code class="red">&Theta;(n^2)</code></td>
+      <td><code class="red">O(n^2)</code></td>
+      <td><code class="green">O(1)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Insertion_sort">Insertion Sort</a></td>
+      <td><code class="yellow">&Omega;(n)</code></td>
+      <td><code class="red">&Theta;(n^2)</code></td>
+      <td><code class="red">O(n^2)</code></td>
+      <td><code class="green">O(1)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Selection_sort">Selection Sort</a></td>
+      <td><code class="red">&Omega;(n^2)</code></td>
+      <td><code class="red">&Theta;(n^2)</code></td>
+      <td><code class="red">O(n^2)</code></td>
+      <td><code class="green">O(1)</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://en.wikipedia.org/wiki/Tree_sort">Tree Sort</a></td>
+      <td><code class="orange">&Omega;(n log(n))</code></td>
+      <td><code class="orange">&Theta;(n log(n))</code></td>
+      <td><code class="red">O(n^2)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Shellsort">Shell Sort</a></td>
+      <td><code class="orange">&Omega;(n log(n))</code></td>
+      <td><code class="red">&Theta;(n(log(n))^2)</code></td>
+      <td><code class="red">O(n(log(n))^2)</code></td>
+      <td><code class="green">O(1)</code></td>
+    </tr>
+    <tr>
+      <td><a rel="tooltip" title="Only for integers. k is a number of buckets" href="http://en.wikipedia.org/wiki/Bucket_sort">Bucket Sort</a></td>
+      <td><code class="green">&Omega;(n+k)</code></td>
+      <td><code class="green">&Theta;(n+k)</code></td>
+      <td><code class="red">O(n^2)</code></td>
+      <td><code class="yellow">O(n)</code></td>
+    </tr>
+    <tr>
+      <td><a rel="tooltip" title="Constant number of digits 'k'" href="http://en.wikipedia.org/wiki/Radix_sort">Radix Sort</a></td>
+      <td><code class="green">&Omega;(nk)</code></td>
+      <td><code class="green">&Theta;(nk)</code></td>
+      <td><code class="green">O(nk)</code></td>
+      <td><code class="yellow">O(n+k)</code></td>
+    </tr>
+    <tr>
+      <td><a rel="tooltip" title="Difference between maximum and minimum number 'k'" href="https://en.wikipedia.org/wiki/Counting_sort">Counting Sort</a></td>
+      <td><code class="green">&Omega;(n+k)</code></td>
+      <td><code class="green">&Theta;(n+k)</code></td>
+      <td><code class="green">O(n+k)</code></td>
+      <td><code class="yellow">O(k)</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://en.wikipedia.org/wiki/Cubesort">Cubesort</a></td>
+      <td><code class="yellow">&Omega;(n)</code></td>
+      <td><code class="orange">&Theta;(n log(n))</code></td>
+      <td><code class="orange">O(n log(n))</code></td>
+      <td><code class="yellow">O(n)</code></td>
+   </tr>
 
-- To pass a null pointer to a function argument when we don’t want to pass any valid memory address.
-  ```c
-  int fun(int *ptr)
-  {
-      /*Fun specific stuff is done with ptr here*/
-      return 10;
-  }
-  fun(NULL); 
-  ```
-[Differences between for loop and while loop in C](https://www.quora.com/Difference-between-while-loops-and-for-loops-in-c-programming-language)
+</table>

@@ -1,7 +1,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<stdarg.h>
-#include"dbg.h"
+#include"../dbg.h"
 
 #define MAX_DATA 100
 
@@ -22,7 +22,7 @@ error:
 }
 
 int read_int(int *out_int)
-{ 
+{
    char *input = NULL;
    int rc = read_string(&input, MAX_DATA);
    check(rc == 0, "Failed to read number.");
@@ -97,7 +97,7 @@ int main(int argc, char *argv[])
    char initial = ' ';
    char *last_name = NULL;
    int age = 0;
-   
+
    printf("What's your first name?");
    int rc = read_scan("%s", MAX_DATA, &first_name);
    check(rc == 0,"Failed first name.");
@@ -109,10 +109,10 @@ int main(int argc, char *argv[])
    printf("What's your last name?");
    rc = read_scan("%s", MAX_DATA, &last_name);
    check(rc == 0,"Failed last name.");
-   
+
    printf("How old are you ?");
    rc = read_scan("%d", &age);
-   
+
    printf("----Results----\n");
    printf("First Name: %s", first_name);
    printf("Initial: '%c'\n", initial);
@@ -125,4 +125,3 @@ int main(int argc, char *argv[])
 error:
    return -1;
 }
-

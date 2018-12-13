@@ -1,3 +1,21 @@
+There are several [programming paradigm](https://en.wikipedia.org/wiki/Programming_paradigm), including
+* Functional programming (Mathematica)
+* Object-oriented programming
+* Procedure programming (Fortran)
+* Data-driven programming
+*  ...
+Some programming language support multiple paradigm.
+
+Which does C belong to?
+
+C follows the procedural paradigm.
+
+> C functions are not first-class objects. You cannot return a function from a function, store a function in a variable, or pass a function to another function. You cannot nest functions, and you cannot create anonymous functions. The workaround is that C does allow you to use pointers to functions, so you can write a function that takes a pointer to a function as an argument, but this is not as clean as what you can do in a language oriented towards functional programming.
+
+Clearly, C is not designed as functional programming.
+
+Even it can be used as a functional paradigm programming language, it doesn't make too much sense, and drag you into tricky situation.
+
 ## Call by reference
 ```c
 /**
