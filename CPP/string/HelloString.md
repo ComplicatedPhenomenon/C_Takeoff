@@ -1,8 +1,10 @@
-`std::string`
+
+## class string or built-in type
+`std::string`  
 
 parameters
 * member function (method)
-  * operator=
+  * operator =
   * assign
   * get_allocator
   * Element access

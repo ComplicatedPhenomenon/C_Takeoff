@@ -3,41 +3,36 @@
 using namespace std;
 
 class Line {
-   public:
-      double length;
-      string name;
-      void setLength( double len );
-      double getLength( void );
-      string setname(string eman);
+    public:
+        double length;
+        string name;
+        void setLength( double len );
+        double getLength( void );
+        string setname(string eman);
 };
 
 // Member functions definitions
 double Line::getLength(void) {
-   return length ;
+    cout << "Entering function: " << __func__ << endl;
+    //every function has a local predefined variable __func__ containing the name of the function.
+    return length ;
 }
 
 void Line::setLength( double len) {
-   length = len;
+    length = len;
 }
 
-string Line:: setname(string eman){
+string Line::setname(string eman) {
     name = eman;
+    return name;
 }
 
 /**
- * When you type using namespace std, you are taking everything inside of * the namespace std and moving it to the global scope, so that you can
+ * When you type using namespace std, you are taking everything inside of the namespace std and moving it to the global scope, so that you can
  * use the shorter cout instead of the more fully-qualified std::cout.
  */
 int main()
 {
-    string result;
-    string s1 = "hello";
-     // without the extra space at the end
-    string s2 = "world";
-    result = s1;
-    result += ' ';
-     // append a space at the end
-    result += s2;
     Line line;
 
     // set line length
