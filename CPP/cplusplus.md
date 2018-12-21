@@ -1,4 +1,48 @@
-Programming Principles and Practices Using CPP
+## CPP entities
+The entities of a C++ program are `values`, `objects`, `references`, `structured bindings` (since C++17), `functions`, `enumerators`, `types`, `class members`, `templates`, `template specializations`, `namespaces`, and p`arameter packs`. `Preprocessor macros` are not C++ entities.
+
+## [Difference between header file and library file in c++](https://stackoverflow.com/questions/924485/whats-the-difference-between-a-header-file-and-a-library)
+
+> It's the fundamental difference between "interface" and "implementation"; the interface (header) tells you how to call some functionality (without knowing how it works), while the implementation (library) is the actual functionality.
+
+Explain this down to the level within my ability. It makes me better, that c++ just omit `.h` when including the standard library header files.
+
+standard library header file
+
+```c++
+g++ -stdlib=<value> <input file>
+```
+
+```cpp
+#include<array>
+#include 'xx.h'
+```
+Header files include declaration, instead of implementation.
+
+### [What does '#include<iostream\>'  do?](https://stackoverflow.com/questions/22645097/what-does-include-iostream-do)
+
+---
+
+Try it, try to tell me your understanding.
+
+It knows what to do with `std::cout`, it makes sure preprocessor knows it too. If cam't be a header file, since the implementation part should also be included during running time.
+
+A program contains
+* `a.h`
+* `a.cpp`
+* `c.cpp`
+
+in `c.cpp`
+```cpp
+#include 'a.h'
+#include 'xx.h'
+```
+---
+> That is a C++ standard library header file for input output streams. It includes functionality to read and write from streams. You only need to include it if you wish to use streams.
+
+### Where are c++ the standard library on Mac.
+
+## Programming Principles and Practices Using CPP
 
 * Fabulous display.
 * Convey philosophy in a simple but powerful way. Everything is depict in detail.
@@ -49,6 +93,53 @@ Apple LLVM version 10.0.0 (clang-1000.11.45.5)
 Target: x86_64-apple-darwin18.2.0
 Thread model: posix
 InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-
+$ cc --version
+Apple LLVM version 10.0.0 (clang-1000.11.45.5)
+Target: x86_64-apple-darwin18.2.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
 
 ```
+
+* [LLVM](https://en.wikipedia.org/wiki/LLVM)
+* [C++ complier](https://en.wikipedia.org/wiki/List_of_compilers#C++_compilers)
+## Template in CPP
+
+## [CPP reference](https://en.cppreference.com/w/)
+* Language
+  - Basic concepts
+  - C++ Keywords
+  - Preprocessor
+  - Expressions
+  - Declaration
+  - Initialization
+  - Functions
+  - Statements
+  - Classes
+  - Templates
+  - Exceptions
+Library for different area
+* Language support library
+* String library
+* Numeric library
+  - Common math functions
+  - Special math functions (C++17)
+  - Numeric algorithms
+  - Pseudo-random number generation
+  - Floating-point environment (C++11)
+  - complex  −  valarray
+* Container library
+* Ranges library (C++20)
+
+* Algorithms library
+* Input/output library
+  - Stream-based I/O
+  - Synchronized output (C++20)
+  - I/O manipulators
+* Localizations library
+  - Regular expressions library (C++11)
+  - basic_regex  −  algorithms
+  - Atomic operations library (C++11)
+  - atomic  −  atomic_flag
+* Thread support library (C++11)
+* Filesystem library (C++17)
