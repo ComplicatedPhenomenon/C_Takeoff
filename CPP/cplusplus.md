@@ -128,3 +128,10 @@ Library for different area
   - atomic  −  atomic_flag
 * Thread support library (C++11)
 * Filesystem library (C++17)
+
+## Referee book
+
+* *Mastering the C++17 STL*
+
+  ~~Make full use of standard library components in C++17~~.
+* *C++17 By Example*
