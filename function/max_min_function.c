@@ -5,14 +5,9 @@
 
 #include<stdio.h>
 
-/* function declaration */
-int max(int, int, int);
-/**
- * When you declare a function with an empty argument list, you invoke
- * K&R (pre-prototype) semantics and nothing is assumed about the parameter
- * list; this is so that pre-ANSI C code will still compile. If you want a
- * prototyped function with an empty parameter list, use (void) instead of ()
- **/
+int maxImplementation_1(int, int, int);
+int minImplementation_2(int, int, int);
+
 int main(void)
 {
     int a = 100;
@@ -20,14 +15,16 @@ int main(void)
     int c = 419;
     int ret;
 
-    ret = max(a, b, c);
-    printf("Max value is: %d\n", ret);
+    ret = maxImplementation_1(a, b, c);
+    printf("Maximum value is: %d\n", ret);
+
+    ret = minImplementation_2(a, b, c);
+    printf("Minimum value is: %d\n", ret);
 
     return 0;
 }
 /* function returning the max between two numbers */
-int max(int num1,int num2, int num3)
-{
+int maxImplementation_1(int num1,int num2, int num3){
 
     int result;
     int tem;
@@ -45,4 +42,12 @@ int max(int num1,int num2, int num3)
     }
 
     return result;
+}
+
+int minImplementation_2(int a1, int a2, int a3){
+    int tem;
+    tem =  (a1 < a2 ? a1 : a2);
+    tem =  (a3 < tem ? a3 : tem);
+
+    return tem;
 }

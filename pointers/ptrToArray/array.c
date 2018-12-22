@@ -2,28 +2,35 @@
 #include<stdlib.h>
 #include<time.h>
 
-int *getRandom()
+int *getRandom_1()
 {
-    static int r[10];
+    static int array[10];
     int i;
 
+    // makes use of the computer's internal clock to control the choice of the seed.  Since time is continually changing, the seed is forever changing.
     srand( (unsigned)time( NULL));
+
+    printf("Initialize an array 'array[10]' \n");
     for (i=0; i < 10; ++i){
-      r[i] = rand();
-      printf("r[%d] = %d\n", i, r[i]);
+      array[i] = rand();
+      printf("array[%d] = %d\n", i, array[i]);
     }
 
-    return r;
+    return array;
 }
+
 
 int main()
 {
-    int *p;
+    int *ptrToFunctionPointer;
     int i;
+    // assign function pointer to a variable
+    ptrToFunctionPointer = getRandom_1();
 
-    p = getRandom();
+
+    printf("A pointer 'ptrToFunctionPointer' pointing to initialization function\n");
     for(i=0; i < 10; i++){
-      	printf ("*(p + %d) : %d\n",i ,*(p+i));
+      	printf ("*(ptrToFunctionPointer + %d) : %d\n",i ,*(ptrToFunctionPointer+i));
     }
 
     return 0;
