@@ -8,42 +8,50 @@ class Line {
         string name;
         void setLength( double len );
         double getLength( void );
-        string setname(string eman);
+        string setName(string eman);
+        string getName();
 };
 
-// Member functions definitions
-double Line::getLength(void) {
+void Line::setLength( double len) {
     cout << "Entering function: " << __func__ << endl;
     //every function has a local predefined variable __func__ containing the name of the function.
-    return length ;
-}
-
-void Line::setLength( double len) {
     length = len;
 }
 
-string Line::setname(string eman) {
+double Line::getLength(void) {
+    return length ;
+}
+
+string Line::setName(string eman) {
     name = eman;
     return name;
 }
 
+string Line::getName(){
+    return name;
+}
+
+
 /**
- * When you type using namespace std, you are taking everything inside of the namespace std and moving it to the global scope, so that you can
+ * When you type using namespace std, you are taking everything inside of the namespace std
+ * and moving it to the global scope, so that you can
  * use the shorter cout instead of the more fully-qualified std::cout.
  */
 int main()
 {
     Line line;
 
-    // set line length
     line.setLength(6.0);
-    line.setname("Straight Line");
+
     cout << "Length of line : " << line.getLength() << endl;
+    cout << "Name of the line: " << line.setName("Straight Line") << endl;
+    cout << "Name of the line: " << line.getName() << endl;
 
     // set line length without member function
     line.length = 10.0; // OK: because length is public
+    line.name = "Curve line";
     cout << "Length of line : " << line.length << endl;
-    cout << "name of line : " << line.name << endl;
+    cout << "Name of line : " << line.name << endl;
 
     Line *ptr_line;
     ptr_line = & line;

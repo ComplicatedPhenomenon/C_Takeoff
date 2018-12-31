@@ -1,5 +1,11 @@
 ## CPP entities
 The entities of a C++ program are `values`, `objects`, `references`, `structured bindings` (since C++17), `functions`, `enumerators`, `types`, `class members`, `templates`, `template specializations`, `namespaces`, and `parameter packs`. `Preprocessor macros` are not C++ entities.
+### Specifier
+`inline`, `const`
+
+[C++ const specifier explanation](https://stackoverflow.com/questions/4064286/c-const-keyword-explanation)
+
+> const member functions prevent modification of any class member - const nonmember functions cannot be used.
 
 ## [Difference between header file and library file in c++](https://stackoverflow.com/questions/924485/whats-the-difference-between-a-header-file-and-a-library)
 
@@ -19,7 +25,7 @@ g++ -stdlib=<value> <input file>
 ```
 Header files include declaration, instead of implementation.
 
-### [What does '#include<iostream\>'  do?](https://stackoverflow.com/questions/22645097/what-does-include-iostream-do)
+### [What does *#include<iostream\>*  do?](https://stackoverflow.com/questions/22645097/what-does-include-iostream-do)
 
 ---
 
@@ -89,6 +95,7 @@ $ cc --version
 
 * [LLVM](https://en.wikipedia.org/wiki/LLVM)
 * [C++ complier](https://en.wikipedia.org/wiki/List_of_compilers#C++_compilers)
+
 ## Template in CPP
 
 ## [CPP reference](https://en.cppreference.com/w/)
@@ -135,3 +142,4 @@ Library for different area
 
   ~~Make full use of standard library components in C++17~~.
 * *C++17 By Example*
+* Professional CPP 4th Edition 2018 by Marc Gregoire

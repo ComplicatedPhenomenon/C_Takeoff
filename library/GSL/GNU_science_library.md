@@ -1,20 +1,16 @@
-How to use [GNU scientific library](https://github.com/ampl/gsl)?
 
-[Documentation for GSL](https://www.gnu.org/software/gsl/doc/latex/gsl-ref.pdf)
-You will come across problems through the way installing GSL by source.
-```
+
+## Install GNU scientific library by source.
+
 Rather than executing `make install`
-...
-Making install in sys
-make[1]: Entering directory '/home/wm/Softwares/gsl/sys'
-make[2]: Entering directory '/home/wm/Softwares/gsl/sys'
-make[2]: Nothing to be done for 'install-exec-am'.
- /bin/mkdir -p '/usr/local/include/gsl'
+```sh
 /bin/mkdir: cannot create directory ‘/usr/local/include/gsl’: Permission denied
-...
+
 ```
+
 Instead you should run `sudo make install`
-```
+
+```sh
 Libraries have been installed in:
    /usr/local/lib
 
@@ -30,21 +26,18 @@ flag during linking and do at least one of the following:
    - have your system administrator add LIBDIR to `/etc/ld.so.conf'
 
 ```
-When I want first try with `gsl`, the difficulty I met is
+
+When I tried with `gsl`, the difficulty I met was
 ```
 ./a.out: error while loading shared libraries: libgsl.so.23: cannot open shared object file: No such file or directory
 ```
 Then I asked it on [StackOverflow](https://stackoverflow.com/q/45665878/7583919) in a rush when no one at least I knew had asked such question. I missed out for
 looking up the official help documentation.
-> To avoid this error, either modify the system daynamic linker configuration ordefine the shell variable `LD_LIBARY_PATH` to include the directory where the library is installed.
+> To avoid this error, either modify the system dynamic linker configuration or define the shell variable `LD_LIBARY_PATH` to include the directory where the library is installed.
 
 Again unnecessary information generated in the online world because of me.
 
-**This should be prevented from happening as much as possible.**
 
-Besides of adding more topics to improve the possibility of finding the right answer,
-We can adjust the searching way to be more accurate to find out the right answer, that's a once for all method.
-
-
-**[undefined reference to ](http://blog.csdn.net/aiwoziji13/article/details/7330333)
-**
+## Reference
+* [GNU scientific library](https://github.com/ampl/gsl)
+* [Documentation for GSL](https://www.gnu.org/software/gsl/doc/latex/gsl-ref.pdf)

@@ -1,3 +1,4 @@
+// Showcase class template, besides demo of std::vector member functions  
 #include <iostream>
 #include <vector>
 #include <cstdlib>
@@ -6,14 +7,14 @@
 
 using namespace std;
 
-template <class T>
+template <typename T>
 class Stack {
    private:
-      vector<T> elems;    // elements
+      vector<T> elems;
 
    public:
-      void push(T const&);  // push element
-      void pop();               // pop element
+      void push(T const&);
+      void pop();
       T top() const;            // return top element
 
       bool empty() const {      // return true if empty.
@@ -21,13 +22,15 @@ class Stack {
       }
 };
 
-template <class T>
+// Working in the framework of Modern C++ is much easier than in C.
+template <typename T>
 void Stack<T>::push (T const& elem) {
    // append copy of passed element
    elems.push_back(elem);
 }
 
-template <class T>
+
+template <typename T>
 void Stack<T>::pop () {
    if (elems.empty()) {
       throw out_of_range("Stack<>::pop(): empty stack");
@@ -37,7 +40,7 @@ void Stack<T>::pop () {
    elems.pop_back();
 }
 
-template <class T>
+template <typename T>
 T Stack<T>::top () const {
    if (elems.empty()) {
       throw out_of_range("Stack<>::top(): empty stack");
@@ -65,4 +68,4 @@ int main() {
       cerr << "Exception: " << ex.what() <<endl;
       return -1;
    }
-} 
+}

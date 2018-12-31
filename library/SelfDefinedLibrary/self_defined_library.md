@@ -6,9 +6,7 @@ The compiler is smart enough to know  what `-lmoo` is.
 ```
 gcc -o foo foo.c -L. -lmoo
 ```
-
----
-### Static Libraries: (.a)
+### Static Libraries: `.a`
 How to generate a static library (object code archive file):
 * Compile: cc -Wall -c ctest1.c ctest2.c
   Compiler options:
@@ -26,8 +24,13 @@ cc -o prog prog.c libtest.a
 ./prog
 rm  prog *.o *.a
 ```
----
-### Dynamically Linked "Shared Object" Libraries: (.so)
+
+
+[Problems when Link static library ](http://blog.csdn.net/aiwoziji13/article/details/7330333)
+```sh
+undefined reference to
+```
+### Dynamically Linked "Shared Object" Libraries: `.so`
 * Create object code
 * Create library
 * Optional: create default version using a symbolic link.
