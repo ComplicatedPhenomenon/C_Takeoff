@@ -1,5 +1,6 @@
-/**
+/*
  * C program to print ASCII values of all characters.
+ * Storing and printing 'special' characters (♠, ♣, ♥, ♦,)
  */
 
 #include <stdio.h>

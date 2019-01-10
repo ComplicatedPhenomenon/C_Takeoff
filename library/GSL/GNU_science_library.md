@@ -1,32 +1,33 @@
+# Install GNU scientific library by source.
+1. `./configure`
+  `./configure' to configure the package for your system.
 
+  Running `configure' might take a while.  While running, it prints some messages telling which features it is checking for.
 
-## Install GNU scientific library by source.
+2. `make`
 
-Rather than executing `make install`
-```sh
-/bin/mkdir: cannot create directory ‘/usr/local/include/gsl’: Permission denied
+   Compile the package
+3. `$ sudo make install`
 
-```
+  ```sh
 
-Instead you should run `sudo make install`
+  Libraries have been installed in:
+     /usr/local/lib
 
-```sh
-Libraries have been installed in:
-   /usr/local/lib
+  If you ever happen to want to link against installed libraries
+  in a given directory, LIBDIR, you must either use libtool, and
+  specify the full pathname of the library, or use the -LLIBDIR
+  flag during linking and do at least one of the following:
+     - add LIBDIR to the LD_LIBRARY_PATH environment variable
+       during execution
+     - add LIBDIR to the LD_RUN_PATH environment variable
+       during linking
+     - use the -Wl,-rpath -Wl,LIBDIR linker flag
+     - have your system administrator add LIBDIR to /etc/ld.so.conf
 
-If you ever happen to want to link against installed libraries
-in a given directory, LIBDIR, you must either use libtool, and
-specify the full pathname of the library, or use the `-LLIBDIR'
-flag during linking and do at least one of the following:
-   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
-     during execution
-   - add LIBDIR to the `LD_RUN_PATH' environment variable
-     during linking
-   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
-   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+  ```
 
-```
-
+# Usage of `gsl`
 When I tried with `gsl`, the difficulty I met was
 ```
 ./a.out: error while loading shared libraries: libgsl.so.23: cannot open shared object file: No such file or directory

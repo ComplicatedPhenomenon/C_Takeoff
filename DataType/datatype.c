@@ -1,3 +1,8 @@
+/*
+ * You need to compile this program with the flag -lm or you will get the error
+ * (.text+0x43): undefined reference to 'pow'
+ */
+
 #include<stdio.h>
 #include<float.h>
 #include<limits.h>
@@ -11,7 +16,7 @@ int main()
     long double sum_2;
     long double Sum1;
     long double Sum2;
-    
+
     printf("Size of float  :%lu \n",sizeof(float));
     printf("Size of long   :%lu \n",sizeof(double));
     printf("Size of long   :%lu \n",sizeof(long));
@@ -75,6 +80,7 @@ int main()
     printf("%LE\n",sum_2);
     printf("%LE\n",Sum1);
     printf("%LE\n",Sum2);
+    fflush(stdout);
 
     return 0;
 
