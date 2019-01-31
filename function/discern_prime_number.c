@@ -8,10 +8,10 @@ int main()
     // esential part of this short program
     for(i=2; i<=n/2; ++i){
         // condition for non-prime number
-    	  if(n%i==0){
-          flag=1;
-    	    break;
-      }
+    	if(n%i==0){
+        flag=1;
+    	break;
+        }
     }
 
   	if (flag==0){

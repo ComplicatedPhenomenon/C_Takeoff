@@ -1,12 +1,13 @@
 ## CPP entities
 The entities of a C++ program are `values`, `objects`, `references`, `structured bindings` (since C++17), `functions`, `enumerators`, `types`, `class members`, `templates`, `template specializations`, `namespaces`, and `parameter packs`. `Preprocessor macros` are not C++ entities.
-### Specifier
-`inline`, `const`
+### Explanation on specifier
+Specifier instances
+* `inline`,
+* `const`
+  * [C++ const specifier explanation](https://stackoverflow.com/questions/4064286/c-const-keyword-explanation)
 
-[C++ const specifier explanation](https://stackoverflow.com/questions/4064286/c-const-keyword-explanation)
-
-> const member functions prevent modification of any class member - const nonmember functions cannot be used.
-
+    const member functions prevent modification of any class member - const nonmember functions cannot be used.
+  * [Meaning of 'const' last in a function declaration of a class?](https://stackoverflow.com/questions/751681/meaning-of-const-last-in-a-function-declaration-of-a-class)
 ## [Difference between header file and library file in c++](https://stackoverflow.com/questions/924485/whats-the-difference-between-a-header-file-and-a-library)
 
 > It's the fundamental difference between "interface" and "implementation"; the interface (header) tells you how to call some functionality (without knowing how it works), while the implementation (library) is the actual functionality.

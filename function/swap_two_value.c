@@ -12,11 +12,12 @@ int main()
     char string_b[10];
     char string_c[10];
 
-    strcpy(a, "Alive");
-    strcpy(b, "Dead");
+    strcpy(string_a, "Alive");
+    strcpy(string_b, "Dead");
 
     printf("Before swap, value of a = %d\n",a);
     printf("Before swap, value of b = %d\n",b);
+    printf("&a=%p, &b= %p\n", &a, &b);
 
     swap(&a, &b);
 
@@ -34,13 +35,14 @@ int main()
     strcpy(string_a, string_b);
     strcpy(string_b, string_c);
     printf("After exchanging, string_a is : %s\n", string_a);
-    printf("After exchanging, string_b is : %s\n", string_string_b);
+    printf("After exchanging, string_b is : %s\n", string_b);
 
     return 0;
 }
 
 void swap(int *x, int *y)
 {
+    printf("In scope of function swap, x= %p, y = %p\n", x, y);
   	int temp;
     temp = *x; /* save the contents of var x in tem */
   	*x = *y;

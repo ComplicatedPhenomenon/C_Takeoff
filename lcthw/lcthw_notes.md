@@ -39,9 +39,9 @@ About when using each of the functions
 
 `int main (int argc, char *argv[])`
 
-- [] you need to use this function when your program needs initial parameters     to load (parameters received from the OS - out of the program itself)
+-[] you need to use this function when your program needs initial parameters    to load (parameters received from the OS - out of the program itself)
 
-A qick way to look up the way that preprocessor to deal with things
+A quick way to look up the way that preprocessor to deal with things
 ```bash
 cpp examplecode.c | less
 ```

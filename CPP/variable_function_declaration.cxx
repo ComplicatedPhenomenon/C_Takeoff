@@ -1,4 +1,5 @@
 /**
+ *  c++ variable_function_declaration.cxx
  * I need to increase abstraction level of algorithm of this concrete sample.
  **/
 
@@ -24,11 +25,13 @@ int main ()
 }
 
 int add(int &p){
+    cout << "In scope of function add, p= " << p <<endl;
     p=p+100;
     return p;
 }
 
 void swap(int &i, int &j){
+    cout << "In scope of function swap, i= "<< i << ", j= " << j <<endl;
     int tem;
     tem = i;
     i = j;

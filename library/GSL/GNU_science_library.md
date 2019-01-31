@@ -1,8 +1,9 @@
 # Install GNU scientific library by source.
 1. `./configure`
-  `./configure' to configure the package for your system.
 
-  Running `configure' might take a while.  While running, it prints some messages telling which features it is checking for.
+  `./configure` to configure the package for your system.
+
+  Running `./configure` might take a while.  While running, it prints some messages telling which features it is checking for.
 
 2. `make`
 
