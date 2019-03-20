@@ -3,13 +3,11 @@
 #include<stdlib.h>
 
 typedef struct phone
-{ 
-/* field */
-    char   * company; 
-    char    * series;
-    float       cost;
-/* method */
-    void (*word)(void);  /* Detail1: void * word (void) */ 
+{
+    char   *company;
+    char    *series;
+    float     cost;
+    void (*word)(void);  /* Detail1: void * word (void) */
 } Phone;
 
 void method(void)
@@ -17,29 +15,32 @@ void method(void)
     printf("Hello!!!\n");
 }
 
-/* Detail1 may be affected by Phone  * creat_phone(...) */
-Phone  * creat_phone(char *cp, char *ba, float cs) 
+// Why pointer is used so often?
+Phone  * phone_create(char *cp, char *ba, float cs)
 /* A pointer which store the address of function <creat_phone> */
 {
     Phone *p1 = malloc(sizeof(Phone));
     assert(p1 != NULL);
     p1->company = cp;
+    printf("%s Made it\n", cp);
     p1->series  = ba;
     p1->cost    = cs;
     p1->word    = &method;
-    
+
     return p1;
 }
 
-int main(int argc, char argv[])
-{
-    Phone *HW=creat_phone("HUAWEI","P9",2999) ;
-    HW->word();
-    
-    return 0;
+void destroy_phone(Phone *a_phone){
+    assert(a_phone != NULL);
+    free(a_phone);
 }
 
 
+int main(int argc, char *argv[])
+{
+    Phone *HW=phone_create("Huawei Technologies","Mate 10", 2999);
+    HW->word();
+    free(HW);
 
-	  
-
+    return 0;
+}

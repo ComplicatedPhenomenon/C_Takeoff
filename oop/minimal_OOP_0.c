@@ -23,7 +23,7 @@ oop new_oop(void)
    o.method = &f;
    o.y = 4;
    o.x = 2;
-   return o;
+   return o; // return an object, with an object, you can apply method and data.
 }
 
 int main(int argc, char ** argv)

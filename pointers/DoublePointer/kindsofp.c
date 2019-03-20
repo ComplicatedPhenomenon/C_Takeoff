@@ -5,7 +5,9 @@ int main()
     char *s = "asd";
     char **p = &s;
     int i;
+    printf("s = %s\n", s);
     printf("*s = %c\n", *s);
+    //printf("*s = %s\n", p);
     printf("&s = %p\n", &s);
 
     printf("p = %p\n", p);

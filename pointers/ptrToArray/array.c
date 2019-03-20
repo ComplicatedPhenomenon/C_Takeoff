@@ -22,15 +22,15 @@ int *getRandom_1()
 
 int main()
 {
-    int *ptrToFunctionPointer;
+    int *ptrToFunction;
     int i;
     // assign function pointer to a variable
-    ptrToFunctionPointer = getRandom_1();
+    ptrToFunction = getRandom_1();
 
 
-    printf("A pointer 'ptrToFunctionPointer' pointing to initialization function\n");
+    printf("A pointer 'ptrToFunction' pointing to initialization function\n");
     for(i=0; i < 10; i++){
-      	printf ("*(ptrToFunctionPointer + %d) : %d\n",i ,*(ptrToFunctionPointer+i));
+      	printf ("*(ptrToFunction + %d) : %d\n",i ,*(ptrToFunction+i));
     }
 
     return 0;

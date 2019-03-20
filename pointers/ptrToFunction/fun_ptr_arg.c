@@ -13,6 +13,9 @@ void foo(void (*a)()){
     a();
 }
 
+/*
+ * This states that the parameter a will be a pointer to a function which has a void return type and which takes zero parameter.
+*/
 void easyf1(){
     printf("Hello world\n");
 }
@@ -24,7 +27,10 @@ void easyf2(){
 
 int main(){
     easyf0();
+    foo(&easyf0);
+    easyf1();
     foo(&easyf1);
+    easyf2();
     foo(&easyf2);
     return 1;
 }

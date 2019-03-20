@@ -1,3 +1,5 @@
 a.out*
 *.asm
 *.s
+CPP/algorithm
+algorithm/libeve

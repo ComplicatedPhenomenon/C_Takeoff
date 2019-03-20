@@ -50,3 +50,13 @@ you to understand how things work better.
     - [ ] Graph
   - [ ] Data Algorithm
     - [ ] Bubble sort
+# Compiler and memory leak testing
+Applying Docker to solve the incompatible problems.
+
+My situation I used gcc on Ubuntu for a long time, 16.04, 17.04, 17.10, so the version of Valgrind changed with OS.
+
+When I turn to MacOS, After I update the OSX to the newest version, no proper Valgrind for it.
+
+What a mess!
+
+# gdb usage
