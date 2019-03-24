@@ -18,7 +18,7 @@ DArray *DArray_create(size_t element_size, size_t initial_max){
 
     return array;
 error:
-    if(array)free(array);
+    if(array != 0)free(array);
     return NULL;
 }
 

@@ -26,8 +26,7 @@ typedef struct {
 	Database *db;
 }Connection;
 
-void die(const char *message)
-{
+void die(const char *message){
 	if(errno){
 		perror(message);
 	}
@@ -54,28 +53,16 @@ void Database_load(Connection * conn)
 Connection *Database_open(const char *filename, char mode)
 {
 	Connection *conn = malloc(sizeof(Connection));
-	if(!conn)die("Memory error");
+	if(conn == 0)die("Memory error");
 	/*If conn is NULL, !conn will be non-NULL and the condition will be true.*/
-
 	conn->db = malloc(sizeof(Database));
-	/**
-	 * conn->db fetches the value of the member variable db ,if conn->db is
-	 * NULL(for pointers, NULL is falsy). !conn->db will be non-NULL and the
-	 * condition will be true vice versa
-	 **/
-	if(!conn->db) die("Memory error");
-    /**
-	* The if (!conn->db) means the same as if (conn->db == 0) or if (conn->db == NULL).
-	* It works with any numeric or pointer type when you compare to 0
-	**/
-	if(mode == 'c')
-	{
+	if(conn->db == 0) die("Memory error");
+	if(mode == 'c'){
 		conn -> file = fopen(filename, "w");
 	}
-
 	else{
 		conn -> file = fopen(filename, "r+");
-		if(conn->file){
+		if(conn->file != 0){
 			Database_load(conn);
 		}
 	}
@@ -84,34 +71,27 @@ Connection *Database_open(const char *filename, char mode)
 	return conn;
 }
 
-void Database_close(Connection *conn)
-{
-	if(conn){
-		if(conn->file){
+void Database_close(Connection *conn){
+	if(conn != 0){
+		if(conn->file != 0){
 			fclose(conn->file);
 		}
-		if(conn->db) {
+		if(conn->db != 0) {
 			free(conn->db);
 		}
 		free(conn);
 	}
 }
 
-void Database_write(Connection *conn)
-{
+void Database_write(Connection *conn){
 	rewind(conn->file);
 	int rc = fwrite(conn->db, sizeof(Database), 1, conn->file);
-
-	if(rc != 1)
-		die ("Failed to write database.");
-
+	if(rc != 1) die ("Failed to write database.");
 	rc = fflush(conn-> file);
-	if(rc ==-1)
-		die("Cannot flush database.");
+	if(rc ==-1) die("Cannot flush database.");
 }
 
-void Database_create(Connection *conn)
-{
+void Database_create(Connection *conn){
 	int i = 0;
 	for(i = 0; i < MAX_ROWS; i++){
 		Address addr = {.id = i, .set = 0};
@@ -120,49 +100,35 @@ void Database_create(Connection *conn)
 }
 
 void Database_set (Connection *conn, int id, const char *name,
-		const char * email)
+				   const char * email)
 {
 	Address *addr = &conn->db->rows[id];
-	if(addr->set)
-		die("Already set, delete it first");
-
+	if(addr->set != 0) die("Already set, delete it first");
 	addr->set = 1;
 	char *res = strncpy(addr->name, name, MAX_DATA);
 
-	if(!res)
-		die("Name copy failed");
-
+	if(res == 0) die("Name copy failed");
 	res = strncpy(addr->email, email, MAX_DATA);
-	if(!res) die("Email copy failed");
+	if(res == 0) die("Email copy failed");
 }
-void Database_get(Connection *conn, int id)
-{
+void Database_get(Connection *conn, int id){
 	Address *addr = &conn->db->rows[id];
-	if(addr->set){
-		Address_print(addr);
-	}
-	else{
-		die("ID is not set");
-	}
+	if(addr->set != 0) Address_print(addr);
+	else die("ID is not set");
 }
 
-void Database_delete(Connection *conn, int id)
-{
+void Database_delete(Connection *conn, int id){
 	Address addr = {.id = id, .set = 0};
 	conn->db->rows[id] = addr;
 }
 
-void Database_list(Connection *conn)
-{
+void Database_list(Connection *conn){
 	int i = 0;
 	Database *db = conn->db;
 
 	for(i = 0; i < MAX_ROWS; i++){
 		Address *cur = &db -> rows[i];
-
-		if(cur -> set){
-			Address_print(cur);
-		}
+		if(cur -> set) Address_print(cur);
 	}
 }
 
@@ -170,6 +136,7 @@ int main(int argc, char *argv[])
 {
 	if(argc < 3)
 		die("USAGE: stack <dbfile> <action> [action params]");
+
 
 	char *filename = argv[1];
 	char action = argv[2][0];
