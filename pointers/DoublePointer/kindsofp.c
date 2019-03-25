@@ -6,6 +6,7 @@ int main()
     char **p = &s;
     int i;
     printf("s = %s\n", s);
+    printf("s = %p\n", s);
     printf("*s = %c\n", *s);
     //printf("*s = %s\n", p);
     printf("&s = %p\n", &s);

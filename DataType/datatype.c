@@ -82,6 +82,9 @@ int main()
     printf("%LE\n",Sum2);
     fflush(stdout);
 
+    printf("9 is %o\n", 9);
+    printf("16 is %x\n", 16);
+
     return 0;
 
 }

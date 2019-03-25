@@ -1,9 +1,7 @@
-# Format specifiers in C
-* `%f`
-* `%lf`
-* `%c`
-* `%lu`
-## Conversion specifiers
+# [printf format cheat sheet](https://alvinalexander.com/programming/printf-format-cheat-sheet)
+
+# `unsigned int` and `size_t` interchangeable ?
+Because `unsigned int` is not the only unsigned integer type. `size_t` could be any of `unsigned char`, `unsigned short`, `unsigned int`, `unsigned long` or `unsigned long long`, depending on the implementation.
 
 # Data Type
 * Basic Data Types

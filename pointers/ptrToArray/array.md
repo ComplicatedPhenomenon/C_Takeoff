@@ -3,23 +3,56 @@ An Array is a collection of similar data type value in a single variable. An arr
 * Array declaration
 * Array initialization
 
+## Something against intuition
+```c
+char x = "czfzdxx";
+char name[] = {"Wall-E-1000000001","complicatephenomenon","czfzdxx"};
+
+```
+```sh
+pointerToArray.c:7:10: warning: incompatible pointer to integer conversion initializing
+      'char' with an expression of type 'char [8]' [-Wint-conversion]
+    char x = "czfzdxx";
+         ^   ~~~~~~~~~
+
+pointerToArray.c:10:11: error: redefinition of 'name' with a different type: 'char *[]' vs
+       'char [18]'
+    char *name[] = {"Wall-E-1000000001","complicatephenomenon","czfzdxx"};
+
+```
+[Is array name a pointer?](https://stackoverflow.com/questions/1641957/is-an-array-name-a-pointer)
+
+
+### Array decay into pointers
+
+Crucial points:
+
+* In general, `x[y]` is by definition equivalent to `*(x+y)`
+* The name of the array is the address of the first element, right?
+  ```c
+  int v[10]
+  int *a[5]
+  a[0] = v
+  ```
+  `*a` in this case is the same is `a[0]`, which is the first element in your array(which is a pointer)
+
 ### Char array declaration and initialization in C
 So far I have been initializing an array like
 ```c
 char array_c[3] = {'s', 'o', 's'};
 ```
-but I need to do something like this
+something like below is illegal,
 ```c
 char array_c[3];
 array_c = {'s','o','s'};
 ```
-Your first code snippet is not performing *initialization*, but *assignment*:
+the first statement is not performing *initialization*, but *assignment*:
 
 ```sh    
 char myarray[4] = "abc";  // Initialization.
 myarray = "abc";          // Assignment.
 ```
-And arrays are not directly assignable in C.
+And **arrays are not directly assignable in C**.
 
 The name `myarray` actually resolves to the address of its first element (`&myarray[0]`), which is not a `value`, and as such cannot be the target of an assignment.
 
@@ -37,64 +70,4 @@ char *ptr = myarray;
 
 `" "` is a string (`char *`) literal. You want `''` for a single char.
 
-### Create an array of string in C
-There are several ways to create an array of strings in c, of course not via the way below
-```sh
-char array[] = {"string_1","string_2","..."}
-```
-If all strings are going to be the same length (or at least have the same maximum length),you simply declare a 2-d array of char and assign as necessary:
-```sh
-char str[NUMBER_OF_STRINGS][STRING_LENGTH+1];
-...
-strcpy(strs[0], aString); // where aString is either an array or pointer to char
-
-strcpy[str[1],"foo");
-```
-
-字符串实际上是一维数组终止于空字符(**NULL**)"\0".
-```c
-char name[length] = {' ',' ',' ',...};
-
-char name[ ] = "..."
-```
-
-[what does sizeof array return?](https://stackoverflow.com/questions/15177420/what-does-sizeofarray-return)
-
-```c
-#include<stdio.h>
-
-int main()
-{
-    char arrayofstring[5][50];
-    int i;
-    for(i = 0; i < 3; i++){
-	      scanf("%s\n",arrayofstring[i]);
-    }
-
-    for(i = 0; i < 3; i++){
-	      printf(">%s\n",arrayofstring[i]);
-    }
-
-	  return 0;
-}
-```
-
-### Array decay into pointers
-
-Crucial points:
-
-* In general, `x[y]` is by definition equivalent to `*(x+y)`
-* The name of the array is the address of the first element, right?
-```c
-int v[10]
-int *a[5]
-a[0] = v
-```
-`*a` in this case is the same is `a[0]`, which is the first element in your array(which is a pointer)
-
-In `array.c`.
-
-
-1. Variable name is not professional enough?
-
-   There is no need to make a long name.
+### [What is a printf formatter for bool](What is the printf format specifier for bool?)
