@@ -3,6 +3,8 @@
 format `%x` expects argument of type `unsigned int`, but argument 3 has type `char \*`
 ```
 
+We use `* pointer_name` to serve the purpose of dereferencing a pointer
+
 # Rules of Using Pointers
 A string is composed of characters. A sentence is composed of strings. `char *strings[]`can be used to store sentences. so strings here is an array of pointers pointer pointing to a int 1D array.   
 
@@ -27,7 +29,7 @@ How about below?
 ```c
 char *string = "hello";
 ```
-Will it work or not?
+Will it work or not? Yes.
 
 In the above line "hello" is stored in a shared read only location, but pointer "string" is stored in a read-write memory. You can change "string" to point something else but cannot change value at present "string". So this kind of string should only be used when we don’t want to modify string at a later stage in program.
 
@@ -44,6 +46,7 @@ Below is a part of memory(the number at the top is the address)
 +---+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
 |   | 58 |    |    | 63 |    | 55 |    |    | h  | e  | l  | l  | o  | \0 |    |
 +---+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
+      cp              c        cpp
 ```
 what you can see here, is that at address 63 the string "hello" starts. So in this case, if this is the only occurrence of "hello" in memory then,
 ```c
@@ -78,4 +81,4 @@ int main(){
     sum{&a,&b}
 }
 ```
-It is `call by reference`. When executing main function, it pause at `b = 4`, and go to another stack frame to execute sum function, when done, this stack frame collapse. When back to main function, a a  
+It is `call by reference`. When executing main function, it pause at `b = 4`, and go to another stack frame to execute sum function, when done, this stack frame collapse.
