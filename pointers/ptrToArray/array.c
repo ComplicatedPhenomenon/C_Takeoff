@@ -15,23 +15,18 @@ int *getRandom_1()
       array[i] = rand();
       printf("array[%d] = %d\n", i, array[i]);
     }
-
     return array;
 }
 
 
-int main()
-{
+int main(){
     int *ptrToFunction;
     int i;
-    // assign function pointer to a variable
+
     ptrToFunction = getRandom_1();
-
-
     printf("A pointer 'ptrToFunction' pointing to initialization function\n");
     for(i=0; i < 10; i++){
       	printf ("*(ptrToFunction + %d) : %d\n",i ,*(ptrToFunction+i));
     }
-
     return 0;
 }
