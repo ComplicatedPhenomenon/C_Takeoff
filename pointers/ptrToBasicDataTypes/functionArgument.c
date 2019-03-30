@@ -12,8 +12,7 @@ void oop(int *l){
     printf("The address for pointer l in `void oop(int *l)` is %p, *l = %d\n", &l, *l);
 }
 
-void bar()
-{
+void bar(){
     int i = 10;
     int j = 8;
     printf("I got two integers i=%d, j=%d\n",i ,j);
@@ -22,12 +21,10 @@ void bar()
     printf("`Execute foo(i)`. now i = %d,  &i=%p\n", i, &i);
     oop(&j);
     printf("`Execute oop(&j)`. now j = %d,  &j=%p\n",j, &j);
-
 }
 
-int main()
-{
- bar();
+int main(){
+    bar();
 
- return 0;
+    return 0;
 }

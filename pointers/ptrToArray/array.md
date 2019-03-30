@@ -1,4 +1,4 @@
-An Array is a collection of similar data type value in a single variable. An array is a derived data type in C, which is constructed from fundamental data type of C language.
+An array is a derived data type in C, which is constructed from fundamental data type of C language.
 
 * Array declaration
 * Array initialization
@@ -9,25 +9,12 @@ char x = "czfzdxx";
 char name[] = {"Wall-E-1000000001","complicatephenomenon","czfzdxx"};
 
 ```
-```sh
-pointerToArray.c:7:10: warning: incompatible pointer to integer conversion initializing
-      'char' with an expression of type 'char [8]' [-Wint-conversion]
-    char x = "czfzdxx";
-         ^   ~~~~~~~~~
-
-pointerToArray.c:10:11: error: redefinition of 'name' with a different type: 'char *[]' vs
-       'char [18]'
-    char *name[] = {"Wall-E-1000000001","complicatephenomenon","czfzdxx"};
-
-```
-[Is array name a pointer?](https://stackoverflow.com/questions/1641957/is-an-array-name-a-pointer)
-
-
 ### Array decay into pointers
 
 Crucial points:
+* [Is array name a pointer?](https://stackoverflow.com/questions/1641957/is-an-array-name-a-pointer)
 
-* In general, `x[y]` is by definition equivalent to `*(x+y)`
+  In general, `x[y]` is by definition equivalent to `*(x+y)`
 * The name of the array is the address of the first element, right?
   ```c
   int v[10]
@@ -52,7 +39,7 @@ the first statement is not performing *initialization*, but *assignment*:
 char myarray[4] = "abc";  // Initialization.
 myarray = "abc";          // Assignment.
 ```
-And **arrays are not directly assignable in C**.
+**arrays are not directly assignable in C**.
 
 The name `myarray` actually resolves to the address of its first element (`&myarray[0]`), which is not a `value`, and as such cannot be the target of an assignment.
 
@@ -70,4 +57,14 @@ char *ptr = myarray;
 
 `" "` is a string (`char *`) literal. You want `''` for a single char.
 
-### [What is a printf formatter for bool](What is the printf format specifier for bool?)
+
+## How dynamic array and static array stored in memory?
+
+* [How dynamic array and static array stored in memory?](https://stackoverflow.com/a/35445125/7583919)
+* [C++ arrays](http://courses.washington.edu/css342/zander/css332/array.html)
+
+
+If you want to return some string from your function to the caller, you can dynamically allocate that string inside the function (e.g. using `malloc()`) and return a pointer to that string to the caller.
+
+## How to ask on SO
+*  Limit it to a specific problem

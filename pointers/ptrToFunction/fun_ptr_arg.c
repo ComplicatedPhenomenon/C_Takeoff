@@ -1,36 +1,42 @@
 /**
- *   Modified Date: 9/12/2018
- *   Description: Function pointers are useful for passing functions as parameters to other functions
+ *   You can't change the value (i.e., address of) a static array.
  **/
 
 #include<stdio.h>
 
 void easyf0(){
-    printf(" \n");
     printf("I am from planet Earth\n");
 }
+
 void foo(void (*a)()){
     a();
 }
 
-/*
- * This states that the parameter a will be a pointer to a function which has a void return type and which takes zero parameter.
-*/
-void easyf1(){
-    printf("Hello world\n");
+char *changeFirstCharacter(char *ptrToTarget){
+    *ptrToTarget = 'h';
+    return ptrToTarget;
 }
 
-void easyf2(){
-    printf(" \n");
-    printf("An advanced version of Hello World\n");
+char *changeBackFirstCharacter(char *ptrToTarget){
+    *ptrToTarget = 'H';
+    return ptrToTarget;
 }
 
 int main(){
     easyf0();
     foo(&easyf0);
-    easyf1();
-    foo(&easyf1);
-    easyf2();
-    foo(&easyf2);
-    return 1;
+
+    char target[] = "Hi, czfzdxx";
+    char *ptrToTarget = target;
+
+    printf("%c\n", *ptrToTarget);
+    printf("%s\n", ptrToTarget);
+    printf("%c\n", target[0]);
+    printf("%s\n", target);
+    ptrToTarget = changeFirstCharacter(ptrToTarget);
+    printf("%s\n", ptrToTarget);
+    ptrToTarget = changeBackFirstCharacter(ptrToTarget);
+    printf("%s\n", ptrToTarget);
+
+    return 0;
 }
