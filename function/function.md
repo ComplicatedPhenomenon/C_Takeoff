@@ -18,7 +18,7 @@ C follows the procedural paradigm.
 Clearly, C is not designed as functional programming.
 
 <span style="color:red">
-Can C be used for functional programming?
+Is it wise to use C for functional programming?
 </span>
 
 Even it can be used as a functional paradigm programming language, it doesn't make too much sense, and drag you into tricky situation.
@@ -47,34 +47,20 @@ In order to make my point clear, the sample program is simple enough but not too
   ```c++
   ```
 
-## Call by reference
+[A good explanation on CBV & CBR](http://www.mathcs.emory.edu/~cheung/Courses/561/Syllabus/3-C/param-passing.html)
+* In the pass-by-value method, the value of the actual parameter is copied into the (formal) parameter variable (when the parameter variable is created)
+
+  ![](http://www.mathcs.emory.edu/~cheung/Courses/561/Syllabus/3-C/FIGS/low-level.gif)
+* In the pass-by-reference method, the address of the actual parameter is copied into the (formal) parameter variable (when the parameter variable is created)
+
+  Check `swap_two_value.c` for detail.
+
+  ![](http://www.mathcs.emory.edu/~cheung/Courses/561/Syllabus/3-C/FIGS/low-level2.gif)
+
+
+
 ```c
-/**
-   ________   ________   ________
-   | 102  |   |  102 |   | 103  |
-     temp         x         y
 
-     ________   ________   ________
-     | 102  |   |  103 |   | 103  |
-       temp         x         y
-
-       ________   ________   ________
-       | 102  |   |  103 |   | 102  |
-         temp         x         y
-
-**/
-
-void swap(int * x, int * y){
-    int * temp;
-    temp = x;
-    x = y;
-    y = temp;
-
-    return ;
-}
-```
-Function `swap` above doesn't work.
-```c
 ...
 int main(void){
     int x = 3, y = 4;
@@ -91,7 +77,8 @@ void Swap (void * x, void * y, size_t bytes){
 
 ```
 
-# Function pointer
+## Function pointer
+
 ```C
 #include<stdio.h>
 
@@ -114,11 +101,14 @@ The place in which we store data are called `objects`. To access an `object` we 
 
 `addInt `is a function. `funcPtr` is a pointer, pointing to function `addInt`.
 
-Maybe we only care where is a piece of memory and what's in there. Its name, variable, is something represents that piece of memory. when we print this variable, we know what this piece of memory contains.
-
-A pointer variable represents a piece of memory containing the address of another piece of memory. Now, say about data type, we see the pointer got a type, it means the memory which the pointer refers to containing that data type of data.
-
 ### Return Type
 * The `return type` indicates what kind of data this function will return.  
-* Some languages differentiate between `subroutines`, which do not return a value, and `functions`, which do.  In C there are no subroutines, only functions, but functions are not required to return a value.  The correct way to indicate that a function does not return a value is to use the return type `void`.  ( This is a way of explicitly saying that the function returns nothing. )
+* Some languages differentiate between `subroutines`, which do not return a value, and `functions`, which do.  In C there are no subroutines, only functions, but functions are not required to return a value.  The correct way to indicate that a function does not return a value is to use the return type `void`.  ( This is a way of explicitly saying that the function returns nothing.)
 * If no return type is given, the compiler will normally assume the function returns an int.  This can cause problems if the function does not in fact return an int.
+
+## Variable address is a virtual address
+[Value of pointers in C](https://stackoverflow.com/questions/39142190/value-of-pointer-in-c), check `pointerValue.c` for detail.
+
+> It means that its numerical value does not necessarily represent the sequential number of the byte in physical memory.
+
+> This is something hidden from your program by a combination of the operating system and the hardware on which it is running, so there is no OS-independent way to obtain a mapping of a particular address to a physical address. Physical addresses are also meaningless outside the context of the OS virtual memory manager, because pages (allocation blocks) come in no particular order.

@@ -17,7 +17,6 @@ int main(void)
 
     ret = maxImplementation_1(a, b, c);
     printf("Maximum value is: %d\n", ret);
-
     ret = minImplementation_2(a, b, c);
     printf("Minimum value is: %d\n", ret);
 
@@ -28,18 +27,8 @@ int maxImplementation_1(int num1,int num2, int num3){
 
     int result;
     int tem;
-    if(num1 > num2){
-        tem = num1;
-    }
-    else{
-        tem = num2;
-    }
-    if(tem > num3){
-        result = tem;
-    }
-    else{
-        result = num3;
-    }
+    tem = (num1 > num2 ? num1 : num2);
+    tem = (tem > num3  ? tem  : num3);
 
     return result;
 }

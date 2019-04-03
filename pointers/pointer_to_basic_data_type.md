@@ -1,12 +1,10 @@
-# About Printing pointers
-```sh
-format `%x` expects argument of type `unsigned int`, but argument 3 has type `char \*`
+## Figure out storage of string 
+```c
+char *string = "hello";
 ```
+Will it work or not? Yes.
 
-We use `* pointer_name` to serve the purpose of dereferencing a pointer
-
-# Rules of Using Pointers
-A string is composed of characters. A sentence is composed of strings. `char *strings[]`can be used to store sentences. so strings here is an array of pointers pointer pointing to a int 1D array.   
+In the above line "hello" is stored in a shared read only location, but pointer "string" is stored in a read-write memory. You can change "string" to point something else but cannot change value at present "string". So this kind of string should only be used when we don’t want to modify string at a later stage in program.
 
 ```c
 int *ptr[NUM];
@@ -14,24 +12,6 @@ int *ptr[NUM];
 It declares **ptr** as an array of NUM integer pointers.( In other words. a series of pointers which point to integer data were stored in an array)
 
 ptr is an array, also a pointer, its datatype is pointer, that means the object is address of another variables.
-## Differentiate string storage
-At the beginning, I was stubborn with
-```c
-char string = 'hello';
-```
-The compiler thrown an error to me,
-```sh
-initializing 'char' with an expression of type 'char [6]'
-```
-You can't assign a string to a char type.
-
-How about below?
-```c
-char *string = "hello";
-```
-Will it work or not? Yes.
-
-In the above line "hello" is stored in a shared read only location, but pointer "string" is stored in a read-write memory. You can change "string" to point something else but cannot change value at present "string". So this kind of string should only be used when we don’t want to modify string at a later stage in program.
 
 ### Right usage
 ```c
