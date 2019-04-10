@@ -2,28 +2,28 @@
 #include <stdlib.h>
 
 typedef struct Cell {
-  int data;
-  struct Cell * next; /* tCell *next will not work here */
+    int data;
+    struct Cell * next; /* tCell *next will not work here */
 } tCell;
 
 int main(void) {
-  int i;
-  tCell * curr;
-  tCell * first;
-  tCell * last;
+    int i;
+    tCell * curr;
+    tCell * first;
+    tCell * last;
 
-  /* Construct linked list, 100 down to 80. */
-  first = (tCell *) malloc (sizeof (tCell));
-  last = first;                               /* last and first points to the same address */
-  first->data = 100;                          /* modify the value of that allocated address */
-  first->next = NULL;                         /* 1 node in the linked list */
+    /* Construct linked list, 100 down to 80. */
+    first = (tCell *) malloc (sizeof (tCell));
+    last = first;                               /* last and first points to the same address */
+    first->data = 100;                          /* modify the value of that allocated address */
+    first->next = NULL;                         /* 1 node in the linked list */
 
-  for (i = 0; i < 20; i++) {
-    curr = (tCell *) malloc (sizeof (tCell));         /* create a block in the memory to store a node */
-    curr->data = last->data - 1;            /* modify the value of this latest allocated address */
-	  curr->next = NULL;
-	  last->next = curr;                      /* link the 2nd one with the 1st one */
-	  last = curr;                            /* last point to the latest node */
+    for (i = 0; i < 20; i++) {
+        curr = (tCell *) malloc (sizeof (tCell));         /* create a block in the memory to store a node */
+        curr->data = last->data - 1;            /* modify the value of this latest allocated address */
+	    curr->next = NULL;
+	    last->next = curr;                      /* link the 2nd one with the 1st one */
+	    last = curr;                            /* last point to the latest node */
   }
   /* *
    * From the logical view, it becme easy to understand
@@ -66,8 +66,8 @@ int main(void) {
     *
     * *********************************************************************/
     while (curr != NULL) {
-      printf ("Sequence = %d\n", curr->data);
-      curr = curr->next;
+        printf ("Sequence = %d\n", curr->data);
+        curr = curr->next;
     }
 
     /**
@@ -80,9 +80,9 @@ int main(void) {
      **/
 
     while( (curr=first) != NULL){
-      first = first->next;
-     /* clear the whole space for storing the SSL */
-      free(curr);
+        first = first->next;
+        /* clear the whole space for storing the SSL */
+        free(curr);
     }
 
 

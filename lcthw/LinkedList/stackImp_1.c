@@ -1,25 +1,14 @@
-/*Memory leak definitely lost: 16 bytes in 1 blocks*/
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
-/*
- * Stack has three properties:
- * capacity stands for the maximum number of elements stack can hold.
- * Size stands for the current size of the stack
- * elements is the array of elements
- */
-typedef struct Stack
-{
+
+typedef struct Stack{
     int capacity;
     int size;
     int *elements;
 }Stack;
-/*
- * crate Stack function takes argument the maximum number of elements the stack * can hold, creates a stack according to it and returns a pointer to the
- * stack.
- */
-Stack *createStack(int maxElements)
-{
+
+Stack *createStack(int maxElements){
     Stack *S;
     S = (Stack *)malloc(sizeof(Stack));
     S->elements = (int *)malloc(sizeof(int)*maxElements);
@@ -28,8 +17,7 @@ Stack *createStack(int maxElements)
     return S;
 }
 
-void pop(Stack *S)
-{
+void pop(Stack *S){
     if(S->size==0){
     printf("Stack is Empty\n");
     return;
@@ -40,8 +28,7 @@ void pop(Stack *S)
     return;
 }
 
-int top(Stack *S)
-{
+int top(Stack *S){
     if(S->size==0){
     printf("Stack is Empty\n");
     exit(0);
@@ -50,8 +37,7 @@ int top(Stack *S)
     return S->elements[S->size-1];
 }
 
-void push(Stack *S,int element)
-{
+void push(Stack *S,int element){
     if(S->size == S->capacity){
     printf("Stack is Full\n");
     }
@@ -61,8 +47,7 @@ void push(Stack *S,int element)
   return;
 }
 
-int main()
-{
+int main(){
     Stack *S = createStack(5);
     push(S,7);
     push(S,5);

@@ -18,24 +18,15 @@ struct people {
     int  age;
     char description[300];
 };
-/*------------------------------------------------------------*/
-/*        sturct is a derived data type, so is array          */
-/*------------------------------------------------------------*/
-int main(){
 
-    /*  access the element in struct */
+int main(){
     struct book book1;
     struct people wm;
-    strcpy(book1.name,"learn python the hard way");
-    /* whitespace is a character too */
+    strcpy(book1.name, "learn python the hard way");
     strcpy(book1.author, "Zed A. Shaw");
     strcpy(book1.subject,"tutorial for a beginner");
-    /* "()" not "{}" is followed by function "*/
     book1.units = 42;
-    /*-------------------------------------------------------------*
-     *  In an interactive programm, we get the required            *
-     *  arguments from keyboard input                              *
-     *-------------------------------------------------------------*/
+
     strcpy(wm.name, "wang maio");
     strcpy(wm.disease, "depression");
     strcpy(wm.description, "I have heard that a low or depressed mood can incrase an individual's ability to cope with situations in which the effort to pursue a major goal could result in danger, loss, or wasted effort. and I'm suffering from mood disorder.");

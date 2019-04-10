@@ -1,27 +1,34 @@
+// ptrToPW points to 13 characters like kDlbwTJ!WWtv?, there always a ? sign at the end of the string.
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
 #include<time.h>
 
 static char geneSet[] = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!.";
+static char password[] = "Hello World!";
+char *ptrToTarget;
+char *ptrToPW;
 
-char *generateAString(size_t lenOfGeneSet, size_t x){
+void generateAString(size_t lenOfGeneSet, size_t lenOfPW){
     int i;
-    char result[x];
+    char result[lenOfPW];
     int randomNumber;
-    char *ptrToTarget = malloc(strlen(result) + 1);
-
+    printf("lenOfPW = %lu\n", lenOfPW);
+    ptrToTarget = malloc(strlen(result) + 1);
     srand(time(NULL));
-    for(i = 0; i < x; i++) {
+    for(i = 0; i < lenOfPW; i++) {
         randomNumber = rand()% lenOfGeneSet;
         result[i] = geneSet[randomNumber];
     }
     strcpy(ptrToTarget, result); //Highlights!
+    printf("Size of result[lenOfPW] = %lu\n", sizeof(result));
+    printf("Size of *ptrToTarget = %lu\n", sizeof(ptrToTarget));
+    //ptrToTarget = result;
 
-    return ptrToTarget;
+    return;
 }
 
-int getFitness(char *ptrToTarget, char *ptrToPW, size_t lenOfPW ){
+int getFitness(size_t lenOfPW ){
     int i;
     int mark = 0;
 
@@ -34,11 +41,11 @@ int getFitness(char *ptrToTarget, char *ptrToPW, size_t lenOfPW ){
         }
         else mark +=0;
     }
-    printf("%d\n", mark);
+    printf("Fitness: %d\n", mark);
     return mark;
 }
 
-char* Mutate(char* ptrToTarget, size_t lenOfPW, size_t lenOfGeneSet){
+void Mutate(size_t lenOfPW, size_t lenOfGeneSet){
     int randomNumber1, randomNumber2;
 
     printf("Before Mutation, string is: %s\n", ptrToTarget);
@@ -49,28 +56,21 @@ char* Mutate(char* ptrToTarget, size_t lenOfPW, size_t lenOfGeneSet){
     }
     *(ptrToTarget+randomNumber1) = geneSet[randomNumber2];
     printf("After Mutation, string is : %s\n", ptrToTarget);
-    return ptrToTarget;
+    return;
 }
 
-
-
 int main(){
-    char *ptrToTarget = NULL;
-    int mark;
-    char password[] = "Hello World!";
-    size_t lenOfPW = strlen(password);
     size_t lenOfGeneSet = strlen(geneSet);
-    char *ptrToPW = password;
+    size_t lenOfPW = strlen(password);
+    ptrToTarget = NULL;
+    ptrToPW = password;
 
-    ptrToTarget = generateAString(lenOfGeneSet, lenOfPW);
-
+    generateAString(lenOfGeneSet, lenOfPW);
     printf("First string generated: %s\n", ptrToTarget);
-
-    mark = getFitness(ptrToTarget, ptrToPW, lenOfPW);
-    ptrToTarget = Mutate(ptrToTarget, lenOfPW, lenOfGeneSet);
-    mark = getFitness(ptrToTarget, ptrToPW, lenOfPW);
-
-
+    getFitness(lenOfPW);
+    Mutate(lenOfPW, lenOfGeneSet);
+    getFitness(lenOfPW);
     free(ptrToTarget);
+
     return 0;
 }

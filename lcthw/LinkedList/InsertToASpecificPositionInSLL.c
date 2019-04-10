@@ -1,74 +1,87 @@
+/**
+ * head is determined when after calling insert, what it refers to is defined as the variable
+ * allocated on heap is hehaviour defined when insert exit.
+ **/
 #include <stdio.h>
 #include <stdlib.h>
 
 typedef struct Cell{
-  int data;
-  struct Cell* next;
+    int data;
+    struct Cell *next;
 } tCell;
 
 tCell *head; /* head stores the address of the first Node */
 
 void print(){
-  tCell *curr = head;
-  while (curr != NULL){
-    printf ("%d ", curr->data);
-    curr = curr->next;
+    int i;
+    tCell *curr = head;
+    i = 1;
+    while (curr != NULL){
+        printf ("At the position %d, the data is %d \n", i, curr->data);
+        i += 1;
+        curr = curr->next;
   }
 }
 
 void insert(int data, int n){
-  tCell *temp1 = (tCell *) malloc(sizeof(tCell)); //
-  temp1->data = data;
-  temp1->next = NULL;
-  /**
-   *  ________________201______________ --- The address of the variable
-   * |201|---|---|data |NULL|---        --- The contents of the variable
-   * |___|___|___|_____|____|__________
-   * temp1                              --- The name of variable
-   * */
+    printf("Before insert, Head node is pointing to address %p\n", head);
+    tCell *temp1 = (tCell *) malloc(sizeof(tCell)); //
+    temp1->data = data;
+    temp1->next = NULL;
 
-  if(n == 1){
-    //temp1->next = head;
-    head = temp1;
-    return;
-  }
-  tCell *temp2 = head;
+    if(n == 1){
+        temp1->next = head;
+        head = temp1; // it makes sense head will never change when n == 1
+        return;
+    }
+    // 4 lines of code below makes perfect sense.
+    tCell *temp2 = head;
+    for(int i = 0; i < n-2; i++) temp2 = temp2->next;
+    temp1->next = temp2->next; // If n = 3, we assign the address of the address of the old second node to temp1->next
+    temp2->next = temp1;
+    printf("After insertion, Head node is pointing to address %p\n", head);
+}
 
-  /**
-   *  temp1->next = head;
-   *  _____________________201___________
-   * |201|---|---|data |NULL|---|NULL|
-   * |___|___|___|_____|____|___|____|___
-   * temp1                        head
-   *  head = temp1;
-   *  ________________201________________
-   * |NULL|---|---|data |NULL|---|201 |
-   * |____|___|___|_____|____|___|____|___
-   * temp1                        head
-   *
-   *   tCell *temp2 = head;
-   *  __________________201______________________
-   * |NULL|---|---|data1|NULL|---|201 |---|201 |
-   * |____|___|___|_____|____|___|____|___|____|__
-   * temp1                        head     temp2
-   * */
-
-
-  for(int i = 0; i < n-2; i++){
-    temp2 = temp2->next;
-  }
-  temp1->next = temp2->next;
-  temp2->next = temp1;
+void ReleaseMemory(){
+    tCell * curr;
+    while( ( curr = head ) != NULL){
+        head = head->next;
+        free(curr);
+    }
 }
 
 int main(){
-  head = NULL; //Initialization?
-  insert(2,1);
-  insert(3,2);
-  insert(4,1);
-  insert(5,2);
-  insert(23,4);
-  insert(224,6);
-  print();
-  printf("\n");
+    head = NULL;
+    insert(2,1);
+    /**
+     *  temp1->next = head;
+     *  _____________________201___________
+     * |201|---|---|  2  |NULL|---|201 |
+     * |___|___|___|_____|____|___|____|___
+     * temp1                        head
+     *  head = temp1;
+     *  _____________________201__________________
+     * |201|---|---|  2  |NULL|---|201 |---|201 |
+     * |___|___|___|_____|____|___|____|___|____|__
+     * temp1                        head    temp2
+     * return
+     **/
+    print();
+    printf("Head node is pointing to address %p\n", head);
+    insert(3,2);
+    print();
+    printf("Head node is pointing to address %p\n", head);
+    insert(4,1);
+    printf("Head node is pointing to address %p\n", head);
+    insert(5,2);
+    printf("Head node is pointing to address %p\n", head);
+    insert(23,4);
+    printf("Head node is pointing to address %p\n", head);
+    insert(224,6);
+    printf("Head node is pointing to address %p\n", head);
+    printf("done!\n");
+    print();
+    printf("\n");
+    ReleaseMemory();
+    return 0;
 }

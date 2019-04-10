@@ -16,17 +16,13 @@ struct person{
 /* the return type of function person_create is a structure */
 struct person *person_create(char *name, int age, int height, int weight){
     struct person *who = malloc(sizeof(struct person));
-    /* create a structure by applying a piece of raw memory from OS  pass the parameter of struct person to malloc */
     assert(who != NULL);
     /* make sure get an effective piece of memory. */
-    who->name = strdup(name);
+    who->name = strdup(name); // x->y is short for (*x).y
     who->age = age;
     who->height = height;
     who->weight=weight;
-    /**********************************************************************
-     * Initialize the members in struct person , use `strdup` to copy string	 * name, in order to make sure the struct really own it x->y is short
-     * for (*x).y
-     *********************************************************************/
+
     return who;
 }
 
