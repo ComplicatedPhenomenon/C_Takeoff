@@ -1,3 +1,4 @@
+/* sharei = 30003 How does the program did it? */
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
@@ -11,6 +12,7 @@ int main(){
     int ret;
     pthread_t thread1,thread2,thread3;
     ret = pthread_create(&thread1, NULL, (void *)&increase_num, NULL);
+    printf("The id of thread1 is %d", thread1);
     ret = pthread_create(&thread2, NULL, (void *)&increase_num, NULL);
     ret = pthread_create(&thread3, NULL, (void *)&increase_num, NULL);
 
