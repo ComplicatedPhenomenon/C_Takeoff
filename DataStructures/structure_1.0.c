@@ -27,7 +27,7 @@ int main(){
     strcpy(book1.subject,"tutorial for a beginner");
     book1.units = 42;
 
-    strcpy(wm.name, "wang maio");
+    strcpy(wm.name, "Brilliant guy");
     strcpy(wm.disease, "depression");
     strcpy(wm.description, "I have heard that a low or depressed mood can incrase an individual's ability to cope with situations in which the effort to pursue a major goal could result in danger, loss, or wasted effort. and I'm suffering from mood disorder.");
     wm.age = 25;

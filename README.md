@@ -6,7 +6,7 @@ It's a repo mainly about C, few may involve C++. It aims to become a useful libr
 * `GSL` is used to do scientific computation by [GNU Scientific Library](http://www.gnu.org/software/gsl/).
 
 # Features of this repo
-* Documentation.
+* [ ]Documentation is required.
 
   ❌ Doxygen is not idea tool to make documentation for me, I really can't agree with taste.
 
@@ -20,14 +20,12 @@ It's a repo mainly about C, few may involve C++. It aims to become a useful libr
     - [x] Pointer
   * Advanced
     - [x] OOP
-    - [ ] parallel programming
+    - [x] parallel programming
   * Data structure
     - [x] Linked List
     - [x] Stack
     - [x] Queue
-    - [ ] Heap
-      - [ ] min Heap
-      - [ ] max Heap
+    - [x] Heap
     - [ ] Hash table
     - [ ] tree
     - [ ] Graph

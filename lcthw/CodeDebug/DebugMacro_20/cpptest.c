@@ -2,5 +2,5 @@
 
 int main(void)
 	SET_FLAGS(0, 4771);
-	SET_FLAGS(wm, wangmiao);
+	SET_FLAGS(czfzdxx, ComplicatedPhenomenon);
 	return 0;
