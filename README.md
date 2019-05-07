@@ -8,9 +8,9 @@ It's a repo mainly about C, few may involve C++. It aims to become a useful libr
 # Features of this repo
 * Documentation.
 
-  Doxygen is not idea for me, I really can't agree with taste.
+  ❌ Doxygen is not idea tool to make documentation for me, I really can't agree with taste.
 
-  [slate an API generator](https://github.com/lord/slate)
+  :guitar:[slate an API generator](https://github.com/lord/slate)
 
 * New features on C. Obey the new standard as much as possible. <a href = "https://en.wikipedia.org/wiki/C_(programming_language)#C11"> C11 <a>
 * Informative

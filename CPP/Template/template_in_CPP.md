@@ -1,3 +1,10 @@
+A template is a C++ entity that defines one of the following:
+* a family of classes (class template), which may be nested classes
+* a family of functions (function template), which may be member functions
+* an alias to a family of types (alias template) (since C++11)
+* a family of variables (variable template) (since C++14)
+* a concept (constraints and concepts) (since C++20)
+
 ## Syntax
 * The syntax of function template is
 ```c++

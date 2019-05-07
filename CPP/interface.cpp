@@ -1,5 +1,5 @@
 /**
- * Every object in c++ has access to its own address through an import pointer called this pointer. 
+ * Every object in c++ has access to its own address through an import pointer called this pointer.
  **/
 
 #include<iostream>

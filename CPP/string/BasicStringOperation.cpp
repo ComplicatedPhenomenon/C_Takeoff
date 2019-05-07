@@ -7,6 +7,7 @@ int main()
 {
     //this part is about string  manipulation
     string result;
+    cout <<  result.empty() << endl;
     string s1 = "Hello";
      // without the extra space at the end
     string s2 = "world";
@@ -18,8 +19,10 @@ int main()
     result += "! ";
     result += s3;
     cout <<  result << endl;
+    cout <<  result[1] << endl;
 
     string s("message"); // for capacity
+    cout << s << '\n';
     s = "abc";
     s.at(2) = 'x'; // ok
     cout << s << '\n';
