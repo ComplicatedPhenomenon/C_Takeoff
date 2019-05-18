@@ -32,7 +32,7 @@ int main(){
     cout << "Input your string" << endl;
     getline (cin, mystr);
     owl xx;
-    cout << mystr << " is capital world: " << xx.detectCapital(mystr)<< endl;
+    cout << mystr << " is capital word: " << xx.detectCapital(mystr)<< endl;
 
     return 0;
 }
