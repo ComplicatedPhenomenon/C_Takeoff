@@ -31,7 +31,7 @@ void enQueue(struct queue* q, int x)
 }
 
 /* Function to deQueue an item from queue */
-int deQueue(struct queue* q)
+int deQueue(struct queue* q) 
 {
 	int x;
 

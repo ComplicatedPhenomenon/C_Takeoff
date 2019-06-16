@@ -6,5 +6,5 @@ Algorithm
 
 
 Concepts
-* PBV vs PBA
+* PBR vs PBV
   ![](https://www.mathwarehouse.com/programming/images/pass-by-reference-vs-pass-by-value-animation.gif)

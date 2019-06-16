@@ -20,6 +20,10 @@ int main(int argc, char *argv[]){
     for (i=0; i<NTHREADS; ++i){
        thread_args[i] = i;
        printf("spawning thread %d\n", i);
+       /**
+        * threads[i]返回创建的线程ID, set up attr of thread as defalut
+        * &thread_args[i] as any type passed to myFun
+        **/
        rc = pthread_create(&threads[i], NULL, myFun, (void *) &thread_args[i]);
     }
 

@@ -7,9 +7,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define LCHILD(x) 2 * x + 1
+#define LCHILD(x) 2 * x + 1 // The index of left child of xth node
 #define RCHILD(x) 2 * x + 2
-#define PARENT(x) (x - 1) / 2
+#define PARENT(x) (x - 1) / 2 // The parent if xth node which is a left node
 
 typedef struct node {
     int data ;
@@ -21,9 +21,7 @@ typedef struct maxHeap {
 } maxHeap ;
 
 
-/*
-    Function to initialize the max heap with size = 0
-*/
+// Function to initialize the max heap with size = 0
 maxHeap initMaxHeap(int size) {
     maxHeap hp ;
     hp.size = 0 ;
@@ -49,8 +47,10 @@ void swap(node *n1, node *n2) {
     heap property is never violated
 */
 void heapify(maxHeap *hp, int i) {
+    // the ith node in max heap should satisfy:
+    //     if its left child exists, the value in its left child is less than value in itself
+    //     Here we list out those nodes don't satify the rule above and heapify them
     int largest = (LCHILD(i) < hp->size && hp->elem[LCHILD(i)].data > hp->elem[i].data) ? LCHILD(i) : i ;
-    // hp->elem[LCHILD(i)].data
     if(RCHILD(i) < hp->size && hp->elem[RCHILD(i)].data > hp->elem[largest].data) {
         largest = RCHILD(i) ;
     }
@@ -58,7 +58,7 @@ void heapify(maxHeap *hp, int i) {
         swap(&(hp->elem[i]), &(hp->elem[largest])) ;
         heapify(hp, largest) ;
     }
-}
+}  // Recursive?(递归？)
 
 
 /*
@@ -196,4 +196,10 @@ void levelorderTraversal(maxHeap *hp) {
     for(i = 0; i < hp->size; i++) {
         printf("%d ", hp->elem[i].data) ;
     }
+}
+
+int main(){
+    
+    buildMaxHeap();
+    return 0;
 }
