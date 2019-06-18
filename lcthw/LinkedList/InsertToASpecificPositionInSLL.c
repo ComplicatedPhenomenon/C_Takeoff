@@ -10,35 +10,38 @@ typedef struct Cell{
     struct Cell *next;
 } tCell;
 
-tCell *head; /* head stores the address of the first Node */
+tCell *head=NULL; /* head stores the address of the first Node */
 
 void print(){
     int i;
     tCell *curr = head;
     i = 1;
     while (curr != NULL){
-        printf ("At the position %d, the data is %d \n", i, curr->data);
+        printf ("Position: %d,  data: %d \n", i, curr->data);
         i += 1;
         curr = curr->next;
   }
 }
 
 void insert(int data, int n){
-    printf("Before insert, Head node is pointing to address %p\n", head);
+    printf("Before insertion, Head node is pointing to address %p\n", head);
     tCell *temp1 = (tCell *) malloc(sizeof(tCell)); //
     temp1->data = data;
     temp1->next = NULL;
 
+    // Initialize a single linked list
     if(n == 1){
         temp1->next = head;
         head = temp1; // it makes sense head will never change when n == 1
         return;
     }
-    // 4 lines of code below makes perfect sense.
+
+    // The logic in 4 lines of code below makes perfect sense.
     tCell *temp2 = head;
     for(int i = 0; i < n-2; i++) temp2 = temp2->next;
-    temp1->next = temp2->next; // If n = 3, we assign the address of the address of the old second node to temp1->next
+    temp1->next = temp2->next; 
     temp2->next = temp1;
+    
     printf("After insertion, Head node is pointing to address %p\n", head);
 }
 
@@ -51,7 +54,7 @@ void ReleaseMemory(){
 }
 
 int main(){
-    head = NULL;
+    //head = NULL;
     insert(2,1);
     /**
      *  temp1->next = head;

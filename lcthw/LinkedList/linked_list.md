@@ -63,7 +63,7 @@ Data Structures are the programmatic way of storing data so that data can be use
 [An overview of data structures and algorithm](https://www.tutorialspoint.com/data_structures_algorithms/)
 
 Data structure include
-* Linked List
+* Linked list
 * Stack & Heap
 * Queues
 * Tree Data structure

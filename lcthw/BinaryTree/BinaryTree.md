@@ -56,7 +56,7 @@ In a FULL BINARY TREE each node has exactly 0 or 2 children and all leaf nodes a
 I think there's no confusion in the definition of a Complete Binary Tree, still for the completeness of the post I would like to tell what a Complete Binary Tree is.
 
 
-3) **COMPLETE BINARY TREE:** A Binary Tree is complete Binary Tree if all levels are completely filled except possibly the last level and the last level has all keys as left as possible.
+**3) COMPLETE BINARY TREE:** A Binary Tree is complete Binary Tree if all levels are completely filled except possibly the last level and the last level has all keys as left as possible.
 
 
 **For Example:** The following is a COMPLETE BINARY TREE:

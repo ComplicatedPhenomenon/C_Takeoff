@@ -11,21 +11,21 @@
 #define RCHILD(x) 2 * x + 2
 #define PARENT(x) (x - 1) / 2 // The parent if xth node which is a left node
 
-typedef struct node {
+typedef struct{
     int data ;
 } node ;
 
-typedef struct maxHeap {
+typedef struct{
     int size ;
     node *elem ;
 } maxHeap ;
 
 
 // Function to initialize the max heap with size = 0
-maxHeap initMaxHeap(int size) {
+maxHeap initMaxHeap(int n) {
     maxHeap hp ;
     hp.size = 0 ;
-    hp.elem = malloc(size * sizeof(node)) ;
+    hp.elem = malloc(n * sizeof(node)) ;
     return hp ;
 }
 
@@ -71,7 +71,7 @@ void buildMaxHeap(maxHeap *hp, int *arr, int size) {
 
     // Insertion into the heap without violating the shape property
     for(i = 0; i < size; i++) {
-        if(hp->size) {
+        if(hp->size != 0) {
             hp->elem = realloc(hp->elem, (hp->size + 1) * sizeof(node)) ;
         } else {
             hp->elem = malloc(sizeof(node)) ;
@@ -82,7 +82,7 @@ void buildMaxHeap(maxHeap *hp, int *arr, int size) {
     }
 
     // Making sure that heap property is also satisfied
-    for(i = (hp->size - 1) / 2; i >= 0; i--) {
+    for(i = PARENT(hp->size) ; i >= 0; i--) {
         heapify(hp, i) ;
     }
 }
@@ -180,7 +180,7 @@ void preorderTraversal(maxHeap *hp, int i) {
 void postorderTraversal(maxHeap *hp, int i) {
     printf("%d ", hp->elem[i].data) ;
     if(LCHILD(i) < hp->size) {
-        postOrderTraversal(hp, LCHILD(i)) ;
+        postorderTraversal(hp, LCHILD(i)) ;
     }
     if(RCHILD(i) < hp->size) {
         postorderTraversal(hp, RCHILD(i)) ;
@@ -199,7 +199,12 @@ void levelorderTraversal(maxHeap *hp) {
 }
 
 int main(){
+    /*
+    int *arr[] = {1,2,3,7,4,0,-1};
+    int size = 7;
+    maxHeap *hp;
+    hp = initMaxHeap(7);
     
-    buildMaxHeap();
+    buildMaxHeap(hp, arr, size);*/
     return 0;
 }

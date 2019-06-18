@@ -23,6 +23,11 @@ int main(){
         printf("Something is wrong, because head is still none after calling insertSLL\n");
     }
 
+    if (head == NULL) {
+        fprintf(stderr, "malloc failed\n");
+        return(-1);
+    }
+
     insertSLL(3);
     insertSLL(-3);
     insertSLL(13);
