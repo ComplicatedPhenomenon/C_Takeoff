@@ -1,16 +1,15 @@
 #include<stdio.h>
 #include<stdlib.h>
-typedef struct Node
-{
+
+typedef struct Node{
     int data;
     struct Node *next;
     struct Node *prev;
 }node;
-void insert(node *pointer, int data)
-{
+
+void insert(node *pointer, int data){
     /* Iterate through the list till we encounter the last node.*/
-    while(pointer->next!=NULL)
-    {
+    while(pointer->next!=NULL){
         pointer = pointer -> next;
     }
     /* Allocate memory for the new node and put data in it.*/
@@ -24,26 +23,20 @@ int find(node *pointer, int key)
 {
     pointer =  pointer -> next; //First node is dummy node.
     /* Iterate through the entire linked list and search for the key. */
-    while(pointer!=NULL)
-    {
-        if(pointer->data == key) //key is found.
-        {
+    while(pointer!=NULL){
+        if(pointer->data == key){
             return 1;
         }
         pointer = pointer -> next;//Search in the next node.
     }
-        /*Key is not found */
     return 0;
 }
-void delete(node *pointer, int data)
-{
+void delete(node *pointer, int data){
     /* Go to the node for which the node next to it has to be deleted */
-    while(pointer->next!=NULL && (pointer->next)->data != data)
-    {
+    while(pointer->next!=NULL && (pointer->next)->data != data){
         pointer = pointer -> next;
     }
-    if(pointer->next==NULL)
-    {
+    if(pointer->next==NULL){
         printf("Element %d is not present in the list\n",data);
         return;
     }

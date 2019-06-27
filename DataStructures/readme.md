@@ -1,3 +1,4 @@
+# [Data structure](https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/)
 ## Struct
 
 > C is not an object-oriented language, and thus does not have support for classes. It does, however, have support for defining structured types (like the data part of classes).
@@ -13,7 +14,7 @@ One to one and onto mapping of array element to heap node.
 
 * https://courses.csail.mit.edu/6.006/fall10/handouts/recitation10-8.pdf
 
-Heap sort 
+Heap sort
 
 ## Big O complexcity
 <h2 id="data-structures">Common Data Structure Operations</h2>

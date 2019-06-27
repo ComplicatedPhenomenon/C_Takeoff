@@ -1,4 +1,4 @@
-> What is Time Complexity?
+# Time Complexity?
 
 **Time complexity** is a description of the asymptotic behavior(渐进行为) of running time as input size tends to infinity.
 
@@ -19,9 +19,10 @@ Then it takes log<sub>2</sub>(n) time. The [Big O notation](https://stackoverflo
 
 ![](http://bigocheatsheet.com/img/big-o-cheat-sheet-poster.png)
 
-### [How to find time complexity of an algorithm？](https://stackoverflow.com/questions/11032015/how-to-find-time-complexity-of-an-algorithm)
+* [How to find time complexity of an algorithm？](https://stackoverflow.com/questions/11032015/how-to-find-time-complexity-of-an-algorithm)
 
-### 逻辑严密， 陈述简洁，形象易理解的典范
+* 逻辑严密， 陈述简洁，形象易理解的典范
+# Binary tree
 There is a difference between a STRICT and FULL BINARY TREE.
 
 **1) FULL BINARY TREE:** A binary tree of height h that contains exactly (2^h)-1 elements is called a full **binary tree**. (Ref: Pg 427, **Data Structures, Algorithms and Applications in C++** [University Press], Second Edition by Sartaj Sahni).
@@ -77,3 +78,18 @@ I think there's no confusion in the definition of a Complete Binary Tree, still 
          15       30    
         /  \     /   \   
       40    50  100  40
+
+# [Binary search tree](https://www.cs.usfca.edu/~galles/visualization/BST.html)
+* https://www.hackerearth.com/practice/data-structures/trees/binary-search-tree/tutorial/
+
+  To understand `Tansversal.c`, read the material listed above.
+
+               CT(0)
+             /      \   
+           CT(1)     CT(2)    
+          /    \     /    \   
+        CT(3) CT(4) CT(5) CT(6)
+              /
+            CT(9)
+
+* [Free memory of a binary tree in C](https://stackoverflow.com/questions/9181146/freeing-memory-of-a-binary-tree-c)
