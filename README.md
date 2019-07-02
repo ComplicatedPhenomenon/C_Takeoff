@@ -6,9 +6,9 @@ It's a repo mainly about C, few may involve C++. It aims to become a useful libr
 * `GSL` is used to do scientific computation by [GNU Scientific Library](http://www.gnu.org/software/gsl/).
 
 # Features of this repo
-* [ ]Documentation is required.
+* [ ] Documentation is required.
 
-  ❌ Doxygen is not idea tool to make documentation for me, I really can't agree with taste.
+  ❌ `Doxygen` is not idea tool to make documentation for me, I really can't agree with taste.
 
   :guitar:[slate an API generator](https://github.com/lord/slate)
 
@@ -27,13 +27,21 @@ It's a repo mainly about C, few may involve C++. It aims to become a useful libr
     - [x] Queue
     - [x] Heap
     - [ ] Hash table
-    - [ ] tree
+    - [x] tree
+      - [x] binary search tree
     - [ ] Graph
   * Data Algorithm
-    - [ ] Bubble sort
+    * Sort
+      - [ ] Bubble sort
+      - [ ] Select sort
+      - [ ] Quick sort
+      - [ ] Merge sort
+    * Search
+      - [x] Binary Search tree
+
 
 # Compiler and memory leak testing
-Applying Docker to solve the the problem of no proper Valgrind for a specify OS version.
+Applying Docker to solve the the problem of no proper `Valgrind` for a specify OS version.
 
 
 # gdb usage
@@ -46,9 +54,9 @@ Applying Docker to solve the the problem of no proper Valgrind for a specify OS 
 
 
 # Warnings and directions
-The small program is tomorrow's building block in a larger project. So avoid write any one program ugly, think it over and over to make it exquisite.
+The small program is tomorrow's building block in a larger project. So avoid writing any one program ugly, think it over and over to make it exquisite.
 
-There are some standards to test whether or not you are qualified to do the programming job. You won't say "I have no idea of how to be a qualified programmer" again.
+There are some standards to test whether or not you are qualified to do the programming job. You won't say 'I have no idea of how to be a qualified programmer' again.
 
 ## Standards to tell you whether or not you are qualified
 It not hard to be a good programmer compared with to be a good physicist.
