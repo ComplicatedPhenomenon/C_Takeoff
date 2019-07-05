@@ -4,6 +4,8 @@
 
 char *getAnotherString(){
     char target[] = "Hi, ComplicatedPhenomenon";
+    // malloc(nBytes) will allocates a block of memory cells of at least nBytes bytes that us suitably aligned for any usage.
+
     char *ptrToTarget = malloc(strlen(target) + 1);
     strcpy(ptrToTarget, target);
 
