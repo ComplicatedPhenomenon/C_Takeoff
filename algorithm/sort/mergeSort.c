@@ -1,5 +1,7 @@
+/**
+ * a = a%b+a/b *b
+ **/
 #include <stdio.h>
-
 #define max 10
 
 int a[11] = { 10, 14, 19, 26, 27, 31, 33, 35, 42, 44, 0 };
@@ -16,7 +18,7 @@ void merging(int low, int mid, int high) {
         }
     while(l1 <= mid) b[i++] = a[l1++];
     while(l2 <= high)b[i++] = a[l2++];
-    
+
     for(i = low; i <= high; i++) a[i] = b[i];
 }
 
@@ -34,9 +36,10 @@ void sort(int low, int high) {
 
 int main() {
     int i;
-
+    
     printf("List before sorting\n");
     for(i = 0; i <= max; i++)printf("%d ", a[i]);
+    printf("11 mod 2 = %d\n", 11%2);
 
     sort(0, max);
     printf("\nList after sorting\n");

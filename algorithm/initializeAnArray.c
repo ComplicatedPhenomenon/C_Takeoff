@@ -2,7 +2,7 @@
 
 int main(){
     int i ;
-    char target[3]; // target is ['x', 'y', 'z'] or 'xyz'
+    char target[3];
     char *x;
     char stringArray[] = "dnsDNS";
 

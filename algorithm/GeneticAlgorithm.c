@@ -1,3 +1,6 @@
+/**
+ * The C library function int rand(void) returns a pseudo-random number in the range of 0 to RAND_MAX
+ **/
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>

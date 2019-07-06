@@ -1,58 +1,17 @@
-## [CPP framework](https://en.cppreference.com/w/)
-* Language
-  - Basic concepts
-  - C++ Keywords
-  - Preprocessor
-  - Expressions
-  - Declaration
-  - Initialization
-  - Functions
-  - Statements
-  - Classes
-  - Templates
-  - Exceptions
-Library for different area
-* Language support library
-* String library
-* Numeric library
-  - Common math functions
-  - Special math functions (C++17)
-  - Numeric algorithms
-  - Pseudo-random number generation
-  - Floating-point environment (C++11)
-* Container library
-* Ranges library (C++20)
+* https://zhuanlan.zhihu.com/p/72282592
+* [CPP framework](https://en.cppreference.com/w/)
 
-* Algorithms library
-* Input/output library
-  - Stream-based I/O
-  - Synchronized output (C++20)
-  - I/O manipulators
-* Localizations library
-  - Regular expressions library (C++11)
-  - basic_regex  −  algorithms
-  - Atomic operations library (C++11)
-  - atomic  −  atomic_flag
-* Thread support library (C++11)
-* Filesystem library (C++17)
 
+The "places" in which we store data are called *objects*. To access an *object* we need a name. A named *object* is called a *variable* and has a specific type (such as `int` or `string` ) that determines what can be put into the object (e.g., 123 can go into an int and " Hello, World!\n " can go into a string ) and which operations can be applied (e.g., we can multiply `int` s using the * operator and compare strings using the `<=`
+operator). The data items we put into variables are called values.
 
 ## Environment
 * gcc v.s g++
 
-  According to GCC's online documentation link options and how `g++` is invoked, `g++` is equivalent to `gcc -xc++ -lstdc++ -shared-libgcc` (the 1st is a compiler option, the 2nd two are linker options). This can be checked by running both with the `-v` option (it displays the backend toolchain commands being run).
+   `g++` is equivalent to `gcc -xc++ -lstdc++ -shared-libgcc` (the 1st is a compiler option, the 2nd two are linker options). This can be checked by running both with the `-v` option (it displays the backend toolchain commands being run).
 
-  ```
-  $ gcc xx.cpp
-  undefined reference to `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string()'
-  ...
-  ```
   `cout` is present in the C++ standard library, which would need explicit linking with `-lstdc++` when using `gcc`; `g++` links the standard library by default.
 
-  The “places” in which we store data are called *objects*. To access an *object* we need a name. A named *object* is called a *variable* and has a specific type (such as `int` or `string` ) that determines what can be put into the object (e.g., 123 can go into an int and " Hello, World!\n " can go into a string ) and which operations can be applied (e.g., we can multiply `int` s using the * operator and compare strings using the `<=`
-  operator). The data items we put into variables are called values.
-
-* Use which complier
   ```sh
   $ g++ -v
   Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/c++/4.2.1
@@ -70,8 +29,7 @@ Library for different area
   $ cc --version
   ```
 
-* [LLVM](https://en.wikipedia.org/wiki/LLVM)
-* [C++ complier](https://en.wikipedia.org/wiki/List_of_compilers#C++_compilers)
+* [LLVM](https://en.wikipedia.org/wiki/LLVM), [C++ complier](https://en.wikipedia.org/wiki/List_of_compilers#C++_compilers)
 
 ## Remove confusions
 *  [Difference between header file and library file in c++](https://stackoverflow.com/questions/924485/whats-the-difference-between-a-header-file-and-a-library)
@@ -80,55 +38,24 @@ Library for different area
 
   Explain this down to the level within my ability. It makes sense to me better that c++ just omit `.h` when including the standard library header files.
 
-  ```cpp
-  #include<array>
-  #include 'xx.h'
-  ```
-  Header files include declaration, instead of implementation.
+* [What are the differences between a pointer variable and a reference variable in C++?](https://isocpp.org/wiki/faq/references )
 
-  [eg](https://stackoverflow.com/questions/22645097/what-does-include-iostream-do):`#include<iostream>` knows what to do with `std::cout`, it makes sure preprocessor knows it too. If cam't be a header file, since the implementation part should also be included during running time.
+  A reference is an alias (an alternate name) for an object.
 
-    > That is a C++ standard library header file for input output streams. It includes functionality to read and write from streams. You only need to include it if you wish to use streams.
-
-* reference variable vs pointer variable
-
-  [What are the differences between a pointer variable and a reference variable in C++?](https://stackoverflow.com/questions/57483/what-are-the-differences-between-a-pointer-variable-and-a-reference-variable-in)
-  * What is a reference?
-
-    An alias (an alternate name) for an object.
-
-    Look up [here](https://isocpp.org/wiki/faq/references) to explain usage of `swap` function in `variable_function_declaration.cpp`.
     ```c++
-    void swap(int &i, int &j){
-        cout << "In scope of function swap, i= "<< i << ", j= " << j <<endl;
-        int tem;
-        tem = i;
-        i = j;
-        j = tem;
-    }
+    void swap(int &i, int &j);
     ```
 
     Here i and j are aliases for main’s x and y respectively. In other words, i is x — not a pointer to x, nor a copy of x, but x itself. Anything you do to i gets done to x, and vice versa. This includes taking the address of it. The values of &i and &x are identical.
-  * What is a pointer?
-
-    Above account for my confusion in `function/swap_two_number.c`.
-
     ```c
-    void swap(int *x, int *y)
-    {
-        printf("In scope of function swap, x= %p, y = %p\n", x, y);
-      	int temp;
-        temp = *x; /* save the contents of var x in tem */
-      	*x = *y;
-      	*y = temp;
-
-    	return;
-    }
+    void swap(int *i, int *j);
     ```
+    Here i and j are the pointer for main's x and y respectively, in other words, i and j store the address of main's x and y.
 
-    Here x and y are the pointer for main's x and y respectively, in other words, x and y store the address of main's x and y.
 
 * [vector vs array in c++](https://www.educba.com/c-plus-plus-vector-vs-array/)
+
+  vectors consume more memory in exchange for the ability to handle storage and growing dynamically in size.
 * [namespace vs class](https://stackoverflow.com/a/3188198/7583919)
 * Explanation on specifier
   Specifier instances

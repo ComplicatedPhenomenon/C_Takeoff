@@ -199,12 +199,12 @@ void levelorderTraversal(maxHeap *hp) {
 }
 
 int main(){
-    /*
-    int *arr[] = {1,2,3,7,4,0,-1};
-    int size = 7;
-    maxHeap *hp;
-    hp = initMaxHeap(7);
-    
-    buildMaxHeap(hp, arr, size);*/
+
+    int array[] = {1,2,3,7,4,0,-1};
+    int size = sizeof(array)/sizeof(array[0]);
+    maxHeap *hp = NULL;
+
+    buildMaxHeap(hp, array, size);
+    postorderTraversal(hp, size);
     return 0;
 }

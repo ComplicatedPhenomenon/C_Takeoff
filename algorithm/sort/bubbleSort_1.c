@@ -5,18 +5,13 @@
 #include<stdio.h>
 
 void printArray(int *array, int n);
-void swap(int *x, int *y);
 int *bubbleSort(int *array, int n);
 
 int main(){
-
     int array[] = {6, 3, 2, 3, 4, 5};
     size_t n = sizeof(array)/sizeof(array[0]);
     int *ascendingArray;
 
-    printArray(array, n);
-
-    swap(array, array+1);
     printArray(array, n);
 
     ascendingArray = bubbleSort(array, n);
@@ -24,16 +19,6 @@ int main(){
 
     return 0;
 
-}
-
-
-
-void swap(int *x, int *y){
-  	int temp=0;
-    temp = *x;
-  	*x = *y;
-  	*y = temp;
-	return;
 }
 
 void printArray(int *array, int n){
@@ -48,9 +33,14 @@ void printArray(int *array, int n){
 }
 
 int *bubbleSort(int *array, int n){
+    int tem;
     for (int x = n; x >1; --x){
         for(int i= 0; i<(x-1); ++i){
-            if (array[i]>array[i+1]) swap(array+i, array+i+1);
+            if (array[i]>array[i+1]){
+                tem = array[i];
+                array[i] = array[i+1];
+                array[i+1] = tem;
+            }
         }
     }
     return array;
