@@ -5,26 +5,21 @@
 #define SIZEOFARRAY 17
 
 int main(){
-    int a[17];
-    int b[4] = {1, 2, 3, 4};
-    if(sizeof(a)/sizeof(a[0])==17) printf("sizeof(a)/sizeof(a[0])==17\n");
+    int a[17]; // a is not initialized
+    printf("sizeof(a)/sizeof(a[0])==17 is %s\n", sizeof(a)/sizeof(a[0])==17? "True":"False");
+    int twoDArray[3][5]; // declared a static 2D array of 3 rows, 5 cols
+    printf("sizeof(twoDArray[3][5]): %lu, sizeof(twoDArray[3]): %lu", sizeof(twoDArray), sizeof(twoDArray[3]));
     int c[SIZEOFARRAY];
-    int randomNumber;
     srand(time(NULL));
-    for(int i = 0; i< SIZEOFARRAY; ++i){
-        randomNumber = rand()% SIZEOFARRAY; // There exists duplication.
-        c[i] = randomNumber;
-        printf("c[%d] = %d\n", i, randomNumber);
-    }
+    for(int i = 0; i< SIZEOFARRAY; ++i) c[i]  = rand()% SIZEOFARRAY; // There exists duplication.
+    printf("\n");
+    for(int i = 0; i< SIZEOFARRAY; ++i) printf("%d ", c[i]);
+    printf("\n");
 
-    int *d;
-    d[0] = 1;
-    d[1] = 2;
-    d[100] = 101;
-    printf("d[1]=%d, d[2]=%d, d[100]=%d\n",d[1],d[2],d[100]);
-    if(sizeof(d)/sizeof(d[0])==2) printf("sizeof(d)/sizeof(d[0])==2\n");
-
-
+    int *d=NULL;
+    int b = 1;
+    d = &b;
+    printf("%d\n", *d);
 
     return 0;
 }
