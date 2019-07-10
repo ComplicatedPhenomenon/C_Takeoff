@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
-#define oneDArrayElements 12
+#define NUMBER 12
 
 int main(){
     int i, j;
@@ -11,16 +11,15 @@ int main(){
     int ncolumns=4;
 
     srand(time(NULL));
-    ptrToOneDArray = (int*)calloc(oneDArrayElements, sizeof(int));
+    ptrToOneDArray = (int*)calloc(NUMBER, sizeof(int));
     ptrToTwoDArray = (int **)malloc( nrows * sizeof(int *));  // allocate nrows int *
 
     //1D array initialization
-    //for(i = 0; i < oneDArrayElements; ++i) ptrToOneDArray[i]=rand()%oneDArrayElements;
-    for(i = 0; i < oneDArrayElements; ++i){
-        while()
-        ptrToOneDArray[i]=rand()%oneDArrayElements;
+    //for(i = 0; i < NUMBER; ++i) ptrToOneDArray[i]=rand()%NUMBER;
+    for(i = 0; i < NUMBER; ++i){
+        ptrToOneDArray[i]=rand()%NUMBER;
     }
-    for(i = 0; i < oneDArrayElements; ++i) printf("%d ", ptrToOneDArray[i]);
+    for(i = 0; i < NUMBER; ++i) printf("%d ", ptrToOneDArray[i]);
     printf("\n");
 
     // 2D array initialization
@@ -39,6 +38,7 @@ int main(){
 
 
     // let's release the allocated memory properly
+    free(ptrToOneDArray);
     for(i = 0; i < ncolumns; ++i)
         free(ptrToTwoDArray[i]);
     free(ptrToTwoDArray);

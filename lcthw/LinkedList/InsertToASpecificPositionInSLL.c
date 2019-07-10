@@ -10,6 +10,8 @@ typedef struct Cell{
     struct Cell *next;
 } tCell;
 
+
+
 tCell *head=NULL; /* head stores the address of the first Node */
 
 void print(){
@@ -39,9 +41,9 @@ void insert(int data, int n){
     // The logic in 4 lines of code below makes perfect sense.
     tCell *temp2 = head;
     for(int i = 0; i < n-2; i++) temp2 = temp2->next;
-    temp1->next = temp2->next; 
+    temp1->next = temp2->next;
     temp2->next = temp1;
-    
+
     printf("After insertion, Head node is pointing to address %p\n", head);
 }
 

@@ -16,9 +16,9 @@ int main(){
     tCell * last;
 
     head = (tCell *) malloc (sizeof (tCell));
-    last = head;                               /* last and head points to the same address */
+    last = head;
     head->data = 100;                          /* modify the value of that allocated address */
-    head->next = NULL;                         /* 1 node in the linked list */
+    head->next = NULL;                         /* 1st node in the linked list */
 
     for (int i = 0; i < 20; i++) {
         curr = (tCell *) malloc (sizeof (tCell));   /* create a block in the memory to store a node */
@@ -62,7 +62,6 @@ void printSSL(tCell *head){
         printf ("Sequence = %d\n", curr->data);
         curr = curr->next;
     }
-
 }
 
 
@@ -70,7 +69,6 @@ void freeSSL(tCell *head){
     tCell *curr;
     while( (curr=head) != NULL){
         head = head->next;
-        /* clear the whole space for storing the SSL */
         free(curr);
     }
 }
