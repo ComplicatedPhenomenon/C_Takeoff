@@ -24,9 +24,10 @@ void *PrintHello(void *threadid){
 }
 
 int main(int argc, char *argv[]){
-    pthread_t threads[NUM_THREADS];
-    long taskids[NUM_THREADS];
-    int rc, t;
+    pthread_t threads[NUM_THREADS]; // To store thread id of newly created thread.
+    //long taskids[NUM_THREADS];  //  func args
+    int rc;
+    long t;
 
     messages[0] = "English: Hello World!";
     messages[1] = "French: Bonjour, le monde!";
@@ -38,9 +39,9 @@ int main(int argc, char *argv[]){
     messages[7] = "Latin: Orbis, te saluto!";
 
     for(t=0;t<NUM_THREADS;t++) {
-        taskids[t] = t;
-        printf("Creating thread %d\n", t);
-        rc = pthread_create(&threads[t], NULL, PrintHello, (void *) taskids[t]);
+        //taskids[t] = t;
+        printf("Creating thread %ld\n", t);
+        rc = pthread_create(&threads[t], NULL, PrintHello, (void *) t);
         if (rc) {
             printf("ERROR; return code from pthread_create() is %d\n", rc);
             exit(-1);

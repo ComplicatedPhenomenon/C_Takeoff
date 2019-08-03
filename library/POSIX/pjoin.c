@@ -26,7 +26,8 @@ int main()
     else
         printf("Failed to create thread 2 \n");
 
-    tmp1 = pthread_join(thread1,&retival);
+    // int pthread_join(pthread_t thread, void **status);
+    tmp1 = pthread_join(thread1,&retival); //If successful, pthread_join() returns 0.
     printf("thread 1 return value (retival) is %d\n",(int)retival);
     printf("thread 1 return value (tmp1) is %d\n",tmp1);
 

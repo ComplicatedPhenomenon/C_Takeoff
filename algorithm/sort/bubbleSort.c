@@ -9,24 +9,19 @@ void swap(int *x, int *y);
 int *bubbleSort(int *array, int n);
 
 int main(){
-
     int array[] = {6, 3, 2, 3, 4, 5};
     size_t n = sizeof(array)/sizeof(array[0]);
     int *ascendingArray;
 
     printArray(array, n);
-
     swap(array, array+1);
     printArray(array, n);
-
     ascendingArray = bubbleSort(array, n);
     printArray(ascendingArray, n);
 
     return 0;
 
 }
-
-
 
 void swap(int *x, int *y){
   	int temp=0;
@@ -37,7 +32,7 @@ void swap(int *x, int *y){
 }
 
 void printArray(int *array, int n){
-    printf("Ascending arrayay is \n");
+    printf("Now array is \n");
     for(int i = 0; i < n; ++i){
         printf("%d ", *(array+i));
         //printf("%d ", array[i]);
