@@ -1,3 +1,5 @@
+http://pages.tacc.utexas.edu/~eijkhout/istc/html/language.html
+
 ## Dynamic array declaration and initialization
 Dynamically declared 2D arrays can be allocated in one of two ways. For a NxM 2D array:
 * Allocate a single chunk of NxM heap space

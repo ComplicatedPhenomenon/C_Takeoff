@@ -48,6 +48,6 @@ int *bubbleSort(int *array, int n){
             if (array[i]>array[i+1]) swap(array+i, array+i+1);
         }
     }
-    return array;
+    return array;  //the return value is captured in a variable (ascendingArray)
 
 }

@@ -9,15 +9,15 @@ int main()
     int n, i, flag = 0;
     printf("Input a number:\n");
     scanf("%d",&n); // Careful with scanf
-    for(i=2; i<=n/2; ++i){
+    for(i = 2; i <= n/2; ++i){
         //remainder is 0
-    	if(n%i==0){
-            flag=1;
+    	if(n%i == 0){
+            flag = 1;
             break;
         }
     }
 
-  	flag==0 ? printf("%d is a prime number.\n", n):printf("%d is not a prime number\n", n);
+  	flag == 0 ? printf("%d is a prime number.\n", n) : printf("%d is not a prime number\n", n);
 
     return 0;
 }
