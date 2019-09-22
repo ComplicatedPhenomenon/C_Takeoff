@@ -16,7 +16,7 @@ swap( array[0], array[x]);
 int left = 0;
 int right = n-1;
 while(left<right){
-    
+
 }
 
 

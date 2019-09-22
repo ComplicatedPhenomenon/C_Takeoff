@@ -33,10 +33,10 @@ int find(node *pointer, int key)
 }
 void delete(node *pointer, int data){
     /* Go to the node for which the node next to it has to be deleted */
-    while(pointer->next!=NULL && (pointer->next)->data != data){
+    while(pointer->next != NULL && (pointer->next)->data != data){
         pointer = pointer -> next;
     }
-    if(pointer->next==NULL){
+    if(pointer->next == NULL){
         printf("Element %d is not present in the list\n",data);
         return;
     }
@@ -63,11 +63,11 @@ void print(node *pointer)
 }
 int main()
 {
-    /* start always points to the first node of the linked list.
+    /* head always points to the first node of the linked list.
     temp is used to point to the last node of the linked list.*/
-    node *start,*temp;
-    start = (node *)malloc(sizeof(node));
-    temp = start;
+    node *head,*temp;
+    head = (node *)malloc(sizeof(node));
+    temp = head;
     temp -> next = NULL;
     temp -> prev = NULL;
     /* Here in this code, we take the first node as a dummy node.
@@ -86,25 +86,25 @@ int main()
         {
             int data;
             scanf("%d",&data);
-            insert(start,data);
+            insert(head,data);
         }
-        else if(query==2)
+        else if(query == 2)
         {
             int data;
             scanf("%d",&data);
-            delete(start,data);
+            delete(head,data);
         }
-        else if(query==3)
+        else if(query == 3)
         {
             printf("The list is ");
-            print(start->next);
+            printf(head->next);
             printf("\n");
         }
-        else if(query==4)
+        else if(query == 4)
         {
             int data;
             scanf("%d",&data);
-            int status = find(start,data);
+            int status = find(head,data);
             if(status)
             {
                 printf("Element Found\n");

@@ -29,15 +29,15 @@ int main(){
     printSSL();
 
     lengthOfSLL = NUMBER;
-    for(i =0; i<NUMBER; ++i){
-        nth = rand()%lengthOfSLL+1;
+    for(i = 0; i < NUMBER; ++i){
+        nth = rand() % lengthOfSLL + 1;
         tem = deleteANodeAndReturnAValue(lengthOfSLL, nth);
         ptr[i] = tem;
         //printf("%d\n",tem);
         --lengthOfSLL;
     }
 
-    for(i =0; i<NUMBER; ++i)printf("%d ", ptr[i]);
+    for(i = 0; i < NUMBER; ++i)printf("%d ", ptr[i]);
     printf("\n");
 
     free(ptr);

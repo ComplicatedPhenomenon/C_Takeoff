@@ -21,10 +21,8 @@ int main(){
 
     int mergedAB[n1+n2];
 
-    for(int i = 0; i < n1; ++i)numA[i]  = rand()% 100;
+    for(int i = 0; i < n1; ++i) numA[i]  = rand()% 100;
     for(int i = 0; i < n2; ++i) numB[i]  = rand()% 100;
-
-
 
     printArray(numA, n1);
     printArray(numB, n2);
@@ -68,9 +66,9 @@ void printArray(int *num, int x){
 
 int *bubbleSort(int *array, int n){
     int tem;
-    for (int x = n; x >1; --x){
-        for(int i= 0; i<(x-1); ++i){
-            if (array[i]>array[i+1]){
+    for (int x = n; x > 1; --x){
+        for(int i = 0; i < (x-1); ++i){
+            if (array[i] > array[i+1]){
                 tem = array[i];
                 array[i] = array[i+1];
                 array[i+1] = tem;

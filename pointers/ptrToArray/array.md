@@ -1,3 +1,5 @@
+https://stackoverflow.com/questions/57650895/why-does-glibcs-strlen-need-to-be-so-complicated-to-run-quickly
+
 An array is a derived data type in C, which is constructed from fundamental data type of C language.
 
 * Array declaration
