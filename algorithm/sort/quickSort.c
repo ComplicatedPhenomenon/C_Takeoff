@@ -1,28 +1,48 @@
-/**
- *  https://www.youtube.com/watch?v=Hoixgm4-P4M
- *  https://www.c-programming-simple-steps.com/return-statement.html
- **/
-
-
-// Quick sort algorithm is recursive.
-
-// find pivot position.
-
-
-srand(time(NULL));
-size_t n = sizeof(array)/sizeof(array[0]);
-int x = rand()%n;
-swap( array[0], array[x]);
-int left = 0;
-int right = n-1;
-while(left<right){
-
+#include<stdio.h>
+void swap(int* a, int* b){
+    int t = *a;
+    *a = *b;
+    *b = t;
 }
 
+int partition (int *arr, int low, int high){
+    int pivot = arr[high];
+    int i = (low - 1);
+    for (int j = low; j <= high- 1; j++){
+        if (arr[j] <= pivot){
+            i++;
+            swap(&arr[i], &arr[j]);
+        }
+    }
+    swap(&arr[i + 1], &arr[high]);
+    return (i + 1);
+}
 
-void swap(int *p1, int*p2){
-    tmp = p1; // assign the address p1 contains to tmp
-    p1 = p2;
-    p2 = tmp;
-    return; //Returning control from function that does not return value:
-}  // what happened between compile time and runtime
+void quickSort(int *arr, int low, int high){
+    if (low < high){
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+
+void printArray(int *arr, int size){
+    int i;
+    for (i=0; i < size; i++)
+    printf("%d ", arr[i]);
+    printf("\n");
+}
+
+int main(){
+    int arr[] = {22, 17, -8, 9, 11, 5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+
+    printf("The origianl array is: ");
+    printArray(arr, n);
+
+    quickSort(arr, 0, n-1);
+    printf("The sorted array is: ");
+    printArray(arr, n);
+
+    return 0;
+}

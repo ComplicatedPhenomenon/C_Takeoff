@@ -18,6 +18,6 @@ typedef struct{
 int *Heapify(int * arr){
     maxHeap * mH;
     for(int i = 0; i < len(sizeof(arr); ++i) mH->node[i] = arr[i];
-    
+
 
 }
