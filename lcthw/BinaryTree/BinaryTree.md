@@ -22,6 +22,7 @@ Then it takes log<sub>2</sub>(n) time. The [Big O notation](https://stackoverflo
 * [How to find time complexity of an algorithm？](https://stackoverflow.com/questions/11032015/how-to-find-time-complexity-of-an-algorithm)
 
 * 逻辑严密， 陈述简洁，形象易理解的典范
+
 # Binary tree
 There is a difference between a STRICT and FULL BINARY TREE.
 

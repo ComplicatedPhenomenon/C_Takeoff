@@ -16,6 +16,8 @@ int deleteANodeAndReturnAValue(int lengthOfSLL, int nth);
 void printSSL();
 void freeSSL();
 
+
+
 int main(){
     int *ptr;
     int i, nth;
@@ -47,15 +49,15 @@ int main(){
 
 
 void buildAnDecendingLL(){
-    tCell *curr;
-    tCell *last;
+    tCell * curr;
+    tCell * last;
     head = (tCell *) malloc (sizeof (tCell));
     last = head;
     head->data = 100;
     head->next = NULL;
     /* Build a sorted lisr*/
     for (int i = 0; i < 99; i++){
-        curr = (tCell *) malloc(sizeof (tCell));
+        curr = (tCell *) malloc (sizeof (tCell));
         curr->data = last->data - 1;
         curr->next = NULL;
         last->next = curr;

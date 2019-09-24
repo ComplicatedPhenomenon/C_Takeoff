@@ -3,7 +3,7 @@
 
 typedef struct Cell {
     int data;
-    struct Cell * next;
+    struct Cell *next;
 } tCell;
 tCell *head;
 
@@ -12,15 +12,15 @@ void reversePartOfASSL(tCell *head, int m, int n);
 void freeSSL(tCell *head);
 
 int main(){
-    tCell * curr;
-    tCell * last;
+    tCell *curr;
+    tCell *last;
 
-    head = (tCell *) malloc (sizeof (tCell));
+    head = (tCell *) malloc(sizeof (tCell));
     last = head;                               /* last and head points to the same address */
-    head->data = 100;                          /* modify the value of that allocated address */
-    head->next = NULL;                         /* 1 node in the linked list */
+    head->data = 100;                          /* Initialize the value of that allocated address */
+    head->next = NULL;                         /* 1st node in the linked list */
 
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 20; i++){
         curr = (tCell *) malloc (sizeof (tCell));   /* create a block in the memory to store a node */
         curr->data = last->data - 1;            /* modify the value of this latest allocated address */
 	    curr->next = NULL;

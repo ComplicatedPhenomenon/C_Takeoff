@@ -10,10 +10,14 @@ int *bubbleSort(int *array, int n);
 
 int main(){
     int array[] = {6, 3, 2, 3, 4, 5};
+
     size_t n = sizeof(array)/sizeof(array[0]);
     int *ascendingArray;
 
     printArray(array, n);
+    printf("*(array[%d]) = %d\n", 0, *(&array[0]));
+
+
     swap(array, array+1);
     printArray(array, n);
     ascendingArray = bubbleSort(array, n);
@@ -23,6 +27,7 @@ int main(){
 
 }
 
+// swap the value of 2 pointer
 void swap(int *x, int *y){
   	int temp=0;
     temp = *x;
@@ -30,6 +35,22 @@ void swap(int *x, int *y){
   	*y = temp;
 	return;
 }
+
+/**
+void swap(&a[i], &a[j]){
+    int tem = a[j];
+    a[j] = a[i];
+    a[i] = tem;
+    return;
+}
+
+void swap(a + i, a + j){
+    int tem = *(a + j);
+    *(a + j) = *(a + i);
+    *(a + i) = tem;
+    return;
+}
+ **/
 
 void printArray(int *array, int n){
     printf("Now array is \n");

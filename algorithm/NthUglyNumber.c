@@ -7,10 +7,10 @@
 
 int nthUglyNumber(int n){
     int *p;
-    int a=0, b=0, c=0, tem=0;
+    int a = 0, b = 0, c = 0, tem = 0;
     int i;
 
-    p = calloc(n, sizeof(int) );
+    p = calloc(n, sizeof(int));
     *(p+0) = 1;
 
     for( i= 1; i < n; ++i){
