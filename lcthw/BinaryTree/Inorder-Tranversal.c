@@ -3,41 +3,45 @@
  **/
 
 #include <stdio.h>
-#include <malloc.h>
+//#include <malloc.h> it's been deprecated
+#include<stdlib.h>
+
 struct node {
-    struct node * left;
+    struct node *left;
     char data;
-    struct node * right;
+    struct node *right;
 };
 
-struct node *constructBST( int );
+struct node *constructBST( int);
 void inorder_transversal(struct node *);
 void freeTree(struct node *root);
 
-char array[ ] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'j', 'i', 'H' };
-int leftcount[ ] = {  1,   3,   5,   -1,   9,  -1,  -1,   -1,   -1,  -1 };
-int rightcount[ ] = {  2,   4,   6,   -1,  -1,  -1,  -1,   -1,   -1,  -1 };
+char array[ ] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'j', 'i', 'H'};
+int leftcount[ ] = { 1, 3, 5, -1, 9, -1, -1, -1, -1, -1};
+int rightcount[ ] = { 2, 4, 6, -1, -1, -1, -1, -1, -1, -1};
 
-void main() {
+int main(){
     struct node *root;
-    root = constructBST( 0 );
+    root = constructBST(0);
     printf("In-order Traversal: \n");
     inorder_transversal(root);
     freeTree(root);
+
+    return 0;
 }
 
-struct node * constructBST( int index ) {
+struct node *constructBST(int index) {
     struct node *temp = NULL;
     if (index != -1) {
-        temp = (struct node *)malloc( sizeof ( struct node ) );
-        temp->left = constructBST( leftcount[index] );
+        temp = (struct node *)malloc(sizeof(struct node));
+        temp->left = constructBST(leftcount[index]);
         temp->data = array[index];
-        temp->right = constructBST( rightcount[index] );
+        temp->right = constructBST(rightcount[index]);
     }
     return temp;
 }
 
-void inorder_transversal( struct node *root ) {
+void inorder_transversal(struct node *root){
     if (root != NULL) {
         inorder_transversal(root->left);
         printf("%c\t", root->data);
@@ -48,9 +52,9 @@ void inorder_transversal( struct node *root ) {
 
 
 void freeTree(struct node *root){
-    if(root!=NULL){
-        freeTree(root->left);
-        freeTree(root->right);
+    if(root != NULL){
+        freeTree(root -> left);
+        freeTree(root -> right);
         free(root);
     }
 }

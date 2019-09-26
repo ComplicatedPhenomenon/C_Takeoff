@@ -28,20 +28,23 @@ It's a repo mainly about C, few may involve C++. It aims to become a useful libr
     - [x] Heap
     - [ ] Hash table
     - [x] tree
-      - [x] binary search tree
+      - [x] Binary tree
+      - [x] Binary search tree
+
     - [ ] Graph
   * Data Algorithm
     * Sort
-      - [ ] Bubble sort
-      - [ ] Select sort
-      - [ ] Quick sort
-      - [ ] Merge sort
+      - [x] Bubble sort
+      - [x] Select sort
+      - [x] Quick sort
+      - [x] Merge sort
+      - [x] Heap sort
     * Search
-      - [x] Binary Search tree
+      - [x] Binary search 
 
 
 # Compiler and memory leak testing
-Applying Docker to solve the the problem of no proper `Valgrind` for a specify OS version.
+Applying Docker to solve the the problem of no proper `Valgrind` for a specific OS version.
 
 
 # gdb usage
