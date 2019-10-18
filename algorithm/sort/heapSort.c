@@ -1,7 +1,7 @@
 /**
  * Original author: https://github.com/robin-thomas/max-heap/blob/master/maxHeap.c
  * explanation goes to detail: http://robin-thomas.github.io/max-heap/
- * Description: The api of this program is confusing to me so far.
+ * Description: The api of this program is less confusing to me now.
  * https://www.edureka.co/blog/heap-sort-in-c/
  **/
 
@@ -190,25 +190,46 @@ void printArray(int *arr, size_t len){
 
 
 int main(){
-
     int array[] = {1,2,3,7,4,0,-1};
     size_t len = sizeof(array)/sizeof(array[0]);
-    //int i;
 
     printf("The origianl array is: ");
     printArray(array, len);
 
     maxHeap hp = initMaxHeap(len);
+    maxHeap *root = &hp;
 
-    maxHeap *o = &hp;
+    buildMaxHeap(root, array, len);
+    printf("postorder traversal: ");
+    postorderTraversal(root,0);
+    printf("\n");
 
-    buildMaxHeap(o, array, len);
+    printf("minimum of node 0 is %d\n",getMinNode(root, 0));
+    printf("minimum of node 1 is %d\n",getMinNode(root, 1));
+    printf("minimum of node 2 is %d\n",getMinNode(root, 2));
+
+
+    getMinNode(root, 0);
+    printf("\n");
+    deleteNode(root);
+
+    getMinNode(root, 0);
+    printf("\n");
+    deleteNode(root);
+    getMinNode(root, 0);
+    printf("\n");
+    deleteNode(root);
+
+
+
+    deleteMaxHeap(root);
 
     return 0;
 }
 
 /**
  * 一个数组
- * 一个最大堆，（堆由一组指针组成，每个指针指向数组元素）
+ * 一个大顶堆，（堆由一组指针组成，每个指针指向数组元素）
  *  A function -buildMaxHeap to arrange the elements in the heap
+ * tricky part is: 1 dyanmic array, 2 pointer to maxheap
  **/

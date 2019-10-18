@@ -4,48 +4,73 @@
 
 #include <stdio.h>
 
-#define LEFTCHILD(x) 2 * x + 1
-#define RIGHTCHILD(x) 2 * x + 2
+#define LCHILD(x) 2 * x + 1
+#define RCHILD(x) 2 * x + 2
 #define PARENT(x) (x - 1) / 2
-
+/*
 int heapify(int *a, int len, int index){
     int tem;
-    if (LEFTCHILD(index) > len - 1) return 0;
+    if (LCHILD(index) > len - 1) return 0; // do nothing when root node has no child
 
-    else if(LEFTCHILD(index) == len-1){
-        if(a[index]<a[LEFTCHILD(index)]){
+    else if(LCHILD(index) == len-1){      // only compare the root node with its left child.
+        if(a[index]<a[LCHILD(index)]){
             tem=a[index];
-            a[index]=a[LEFTCHILD(index)];
-            a[LEFTCHILD(index)]=tem;
+            a[index]=a[LCHILD(index)];
+            a[LCHILD(index)]=tem;
         }
         return 0;
     }
 
-    else{
-        if (a[index] < a[LEFTCHILD(index)] || a[index] < a[RIGHTCHILD(index)]){
-            if (a[LEFTCHILD(index)]<a[RIGHTCHILD(index)]) {
+    else{                                 // compare the root node with its left child and right child.
+        if (a[index] < a[LCHILD(index)] || a[index] < a[RCHILD(index)]){
+            if (a[LCHILD(index)]<a[RCHILD(index)]) {
                 tem=a[index];
-                a[index]=a[RIGHTCHILD(index)];
-                a[RIGHTCHILD(index)]=tem;
-                heapify(a,len,RIGHTCHILD(index));
+                a[index]=a[RCHILD(index)];
+                a[RCHILD(index)]=tem;
+                heapify(a,len,RCHILD(index));
             }
             else{
                 tem=a[index];
-                a[index]=a[LEFTCHILD(index)];
-                a[LEFTCHILD(index)]=tem;
-                heapify(a,len,LEFTCHILD(index));
+                a[index]=a[LCHILD(index)];
+                a[LCHILD(index)]=tem;
+                heapify(a,len,LCHILD(index));
             }
         }
         return 0;
     }
 }
+*/
 
 
+// left is existed for sure, right is not sure
+void heapify(int *a, int len, int index){
+    int largest;
+    int tem;
+    largest = LCHILD(index) < len && a[LCHILD(index)] > a[index] ? LCHILD(index): index;
+    largest = RCHILD(index) < len && a[RCHILD(index)] > a[largest] ? RCHILD(index) : largest;
+    if (largest!= index){
+        tem = a[index];
+        a[index] = a[largest];
+        a[largest] = tem;
+        heapify(a, len, largest);
+    }
+}
+
+/*
 int build_heap(int *a,int len){
     int i;
     for (i = len - 1; i >= 0; i--) {
-        if(LEFTCHILD(i) > len - 1) continue;
+        if(LCHILD(i) > len - 1) continue;
         //  i is now the root of element indexed as len-1
+        heapify(a,len,i);
+    }
+    return 0;
+}
+*/
+
+int build_heap(int *a,int len){
+    int i;
+    for (i = PARENT(len - 1); i >= 0; i--) {
         heapify(a,len,i);
     }
     return 0;

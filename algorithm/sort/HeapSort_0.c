@@ -6,7 +6,6 @@ void Adjust(int Heap_of_Numbers[], int i){
     int tem, unsortedSize, flag = 1;
     unsortedSize = Heap_of_Numbers[0];
     while(2 * i <= unsortedSize && flag == 1){
-        /* Index of root node starts at 1, therefore, the left chile of i is 2*i */
         j = 2 * i;
         /* if right child exists and the right child larger than left child*/
         if(j + 1 <= unsortedSize && Heap_of_Numbers[j+1] > Heap_of_Numbers[j]) j++;
@@ -48,7 +47,7 @@ int main(){
         heap[0]--;
         Adjust(heap,1);
     }
-    printf("Sorted Array: ");/*Printing the sorted Array*/
+    printf("Sorted Array: ");
     for(i=1;i<=NumberofElements;i++) printf("%d ",heap[i]);
     printf("\n");
 
