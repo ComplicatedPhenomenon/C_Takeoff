@@ -49,3 +49,8 @@ After comparing the way of OOP in with C, which has a more explicit style, don't
   * https://www.learncpp.com/cpp-tutorial/89-class-code-and-header-files/
 
   `g++ -Wall owl.cpp detect.cpp`
+
+## data structure
+Vectors are sequence containers which utilize continuous storage locations to store elements. They can manage storage and grow dynamically in an efficient way. These abilities come at a price: vectors consume more memory in exchange for the ability to handle storage and growing dynamically in size.
+
+https://www.geeksforgeeks.org/advantages-of-vector-over-array-in-c/

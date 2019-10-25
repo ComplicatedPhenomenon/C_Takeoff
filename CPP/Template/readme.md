@@ -47,5 +47,3 @@ std::pair p4{"THX"s, int};
 1. `inline` function
   * http://www.cplusplus.com/articles/2LywvCM9/
 2. `const` function
-
-  What is meant with “const” at end of function declaration?
