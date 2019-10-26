@@ -1,8 +1,3 @@
-/**
- *   Modified Date: Git will handle it.
- *   Description:  C Program to implement a queue using two stacks
- **/
-
 #include<stdio.h>
 
 int maxImplementation_1(int, int, int);

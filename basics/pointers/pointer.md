@@ -42,3 +42,10 @@ Some of the most common use cases for NULL are
 
 ## Reference and deference
 * The dereference Operator `*` operates on an address (an unsigned integer !) and returns the value stored at that address
+
+https://www.youtube.com/watch?v=LW8Rfh6TzGg
+# Why use pointers?
+
+https://stackoverflow.com/questions/162941/why-use-pointers
+
+https://www.quora.com/What-is-the-pointer-in-Python-Does-a-pointer-exist-in-Python

@@ -8,6 +8,7 @@
 
 int *getArray(){
     static int array[20];
+    //static int array[20];  //  address of stack memory associated with local variable
     int i;
 
     for (i=0; i < 10; ++i) array[i] = i;

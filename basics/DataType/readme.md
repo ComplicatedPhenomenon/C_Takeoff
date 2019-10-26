@@ -36,6 +36,13 @@ Because `unsigned int` is not the only unsigned integer type. `size_t` could be 
 
 Data type correspond to a data structure, we use data type for specific purpose, but user don't know and don't to know how it's implemented, what the data structure is? for example we have been using `int`, `float`, `char` data types only with the knowledge with values that can take and operations that can be performed on them without any idea of how these types are implemented.
 
+## Struct
+> C is not an object-oriented language, and thus does not have support for classes. It does, however, have support for defining structured types (like the data part of classes).
+
+C incorporates cutting edge of new programming principle, nevertheless, the features it born with matters.
+
+[](https://www.cs.swarthmore.edu/~newhall/cs31/resources/C-structs_pointers.php)
+
 # Abstract Data Types
 Abstract Data type (ADT) is a type (or class) for objects whose behavior is defined by a set of value and a set of operations.
 

@@ -1,4 +1,4 @@
-## Figure out storage of string 
+## Figure out storage of string
 ```c
 char *string = "hello";
 ```
@@ -58,7 +58,7 @@ int main(){
     int a, b;
     a = 3;
     b = 4;
-    sum{&a,&b}
+    sum（&a,&b）
 }
 ```
 It is `call by reference`. When executing main function, it pause at `b = 4`, and go to another stack frame to execute sum function, when done, this stack frame collapse.

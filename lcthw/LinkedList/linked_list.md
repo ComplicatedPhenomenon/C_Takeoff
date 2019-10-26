@@ -57,33 +57,7 @@ struct Node
 
 [singlelist.c](https://stackoverflow.com/a/588729/7583919)
 
-### Data structure
-Data Structures are the programmatic way of storing data so that data can be used efficiently. Almost every enterprise application uses various types of data structures in one or the other way.
 
-[An overview of data structures and algorithm](https://www.tutorialspoint.com/data_structures_algorithms/)
-
-Data structure include
-* Linked list
-* Stack & Heap
-* Queues
-* Tree Data structure
-* Graph Data structure
-
-To understand the list implementation. What variable sits what section of the memory. **What goes where?**
-* Stack is used to store all the information about function call executions , to store all the local variables,
-* Static/Globe store the global values that lives the entire lifetime of the program of that application.
-* Code(Text) is to store all the instructions to be executed.
-
-These three sections of the memory is decided at compile time.
-
-* Heap is not fixed, we can request memory from heap during run time. And that's what we do when we use `malloc()` or new operator etc.
-[linked list implementation in C/C++](https://m.youtube.com/watch?v=vcQIFT79_50)
-
-
-### Priority queue
-### Binary tree
-### Hash table
-### Sorting Algorithm
 ### Memory Leak
 Dynamic memory is allocated from heap. You allocate it using `malloc` ...
 

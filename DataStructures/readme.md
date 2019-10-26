@@ -1,22 +1,29 @@
 # [Data structure](https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/)
-## Struct
 
-> C is not an object-oriented language, and thus does not have support for classes. It does, however, have support for defining structured types (like the data part of classes).
+Data Structures are the programmatic way of storing data so that data can be used efficiently. Almost every enterprise application uses various types of data structures in one or the other way.
 
-C incorporates cutting edge of new programming principle, nevertheless, the features it born with matters.
+[An overview of data structures and algorithm](https://www.tutorialspoint.com/data_structures_algorithms/)
+
+Data structure include
+* Linked list
+* Stack & Heap
+* Queues
+* Tree Data structure
+* Graph Data structure
+
+To understand the list implementation. What variable sits what section of the memory. **What goes where?**
+* Stack is used to store all the information about function call executions , to store all the local variables,
+* Static/Globe store the global values that lives the entire lifetime of the program of that application.
+* Code(Text) is to store all the instructions to be executed.
+
+These three sections of the memory is decided at compile time.
+
+* Heap is not fixed, we can request memory from heap during run time. And that's what we do when we use `malloc()` or new operator etc.
+[linked list implementation in C/C++](https://m.youtube.com/watch?v=vcQIFT79_50)
 
 
-[](https://www.cs.swarthmore.edu/~newhall/cs31/resources/C-structs_pointers.php)
 
-
-## Heap
-One to one and onto mapping of array element to heap node.
-
-* https://courses.csail.mit.edu/6.006/fall10/handouts/recitation10-8.pdf
-
-Heap sort
-
-## Big O complexcity
+## Big O complexity
 <h2 id="data-structures">Common Data Structure Operations</h2>
 <table class="table table-bordered table-striped">
 
