@@ -19,11 +19,15 @@ To understand the list implementation. What variable sits what section of the me
 These three sections of the memory is decided at compile time.
 
 * Heap is not fixed, we can request memory from heap during run time. And that's what we do when we use `malloc()` or new operator etc.
-[linked list implementation in C/C++](https://m.youtube.com/watch?v=vcQIFT79_50)
 
+[Pointers and dynamic memory - stack vs heap](https://www.youtube.com/watch?v=_8-ht2AKyH4)
+* stack data structure has relation with stack.
+* heap data structure is irrelevant with heap. heap is a large pool of free memory.
 
+# Reference
+* [mycodeschool](https://www.youtube.com/channel/UClEEsT7DkdVO_fkrBw0OTrA)
 
-## Big O complexity
+# Big O complexity
 <h2 id="data-structures">Common Data Structure Operations</h2>
 <table class="table table-bordered table-striped">
 

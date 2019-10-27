@@ -16,8 +16,6 @@ int deleteANodeAndReturnAValue(int lengthOfSLL, int nth);
 void printSSL();
 void freeSSL();
 
-
-
 int main(){
     int *ptr;
     int i, nth;
