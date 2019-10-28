@@ -1,8 +1,7 @@
+/* https://dev-notes.eu/2018/07/double-pointers-and-linked-list-in-c/ */
 #include<stdio.h>
 
-/* single linked list*/
-typedef struct node
-{
+typedef struct node{
     char *name;
     struct node *next;
 } Node;
@@ -12,14 +11,9 @@ Node *createNode(char *nameArg);
 Node *head = (Node *) malloc(sizeof(Node));
 head = NULL;
 
-// Prepend node with the name "Goldfish"
 void prependNode(Node **headnode, Node *newNode);
 prependNode(&head, createNode("Goldfish"));
 void append(Node **headRef, Node *newNode);
-
-int main(int argc, char *argv[]){
-
-}
 
 Node *createNode(char *nameArg){
     Node *x = (Node *)malloc(sizeof(Node));

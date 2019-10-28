@@ -27,24 +27,28 @@ Even it can be used as a functional paradigm programming language, it doesn't ma
 In order to make my point clear, the sample program is simple enough but not too simple and include complete features of my problem.
 * `pointers/pointerToArray/array.c`
 
-   Return array from function.
+   Return function from a function.
 
-   C programming does not allow to return an entire array as an argument to a function. However, you can return a pointer to an array by specifying the array's name without an index.
 
-   ```c++
+   ```c
+   
    ```
-* `pointers/ptrToFunction/fun_ptr.arg.c`
+* `pointers/ptrToFunction/fun_ptr_arg.c`
 
    Pass function to another function.
 
-   ```c++
+   ```c
+   void foo(void (*a)()){
+       a();
+   }
    ```
 
 *  `call_by_reference_1.c`
 
   Store a function in a variable.
 
-  ```c++
+  ```c
+  int (* ptr[4]) (int x, int y);
   ```
 
 [A good explanation on CBV & CBR](http://www.mathcs.emory.edu/~cheung/Courses/561/Syllabus/3-C/param-passing.html)
@@ -76,30 +80,6 @@ void Swap (void * x, void * y, size_t bytes){
 }
 
 ```
-
-## Function pointer
-
-```C
-#include<stdio.h>
-
-int addInt(int a, int b)
-{
-    return a+b;
-}
-
-int main()
-{
-    int (*funcPtr)(int, int);
-    funcPtr = &addInt;
-    int sum = (*funcPtr)(2,3);
-    int result = addInt(2,3);    
-    return 0;
-}
-```
-
-The place in which we store data are called `objects`. To access an `object` we need a name. A named `object` is called a `variable` and has a specific type (such as `int` or `string` ) that determines what can be put into the object.
-
-`addInt `is a function. `funcPtr` is a pointer, pointing to function `addInt`.
 
 ### Return Type
 * The `return type` indicates what kind of data this function will return.  

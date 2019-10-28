@@ -11,8 +11,7 @@ typedef struct{
     char  name[50];
 }book;
 
-int main()
-{
+int main() {
     book book1; //the typedef means you no longer have to write struct all over the palace
     book1.price = 15.6;
     strcpy(book1.author, "Zed A. Shaw");

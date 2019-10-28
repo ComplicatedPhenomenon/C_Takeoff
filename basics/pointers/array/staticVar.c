@@ -12,10 +12,11 @@ double z = 0.0000011; // https://stackoverflow.com/posts/50661315/edit
 /*  it is not code which gets ever executed, the variable will just be set up to initially contain the 0.0000011 */
 
 int main(){
-    printf("%d\n", x); //0
+    printf("Testify gloable variable");
+    printf("int x without initialization is: %d\n", x); //0
 
-    printf("%f\n", y); // 0.00000000
-    printf("%f\n", z); // 0.00000110
+    printf("float y without initialization is: %f\n", y); // 0.00000000
+    printf("double z = 0.0000011 is: %f\n", z); // 0.00000110
 
     printf("Storage size: %lu bytes\n"
          "Minimum float value: %E\n"

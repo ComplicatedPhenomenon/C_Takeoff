@@ -28,8 +28,7 @@ void printColor(Color* c) {
         printf("%s = %i,%i,%i\n", c->name, c->red, c->green, c->blue);
 }
 
-int main()
-{
+int main() {
     Colors[0].name = "red";
     Colors[0].red = 255;
     Colors[0].green = 0;

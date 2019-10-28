@@ -1,3 +1,4 @@
+/*https://stackoverflow.com/questions/39142190/value-of-pointer-in-c*/
 #include <stdio.h>
 #include <string.h>
 #include <inttypes.h>
