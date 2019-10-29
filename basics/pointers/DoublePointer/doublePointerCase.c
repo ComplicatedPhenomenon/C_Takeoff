@@ -11,7 +11,8 @@ Node *createNode(char *nameArg);
 Node *head = (Node *) malloc(sizeof(Node));
 head = NULL;
 
-void prependNode(Node **headnode, Node *newNode);
+void prependNode(Node **headnode, Node *newNode); // headnode save the address of a pointer which refer to a Node
+// Node *newNode = createNode("Goldfish") newNode to capture what createNode just returned
 prependNode(&head, createNode("Goldfish"));
 void append(Node **headRef, Node *newNode);
 
@@ -28,6 +29,13 @@ void prependNode(Node **headnode, Node *newNode){
     *headnode = newNode;
 }
 
+/** Why not
+    void prependNode(Node *headnode, Node *newNode){
+        newNode->next = headnode;
+        headnode = newNode;
+    }
+ **/
+
 void append(Node **headRef, Node *newNode){
     Node **tracer = headRef;
     while (*tracer) {
@@ -36,3 +44,15 @@ void append(Node **headRef, Node *newNode){
     newNode->next = *tracer;
     *tracer = newNode;
 }
+
+/** Why not 
+
+    void append(Node *headnode, Node *newNode){
+        Node *tracer = headnode;
+        while (tracer) {
+            tracer = tracer->next;
+        }
+        newNode->next = tracer; // newNode->next = NULL;
+        tracer = newNode;
+}
+ **/

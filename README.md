@@ -12,7 +12,7 @@ It's a repo mainly about C, few may involve C++. It aims to become a useful libr
 
   :guitar:[slate an API generator](https://github.com/lord/slate)
 
-* New features on C. Obey the new standard as much as possible. <a href = "https://en.wikipedia.org/wiki/C_(programming_language)#C11"> C11 <a>
+* New features on C. Obey the new standard as much as possible. 
 * Informative
   * Basic
     - [x] Library
@@ -44,16 +44,18 @@ It's a repo mainly about C, few may involve C++. It aims to become a useful libr
 
 
 # Compiler and memory leak testing
-Applying Docker to solve the the problem of no proper `Valgrind` for a specific OS version.
+* Applying Docker to solve the the problem of no proper `Valgrind` for a specific OS version.
+* [Developing inside a Container!](https://code.visualstudio.com/docs/remote/containers)
+  > The Visual Studio Code Remote - Containers extension lets you use a Docker container as a full-featured development environment. It allows you to open any folder inside (or mounted into) a container and take advantage of Visual Studio Code's full feature set.
 
-
-# gdb usage
+# `gdb` usage
 
 # Configure a handy text editor
-* `Vim`. Set it up for C.
+* `Vim`. 
 
-  [A reference for beginner](https://stackoverflow.com/questions/14533877/ideal-c-setup-for-vim)
-* `Atom`.
+  [A reference for beginner to set it up for C](https://stackoverflow.com/questions/14533877/ideal-c-setup-for-vim)
+* `Atom`
+* `VS code`
 
 
 # Warnings and directions
