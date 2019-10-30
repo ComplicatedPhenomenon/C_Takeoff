@@ -1,42 +1,47 @@
 /**
  * g++ -std=c++11 array.cpp
  **/
+ #include <iostream>
 #include <string>
-#include <iterator>
-#include <iostream>
-#include <algorithm>
 #include <array>
+#include <iterator>
+#include <algorithm>
 
-int main()
-{
-    // construction uses aggregate initialization
-    std::array<int, 3> a1 {{1, 2, 3}} ; // double-braces required in C++11 (not in C++14)
-    std::array<int, 3> a2 = {1, 2, 3};  // never required after =
-    std::array<std::string, 2> a3 = { std::string("a"), "b" };
+using namespace std;
 
-    // container operations are supported
-    std::sort(a1.begin(), a1.end()); // a1={1,2,3}
-    std::reverse_copy(a2.begin(), a2.end(),
-                      std::ostream_iterator<int>(std::cout, " "));
+int main() {
 
-    std::cout << '\n';
+    array<int, 6> array1 {4, 7, 9, 0, 2, 3} ; 
+    array<string, 2> array2 = { "a", "b" };
 
-    // ranged for loop is supported
-    for(const auto& s: a3)
-        std::cout << s << ' ' ;
-    std::cout << std::endl;
+    sort(array1.begin(), array1.end()); 
 
-/**
-    std::array<std::string, 4> arr = {{"the", "quick", "brown", "fox"}};
-    if(assert(arr[2] == "brown")){
-        cout<< "arr[2] == brown is true" << endl;
+    // access by const reference
+    for (const auto &a : array1) {  
+        cout << a << " ";
+    }  
+    cout << '\n';
 
+    // access by value, the type of a is int
+    for (auto a : array1) {  
+        cout << a << " ";
+    }  
+    cout << '\n';
+
+    for (int i : array1) {
+        cout << array1[i] << " ";
     }
+    cout << '\n';
 
-**/
+    for(const auto& s: array2)
+        cout << s << ' ' ;
+    cout << endl;
+
+
+    
+    return 0;
 }
 
 /**
- * std::array::begin  Returns an iterator pointing to the first element in the array container.
- * std::sort Sorts the elements in the range [first, last) in ascending order. The order of equal elements is not guaranteed to be preserved.
+ * array::begin  Returns an iterator pointing to the first element in the array container.
  **/

@@ -64,7 +64,7 @@ The small program is tomorrow's building block in a larger project. So avoid wri
 There are some standards to test whether or not you are qualified to do the programming job. You won't say 'I have no idea of how to be a qualified programmer' again.
 
 ## Standards to tell you whether or not you are qualified
-It not hard to be a good programmer compared with to be a good physicist.
+It's not hard to be a good programmer compared with to be a good physicist.
 
 There are many resources already available online. You need to go through several tests. You can clearly see different stages which you are in along the way toward realizing what you long for.
 

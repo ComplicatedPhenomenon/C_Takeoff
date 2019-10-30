@@ -3,21 +3,17 @@
 #include <string>
 using namespace std;
 
-int main()
-{
-    //this part is about string  manipulation
+int main() {
     string result;
     cout <<  result.empty() << endl;
-    string s1 = "Hello";
-     // without the extra space at the end
-    string s2 = "world";
-    string s3 = "It's a new day!";
-    result = s1;
+    string str1 = "Hello";
+    string str2 = "world";
+    string str3 = "It's a new day!";
+    result = str1;
     result += ' '; // + operator is redefined for string to mean "string concatenation"
-     // append a space at the end
-    result += s2;
+    result += str2;
     result += "! ";
-    result += s3;
+    result += str3;
     cout <<  result << endl;
     cout <<  result[1] << endl;
 
@@ -42,8 +38,8 @@ int main()
     }
 
     char text[] = "Christmas Tree";
-    // Apply shorthand   condition ? if_true : if_false again
     sizeof(text) == strlen(text) ? cout << "sizeof(text) == strlen(text)" << endl : cout << "sizeof(text) != strlen(text)" <<endl;
     cout << "As sizeof return the actual memery used by the string, including the terminated  character." << endl;
+    
     return 0;
 }

@@ -1,6 +1,17 @@
 ## Which compiler?
-` g++ -Wall detectCapital.cpp `
+` g++ -Wall -std=c++11 detectCapital.cpp `
 
+macro
+
+1. Why are `ifndef` and `define` are used in C++ header files
+  * http://www.fredosaurus.com/notes-cpp/preprocessor/ifdef.html
+
+compile and link
+
+2. how to separate implementation and declarations code of a simple class into a new header and cpp file?
+  * https://www.learncpp.com/cpp-tutorial/89-class-code-and-header-files/
+
+  `g++ -Wall owl.cpp detect.cpp`
 ## namespace
 * `using namespace std` is considered bad practice
 
@@ -12,44 +23,55 @@ parameters of class `string`
   * assign
   * get_allocator
   * Element access
-    * ...
   * Iterators
-    * ...
   * capacity
-    * ...
   * Operations
     * clear clears the contents (public member function)
     * insert inserts characters (public member function)
     * erase
     * push_back
-
     * pop_back
     * append
     * operator+=
   * Search
-    * ...
 
 After comparing the way of OOP in with C, which has a more explicit style, don't you see that our efficiency for production goes high under one programming paradigm? It wraps up the universal operations and expand the library, so you don't need to do it again.
 
-## `std::basic_string`
+## `std::vector`
+The `&` denotes a reference instead of a pointer to an object 
 
-  The templated class `std::basic_string` generalizes how sequences of characters are manipulated and stored. String creation, manipulation, and destruction are all handled by a convenient set of class methods and related functions.
 
-  Several specializations of std::basic_string are provided for commonly-used types:
-  * `std::string`
-  * `std::wstring`
-  * `std::U16stsring`
-  * ...
+### reference in cpp
+```cpp
+vector<vector<int>>& matrix
+```
 
--------
-1. Why are `ifndef` and `define` are used in C++ header files
-  * http://www.fredosaurus.com/notes-cpp/preprocessor/ifdef.html
+**Is reference a named variable?**
 
-2. how to separate implementation and declarations code of a simple class into a new header and cpp file?
-  * https://www.learncpp.com/cpp-tutorial/89-class-code-and-header-files/
+A reference is an alias, or an alternate name to an existing variable (a reference has the same memory address as the item it references.). 
+<span style="font-family: New York Times; font-size: 1.2em; color: red;">
+What reference is used for?
+</span>
 
-  `g++ -Wall owl.cpp detect.cpp`
+The main use of references is acting as function formal parameters to support pass-by-reference. 
 
+In an reference variable is passed into a function, the function works on the original copy (instead of a clone copy in pass-by-value). Changes inside the function are reflected outside the function.
+
+<span style="font-family: New York Times; font-size: 1.2em; color: red;">
+When to use reference?
+</span>
+
+`referenceVSPointer.cpp`
+
+*Use reference wherever you can, pointers wherever you must.*
+
+the efficiency  of transportion  matters
+* 通过传递引用而不是整个数据–对象，可以提高程序的运行速度
+* 程序员能修改调用函数中的数据对象
+
+
+### Reference
+* https://www.ntu.edu.sg/home/ehchua/programming/cpp/cp4_PointerReference.html
 ## data structure
 Vectors are sequence containers which utilize continuous storage locations to store elements. They can manage storage and grow dynamically in an efficient way. These abilities come at a price: vectors consume more memory in exchange for the ability to handle storage and growing dynamically in size.
 
