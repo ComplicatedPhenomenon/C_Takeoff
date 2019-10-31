@@ -17,10 +17,11 @@ char *getAnotherString(){
 
 int main(){
     char *ptrToTarget = NULL;
+
     ptrToTarget = getAnotherString();
     printf("ptrToTarget                 = %p\n", ptrToTarget);
     printf("ptrToTarget                 = %s\n", ptrToTarget);
-    free(ptrToTarget);
 
+    free(ptrToTarget);
     return 0;
 }

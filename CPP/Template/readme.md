@@ -5,11 +5,29 @@ $ g++ -Wall stack.cpp action.cpp
 It went wrong!!!
 
 ## Template usage
-There is no need of detailed definition now, mainly to understand the mechanism behind every keyword, identifier
-
-When a pattern was discovered or a mode was proved to be right, then it applied in every possible relevant area. We now have templating language in `Django`, `Sphinx` and etc.
-
 > A templating language basically is a language which allows defining placeholders that should later on be replaced for the purpose of implementing designs. Obviously modern template languages not only support placeholders, but also loops and conditions which are often necessary for designing a web page. Some even support more advanced but still useful techniques like template inheritance, macros and sandboxing.
+
+* function template
+  ```cpp
+  //模板类，实例化模板类必须指定参数类型，编译器无法为模板类自动推导类型
+  template<typename T> 
+  class Test_class{
+  public:
+      explicit A(T val){ }
+          T add(T x){ 
+              return t+y;
+          }
+
+  private:
+      T t;
+  };
+
+  int main(){
+      A<int> a(10)；
+      std::cout<<a.add(5)<<std::endl;
+      return 0;
+  }
+  ```
 
 * function template
 
@@ -22,7 +40,7 @@ When a pattern was discovered or a mode was proved to be right, then it applied 
   }
   ```
 
-## How CPP CTAD works
+## How template argument deduction works
 [How class template argument deduction works?](https://youtu.be/STJExxBU54M)
 
 ```c++
@@ -45,5 +63,5 @@ std::pair p4{"THX"s, int};
 
 ## What's more?
 1. `inline` function
-  * http://www.cplusplus.com/articles/2LywvCM9/
+   * http://www.cplusplus.com/articles/2LywvCM9/
 2. `const` function
