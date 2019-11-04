@@ -1,0 +1,146 @@
+/**
+	ToDo: Free the tree at last
+ **/
+#include<iostream> 
+using namespace std; 
+
+// An AVL tree node 
+class Node { 
+public: 
+	int key; 
+	Node *left; 
+	Node *right; 
+	int height; 
+}; 
+
+int height(Node *N) { 
+	if (N == NULL) 
+		return 0; 
+	return N -> height; 
+} 
+
+int max(int a, int b) { 
+	return (a > b)? a : b; 
+} 
+
+
+Node* newNode(int key) { 
+	Node* node = new Node(); 
+	node -> key = key; 
+	node -> left = NULL; 
+	node -> right = NULL; 
+	node -> height = 1; 
+	return node; 
+} 
+
+Node *rightRotate(Node *root) { 
+	Node *nroot = root -> left; 
+	Node *T2 = nroot -> right; 
+
+	nroot -> right = root; 
+	root -> left = T2; 
+
+	root -> height = max(height(root -> left), height(root -> right)) + 1; 
+	nroot -> height = max(height(nroot -> left), height(nroot -> right)) + 1; 
+
+	return nroot; 
+} 
+
+Node *leftRotate(Node *root) { 
+	Node *nroot = root -> right; 
+	Node *T2 = nroot -> left; 
+
+	nroot -> left = root; 
+	root -> right = T2; 
+
+	root -> height = max(height(root -> left), height(root -> right)) + 1; 
+	nroot -> height = max(height(nroot -> left), height(nroot -> right)) + 1; 
+
+	return nroot; 
+} 
+
+int getBalance(Node *N) { 
+	if (N == NULL) 
+		return 0; 
+	return height(N -> left) - height(N -> right); 
+} 
+
+Node* insert(Node* node, int key) { 
+	/* 1. Perform the normal BST insertion */
+	if (node == NULL) 
+		return(newNode(key)); 
+	if (key < node -> key) 
+		node -> left = insert(node -> left, key); 
+	else if (key > node -> key) 
+		node -> right = insert(node -> right, key); 
+	else // Equal keys are not allowed in BST 
+		return node; 
+
+	/* 2. Update height of this ancestor node */
+	node -> height = 1 + max(height(node -> left), 
+						height(node -> right)); 
+
+	/* 3. Get the balance factor of this ancestor 
+		node to check whether this node became 
+		unbalanced */
+	int balance = getBalance(node); 
+
+	if (balance > 1 && key < node -> left -> key) 
+		return rightRotate(node); 
+
+
+	if (balance < -1 && key > node -> right -> key) 
+		return leftRotate(node); 
+
+	if (balance > 1 && key > node -> left -> key) { 
+		node -> left = leftRotate(node -> left); 
+		return rightRotate(node); 
+	} 
+
+	if (balance < -1 && key < node -> right -> key) { 
+		node -> right = rightRotate(node -> right); 
+		return leftRotate(node); 
+	} 
+	return node; 
+} 
+
+void preOrder(Node *root) { 
+	if(root != NULL) { 
+		cout << root -> key << " "; 
+		preOrder(root -> left); 
+		preOrder(root -> right); 
+	} 
+} 
+
+void freeBinaryTree(Node* root) {
+    if(root != NULL) {
+        freeBinaryTree(root -> left);
+        freeBinaryTree(root -> right);
+        free(root);
+    }
+}
+
+int main() { 
+	Node *root = NULL; 
+	
+	/* Constructing tree given in the above figure */
+	root = insert(root, 10); 
+	root = insert(root, 20); 
+	root = insert(root, 30); 
+	root = insert(root, 40); 
+	root = insert(root, 50); 
+	root = insert(root, 25); 
+	
+	/* The constructed AVL Tree would be 
+				30 
+			    / \ 
+			   20 40 
+			   / \  \ 
+		      10 25 50 
+	*/
+	cout << "Preorder traversal of the "
+			"constructed AVL tree is \n"; 
+	preOrder(root); 
+	//freeBinaryTree(root);
+	return 0; 
+} 

@@ -30,6 +30,9 @@ It's a repo mainly about C, few may involve C++. It aims to become a useful libr
     - [x] tree
       - [x] Binary tree
       - [x] Binary search tree
+      - [ ] AVL Tree
+      - [ ] B Tree
+      - [ ] B+ Tree
 
     - [ ] Graph
   * Data Algorithm
