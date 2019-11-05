@@ -4,8 +4,7 @@
 
 void print_message_func(void *ptr);
 
-int main()
-{
+int main() {
     int tmp1,tmp2;
     void *retival;
     pthread_t thread1,thread2;

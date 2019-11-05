@@ -1,12 +1,11 @@
 ## Machine instructions
 ```sh
-$ gcc -S ArrayofStruct.c #or $ cc -S ArrayofStruct.c -o -
+$ gcc -S ArrayofStruct.c 
 ```
 
 ```sh
 $ cc -g ArrayofStruct.c -o ArrayofStruct
 $ objdump -d ArrayofStruct | awk -v RS= '/^[[:xdigit:]].*main/'
-
 ```
 
 Compiler with different flags can satisfy different needs

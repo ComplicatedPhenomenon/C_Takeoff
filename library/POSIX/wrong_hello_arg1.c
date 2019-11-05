@@ -12,12 +12,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#define NUM_THREADS     8
+#define NUM_THREADS  8
 
 void *PrintHello(void *threadid){
    long taskid;
    sleep(1);
    taskid = *(long *)threadid;
+   //taskid = (long) threadid; 
    printf("Hello from thread %ld\n", taskid);
    pthread_exit(NULL);
 }
@@ -27,7 +28,7 @@ int main(int argc, char *argv[]){
     int rc;
     long t;
 
-    for(t=0;t<NUM_THREADS;t++) {
+    for(t = 0; t < NUM_THREADS; t++) {
         printf("Creating thread %ld\n", t);
         rc = pthread_create(&threads[t], NULL, PrintHello, (void *) &t);
         if (rc) {
@@ -38,3 +39,22 @@ int main(int argc, char *argv[]){
 
     pthread_exit(NULL);
 }
+
+/**
+    Creating thread 0
+    Creating thread 1
+    Creating thread 2
+    Creating thread 3
+    Creating thread 4
+    Creating thread 5
+    Creating thread 6
+    Creating thread 7
+    Hello from thread 8
+    Hello from thread 8
+    Hello from thread 8
+    Hello from thread 8
+    Hello from thread 8
+    Hello from thread 8
+    Hello from thread 8
+    Hello from thread 8
+ **/

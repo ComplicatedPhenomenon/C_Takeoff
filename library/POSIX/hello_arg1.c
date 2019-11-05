@@ -1,10 +1,11 @@
 /******************************************************************************
 * FILE: hello_arg1.c
+* USAGE: gcc -pthread hello_arg1.c 
 * DESCRIPTION:
 *   A "hello world" Pthreads program which demonstrates one safe way
 *   to pass arguments to threads during thread creation.
-* AUTHOR: Blaise Barney
-* LAST REVISED: 08/04/15
+* ORIGINAL AUTHOR: Blaise Barney
+* LAST REVISED: 11/05/19
 ******************************************************************************/
 #include <pthread.h>
 #include <stdio.h>
@@ -16,7 +17,6 @@ char *messages[NUM_THREADS];
 
 void *PrintHello(void *threadid){
     long taskid;
-
     sleep(1);
     taskid = (long) threadid;
     printf("Thread %ld: %s\n", taskid, messages[taskid]);
@@ -38,7 +38,7 @@ int main(int argc, char *argv[]){
     messages[6] = "Japan: Sekai e konnichiwa!";
     messages[7] = "Latin: Orbis, te saluto!";
 
-    for(t=0;t<NUM_THREADS;t++) {
+    for(t = 0; t < NUM_THREADS; t++) {
         //taskids[t] = t;
         printf("Creating thread %ld\n", t);
         rc = pthread_create(&threads[t], NULL, PrintHello, (void *) t);

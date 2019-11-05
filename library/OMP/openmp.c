@@ -7,8 +7,8 @@
 *   The master thread only prints the total number of threads.  Two OpenMP
 *   library routines are used to obtain the number of threads and each
 *   thread's number.
-* AUTHOR: Blaise Barney  5/99
-* LAST REVISED: 04/06/05
+* ORIGINAL AUTHOR: Blaise Barney
+* LAST REVISED: 11/05/19
 ******************************************************************************/
 #include <omp.h>
 #include <stdio.h>
@@ -16,22 +16,16 @@
 
 int main (int argc, char *argv[]){
     int nthreads, tid;
-
     /* Fork a team of threads giving them their own copies of variables */
-    #pragma omp parallel private(nthreads, tid)
-      {
-
-      /* Obtain thread number */
-      tid = omp_get_thread_num();
+    #pragma omp parallel private(nthreads, tid) {
+      tid = omp_get_thread_num(); /* Obtain thread number */
       printf("Hello World from thread = %d\n", tid);
 
       /* Only master thread does this */
-      if (tid == 0)
-        {
+      if (tid == 0) {
         nthreads = omp_get_num_threads();
         printf("Number of threads = %d\n", nthreads);
         }
-
       }  /* All threads join master thread and disband */
 
 }

@@ -20,7 +20,7 @@ group transformation_type;
 int main(){
     int i, j;
     transformation_type = SO_T;
-    printf("trnasformation type is %d\n",transformation_type);
+    printf("transformation type is %d\n", transformation_type);
     FILE *f = fopen("file.txt","w");
 
     if (f == NULL){
@@ -45,10 +45,3 @@ int main(){
     fclose(f);
   return 0;
 }
-
-
-/**********************************************************
- *  First A is an array consisted of n elements
- *  Every element has a body type described by
- *  four differnt characters
- **********************************************************/

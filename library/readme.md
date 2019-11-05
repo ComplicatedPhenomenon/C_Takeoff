@@ -1,7 +1,7 @@
 ## [Implementation of C header files](https://stackoverflow.com/questions/5955309/implementation-of-c-header-files/5955370#5955370)
 
 
-I can only see the header file such as `stdio.h` is included, I don't know how `gcc` know the implementation of the function.
+when `#include<stdio.h>` is included,  how `gcc` know the implementation of the function?
 
 > Those are called function prototypes. They tell the compiler that the function exists, but not where (yet). The compiler uses this to make sure that you're calling the function correctly, but that's it.
 
@@ -20,12 +20,6 @@ To get a better complete understanding, [visit here](http://www.yolinux.com/TUTO
   * Add library directories to be included during dynamic linking to the file `/etc/ld.so.conf`.
 * Library Versions.  
 
-I am growing used to write a command thousands of times without know the principles behind. It's a bad behavior, since it prevent me from improving my ability to work on something.
+I used to write a command thousands of times without know the mechanism behind. It's a bad behavior, since it prevent me from knowing the foundation of how things work.
 
-# [awesome-cpp](https://github.com/fffaraz/awesome-cpp)
-## C++ Machine learning library
-What is your main purpose ?
 
-To learn about ML or practice programming
-
->  Your problem is still far away from reaching the bottleneck of language runtime speed

@@ -3,8 +3,6 @@
 #include<string.h>
 #include<unistd.h>
 
-
-
 int main(){
     char answer[60];
     char *ptr;
@@ -23,12 +21,12 @@ int main(){
 
     if(!strcmp(answer, "live")){
        	printf("Well done!\n");
-	      printf("The condition is = %s in a fancy way\n",!strcmp(answer,"live")?"true":"false");
-	      printf("The condition is = %d\n",!strcmp(answer,"live"));
-	      /*There is no specifier for bool*/
-	      sleep(3);
+	    printf("The condition is = %s in a fancy way\n",!strcmp(answer,"live")?"true":"false");
+	    printf("The condition is = %d\n",!strcmp(answer,"live"));
+	    /*There is no specifier for bool*/
+	    sleep(3);
 
-	      return 0;
+	    return 0;
     }
 
     if(!strcmp(answer, "die")){

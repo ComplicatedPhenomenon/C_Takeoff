@@ -1,6 +1,7 @@
 a.out*
 *.asm
 *.s
+*.txt
 CPP/algorithm
 algorithm/libeve
 Learn-Algorithms/
