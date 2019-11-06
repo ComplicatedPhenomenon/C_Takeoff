@@ -3,13 +3,12 @@
 #include<stdio.h>
 
 char *getAnotherString(){
-
     //static char target[] = "Hi, ComplicatedPhenomenon";
     char target[] = "Hi, ComplicatedPhenomenon";
     char *ptrToTarget =  target;
     printf("ptrToTarget                 = %p\n", ptrToTarget);
-    return ptrToTarget;
 
+    return ptrToTarget;
 }
 
 

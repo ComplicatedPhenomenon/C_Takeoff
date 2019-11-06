@@ -1,10 +1,3 @@
-```c
-int arr[] = {6, 3, 2, 3, 4, 5};
-size_t n = sizeof(arr)/sizeof(arr[0]);
-int *ascendingArray;
-ascendingArray = bubbleSort(arr, n); //Why is n necessary?
-```
-Because `arr` as a pointer only store the address of the array.
 
 * https://www.hackerearth.com/practice/algorithms/sorting
 ----
@@ -14,7 +7,14 @@ Question:
 
    The scenario of when to use stable sort and when to use unstable sort? what the difference between them?
 2. Time complexity for heap sort.
+
+3.Which fit most in what situation?
+  * Bucket sort 
+
+    Bucket sort is mainly useful when the input is uniformly distributed over a range.
+
 -----
+# heap sort
 `heapSort.c`
 
 original list
@@ -53,3 +53,5 @@ postorderTraversal(0)->7->postorderTraversal(1)->4->postorderTraversal(3)->2->po
 ```
 
 Example of bad workflow, better to demonstrate in animation.
+
+

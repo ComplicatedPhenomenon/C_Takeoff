@@ -20,10 +20,10 @@ It's a repo mainly about C, few may involve C++. It aims to become a useful libr
     - [x] Pointer
   * Advanced
     - [x] OOP
-    - [x] parallel programming
+    - [x] multithreading
   * Data structure
     - [x] Linked List
-    - [x] Stack
+    - [x] Stack 
     - [x] Queue
     - [x] Heap
     - [ ] Hash table
@@ -35,6 +35,9 @@ It's a repo mainly about C, few may involve C++. It aims to become a useful libr
       - [ ] B+ Tree
 
     - [ ] Graph
+      - [ ] Breadth-First search
+      - [ ] Depth-First search
+      - [ ] shorted-path alogorithm
   * Data Algorithm
     * Sort
       - [x] Bubble sort
@@ -42,6 +45,10 @@ It's a repo mainly about C, few may involve C++. It aims to become a useful libr
       - [x] Quick sort
       - [x] Merge sort
       - [x] Heap sort
+      - [ ] Bucket sort
+      - [x] Counting sort
+      - [x] Insertion sort
+      - [ ] Radix sort
     * Search
       - [x] Binary search 
 

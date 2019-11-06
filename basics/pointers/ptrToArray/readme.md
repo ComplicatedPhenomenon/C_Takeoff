@@ -9,7 +9,6 @@ An array is a derived data type in C, which is constructed from fundamental data
 ```c
 char x = "czfzdxx";
 char name[] = {"Wall-E-1000000001","complicatephenomenon","czfzdxx"};
-
 ```
 ### Array decay into pointers
 
@@ -37,27 +36,35 @@ array_c = {'s','o','s'};
 ```
 the first statement is not performing *initialization*, but *assignment*:
 
-```sh    
+```c
 char myarray[4] = "abc";  // Initialization.
 myarray = "abc";          // Assignment.
 ```
-**arrays are not directly assignable in C**.
+**As arrays are not directly assignable in C**.
 
 The name `myarray` actually resolves to the address of its first element (`&myarray[0]`), which is not a `value`, and as such cannot be the target of an assignment.
 
 The `=` in `myarray = "abc";` is assignment (which won't work as the array is basically a kind of constant pointer), whereas in `char myarray[4] = "abc";`, it's an initialization of the array. There's no way for late initialization.
 
 If you want to fill the `myarray` buffer manually, without strcpy(), you can use:
-```sh
+```c
 myarray[0] = 'a', myarray[1] = 'b', myarray[2] = 'c', myarray[3] = 0;
 ```
 or
-```sh
+```c
 char *ptr = myarray;
 *ptr++ = 'a', *ptr++ = 'b', *ptr++ = 'c', *ptr = 0;
 ```
 
-`" "` is a string (`char *`) literal. You want `''` for a single char.
+
+### Pass array around
+```c
+int arr[] = {6, 3, 2, 3, 4, 5};
+size_t n = sizeof(arr)/sizeof(arr[0]);
+int *ascendingArray;
+ascendingArray = bubbleSort(arr, n); //Why is n necessary?
+```
+Because `arr` as a pointer only store the address of the array.
 
 
 ## How dynamic array and static array stored in memory?
@@ -68,5 +75,6 @@ char *ptr = myarray;
 
 If you want to return some string from your function to the caller, you can dynamically allocate that string inside the function (e.g. using `malloc()`) and return a pointer to that string to the caller.
 
-## How to ask on SO
-*  Limit it to a specific problem
+`pointerAsReturnType.c`
+
+
