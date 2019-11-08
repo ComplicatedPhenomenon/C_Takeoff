@@ -1,4 +1,4 @@
-// c++ hash.cpp
+// Description: count the frequency of char in S
 #include <string>
 #include <iostream>
 using namespace std;
@@ -14,7 +14,7 @@ void countFre(string S){
         int index = hashFunc(S[i]);
         Frequency[index]++;
     }
-    for(int i = 0;i < 26;++i){
+    for(int i = 0;i < 26; ++i){
         cout << (char)(i+'a') << ' ' << Frequency[i] << endl;
     }
 }

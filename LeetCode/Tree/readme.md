@@ -12,3 +12,14 @@ free(t);
 
 # AVL tree
 ![https://www.geeksforgeeks.org/avl-tree-set-1-insertion/](https://media.geeksforgeeks.org/wp-content/uploads/AVL-Insertion1-1.jpg)
+
+
+# `BTLevelOrderTraversal_1.c`
+When you think you know well enough about pointers, boom, here comes `BTLevelOrderTraversal.c` to improve you are wrong.
+
+Review how to implement a heap by 2 stacks to help understand the more complex usage of pointers.
+
+![](implementAHeap.svg)
+
+# `BTLevelOrderTraversal_2.cpp`
+![](levelOrderTraversal.svg)

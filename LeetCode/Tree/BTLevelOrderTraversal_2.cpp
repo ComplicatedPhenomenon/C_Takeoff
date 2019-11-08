@@ -1,3 +1,7 @@
+/**
+ *   Modified Date: 11/08/2019
+ *   Description:
+ **/
 
 #include<iostream>
 #include<vector>
@@ -21,12 +25,12 @@ public:
         q.push(root);
         int count = 1;
         while (!q.empty()) {
-            if (q.front()->left) { q.push(q.front()->left); }
-            if (q.front()->right) { q.push(q.front()->right); }
+            if (q.front()->left) {q.push(q.front()->left);}
+            if (q.front()->right) {q.push(q.front()->right);}
             row.push_back(q.front()->val), q.pop();
-            if (--count == 0) {
+            if (--count == 0) {  // the logic here is a bit implicit. decrease count by one of every pop 
                 result.emplace_back(row), row.clear();
-                count = q.size();
+                count = q.size(); // count the number of node in current level
             }
         }
         return result; 
@@ -51,17 +55,12 @@ void freeBinaryTree(struct TreeNode* root) {
 
 int main ( ) {
     struct TreeNode *root; 
-    struct TreeNode* tem = newNode(2);
-    root = tem;
- 
-    tem = newNode(3);
-    root -> left = tem;
-
-    tem = newNode(4);
-    root -> left -> left = tem;
-
-    tem = newNode(5);
-    root -> left -> right = tem;
+    root = newNode(2);
+    root -> left = newNode(3);
+    root -> right = newNode(4);
+    root -> left -> left = newNode(5);;
+    root -> left -> right = newNode(6);
+    root -> right -> right = newNode(7);
 
     Solution test;
     auto res = test.levelOrder(root);

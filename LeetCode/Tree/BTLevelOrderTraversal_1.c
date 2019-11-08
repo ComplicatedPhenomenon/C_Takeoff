@@ -1,5 +1,7 @@
-/** 
- ToDo : definitely lost: 168 bytes in 2 blocks
+/**
+ *   Modified Date: 11/08/2019
+ *   Description:
+ *   Todo: Hardly understand and there is memory leak
  **/
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,7 +11,11 @@ struct TreeNode {
     struct TreeNode *left;
     struct TreeNode *right;
 };
-
+/**
+    limited by the paradigm, you can do nothing with the fact that
+    struct QueueNode, struct Queue, void push, void * pop 
+    should formed a class, with struct Queue as private attribute
+ **/
 struct QueueNode {
     void *ptr;
     struct QueueNode *next;
@@ -25,41 +31,27 @@ void push(struct Queue *queue, void *new_val) {
     new_node->ptr = new_val;
     new_node->next = NULL;
 
-    if (queue->tail != NULL) {
-        queue->tail->next = new_node;
-    }
-
+    if (queue->tail != NULL) queue->tail->next = new_node;
     queue->tail = new_node;
-
-    if (queue->front == NULL) {
-        queue->front = new_node;
-    }
+    if (queue->front == NULL) queue->front = new_node;   
 }
 
 void * pop(struct Queue * queue) {
     void *ans;
-    if (queue->front == NULL) {
-        ans = NULL;
-    }
+    
+    if (queue->front == NULL) ans = NULL;
     else {
         ans = queue->front->ptr;
         struct QueueNode *tmp = queue->front;
         queue->front = queue->front->next;
-        if (queue->front == NULL) {
-            queue->tail = NULL;
-        }
+        if (queue->front == NULL) queue->tail = NULL;
         free(tmp);
     }
 
     return ans;
 }
 
-/**
- * Return an array of arrays of size *returnSize.
- * The sizes of the arrays are returned as *columnSizes array.
- * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
- */
-int** levelOrder(struct TreeNode* root, int** columnSizes, int* returnSize) {
+int ** levelOrder(struct TreeNode * root, int ** columnSizes, int * returnSize) {
     if (root == NULL) return NULL;
 
     #define MAX 4096
@@ -78,7 +70,7 @@ int** levelOrder(struct TreeNode* root, int** columnSizes, int* returnSize) {
     int count = 0; /* count of nodes already traversed in current level */
 
     while (q.front != NULL) {
-        struct TreeNode *p = (struct TreeNode *)pop(&q);
+        struct TreeNode *p = pop(&q);
 
         if (p) { /* push children into queue if parent is not NULL */
             ans[*returnSize][count] = p->val;
@@ -107,8 +99,6 @@ int** levelOrder(struct TreeNode* root, int** columnSizes, int* returnSize) {
     return ans;
 }
 
-
-/*
 void freeBinaryTree(struct TreeNode* root) {
     if(root != NULL){
         freeBinaryTree(root -> left);
@@ -116,57 +106,48 @@ void freeBinaryTree(struct TreeNode* root) {
         free(root);
     }
 }
-*/
-
 
 int main() {
-    struct TreeNode *r = (struct TreeNode *)calloc(7, sizeof(struct TreeNode));
-    struct TreeNode *p = r;
+    struct TreeNode *root = (struct TreeNode *)calloc(7, sizeof(struct TreeNode));
+    struct TreeNode *p = root;
 
+    // construct a binary tree
     p->val = 3;
-    p->left = r + 1;
-    p->right = r + 2;
+    p->left = root + 1;
+    p->right = root + 2;
 
-    p = r + 1;
+    p = root + 1;
     p->val = 9;
 
-    p = r + 2;
+    p = root + 2;
     p->val = 20;
 
-    p->left = r + 5;
-    p->right = r + 6;
+    p->left = root + 5;
+    p->right = root + 6;
 
-    p = r + 5;
+    p = root + 5;
     p->val = 15;
 
-    p = r + 6;
+    p = root + 6;
     p->val = 7;
 
     int *columnSizes = NULL;
     int returnSize = 0;
-
-    int **ret = levelOrder(r, &columnSizes, &returnSize);
+    int **res = levelOrder(root, &columnSizes, &returnSize);
 
     int i, j;
     for (i = 0; i < returnSize; i++) {
         for (j = 0; j < columnSizes[i]; j++) {
-            printf("%d ", ret[i][j]);
+            printf("%d ", res[i][j]);
         }
         printf("\n");
-        free(ret[i]);
+        free(res[i]);
     }
-    free(ret);
 
+    free(res);
     free(columnSizes);
-    
-    
-    //freeBinaryTree(r);
-    /*
-    while (r!= NULL){
-        p = r + 1;
-        free(r);
-        r = p;
-    }
-    */
+    free(root);
+    //freeBinaryTree(root);
+
     return 0;
 }
