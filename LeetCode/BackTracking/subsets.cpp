@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/subsets/
+// Source: https://leetcode.com/problems/subsets/
 
 /** 
     Input: nums = [1,2,3]
@@ -25,9 +25,11 @@ public:
     vector<vector<int>> subsets(vector<int>& nums) {
         unsigned int n = nums.size();
         vector<vector<int>> ans;
+
         if (n == 0) return ans;
         quicksort(nums, 0, n - 1);
         vector<int> temp;
+        
         for (unsigned int i = 0; i < (1 << n); i++) {
             unsigned int t = i;
             unsigned int k = 0;
@@ -42,7 +44,7 @@ public:
             ans.push_back(temp);
             temp.clear();
         }
-    return ans;
+        return ans;
         
     }
 

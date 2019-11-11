@@ -37,35 +37,44 @@ parameters of class `string`
 
 After comparing the way of OOP in with C, which has a more explicit style, don't you see that our efficiency for production goes high under one programming paradigm? It wraps up the universal operations and expand the library, so you don't need to do it again.
 
-## `std::vector`
-The `&` denotes a reference instead of a pointer to an object 
 
 
-### reference in cpp
-```cpp
-vector<vector<int>>& matrix
-```
 
-**Is reference a named variable?**
+## reference vs pointer
+要确切理解区别的话，需要理解它的底层实现，编译器执行时的操作。这里仅限于上层理解。
 
-A reference is an alias, or an alternate name to an existing variable (a reference has the same memory address as the item it references.). 
-<span style="font-family: New York Times; font-size: 1.2em; color: red;">
+<span style="font-family: New York Times; font-size: 1.3em; color: red;">
 What reference is used for?
-</span>
+</span> 
 
-The main use of references is acting as function formal parameters to support pass-by-reference. 
+example
+* `referenceVSPointer.cpp`
+* `array.cpp`
 
 In an reference variable is passed into a function, the function works on the original copy (instead of a clone copy in pass-by-value). Changes inside the function are reflected outside the function.
 
+ ![](https://www.mathwarehouse.com/programming/images/pass-by-reference-vs-pass-by-value-animation.gif)
+
+
+以常量引用来修饰函数的输入参数，input 是个输入参数，在函数内部不会被改变，此时用常量引用就是最合适的：
+* 一不会在调用函数的时候拷贝一遍 input
+* 二在函数内部使用方便
+* 三从调用函数的地方看过去，`NormalizeBigString(string_a, &string_b)`，单凭语法就能清楚的区分输入和输出参数，可读性更好。
+
+
 <span style="font-family: New York Times; font-size: 1.2em; color: red;">
-When to use reference?
+
 </span>
 
-`referenceVSPointer.cpp`
+Why does C++ have both pointers and references?
+> C++ inherited pointers from C, so I couldn't remove them without causing serious compatibility problems. References are useful for several things, but the direct reason I introduced them in C++ was to support operator overloading.
+
+When to use reference?
+
 
 *Use reference wherever you can, pointers wherever you must.*
 
-the efficiency  of transportion  matters
+Moreover, the efficiency  of transportion  matters
 * 通过传递引用而不是整个数据–对象，可以提高程序的运行速度
 * 程序员能修改调用函数中的数据对象
 

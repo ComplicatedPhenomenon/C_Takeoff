@@ -1,36 +1,25 @@
 #include<iostream>
 using namespace std;
 
-int passByValue(int n);
-int passByConstantValue(const int n);
+void passByValue(int n);
+void passByConstantValue(const int n);
 void passByReferenceWithPointerArg(int * n);
 void passByReferenceWithReferenceArg(int & n);
 
 int main() {
     int number = 9;
+
     cout << "In main(), the address of number is: " << &number << endl;  
-    cout << "After passByValue, we get : " << passByValue(number) << "\n";
-    cout << "number now is: " << number << "\n";
-
-    const int cnumber = 9;
-    cout << "In main(), the address of cnumber is: " << &cnumber << endl;  
-    cout << "After passByValue, we get : " << passByConstantValue(cnumber) << "\n";
-    cout << "number now is: " << cnumber << "\n";
-
-
+    passByValue(number); // 修改调用函数中的数据对象
+    cout << "After passByValue, number now is: " << number << endl;
 
     number = 9;
-    cout << "In main(), the address of number is: " << &number << endl;  
     passByReferenceWithPointerArg(&number);
-    cout << "After passByReferenceWithPointerArg"  << "\n";
-    cout << "number now is: " << number << "\n";
+    cout << "After passByReferenceWithPointerArg, number now is: "  << number << endl;
 
     number = 9;
-    int & num = number;
-    cout << "In main(), the address of number is: " << &number << endl;  
-    passByReferenceWithReferenceArg(num);
-    cout << "After passByReferenceWithReferenceArg" << "\n";
-    cout << "number now is: " << number << "\n";
+    passByReferenceWithReferenceArg(number);
+    cout << "After passByReferenceWithReferenceArg, number now is: " << number << endl;
 
     return 0;
 }
@@ -40,16 +29,9 @@ int main() {
      Changes to the clone copy inside the function has no effect to 
      the original argument in the caller.
  **/
-int passByValue(int n){
+void passByValue(int n){
     cout << "In passByValue, the address of number is: " << &n << endl;  
     n *= n;
-    return n;
-}
-
-int passByConstantValue(const int n){
-    cout << "In passByValue, the address of number is: " << &n << endl;  
-    // n *= n;   assignment of read-only parameter 'n'
-    return n * n;
 }
 
 //  modify the original copy directly (especially in passing huge object or array) to avoid the overhead of cloning.
@@ -58,8 +40,19 @@ void passByReferenceWithPointerArg(int * n) {
     *n *= *n; // Enumberplicit de-referencing to get the value pointed-to
 }
 
-// pass references into function, to avoid the clumsy syntax of referencing and dereferencing. 
-void passByReferenceWithReferenceArg(int & n) {
+// pass references into function, here to avoid the clumsy syntax of referencing and dereferencing. 
+//在这里使用引用类型，相当于是实参变量的一个别名. 
+void passByReferenceWithReferenceArg(int & n) { 
     cout << "In passByReferenceWithReferenceArg, the address of number is: " << &n << endl;
-    n *= n;
+    n *= n;  // convenient than `*n *= *n;`
 }
+
+/*
+In main(), the address of number is: 0x7ffc891ee59c
+In passByValue, the address of number is: 0x7ffc891ee57c
+After passByValue, number now is: 9
+In passByReferenceWithPointerArg, the address of number is: 0x7ffc891ee59c
+After passByReferenceWithPointerArg, number now is: 81
+In passByReferenceWithReferenceArg, the address of number is: 0x7ffc891ee59c
+After passByReferenceWithReferenceArg, number now is: 81
+*/

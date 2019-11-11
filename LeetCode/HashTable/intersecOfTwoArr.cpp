@@ -13,10 +13,10 @@ public:
         vector<int> res;
         unordered_set<int> set;
         // hash the first array
-        for(auto n : nums1)
+        for(auto n : Number s1)
             set.insert(n);
         for(auto n : nums2) {
-            if(set.find(n) != set.end()) {
+            if(set.find(n) != set.end()) { //  If the element is found, 
                 set.erase(n);       // delete it from hash table
                 res.push_back(n);
             }
