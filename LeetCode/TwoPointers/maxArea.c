@@ -1,7 +1,4 @@
-/**
- * Runtime: 16 ms, faster than 56.82% of C online submissions for Container With Most Water.
- * Memory Usage: 7.8 MB, less than 16.08% of C online submissions for Container With Most Water.
- **/
+//source: https://leetcode.com/problems/container-with-most-water/
 
 #include<stdio.h>
 int maxArea(int* height, int heightSize){
@@ -15,10 +12,9 @@ int maxArea(int* height, int heightSize){
         res = ( area > res? area  : res);
         //printf("end = %d, start = %d, area = %d, res=%d\n", end, start, area, res);
         if (height[end] > height[start])++start;
-        else --end;
+        else end--;
         //printf("%d\n", res);
     }
-
     return res;
 }
 

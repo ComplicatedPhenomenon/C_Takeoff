@@ -1,8 +1,7 @@
-/**
- * 
+/** 
+ *  method on vector
  **/
 
-// Include library
 #include<iostream>
 #include<vector>
 
