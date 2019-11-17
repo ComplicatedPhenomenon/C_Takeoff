@@ -28,48 +28,40 @@ public:
         res.push_back("");
         for(const char & c: S) {
             if(isalpha(c)){
-                char t1 = static_cast<char>(toupper(c));
-                char t2 = static_cast<char>(tolower(c));
-                array<char, 2> tem = {t1, t2};
-                for (string &r: res ){
+                array<char, 2> tem = {static_cast<char>(toupper(c)), static_cast<char>(tolower(c))};
+                vector<string> temres = res;
+                res.clear();
+                for (string &r: temres ){
                     for (const char  &t: tem){
-                        char c1 = t;
-                        string c2 = r;
-                        auto c3 = std::string(1,c1)+c2;
-                        cout << c3 << endl;
-                        res.push_back(c3);
+                        cout << "push: " << r + string(1,t) << endl;
+                        res.push_back(r +string(1,t));
                     }
                 }
             }
             else{
-                for(auto &r: res) {
-                    res.push_back(c + r);
-                }   
+                vector<string> temres = res;
+                res.clear();
+                for(string &r: temres) {
+                    cout << "push: " << r + string(1,c) << endl;
+                    res.push_back(r + string(1,c)); 
+                }     
             }
-            for(string &item: res) cout << item << " ";
-            cout << endl;
         }
-
-        
         return res;
         }
 };
 
 
 int main() {
-    string S = "ba";
+    string S = "a1b2";
+
     Solution test;
-    char c1 = '1';
-    char c2 = 'b';
-    auto c3 = std::string(1,c1)+c2;
-    cout << c3 << endl;
     vector<string> res = test.letterCasePermutation(S);
-    
+
     for(string &item: res){
         cout << item << " ";
     }
     cout << endl;
-
 
     return 0;
 }

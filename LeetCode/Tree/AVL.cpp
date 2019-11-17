@@ -34,29 +34,29 @@ Node* newNode(int key) {
 } 
 
 Node *rightRotate(Node *root) { 
-	Node *nroot = root -> left; 
-	Node *T2 = nroot -> right; 
+	Node *newRoot = root -> left; 
+	Node *T2 = newRoot -> right; 
 
-	nroot -> right = root; 
+	newRoot -> right = root; 
 	root -> left = T2; 
 
 	root -> height = max(height(root -> left), height(root -> right)) + 1; 
-	nroot -> height = max(height(nroot -> left), height(nroot -> right)) + 1; 
+	newRoot -> height = max(height(newRoot -> left), height(newRoot -> right)) + 1; 
 
-	return nroot; 
+	return newRoot; 
 } 
 
 Node *leftRotate(Node *root) { 
-	Node *nroot = root -> right; 
-	Node *T2 = nroot -> left; 
+	Node *newRoot = root -> right; 
+	Node *T2 = newRoot -> left; 
 
-	nroot -> left = root; 
+	newRoot -> left = root; 
 	root -> right = T2; 
 
 	root -> height = max(height(root -> left), height(root -> right)) + 1; 
-	nroot -> height = max(height(nroot -> left), height(nroot -> right)) + 1; 
+	newRoot -> height = max(height(newRoot -> left), height(newRoot -> right)) + 1; 
 
-	return nroot; 
+	return newRoot; 
 } 
 
 int getBalance(Node *N) { 

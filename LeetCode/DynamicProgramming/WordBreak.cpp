@@ -29,16 +29,17 @@ class Solution {
 public:
     bool wordBreak(string s, vector<string>& wordDict) {
         if(wordDict.size() == 0) return false;
-        vector<bool> dp(s.size()+1,false);
+        vector<bool> dp(s.size()+1, false);
         dp[0]=true;
         
-        for(int i = 1;i <= s.size(); i++) {
+        for(int i = 1; i <= s.size(); i++) {
             for(int j = i - 1;j >= 0; j--) {
                 if(dp[j] == true) {
                     string word = s.substr(j, i - j);
+                    cout << "searching <" << s.substr(j, i - j) << " > in wordDict" << endl;
                     if(find(wordDict.begin(), wordDict.end(), word) != wordDict.end()) {
                         dp[i]=true;
-                        break; //next i
+                        break; 
                     }
                 }
             }
@@ -50,7 +51,12 @@ public:
 
 int main() {
     string  s = "applepenapple";
-    vector<string> wordDict = {"apple", "pen"};
+    vector<string> wordDict = {"app", "apple", "pen"};
+
+    cout << "s = " << s << endl;
+    cout << "wordDict = { ";
+    for(const string &s: wordDict) cout << s << " ";
+    cout <<"}" << endl;
 
     Solution test;
     bool res = test.wordBreak(s, wordDict);

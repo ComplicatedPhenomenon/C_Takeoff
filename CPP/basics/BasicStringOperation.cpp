@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
     string result;
-    cout <<  result.empty() << endl;
+    cout << "result is empty: " << result.empty() << endl;
     string str1 = "Hello";
     string str2 = "world";
     string str3 = "It's a new day!";
@@ -14,13 +14,12 @@ int main() {
     result += str2;
     result += "! ";
     result += str3;
-    cout <<  result << endl;
-    cout <<  result[1] << endl;
+    cout << "result is: " << result << endl;
+    cout << "result[1] is: " << result[1] << endl;
 
-    string s("message"); // for capacity
-    cout << s << '\n';
+    string s("message"); 
     s = "abc";
-    s.at(2) = 'x'; // ok
+    s.at(2) = 'x'; 
     cout << s << '\n';
 
     cout << "string size = " << s.size() << '\n';
@@ -37,9 +36,11 @@ int main() {
         cout << exc.what() << '\n';
     }
 
-    char text[] = "Christmas Tree";
-    sizeof(text) == strlen(text) ? cout << "sizeof(text) == strlen(text)" << endl : cout << "sizeof(text) != strlen(text)" <<endl;
-    cout << "As sizeof return the actual memery used by the string, including the terminated  character." << endl;
-    
+    char text[] = "Christmas Tree"; //The C-style character string
+    cout << "sizeof(text) = " << sizeof(text) << endl;
+    cout << "sizeof(text[0]) = " << sizeof(text[0]) <<endl;
+    // Single quotation marks around one character are used for char literals,
+    string xs = string(1, 'a') + "bc"; 
+    cout << xs << endl;   
     return 0;
 }

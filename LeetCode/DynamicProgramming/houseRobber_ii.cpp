@@ -1,3 +1,8 @@
+// source: https://leetcode.com/problems/house-robber-ii/
+#include<iostream>
+#include<vector>
+using namespace std;
+
 class Solution {
 public:
     int rob(vector<int>& nums) {
@@ -16,3 +21,15 @@ private:
         return cur;
     }
 };
+
+int main(){
+    int res;
+    vector<int> nums = {2, 3, 2};
+    Solution test;
+    res = test.rob(nums);
+    cout << "Distribution: ";
+    for(int &i: nums) cout << i  << ' ';
+    cout << endl;
+    cout << res << endl;
+    return res;
+}
