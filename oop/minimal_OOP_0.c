@@ -5,20 +5,17 @@
 
 #include<stdio.h>
 
-typedef struct oop
-{
+typedef struct oop {
    void (*method)(void);
    int x;
    int y;
 } oop;
 
-void f()
-{
+void f() {
    printf("hey.\n");
 }
 
-oop new_oop(void)
-{
+oop new_oop(void) {
    oop o;
    o.method = &f;
    o.y = 4;
@@ -26,8 +23,7 @@ oop new_oop(void)
    return o; // return an object, with an object, you can apply method and data.
 }
 
-int main(int argc, char ** argv)
-{
+int main(int argc, char ** argv) {
    oop a = new_oop(); //Instantiate an object a
    printf("%d.\n",a.x+a.y);
    a.method();

@@ -31,23 +31,18 @@ maxHeap initMaxHeap(int n) {
     return hp;
 }
 
-
-/*
-    Function to swap data within two nodes of the max heap using pointers
-*/
 void swap(node *n1, node *n2) {
     node temp = *n1;
     *n1 = *n2;
     *n2 = temp;
 }
 
-
 void heapify(maxHeap *hp, int i) {
-    int largest = (LCHILD(i) < hp->size && hp->elem[LCHILD(i)].data > hp->elem[i].data) ? LCHILD(i) : i;
-    if(RCHILD(i) < hp->size && hp->elem[RCHILD(i)].data > hp->elem[largest].data) largest = RCHILD(i);
+    int largest = (LCHILD(i) < hp -> size && hp -> elem[LCHILD(i)].data > hp -> elem[i].data) ? LCHILD(i) : i;
+    if(RCHILD(i) < hp -> size && hp -> elem[RCHILD(i)].data > hp -> elem[largest].data) largest = RCHILD(i);
 
     if(largest != i){
-        swap(&(hp->elem[i]), &(hp->elem[largest]));
+        swap(&(hp -> elem[i]), &(hp -> elem[largest]));
         heapify(hp, largest);
     }
 }
@@ -56,15 +51,15 @@ void buildMaxHeap(maxHeap *hp, int *arr, size_t len) {
     int i;
     printf("Building a MaxHeap\n");
     for(i = 0; i < len; i++){
-        hp->elem = (hp->size != 0) ? realloc(hp->elem, (hp->size + 1) * sizeof(node)) : malloc(sizeof(node));
+        hp -> elem = (hp -> size != 0) ? realloc(hp -> elem, (hp -> size + 1) * sizeof(node)) : malloc(sizeof(node));
         /*`*realloc(void *ptr, size_t size)` attempts to resize the memory block pointed to by ptr that
         was previously allocated with a call to malloc or calloc.*/
         node nd;
         nd.data = arr[i];
-        hp->elem[(hp->size)++] = nd;
+        hp -> elem[(hp -> size)++] = nd;
     }
 
-    for(i = PARENT(hp->size); i >= 0; i--) {
+    for(i = PARENT(hp -> size); i >= 0; i--) {
         heapify(hp, i);
     }
 }
@@ -78,12 +73,12 @@ void insertNode(maxHeap *hp, int data) {
     node nd;
     nd.data = data;
 
-    int i = (hp->size)++;
-    while(i && nd.data > hp->elem[PARENT(i)].data) {
-        hp->elem[i] = hp->elem[PARENT(i)];
+    int i = (hp -> size)++;
+    while(i && nd.data > hp -> elem[PARENT(i)].data) {
+        hp -> elem[i] = hp -> elem[PARENT(i)];
         i = PARENT(i);
     }
-    hp->elem[i] = nd;
+    hp -> elem[i] = nd;
 }
 
 
@@ -94,14 +89,14 @@ void insertNode(maxHeap *hp, int data) {
     is never violated
 */
 void deleteNode(maxHeap *hp) {
-    if(hp->size) {
-        printf("Deleting node %d\n\n", hp->elem[0].data);
-        hp->elem[0] = hp->elem[--(hp->size)];
-        hp->elem = realloc(hp->elem, hp->size * sizeof(node));
+    if(hp -> size) {
+        printf("Deleting node %d\n\n", hp -> elem[0].data);
+        hp -> elem[0] = hp -> elem[--(hp -> size)];
+        hp -> elem = realloc(hp -> elem, hp -> size * sizeof(node));
         heapify(hp, 0);
     } else {
         printf("\nMax Heap is empty!\n");
-        free(hp->elem);
+        free(hp -> elem);
     }
 }
 
@@ -114,8 +109,8 @@ void deleteNode(maxHeap *hp) {
     node
 */
 int getMinNode(maxHeap *hp, int i) {
-    if(LCHILD(i) >= hp->size) {
-        return hp->elem[i].data;
+    if(LCHILD(i) >= hp -> size) {
+        return hp -> elem[i].data;
     }
 
     int l = getMinNode(hp, LCHILD(i));
@@ -128,55 +123,47 @@ int getMinNode(maxHeap *hp, int i) {
     }
 }
 
-
-/*
-    Function to clear the memory allocated for the max heap
-*/
 void deleteMaxHeap(maxHeap *hp) {
-    free(hp->elem);
+    free(hp -> elem);
 }
 
-
-void inorderTraversal(maxHeap *hp, int i) {
-    if(LCHILD(i) < hp->size) {
-        inorderTraversal(hp, LCHILD(i));
+void inOrderTraversal(maxHeap *hp, int i) {
+    if(LCHILD(i) < hp -> size) {
+        inOrderTraversal(hp, LCHILD(i));
     }
-    printf("%d ", hp->elem[i].data);
-    if(RCHILD(i) < hp->size) {
-        inorderTraversal(hp, RCHILD(i));
+    printf("%d ", hp -> elem[i].data);
+    if(RCHILD(i) < hp -> size) {
+        inOrderTraversal(hp, RCHILD(i));
     }
 }
-
 
 void preorderTraversal(maxHeap *hp, int i) {
-    if(LCHILD(i) < hp->size) {
+    if(LCHILD(i) < hp -> size) {
         preorderTraversal(hp, LCHILD(i));
     }
-    if(RCHILD(i) < hp->size) {
+    if(RCHILD(i) < hp -> size) {
         preorderTraversal(hp, RCHILD(i));
     }
-    printf("%d ", hp->elem[i].data);
+    printf("%d ", hp -> elem[i].data);
 }
 
-
-void postorderTraversal(maxHeap *hp, int i) {
-    printf("%d ", hp->elem[i].data);
-    if(LCHILD(i) < hp->size) {
-        postorderTraversal(hp, LCHILD(i));
+void postOrderTraversal(maxHeap *hp, int i) {
+    printf("%d ", hp -> elem[i].data);
+    if(LCHILD(i) < hp -> size) {
+        postOrderTraversal(hp, LCHILD(i));
     }
-    if(RCHILD(i) < hp->size) {
-        postorderTraversal(hp, RCHILD(i));
+    if(RCHILD(i) < hp -> size) {
+        postOrderTraversal(hp, RCHILD(i));
     }
 }
-
 
 /*
     Function to display all the nodes in the max heap
 */
-void levelorderTraversal(maxHeap *hp) {
+void levelOrderTraversal(maxHeap *hp) {
     int i;
-    for(i = 0; i < hp->size; i++) {
-        printf("%d ", hp->elem[i].data);
+    for(i = 0; i < hp -> size; i++) {
+        printf("%d ", hp -> elem[i].data);
     }
 }
 
@@ -193,7 +180,7 @@ int main(){
     int array[] = {1,2,3,7,4,0,-1};
     size_t len = sizeof(array)/sizeof(array[0]);
 
-    printf("The origianl array is: ");
+    printf("The origianal array is: ");
     printArray(array, len);
 
     maxHeap hp = initMaxHeap(len);
@@ -201,7 +188,7 @@ int main(){
 
     buildMaxHeap(root, array, len);
     printf("postorder traversal: ");
-    postorderTraversal(root,0);
+    postOrderTraversal(root,0);
     printf("\n");
 
     printf("minimum of node 0 is %d\n",getMinNode(root, 0));

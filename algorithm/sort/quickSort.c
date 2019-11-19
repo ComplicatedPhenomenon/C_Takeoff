@@ -1,4 +1,9 @@
+/**
+ * Quick sort requires extra space
+ **/
+
 #include<stdio.h>
+
 void swap(int* a, int* b){
     int t = *a;
     *a = *b;
@@ -37,7 +42,7 @@ int main(){
     int arr[] = {22, 17, -8, 9, 11, 5};
     int n = sizeof(arr)/sizeof(arr[0]);
 
-    printf("The origianl array is: ");
+    printf("The origianal array is: ");
     printArray(arr, n);
 
     quickSort(arr, 0, n-1);

@@ -1,6 +1,7 @@
 /**
  * a = a % b + a / b * b
  * Time complexity O(Nlog(N)))
+ * Mergesort need more memory for another array to put ordered data. 
  **/
 #include <stdio.h>
 #define max 10

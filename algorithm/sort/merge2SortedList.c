@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<time.h>
 
-void printArray(int *arrayay, int x);
+void printArray(int *array, int x);
 int *bubbleSort(int *array, int n);
 
 

@@ -7,6 +7,10 @@ Question:
 
    The scenario of when to use stable sort and when to use unstable sort? what the difference between them?
 2. Time complexity for heap sort.
+3. Compare Merge sort with quick sort and merge sort
+    Merge sort requires extra space, while the other two don't.
+
+    https://stackoverflow.com/a/28522840/7583919
 
 3.Which fit most in what situation?
   * Bucket sort 
@@ -42,14 +46,13 @@ intermediate state
 
       7                           
     /   \    
-   4     3     maxheap is complete! postorderTraversal to testify.
+   4     3     maxheap is complete! postOrderTraversal to testify.
   / \   / \
  2   1  0 -1
 
-postorderTraversal(0)->7->postorderTraversal(1)->4->postorderTraversal(3)->2->postorderTraversal(4)->1
-->postorderTraversal(2)->3->postorderTraversal(5)->0->postorderTraversal(6)->-1
+postOrderTraversal(0)->7->postOrderTraversal(1)->4->postOrderTraversal(3)->2->postOrderTraversal(4)->1
+->postOrderTraversal(2)->3->postOrderTraversal(5)->0->postOrderTraversal(6)->-1
 
-7, 3, 2, 1, 3, 0, -1
 ```
 
 Example of bad workflow, better to demonstrate in animation.

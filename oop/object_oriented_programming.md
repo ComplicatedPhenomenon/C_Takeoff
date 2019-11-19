@@ -3,8 +3,7 @@
 
 `->` in **C**
 ```c
-struct foo
-{
+struct foo {
     int x;
     float y;
 }
@@ -25,14 +24,12 @@ pvar->y = 3.2 // It's just the dot version when you want to access elements of a
 #include<stdio.h>
 #include<stdlib.h>
 
-typedef struct Cell
-{
+typedef struct Cell {
     int cellSeq;
     struct Cell *next; /*tCell will not work here*/
 } tCell;
 
-int main(void)
-{
+int main(void) {
     int i;
     tCell *curr;
     tCell *first;
@@ -62,4 +59,5 @@ int main(void)
 }
 ```
 <hr>
-[With C, you have to pass your "object" explicitly as the first parameter of the method, there is no automatism for OOP. And you only need to make it a member as function pointer when you want to implement virtual methods.](https://stackoverflow.com/questions/45230835/call-method-in-c-oop)
+
+[With in C, you have to pass your `object` explicitly as the first parameter of the method, there is no automatism for OOP. And you only need to make it a member as function pointer when you want to implement virtual methods.](https://stackoverflow.com/questions/45230835/call-method-in-c-oop)

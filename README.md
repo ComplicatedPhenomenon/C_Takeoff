@@ -1,5 +1,5 @@
 # Overview of this repo
-It's a repo mainly about C, few may involve C++. It aims to become a useful libraries to look up the key usage of features in C. It will obey the modern standard as much as possible.
+It's a project mainly about introducing C, few involves C++. It aims to become a useful reference to look up the key usage of features in C and It obeys the modern standard as much as possible.
 
 * `lcthw` is the handy practice on the book `Learn C the Hard way` by [Zed A Shaw](https://zedshaw.com).
 * `test_tools` is the recommend tools used during your C programming career.
@@ -8,7 +8,7 @@ It's a repo mainly about C, few may involve C++. It aims to become a useful libr
 # Features of this repo
 * [ ] Documentation is required.
 
-  ❌ `Doxygen` is not idea tool to make documentation for me, I really can't agree with taste.
+  ❌ `Doxygen` is not an idea tool to make documentation to me, I really can't agree with its taste.
 
   :guitar:[slate an API generator](https://github.com/lord/slate)
 
@@ -37,7 +37,7 @@ It's a repo mainly about C, few may involve C++. It aims to become a useful libr
     - [ ] Graph
       - [ ] Breadth-First search
       - [ ] Depth-First search
-      - [ ] shorted-path alogorithm
+      - [ ] shorted-path algorithm
   * Data Algorithm
     * Sort
       - [x] Bubble sort

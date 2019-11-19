@@ -10,11 +10,11 @@
 /* In C, you cannot have functions inside of structs*/
 struct PERSON{
 	char *name;
-    int    age;
-    int   height;
-    int   weight;
+    int age;
+    int height;
+    int weight;
     void (*print)(struct PERSON *self);
-    void(*destroy)(struct PERSON *self);
+    void (*destroy)(struct PERSON *self);
 };
 
 
@@ -36,11 +36,9 @@ void person_destroy(person *who){
     free(who);
 }
 
-person *person_create(char *name, int age, int height, int weight)
-{
+person *person_create(char *name, int age, int height, int weight) {
 	person *who = malloc(sizeof(person));
-    assert(who != NULL);
-	// who->name is the short version of (*who).name
+    assert(who != NULL); // who->name is the short version of (*who).name
     who->name = strdup(name);
     who->age = age;
     who->height = height;
@@ -56,7 +54,7 @@ int main(int argc, char *argv[]){
     person *joe = person_create("Joe Alex", 32, 64, 140);
     printf("Access the information of the object directly\n");
     printf("joe->name : %s\n", joe->name);
-	printf("(*joe).name : %s\n",(*joe).name);
+	//printf("(*joe).name : %s\n",(*joe).name);
     printf("joe->age : %d\n",joe->age);
     printf("joe->height : %d\n",joe->height);
     printf("joe->weight : %d\n",joe->weight);
