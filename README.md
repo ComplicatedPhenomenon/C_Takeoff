@@ -2,7 +2,6 @@
 It's a project mainly about introducing C, few involves C++. It aims to become a useful reference to look up the key usage of features in C and It obeys the modern standard as much as possible.
 
 * `lcthw` is the handy practice on the book `Learn C the Hard way` by [Zed A Shaw](https://zedshaw.com).
-* `test_tools` is the recommend tools used during your C programming career.
 * `GSL` is used to do scientific computation by [GNU Scientific Library](http://www.gnu.org/software/gsl/).
 
 # Features of this repo
@@ -30,7 +29,7 @@ It's a project mainly about introducing C, few involves C++. It aims to become a
     - [x] tree
       - [x] Binary tree
       - [x] Binary search tree
-      - [ ] AVL Tree
+      - [] AVL Tree
       - [ ] B Tree
       - [ ] B+ Tree
 
@@ -45,7 +44,7 @@ It's a project mainly about introducing C, few involves C++. It aims to become a
       - [x] Quick sort
       - [x] Merge sort
       - [x] Heap sort
-      - [ ] Bucket sort
+      - [x] Bucket sort
       - [x] Counting sort
       - [x] Insertion sort
       - [ ] Radix sort

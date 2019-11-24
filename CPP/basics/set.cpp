@@ -3,13 +3,14 @@
 
 using namespace std;
 int main () {
-    int myints[] = {75,23,65,42,13};
-    set<int> myset (myints,myints+5);
+    int myInts[] = {75, 23, 65, 42, 13};
+    set<int> mySet (myInts,myInts+5);
 
-    if (myset.find(75)!= myset.end()) cout << "Find" << endl;
-    if (myset.find(9) == myset.end()) cout << "Not Find" << endl;
-    cout << "myset contains:";
-    for (set<int>::iterator it=myset.begin(); it!=myset.end(); ++it)
+    if (mySet.find(75)!= mySet.end()) cout << "Find" << endl;
+    if (mySet.find(9) == mySet.end()) cout << "Not Find" << endl;
+
+    cout << "mySet contains:";
+    for (set<int>::iterator it=mySet.begin(); it!=mySet.end(); ++it)
         cout << ' ' << *it;
 
     cout << '\n';

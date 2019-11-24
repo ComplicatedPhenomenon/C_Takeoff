@@ -1,6 +1,6 @@
 /**
  * 原始数组的值的顺序体现在辅助数组的指标上
- * 注意：
+ * 注意： (requirements to use bucket sort)
  * 1， 原始数组不含小于0的元素
  * 2， 原始数组中的最大元素要小于数组的长度
  **/
@@ -12,7 +12,7 @@ void bucketSort(int array[], int n) {
     for (i = 0; i < n; i++) count[i] = 0;
  
     for (i = 0; i < n; i++) (count[array[i]])++;
- 
+    // index of count save the order, item of count represent the time of occurrence of index
     for (i = 0, j = 0; i < n; i++) { 
         for(;count[i] > 0; (count[i])--)
             array[j++] = i;

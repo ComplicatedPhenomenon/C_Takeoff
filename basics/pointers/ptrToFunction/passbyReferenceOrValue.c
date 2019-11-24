@@ -1,10 +1,16 @@
 /**
-    Pointers allow a way to write functions that can modify their arguments' values: the C way of implementing Pass by Reference.
-
-    When and how will the memory will be released?
+ *  Pointers allow a way to write functions that can modify their arguments' values: 
+ *  the C way of implementing Pass by Reference.
+ *  When and how will the memory will be released?
  **/
 #include<stdio.h>
 
+/**
+ * 1. This means that changes in the parameter, intentional or accidental,
+ *    cannot affect the argument. 
+ * 2. the cost of copying: Copying all bytes of the argument can be costly 
+ *    if the object to be copied is large
+ **/
 void foo(int k){
     k = 20;
 }
