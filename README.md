@@ -67,6 +67,8 @@ It's a project mainly about introducing `C`, meanwhile, a certain amount of `CPP
   > The Visual Studio Code Remote - Containers extension lets you use a Docker container as a full-featured development environment. It allows you to open any folder inside (or mounted into) a container and take advantage of Visual Studio Code's full feature set.
 
 # `gdb` usage
+* https://sourceware.org/gdb/onlinedocs/gdb/
+* https://betterexplained.com/articles/debugging-with-gdb/
 
 # Configure a handy text editor
 * `Vim`. 

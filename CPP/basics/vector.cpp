@@ -4,8 +4,25 @@
 
 #include<iostream>
 #include<vector>
-
+#include<array>
+#include <chrono>
+#include <thread>
 using namespace std;
+
+void printOneDVector(vector<int> &v){
+    auto now = chrono::system_clock::now();
+    time_t t = chrono::system_clock::to_time_t(now);
+    cout << "At time" << ctime(&t) << ", elements in vector v includes: ";
+    for(const int &n : v){
+        cout << n << " ";
+    }
+    cout << endl;
+
+    cout << "v.size() is: " << v.size() << endl;
+    cout << "v.capacity() is: " << v.capacity() << endl;
+
+    this_thread::sleep_for(std::chrono::milliseconds(1000));
+}
 
 int main() {
     vector<int> v = {7, 5, 16, 8};
@@ -13,22 +30,14 @@ int main() {
     v.push_back(25);
     v.push_back(13);
 
-    for(int n : v){
-        cout << n << endl;
-    }
+    printOneDVector(v);
 
-    int twoDArray[3][4] = {{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 50}};
-    int len = sizeof(twoDArray) / sizeof(twoDArray[0]);
-    int oneDArray[len];
-    for(int i = 0; i < 3; ++i){
-        for(int j = 0; j < 4; ++j){
-            oneDArray[i*4+j] = twoDArray[i][j];
-        }
-    }
-    for(int i = 0; i < 12; ++i){
-        cout << oneDArray[i] << " ";
-    }
-    cout << endl;
+    array<int, 3> array1 {4, 7, 9};
+    for (const int &a : array1){
+        v.push_back(a);
+    } 
+    printOneDVector(v);
+
 
     vector<vector<int>> matrix = {{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 50}};
     cout << "matrix has " << matrix.size() * matrix[0].size() << " elements" << endl; 

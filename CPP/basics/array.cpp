@@ -10,10 +10,7 @@
 using namespace std;
 
 int main() {
-
-    array<int, 6> array1 {4, 7, 9, 0, 2, 3} ; 
-    array<string, 2> array2 = { "a", "b" };
-
+    array<int, 6> array1 {4, 7, 9, 0, 2, 3}; 
     sort(array1.begin(), array1.end()); 
 
     // access by const reference
@@ -33,12 +30,24 @@ int main() {
     }
     cout << '\n';
 
+    array<string, 2> array2 = { "a", "b" };
     for(const auto& s: array2)
         cout << s << ' ' ;
     cout << endl;
 
 
-    
+    int twoDArray[3][4] = {{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 50}};
+    int len = sizeof(twoDArray) / sizeof(twoDArray[0]);
+    int oneDArray[len];
+    for(int i = 0; i < 3; ++i){
+        for(int j = 0; j < 4; ++j){
+            oneDArray[i*4+j] = twoDArray[i][j];
+        }
+    }
+    for(int i = 0; i < 12; ++i){
+        cout << oneDArray[i] << " ";
+    }
+    cout << endl;
     return 0;
 }
 
