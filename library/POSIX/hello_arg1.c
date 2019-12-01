@@ -16,16 +16,16 @@
 char *messages[NUM_THREADS];
 
 void *PrintHello(void *threadid){
-    long taskid;
+    long taskId;
     sleep(1);
-    taskid = (long) threadid;
-    printf("Thread %ld: %s\n", taskid, messages[taskid]);
+    taskId = (long) threadid;
+    printf("Thread %ld: %s\n", taskId, messages[taskId]);
     pthread_exit(NULL);
 }
 
 int main(int argc, char *argv[]){
     pthread_t threads[NUM_THREADS]; // To store thread id of newly created thread.
-    //long taskids[NUM_THREADS];  //  func args
+    //long taskIds[NUM_THREADS];  //  func args
     int rc;
     long t;
 
@@ -39,7 +39,7 @@ int main(int argc, char *argv[]){
     messages[7] = "Latin: Orbis, te saluto!";
 
     for(t = 0; t < NUM_THREADS; t++) {
-        //taskids[t] = t;
+        //taskIds[t] = t;
         printf("Creating thread %ld\n", t);
         rc = pthread_create(&threads[t], NULL, PrintHello, (void *) t);
         if (rc) {

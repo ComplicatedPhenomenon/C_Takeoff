@@ -28,14 +28,16 @@ It's a project mainly about introducing `C`, meanwhile, a certain amount of `CPP
   * Advanced
     - [x] OOP
     - [x] multithreading
-    - [ ] Error handaling
+    - [ ] Error handling
   * Data structure
     - [x] Linked List
     - [x] Stack 
     - [x] Queue
     - [x] Heap
-    - [ ] Hash table
-      - [ ] value collision 
+    - [x] Hash table
+      - [x] Linear probing
+      - [ ] Chaining
+      - [ ] Re-Hashing
     - [x] tree
       - [x] Binary tree
       - [x] Binary search tree

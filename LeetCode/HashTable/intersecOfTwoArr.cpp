@@ -1,5 +1,13 @@
 /**
     https://leetcode.com/problems/intersection-of-two-arrays/
+
+    Example:
+    Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+    Output: [9,4]
+
+    Note
+    Each element in the result must be unique.
+    The result can be in any order.
  **/
 
 #include <iostream>
@@ -13,7 +21,7 @@ public:
         vector<int> res;
         unordered_set<int> set;
         // hash the first array
-        for(auto n : Number s1)
+        for(auto n : nums1)
             set.insert(n);
         for(auto n : nums2) {
             if(set.find(n) != set.end()) { //  If the element is found, 

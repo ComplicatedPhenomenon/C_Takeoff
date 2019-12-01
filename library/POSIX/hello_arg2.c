@@ -30,7 +30,7 @@ struct thread_data {
 struct thread_data thread_data_array[NUM_THREADS];
 
 void *PrintHello(void *threadarg){
-    int taskid, sum;
+    int taskId, sum;
     char *hello_msg;
     struct thread_data *my_data;
 
@@ -38,10 +38,10 @@ void *PrintHello(void *threadarg){
 
     my_data = (struct thread_data *) threadarg;
     //decompose data of an element from array
-    taskid = my_data->thread_id;
+    taskId = my_data->thread_id;
     sum = my_data->sum;
     hello_msg = my_data->message;
-    printf("Thread %d: %s  Sum=%d\n", taskid, hello_msg, sum);
+    printf("Thread %d: %s  Sum=%d\n", taskId, hello_msg, sum);
     pthread_exit(NULL);
 }
 
