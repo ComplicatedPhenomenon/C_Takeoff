@@ -29,7 +29,7 @@ int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_
 
 An Concrete example
 
-![](pthread.svg)
+![](../../figures/pthread.svg)
 
 
 

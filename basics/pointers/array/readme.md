@@ -19,7 +19,7 @@ step to dynamic array declaration and initialization
 * Define a reference variable (say p) of the desired data type
 * Allocate memory cells for the array elements and make p point to the first array element
 
-![](DynamicArray.svg)
+![](../../../figures/DynamicArray.svg)
 
 
 The address of C array is column-contigious, the address of Fortran array is row-contigious.

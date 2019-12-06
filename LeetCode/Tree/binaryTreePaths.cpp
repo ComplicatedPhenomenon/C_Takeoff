@@ -1,6 +1,22 @@
-//https://leetcode.com/problems/binary-tree-paths
 
+/**
+ * source: https://leetcode.com/problems/binary-tree-paths
+ * Input:
+ 
+          1
+        /   \
+       2     3
+        \
+         5
 
+    Output: ["1->2->5", "1->3"]
+  **/
+
+#include<iostream>
+#include<vector>
+#include<cstdlib>
+#include"tree.h"
+using namespace std;
 
 class Solution {
 public:
@@ -20,4 +36,26 @@ public:
         binaryTreePaths(result, root, to_string(root->val));
         return result;
     }
+};
+
+int main(){
+    struct TreeNode *root; 
+    root = newNode(2);
+    root -> left = newNode(3);
+    root -> right = newNode(4);
+    root -> left -> left = newNode(5);;
+    root -> left -> right = newNode(6);
+    root -> right -> right = newNode(7);
+    Solution test;
+    vector<string> res = test.binaryTreePaths(root);
+    for(string const & i: res) cout << i << " ";
+    cout << endl;
+    freeBinaryTree(root);
+    
+    struct TreeNode *emptyTree = NULL;
+    res = test.binaryTreePaths(emptyTree);
+    for(string const & i: res) cout << i << " ";
+    cout << endl;
+    
+    return 0;
 }

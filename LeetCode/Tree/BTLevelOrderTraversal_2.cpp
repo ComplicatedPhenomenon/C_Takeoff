@@ -72,5 +72,33 @@ int main ( ) {
     }  
 
     freeBinaryTree(root);
+
+    
+    // careful, here you are doing arithmetic on pointer
+    root = (struct TreeNode *)calloc(7, sizeof(struct TreeNode));
+    root -> val = 3;
+    root -> left = root + 1;
+    root -> right = root + 2;
+
+    (root + 1) -> val = 9;
+
+    (root + 2) -> val = 20;
+    (root + 2) -> left = root + 5;
+    (root + 2) -> right = root + 6; 
+
+    (root + 5) -> val = 15;
+    (root + 6) -> val = 7;
+
+    res = test.levelOrder(root);
+    for (int i = 0; i < res.size(); i++) {
+        for (int j = 0 ; j < res[i].size(); j++) {
+            cout << res[i][j] << " ";
+        }
+        cout << endl;
+    }  
+
+    free(root);
+    
+
     return 0;
 }

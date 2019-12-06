@@ -1,3 +1,8 @@
+#include<iostream>
+#include<vector>
+#include"tree.h"
+using namespace std;
+
 class Solution {
 public:
     vector<vector<int>> pathSum(TreeNode* root, int sum) {
@@ -17,3 +22,8 @@ private:
         path.pop_back();
     }
 };
+
+int main(){
+
+    return 0;
+}

@@ -41,9 +41,10 @@ void * pop(struct Queue * queue) {
     
     if (queue->front == NULL) ans = NULL;
     else {
-        ans = queue->front->ptr;
+        ans = queue -> front -> ptr;
         struct QueueNode *tmp = queue->front;
         queue->front = queue->front->next;
+       
         if (queue->front == NULL) queue->tail = NULL;
         free(tmp);
     }

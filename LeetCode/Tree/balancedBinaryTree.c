@@ -29,13 +29,7 @@
 #include<stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
-struct TreeNode {
-    int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
-};
-
+#include"tree.h"
 
 int maxDepth(struct TreeNode *root) {
     if (root == NULL)
@@ -62,23 +56,6 @@ bool isBalanced(struct TreeNode *root) {
         else return false;
     }
     else return false;
-}
-
-
-struct TreeNode * newNode(int val) {  
-    struct TreeNode *node = (struct TreeNode *) malloc(sizeof(struct TreeNode));
-    node->val = val;  
-    node->left = NULL;  
-    node->right = NULL;  
-    return node;  
-} 
-
-void freeBinaryTree(struct TreeNode* root) {
-    if(root != NULL) {
-        freeBinaryTree(root -> left);
-        freeBinaryTree(root -> right);
-        free(root);
-    }
 }
 
 int main() {

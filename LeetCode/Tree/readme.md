@@ -19,7 +19,7 @@ When you think you know well enough about pointers, boom, here comes `BTLevelOrd
 
 Review how to implement a heap by 2 stacks to help understand the more complex usage of pointers.
 
-![](implementAHeap.svg)
+![](../../figures/implementAHeap.svg)
 
 # `BTLevelOrderTraversal_2.cpp`
-![](levelOrderTraversal.svg)
+![](../../figures/levelOrderTraversal.svg)
