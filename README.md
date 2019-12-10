@@ -63,6 +63,8 @@ It's a project mainly about introducing `C`, meanwhile, a certain amount of `CPP
     * [x] Search
       - [x] Binary search 
 
+* [ ] Automated testing
+
 # Memory leak testing
 * Applying Docker to solve the the problem of no proper `Valgrind` for a specific OS version.
 * [Developing inside a Container!](https://code.visualstudio.com/docs/remote/containers)

@@ -1,8 +1,5 @@
-/**
- * Understand array -> contents[i]
- **/
-#include<darray.h>
 #include<assert.h>
+#include"darray.h"
 
 DArray *DArray_create(size_t element_size, size_t initial_max){
     DArray *array = malloc(sizeof(DArray));
@@ -26,7 +23,7 @@ void DArray_clear(DArray *array){
     int i = 0;
     if(array -> element_size > 0){
         for(i = 0; i < array -> max; i++){
-            if(array -> contents[i] !== NULL){
+            if(array -> contents[i] != NULL){
                 free(array -> contents[i]);
             }
         }
@@ -50,7 +47,8 @@ error:
 
 int DArray_expand(DArray *array) {
     size_t old_max = array -> max;
-    check(DArray_resize(array, array -> max + array -> expand_rate)==0, "Failed to expand array to new size: %d", array_max + (int)array -> expand_rate);
+    check(DArray_resize(array, array -> max + array -> expand_rate)==0, 
+    "Failed to expand array to new size: %d", array -> max + (int)array -> expand_rate);
     memset(array -> contents + old_max, 0, array -> expand_rate + 1);
 
     return 0;

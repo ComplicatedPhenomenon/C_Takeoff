@@ -8,9 +8,7 @@ gcc -o foo foo.c -L. -lmoo
 ```
 ### Static Libraries: `.a`
 How to generate a static library (object code archive file):
-* Compile: cc -Wall -c ctest1.c ctest2.c
-  Compiler options:
-  `-Wall: include warnings. See man page for warnings specified.``
+* Compile: `cc -Wall -c ctest1.c ctest2.c`
 * Create library `libctest.a`: `ar -cvq libctest.a ctest1.o ctest2.o`
 * List files in library: `ar -t libctest.a`
 * Linking with the library:
@@ -26,7 +24,7 @@ rm  prog *.o *.a
 ```
 
 
-[Problems when Link static library ](http://blog.csdn.net/aiwoziji13/article/details/7330333)
+[Problems you might encounter with using static library ](http://blog.csdn.net/aiwoziji13/article/details/7330333)
 ```sh
 undefined reference to
 ```

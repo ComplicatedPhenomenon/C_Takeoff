@@ -1,3 +1,5 @@
+//  gcc -Wall -g -DNDEBUG ex20.c
+
 #include "../../dbg.h"
 #include<stdlib.h>
 #include<stdio.h>
