@@ -1,8 +1,7 @@
 #include<stdio.h>
 #include<time.h>
 
-int main()
-{  
+int main() {  
    time_t now;
    time(&now);
    /*returns the current calendar time of the system as time since epoch*/

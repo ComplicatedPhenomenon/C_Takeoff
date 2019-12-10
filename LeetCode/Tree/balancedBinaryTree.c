@@ -1,8 +1,5 @@
-//https://leetcode.com/problems/balanced-binary-tree/
-
-
-/** 
-
+/**
+ * source: https://leetcode.com/problems/balanced-binary-tree 
     a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
 
     Input: 

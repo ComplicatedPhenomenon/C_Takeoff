@@ -13,7 +13,7 @@ struct node {
 };
 
 struct node *constructBST( int);
-void inorder_transversal(struct node *);
+void inorderTranversal(struct node *);
 void freeTree(struct node *root);
 
 char array[ ] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'j', 'i', 'H'};
@@ -24,7 +24,7 @@ int main(){
     struct node *root;
     root = constructBST(0);
     printf("In-order Traversal: \n");
-    inorder_transversal(root);
+    inorderTranversal(root);
     freeTree(root);
 
     return 0;
@@ -41,11 +41,11 @@ struct node *constructBST(int index) {
     return temp;
 }
 
-void inorder_transversal(struct node *root){
+void inorderTranversal(struct node *root){
     if (root != NULL) {
-        inorder_transversal(root->left);
+        inorderTranversal(root->left);
         printf("%c\t", root->data);
-        inorder_transversal(root->right);
+        inorderTranversal(root->right);
     }
     printf("\n");
 }

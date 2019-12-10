@@ -4,7 +4,6 @@
 #include<iostream> 
 using namespace std; 
 
-// An AVL tree node 
 class Node { 
 public: 
 	int key; 
@@ -66,23 +65,18 @@ int getBalance(Node *N) {
 } 
 
 Node* insert(Node* node, int key) { 
-	/* 1. Perform the normal BST insertion */
 	if (node == NULL) 
 		return(newNode(key)); 
 	if (key < node -> key) 
 		node -> left = insert(node -> left, key); 
 	else if (key > node -> key) 
 		node -> right = insert(node -> right, key); 
-	else // Equal keys are not allowed in BST 
+	else 
 		return node; 
 
-	/* 2. Update height of this ancestor node */
 	node -> height = 1 + max(height(node -> left), 
 						height(node -> right)); 
 
-	/* 3. Get the balance factor of this ancestor 
-		node to check whether this node became 
-		unbalanced */
 	int balance = getBalance(node); 
 
 	if (balance > 1 && key < node -> left -> key) 
@@ -122,8 +116,7 @@ void freeBinaryTree(Node* root) {
 
 int main() { 
 	Node *root = NULL; 
-	
-	/* Constructing tree given in the above figure */
+
 	root = insert(root, 10); 
 	root = insert(root, 20); 
 	root = insert(root, 30); 

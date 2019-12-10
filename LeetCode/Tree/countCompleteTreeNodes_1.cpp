@@ -1,4 +1,6 @@
-
+/**
+ * source: https://leetcode.com/problems/count-complete-tree-nodes
+ **/
 #include<iostream>
 #include<cmath>
 #include"tree.h"
@@ -8,7 +10,7 @@ class Solution {
 public:
     int countNodes(TreeNode * root) {
         if(!root) return 0;
-        int hl=0, hr=0;
+        int hl = 0, hr = 0;
         TreeNode *l = root, *r = root;
         while(l) {hl++; l = l -> left;}
         while(r) {hr++; r = r -> right;}

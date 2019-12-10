@@ -5,7 +5,7 @@ static DArray *array = NULL;
 static int *val1 = NULL;
 static int *val2 = NULL;
 
-char *test_create(){
+char *test_create() {
     array = DArray_create(sizeof(int), 100);
     mu_assert(array != NULL, "DArray_create failed.");
     mu_assert(array->contents != NULL, "contents are wrong in darray");
@@ -16,32 +16,28 @@ char *test_create(){
     return NULL;
 }
 
-char *test_destroy()
-{
+char *test_destroy() {
     DArray_destroy(array);
-
     return NULL;
 }
 
-char *test_new()
-{
+char *test_new() {
     val1 = DArray_new(array);
     mu_assert(val1 != NULL, "failed to make a new element");
-
     val2 = DArray_new(array);
     mu_assert(val2 != NULL, "failed to make a new element");
 
     return NULL;
 }
 
-char *test_set(){
+char *test_set() {
     DArray_set(array, 0, val1);
     DArray_set(array, 0, val2);
 
     return NULL;
 }
 
-char *test_get(){
+char *test_get() {
     mu_assert(DArray_get(array, 0) == val1, "Wrong first value.");
     mu_assert(DArray_get(array, 0) == val2, "Wrong second value.");
 

@@ -15,7 +15,7 @@ void List_destroy(List *list){
     free(list);
 }
 
-void Lis_clear(List *list){
+void List_clear(List *list){
   LIST_FOREACH(list, first, next, cur){
     free(cur->value);
     }
@@ -73,14 +73,12 @@ error:
     return;
 }
 
-void *List_shift(List *list)
-{
+void *List_shift(List *list) {
     ListNode *node = list->first;
     return node != NULL ? List_remove(list, node) : NULL;
 }
 
-void *List_remove(List *list, ListNode *node)
-{
+void *List_remove(List *list, ListNode *node) {
     void * result = NULL;
 
     check(list->first && list-> last, "List is empty.");

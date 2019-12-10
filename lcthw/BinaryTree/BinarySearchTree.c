@@ -9,8 +9,8 @@ typedef struct node{
     struct node *right;
 } Node;
 
-Node *insert(int target, Node *xnode);
-void preorder(Node *root);
+Node *insert(int target, Node *node);
+void inorderTraversal(Node *root);
 void freeTree(Node *root);
 
 
@@ -28,37 +28,37 @@ int main() {
     printf("\n");
 
     /* printf("%d, %d\n", root -> info, root -> left -> info);*/
-    preorder(root);
+    inorderTraversal(root);
     freeTree(root);
     
     return 0;
 }
 
-Node *insert(int target, Node *xnode){
-    if(xnode == NULL){
+Node *insert(int target, Node *node){
+    if(node == NULL){
         Node * tem = (Node *)malloc(sizeof(Node));
         tem -> info = target;
         tem -> left = NULL;
         tem -> right = NULL;
-        xnode = tem;
+        node = tem;
     }
     else{
-        //(xnode -> info >= target) ? insert(target, xnode -> left) : insert(target, xnode -> right); /*No warning from compiler*/
-        if (xnode -> info >= target)
-            xnode -> left = insert(target, xnode -> left);
+        //(node -> info >= target) ? insert(target, node -> left) : insert(target, node -> right); /*No warning from compiler*/
+        if (node -> info >= target)
+            node -> left = insert(target, node -> left);
         else
-            xnode -> right = insert(target, xnode -> right);
+            node -> right = insert(target, node -> right);
 
         // think over the above logic
     }
-    return xnode;
+    return node;
 }
 
-void preorder(Node *root) {
+void inorderTraversal(Node *root) {
     if(root != NULL){
+        inorderTraversal(root -> left);
         printf("%d  ", root -> info);
-        preorder(root -> left);
-        preorder(root -> right);
+        inorderTraversal(root -> right);
         printf("\n");
     }
  }

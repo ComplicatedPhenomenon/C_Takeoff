@@ -4,8 +4,7 @@
 
 extern int errno;
 
-int main()
-{
+int main() {
 	FILE * pf;
 /**
  * When accessing files through C, the first necessity is to have a way to
@@ -14,14 +13,13 @@ int main()
  **/
 	int errnum;
 	pf = fopen("exist.txt","rb");
-	if (pf == NULL)
-	{
+	if (pf == NULL) {
 		errnum = errno;
 		fprintf(stderr, "Value of errno: %d\n", errno);
 		perror("Error printed by perror");
 		fprintf(stderr,"Error opening file: %s\n", strerror(errnum));
 	}
-	else{
+	else {
 		fclose(pf);
 		printf("It's doing well\n");
 	}

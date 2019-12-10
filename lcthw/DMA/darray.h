@@ -50,8 +50,7 @@ static inline void *DArray_remove(DArray *array, int i){
     return el;
 }
 
-static inline void *DArray_new(DArray *array)
-{
+static inline void *DArray_new(DArray *array) {
     check(array->element_size > 0, "Can't use DArray_new on 0 size darray.");
     return calloc(1, array->element_size);
 error:
