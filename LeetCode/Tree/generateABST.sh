@@ -1,2 +1,3 @@
-gcc -Wall -c tree.c -o tree.o 
-gcc -Wall generateABST.c tree.o 
+cc -o generateABST generateABST.c tree.c -I.
+valgrind ./generateABST
+rm generateABST

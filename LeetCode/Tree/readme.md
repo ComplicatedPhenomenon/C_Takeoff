@@ -23,3 +23,14 @@ Review how to implement a heap by 2 stacks to help understand the more complex u
 
 # `BTLevelOrderTraversal_2.cpp`
 ![](../../figures/levelOrderTraversal.svg)
+
+# Makefile
+Compare to a [bash script](generateABST.sh), you just collect all the bash commands into a file, nothing more. it is feasible when the dependency relation is easy,
+
+with [`Makefile`](Makefile)
+* you can generate multiple executable once for all.
+* ...
+
+## Reference
+* http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/
+* https://makefiletutorial.com/

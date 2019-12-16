@@ -1,8 +1,8 @@
 CFLAGS=-g	-O2	-Wall	-Wextra	-Isrc	-rdynamic	-DNDEBUG	$(OPTFLAGS)
-LIBS=-ldl	$(OPTLIBS)
+LIBS=-ldl	$(OPTLIBS) # 用于链接库的选项，允许用户使用OPTLIBS变量扩展链接选项
 PREFIX?=/usr/local
 SOURCES=$(wildcard	src/**/*.c	src/*.c)
-OBJECTS=$(patsubst	%.c,%.o,$(SOURCES))
+OBJECTS=$(patsubst	%.c,%.o,$(SOURCES)) #告诉patsubst把所有%.c扩展为%.o，并赋值给OBJECTS
 TEST_SRC=$(wildcard	tests/*_tests.c)
 TESTS=$(patsubst	%.c,%,$(TEST_SRC))
 TARGET=build/libYOUR_LIBRARY.a

@@ -28,5 +28,5 @@ You don't have to figure the value of `size_max` out yourself to write *portable
 
 * [MACRO](https://gcc.gnu.org/onlinedocs/cpp/Macros.html).[1](https://www.quora.com/What-are-macros-in-C)
 
-  * `object-like macros` (Several object-like macros are predefined; you use them without suppling their definitions. They fall into three classes: `standard`, `common`, and `system-specific`. )
+  * `object-like macros` (Several object-like macros are predefined; you use them without supplying their definitions. They fall into three classes: `standard`, `common`, and `system-specific`. )
   * `function-like macros` (Is it like a prototype?)

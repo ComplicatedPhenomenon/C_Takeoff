@@ -8,7 +8,7 @@ It's a project mainly about introducing `C`, meanwhile, a certain amount of `CPP
 
 
 # Features of this repo
-* [ ] Documentation is required.
+* [ ] Documentation.
 
   ❌ `Doxygen` is not an idea tool to make documentation to me, I really can't agree with its taste.
 
@@ -63,7 +63,11 @@ It's a project mainly about introducing `C`, meanwhile, a certain amount of `CPP
     * [x] Search
       - [x] Binary search 
 
-* [ ] Automated testing
+* [ ] writing robust code
+  - [ ] Debug 
+  - [ ] Automated test
+
+  ![](figures/tools.png)
 
 # Memory leak testing
 * Applying Docker to solve the the problem of no proper `Valgrind` for a specific OS version.
