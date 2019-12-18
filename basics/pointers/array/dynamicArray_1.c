@@ -7,12 +7,12 @@ int main(){
     int i, j;
     int *ptrToOneDArray;
     int **ptrToTwoDArray;
-    int nrows = 3;
-    int ncolumns=4;
+    int nRows = 3;
+    int nColumns=4;
 
     srand(time(NULL));
-    ptrToOneDArray = (int*) calloc(NUMBER, sizeof(int));
-    ptrToTwoDArray = (int **) calloc(nrows, sizeof(int *));  
+    ptrToOneDArray = (int *) calloc(NUMBER, sizeof(int));
+    ptrToTwoDArray = (int **) calloc(nRows, sizeof(int *));  
 
     //1D array initialization
     for (i = 0; i < NUMBER; ++i) ptrToOneDArray[i] = rand() % NUMBER;
@@ -23,27 +23,27 @@ int main(){
     
     printf("ptrToTwoDArray is %p\n", ptrToTwoDArray);
     // 2D array initialization
-    for (i = 0; i < nrows; ++i) ptrToTwoDArray[i] = (int *) calloc(ncolumns, sizeof(int));
+    for (i = 0; i < nRows; ++i) ptrToTwoDArray[i] = (int *) calloc(nColumns, sizeof(int));
     printf("&ptrToTwoDArray[0]: %p\n", &ptrToTwoDArray[0]);
-    for (i = 0; i < nrows; ++i) printf("%p ", ptrToTwoDArray[i]);
+    for (i = 0; i < nRows; ++i) printf("%p ", ptrToTwoDArray[i]);
     printf("\n");
     
 
-    for (i = 0; i < nrows; ++i) {
-        for (j = 0; j < ncolumns; ++j){
+    for (i = 0; i < nRows; ++i) {
+        for (j = 0; j < nColumns; ++j){
             ptrToTwoDArray[i][j]= rand() % 100;
         }
     }
  
-    for (i = 0; i < nrows; ++i) {
-        for (j = 0; j < ncolumns; ++j){
+    for (i = 0; i < nRows; ++i) {
+        for (j = 0; j < nColumns; ++j){
             printf("%d  ", ptrToTwoDArray[i][j]);
         }
         printf("\n");
     }
 
-    for (i = 0; i < nrows; ++i) {
-        for (j = 0; j < ncolumns; ++j){
+    for (i = 0; i < nRows; ++i) {
+        for (j = 0; j < nColumns; ++j){
             printf("%p  ", &ptrToTwoDArray[i][j]);
         }
         printf("\n");
@@ -53,7 +53,7 @@ int main(){
 
     // let's release the allocated memory properly
     free(ptrToOneDArray);
-    for (i = 0; i < nrows; ++i)
+    for (i = 0; i < nRows; ++i)
         free(ptrToTwoDArray[i]);
     free(ptrToTwoDArray);
     return 0;

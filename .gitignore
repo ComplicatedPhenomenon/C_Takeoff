@@ -1,10 +1,5 @@
 a.out*
+*.o
 *.asm
 *.s
 *.txt
-CPP/algorithm
-algorithm/libeve
-Learn-Algorithms/
-DataStructuresAndAlgorithmsMadeEasy/
-Data-Structures-and-Algorithms-in-C/
-C/
