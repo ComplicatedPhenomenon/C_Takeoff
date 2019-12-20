@@ -1,6 +1,6 @@
 /**
  * source: https://leetcode.com/problems/binary-tree-inorder-traversal/
- * ToDo: Changing the structure of the tree makes the way to free the tree space invalid
+ * It take me more than two hours to fix the memory leak
  **/
 
 #include<iostream>
@@ -10,25 +10,43 @@ using namespace std;
 
 class Solution {
 public:
-    vector<int> inorderTraversal(TreeNode* root) {
+    TreeNode * inorderTraversal(TreeNode * root) {
         vector<int> res;
         TreeNode* curr = root;
+        TreeNode* minNode = root;
+        TreeNode * previousNodeBeforeCurr = NULL;
+
+        while (minNode -> left){
+            minNode = minNode -> left;
+        }
+
         while(curr != NULL) {
             if(curr -> left == NULL){
                 res.push_back(curr -> val);
+                previousNodeBeforeCurr = curr;
                 curr = curr -> right;
+                
             }
             else{
+                
                 TreeNode* prev = curr -> left;
                 while(prev -> right != NULL) prev = prev -> right;
                 prev -> right = curr;
                 TreeNode* tem = curr;
                 curr = curr -> left;
                 tem -> left = NULL;
+            
+                if (previousNodeBeforeCurr){
+                    previousNodeBeforeCurr -> right = curr;
+                    previousNodeBeforeCurr -> left = NULL;
+                }
             }
         }
 
-        return res;    
+        for(const int &i: res) cout << i << " ";
+        cout << endl;
+
+        return minNode;    
     }
 };
 
@@ -39,11 +57,20 @@ int main() {
     root -> right = newNode(4);
     root -> left -> left = newNode(5);;
     root -> left -> right = newNode(6);
+    root -> right -> left = newNode(0);
     root -> right -> right = newNode(7);
     Solution test;
-    vector<int> res = test.inorderTraversal(root);
-    for(const int &i: res) cout << i << "";
-    cout << endl;
-    freeBinaryTree(root);
+    TreeNode *head = test.inorderTraversal(root);
+    freeBinaryTree(head);
+
+    root = newNode(12);
+    root -> left = newNode(6);
+    root -> right = newNode(18);
+    root -> left -> left = newNode(4);;
+    root -> left -> right = newNode(9);
+    root -> right -> left = newNode(15);
+    root -> right -> right = newNode(22);
+    head = test.inorderTraversal(root);
+    freeBinaryTree(head);
     return 0;
 }

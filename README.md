@@ -1,4 +1,4 @@
-# Overview of this repo
+# Overview 
 It's a project mainly about introducing `C`, meanwhile, a certain amount of `CPP` is involved . It aims to become a useful reference to look up the key usage of features in C and obeys the [modern standard](https://gcc.gnu.org/wiki/HomePage) as much as possible.
 
 * `lcthw` is the handy practice on the book `Learn C the Hard way` by [Zed A Shaw](https://zedshaw.com).
@@ -7,7 +7,7 @@ It's a project mainly about introducing `C`, meanwhile, a certain amount of `CPP
   * `POSIX` make use of the hardware's improvements.
 
 
-# Features of this repo
+# Main features
 * [ ] Documentation.
 
   ❌ `Doxygen` is not an idea tool to make documentation to me, I really can't agree with its taste.

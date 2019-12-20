@@ -1,15 +1,15 @@
 /**
-    https://leetcode.com/problems/sort-list/
+ *  https://leetcode.com/problems/sort-list/
  **/
+
 #include<iostream>
-#include<cstdlib>
 using namespace std;
 
- struct ListNode {
+struct ListNode {
     int val;
     struct ListNode *next;
     ListNode(int x) : val(x), next(NULL) {}
- };
+};
 
 struct ListNode* sortList(struct ListNode* head){
     struct ListNode *s = NULL, *t = NULL, *l = NULL , *r = NULL, *go = NULL;
@@ -108,7 +108,7 @@ int main(){
     while(head != NULL){
         tem = head;
         head = head -> next;
-        free(tem);
+        delete(tem);
     }
 
     return 0;
