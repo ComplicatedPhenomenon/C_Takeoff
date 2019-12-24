@@ -1,9 +1,3 @@
-```sh
-$ g++ -Wall stack.cpp action.cpp
-```
-
-It went wrong!!!
-
 ## Template usage
 > A templating language basically is a language which allows defining placeholders that should later on be replaced for the purpose of implementing designs. Obviously modern template languages not only support placeholders, but also loops and conditions which are often necessary for designing a web page. Some even support more advanced but still useful techniques like template inheritance, macros and sandboxing.
 

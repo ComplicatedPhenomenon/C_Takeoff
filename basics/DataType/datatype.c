@@ -11,31 +11,13 @@
 
 
 int main() {
-    printf("-------------Datatype: float---------------------------\n");
-    printf("Size of float       : %lu \n",sizeof(float));
-    printf("Size of double      : %lu \n",sizeof(double));
-    printf("Size of long double : %lu \n",sizeof(long double));
-
-
-    printf("-------------Datatype: integer ------------------------\n");
-    printf("Size of int                : %lu \n", sizeof(int));
-    printf("Size of short              : %lu \n", sizeof(short));
-    printf("Size of long               : %lu \n", sizeof(long));
-    printf("Size of long long          : %lu \n", sizeof(long long));
-
-    printf("-------------limitation of char------------------------\n");
-    printf("number of bits in a char: \d\n", CHAR_BIT);
-    printf("The minimum of short : %d\n",SHRT_MIN);
-    printf("The maximum of short : %d\n",SHRT_MAX);
-    printf("The minimum of char  : %d\n",CHAR_MIN);
-    printf("The maximum of char  : %d\n",CHAR_MAX);
-    printf("USHRT_MAX            : %d\n", USHRT_MAX);
-    printf("UCHAR_MAX            : %d\n", UCHAR_MAX);
- 
-    printf("----------------limitation  of int and float -------------\n");
-    printf("INT_MAX      : %d\n", INT_MAX);
-    int tem = INT_MAX + 1;
-    printf("What happens when a integer greater than INT_MAX? like %d\n", tem);
+    printf("CHAR_BIT     : %d\n", CHAR_BIT);
+    printf("SHRT_MIN     : %d\n", SHRT_MIN);
+    printf(" SHRT_MAX    : %d\n", SHRT_MAX);
+    printf("CHAR_MIN     : %d\n", CHAR_MIN);
+    printf("CHAR_MAX     : %d\n", CHAR_MAX);
+    printf("USHRT_MAX    : %d\n", USHRT_MAX);
+    printf("UCHAR_MAX    : %d\n", UCHAR_MAX);
     printf("INT_MIN      : %d\n", INT_MIN);
     printf("UINT_MAX     : %d\n", UINT_MAX);
     printf("LONG_MAX     : %ld\n", (long) LONG_MAX);
@@ -65,32 +47,18 @@ int main() {
     for (i = 0; i < 31; i++) {
       sum += pow(2, i);
     }
-    printf("sum of pow(2, i) as i from 0 to 31 is: %d\n", sum);
-    
-    long int item = pow(2,32); 
-    printf("long int pow(2,32) = %ld\n", item);
+    printf("%d\n", sum);
 
-    long double sum_1;
-    long double sum_2;
-    long double Sum1;
-    long double Sum2;
+    long double sum_1 = 0;
+    long double sum_2 = 0;
 
-    sum_1 = 0;
-    sum_2 = 0;
-    Sum1 = 0;
-    Sum2 = 0;
     for (i = 0; i < 24; i++) sum_1 += pow(2,-i);
-    for (i = 0; i < 52; i++) sum_2 += pow(2,-i);
-    
-
-    Sum1 = sum_1 * pow(2, pow(2, 7) - 1);
-    Sum2 = sum_2 * pow(2, pow(2,10) - 1);
-
+    sum_1 *= pow(2, pow(2, 7) - 1);
     printf("%LE\n",sum_1);
+    
+    for (i = 0; i < 52; i++) sum_2 += pow(2,-i);
+    sum_2 *= pow(2, pow(2,10) - 1);
     printf("%LE\n",sum_2);
-    printf("%LE\n",Sum1);
-    printf("%LE\n",Sum2);
-    fflush(stdout);
 
     printf("9 is %o in octonary number system\n", 9);
     printf("16 is %x in hexadecimal form\n", 16);
@@ -99,9 +67,4 @@ int main() {
 
 }
 
-/**
- * You can make use of limits.h that contains the definition of the limits 
- * for the decimal/float types
- * http://www.csse.uwa.edu.au/programming/ansic-library.html#float
- * */
 

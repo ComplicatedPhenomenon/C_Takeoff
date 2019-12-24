@@ -23,3 +23,4 @@ To get a better complete understanding, [visit here](http://www.yolinux.com/TUTO
 I used to write a command thousands of times without know the mechanism behind. It's a bad behavior, since it prevent me from knowing the foundation of how things work.
 
 
+## https://github.com/fffaraz/awesome-cpp

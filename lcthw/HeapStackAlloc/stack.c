@@ -26,7 +26,7 @@ typedef struct {
 	Database *db;
 }Connection;
 
-void die(const char *message){
+void die(const char *message) {
 	if(errno){
 		perror(message);
 	}
@@ -37,23 +37,20 @@ void die(const char *message){
 	exit(1);
 }
 
-void Address_print(Address *addr)
-{
+void Address_print(Address *addr) {
 	printf("%d %s %s \n", addr->id, addr->name, addr->email);
 }
 
 
-void Database_load(Connection * conn)
-{
+void Database_load(Connection * conn) {
 	int rc = fread(conn->db, sizeof(Database), 1, conn->file);
 	if(rc !=1)
 		die("Failed to load database.");
 }
 
-Connection *Database_open(const char *filename, char mode)
-{
+Connection *Database_open(const char *filename, char mode) {
 	Connection *conn = malloc(sizeof(Connection));
-	if(conn == 0)die("Memory error");
+	if(conn == 0) die("Memory error");
 	/*If conn is NULL, !conn will be non-NULL and the condition will be true.*/
 	conn->db = malloc(sizeof(Database));
 	if(conn->db == 0) die("Memory error");
@@ -100,8 +97,7 @@ void Database_create(Connection *conn){
 }
 
 void Database_set (Connection *conn, int id, const char *name,
-				   const char * email)
-{
+				   const char * email) {
 	Address *addr = &conn->db->rows[id];
 	if(addr->set != 0) die("Already set, delete it first");
 	addr->set = 1;
@@ -111,13 +107,13 @@ void Database_set (Connection *conn, int id, const char *name,
 	res = strncpy(addr->email, email, MAX_DATA);
 	if(res == 0) die("Email copy failed");
 }
-void Database_get(Connection *conn, int id){
+void Database_get(Connection *conn, int id) {
 	Address *addr = &conn->db->rows[id];
 	if(addr->set != 0) Address_print(addr);
 	else die("ID is not set");
 }
 
-void Database_delete(Connection *conn, int id){
+void Database_delete(Connection *conn, int id) {
 	Address addr = {.id = id, .set = 0};
 	conn->db->rows[id] = addr;
 }
@@ -132,8 +128,7 @@ void Database_list(Connection *conn){
 	}
 }
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
 	if(argc < 3)
 		die("USAGE: stack <dbfile> <action> [action params]");
 
