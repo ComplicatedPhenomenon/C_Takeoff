@@ -13,6 +13,7 @@ struct stackNode {
 
 void push(struct stackNode ** topRef, int new_data);
 int pop(struct stackNode ** topRef);
+void freeSLL(struct stackNode *head);
 
 /* structure of queue having two stacks */
 struct queue {
@@ -21,6 +22,9 @@ struct queue {
 };
 
 void enQueue(struct queue * q, int x) {
+	while(q->stack2){
+		push(&q -> stack1, pop(&q->stack2));
+	}
 	push(&q->stack1, x);
 }
 
@@ -33,8 +37,7 @@ int deQueue(struct queue* q) {
 		exit(0);
 	}
 
-	/* Move all elements from stack1 to stack 2 only if
-	stack2 is empty */
+	/* Move all elements from stack1 to stack 2 only if stack2 is empty*/
 	if (q->stack2 == NULL) {
 		while (q->stack1 != NULL) {
 			x = pop(&q->stack1);
@@ -44,6 +47,52 @@ int deQueue(struct queue* q) {
 
 	x = pop(&q->stack2);
 	return x;
+}
+
+/* Function to free a stack*/
+void freeQueue(struct queue *q){
+	freeSLL(q->stack1);
+	freeSLL(q->stack2);
+	free(q);
+}
+
+int main() {
+	struct queue* q = (struct queue*)malloc(sizeof(struct queue));
+	q->stack1 = NULL;
+	q->stack2 = NULL;
+
+	int i;
+	for (i = 1; i <= 5; i++) enQueue(q, i);
+	
+	printf("now the queue order from top to bottom is: ");
+	struct stackNode *tem = q->stack1;
+	while(tem!=NULL) {
+		printf("%d ", tem->data);
+		tem = tem->next;
+	}
+	printf("\n");
+
+	for (i = 0; i <= 3; i++) printf("%d\n", deQueue(q));
+
+	for (i = 1; i <= 5; i++) enQueue(q, i*i);
+	printf("now the queue order from top to bottom is: ");
+	tem = q->stack1;
+	while(tem!=NULL) {
+		printf("%d ", tem->data);
+		tem = tem->next;
+	}
+	printf("\n");
+
+	freeQueue(q);
+	return 0;
+}
+
+void freeSLL(struct stackNode *head) {
+    struct stackNode *curr;
+    while( (curr=head) != NULL) {
+        head = head -> next;
+        free(curr);
+    }
 }
 
 /* Function to push an item to stack*/
@@ -75,25 +124,4 @@ int pop(struct stackNode** topRef) {
 		free(top);   
 		return res;
 	}
-}
-
-
-int main() {
-	struct queue* q = (struct queue*)malloc(sizeof(struct queue));
-	q->stack1 = NULL;
-	q->stack2 = NULL;
-	int i = 1;
-	for (; i <= 1; i++) enQueue(q, i);
-	
-	printf("now the queue order from head to tail is: ");
-	struct stackNode *tem = q->stack1;
-	while(tem!=NULL) {
-		printf("%d ", tem->data);
-		tem = tem->next;
-	}
-	printf("\n");
-
-	for (i = 0; i <= 1; i++) printf("%d\n", deQueue(q));
-
-	return 0;
 }
