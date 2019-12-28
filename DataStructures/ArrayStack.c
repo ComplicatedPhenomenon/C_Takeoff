@@ -43,14 +43,20 @@ int pop(struct Stack* stack) {
 	return stack->array[stack->top--];
 }
 
-int main() {
-	struct Stack* stack = createStack(100);
+void freeStack(struct Stack* stack) {
+	free(stack -> array);
+	free(stack);
+}
 
+
+int main() {
+	struct Stack* stack = createStack(10);
 	push(stack, 10);
 	push(stack, 20);
 	push(stack, 30);
-
 	printf("%d popped from stack\n", pop(stack));
+	isFull(stack) != 0 ? printf("Stack is full!\n"): printf("Stack is not full!\n");
 
+	freeStack(stack);
 	return 0;
 }

@@ -19,8 +19,7 @@ void insert(node *pointer, int data){
     pointer->data = data;
     pointer->next = NULL;
 }
-int find(node *pointer, int key)
-{
+int find(node *pointer, int key) {
     pointer =  pointer -> next; //First node is dummy node.
     /* Iterate through the entire linked list and search for the key. */
     while(pointer!=NULL){
@@ -52,17 +51,14 @@ void delete(node *pointer, int data){
      */
     return;
 }
-void print(node *pointer)
-{
-    if(pointer==NULL)
-    {
+void print(node *pointer){
+    if(pointer==NULL) {
         return;
     }
     printf("%d ",pointer->data);
     print(pointer->next);
 }
-int main()
-{
+int main() {
     /* head always points to the first node of the linked list.
     temp is used to point to the last node of the linked list.*/
     node *head,*temp;

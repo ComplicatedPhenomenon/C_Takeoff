@@ -56,10 +56,10 @@ void heapify(maxHeap *hp, int i) {
     }
     if(largest != i) {
         swap(&(hp->elem[i]), &(hp->elem[largest])) ;
-        heapify(hp, largest) ;
-    }
-}  // Recursive?(递归？)
+        heapify(hp, largest); // in an recursive approach(递归)
 
+    }
+}  
 
 /*
     Build a Max Heap given an array of numbers
