@@ -1,7 +1,7 @@
 ## Which compiler?
 ` g++ -Wall -std=c++11 detectCapital.cpp `
 
-macro
+## macro
 
 1. Why are `ifndef` and `define` are used in C++ header files
   * http://www.fredosaurus.com/notes-cpp/preprocessor/ifdef.html
@@ -13,9 +13,7 @@ compile and link
 
   `g++ -Wall owl.cpp detect.cpp`
 ## namespace
-* `using namespace std` is considered bad practice
-
-  Because you can have 2 function have same name belongs 2 namespace.
+* `using namespace std` is considered bad practice because you can have 2 function have same name belongs 2 namespace.
 
 ## reference vs pointer
 要确切理解区别的话，需要理解它的底层实现，编译器执行时的操作。这里仅限于上层理解。
@@ -70,6 +68,9 @@ https://www.geeksforgeeks.org/advantages-of-vector-over-array-in-c/
 > vector的实现技术，关键在于其对大小的控制以及重新配置时的数据移动效率，一旦vector的旧有空间满载，如果客户端每新增一个元素，vector的内部只是扩充一个元素的空间，实为不智，因为所谓扩充空间，都是配置新空间，复制原来内容，释放旧空间所需要的时间很多，那么应该怎样配置空间呢?
 
 > 并且vector维护的是一个连续线性空间，所以支持vector随机存取。
+
+
+**vector initialization**: https://www.geeksforgeeks.org/initialize-a-vector-in-cpp-different-ways/
 
 ### map和set的底层数据结构是什么，为什么使用红黑树？
 > Map是关联容器，以键值对的形式进行存储，方便进行查找，关键词起到索引的作用，值则表示与索引相关联的数据，以红黑树的结构实现，插入删除等操作都可以在O(log n)时间内完成
