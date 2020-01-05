@@ -15,8 +15,6 @@ void method(void) {
 
 // Why pointer is used so often?
 Phone  * phone_create(char *cp, char *ba, float cs) { 
-/* A pointer which store the address of function <creat_phone> */
-
     Phone *p1 = malloc(sizeof(Phone));
     assert(p1 != NULL);
     p1->company = cp;

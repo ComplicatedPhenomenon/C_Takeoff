@@ -22,5 +22,16 @@ To get a better complete understanding, [visit here](http://www.yolinux.com/TUTO
 
 I used to write a command thousands of times without know the mechanism behind. It's a bad behavior, since it prevent me from knowing the foundation of how things work.
 
+## third party library
+### reference
+  * https://github.com/fffaraz/awesome-cpp
+  * https://github.com/uhub/awesome-c
+  * https://github.com/kozross/awesome-c
+  * https://github.com/aleksandar-todorovic/awesome-c
+    * tricks on gdb
+### Some functionalities benefit the current project
+* Numerical library
+  * cuba : [homepage](http://www.feynarts.de/cuba/)
 
-## https://github.com/fffaraz/awesome-cpp
+    To accelerate the rate of processing multidimensional data
+* Statistical library
