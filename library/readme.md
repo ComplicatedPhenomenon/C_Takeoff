@@ -34,4 +34,7 @@ I used to write a command thousands of times without know the mechanism behind. 
   * cuba : [homepage](http://www.feynarts.de/cuba/)
 
     To accelerate the rate of processing multidimensional data
+  * LRU cache (least recently used cache)
+
+    It organizes items in order of use, allowing you to quickly identify which item hasn't been used for the longest amount of time. It used to speed up future requests  
 * Statistical library

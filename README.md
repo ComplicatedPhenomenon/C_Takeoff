@@ -42,6 +42,7 @@ It's a project mainly about introducing `C`, meanwhile, a certain amount of `CPP
       - [x] Binary tree
       - [x] Binary search tree
       - [x] AVL Tree
+      - [ ] Red black tree
       - [ ] B Tree
       - [ ] B+ Tree
 
