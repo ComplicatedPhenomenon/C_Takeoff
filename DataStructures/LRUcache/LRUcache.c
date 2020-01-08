@@ -1,6 +1,10 @@
 /**
  * source: https://leetcode.com/problems/lru-cache/
- * ToDo: need to implement some data structure from scratch
+ * ["LRUCache","put","put","put","put","get","get"]
+ * [[2],[2,1],[1,1],[2,3],[4,1],[1],[2]]
+ * Expected: [null,null,null,null,null,-1,3]
+ * 
+ * ToDo: wrong answer still
  **/
 
 #include<stdio.h>
@@ -50,20 +54,17 @@ typedef struct {
     Node *tail;
 } List;
 
-// by pass in an key, you can verify that whether this key existed in the DLL or not
-// hash function output an index to a key.
+/* by pass in an key, you can verify that whether this key existed in the DLL or not*/
 typedef struct {
     Node *table[HASH_SIZE];
     int capacity;
     int size;
 }Hash;
 
-
 typedef struct {
     List *l;
     Hash *h;
 }LRUCache;
-
 
 LRUCache* lRUCacheCreate(int capacity) {
     LRUCache * hash_DLL = malloc(sizeof(LRUCache)); // ! what happens hash_DLL = NULL;
@@ -86,6 +87,7 @@ LRUCache* lRUCacheCreate(int capacity) {
     return hash_DLL;
 }
 
+/* hash function output an index to a key.*/
 int hashFunction(int key){
     int address;
     address = key % HASH_SIZE;
@@ -118,43 +120,68 @@ int lRUCacheGet(LRUCache* obj, int key) {
     tem -> next =  obj -> l -> head;
     obj -> l -> head -> prev = tem;
     obj -> l -> head = tem;
-    //hash->table[hashFunction(key)] = NULL;
-    //printDLL(obj -> l -> head); 
-    printf("res = %d\n", res);
+    //printf("res = %d\n", res);
     return res;
 }
-
 
 
 void lRUCachePut(LRUCache* obj, int key, int value) {
     Node *headNode = obj -> l -> head;
     Node *tailNode = obj -> l -> head;
-    Node *tem = newNode(key, value);
-
-    // update the prime node of DLL
-    if (!headNode){
-        headNode = tem;
-        tailNode = headNode;
-        obj -> l -> tail = tailNode;
-    }
-    else{
-        tem -> next = headNode;
-        headNode -> prev = tem;
-        headNode = tem;
-    }
 
     Hash *hash = obj -> h;
-    hash -> table[hashFunction(key)] = tem;
-    ++(hash -> size);
-    obj -> l -> head = headNode;
-    printDLL(obj -> l -> head);
+    Node *imagineNode = hash -> table[hashFunction(key)];
+    if (imagineNode){
+        if(imagineNode -> key == key){
+            imagineNode -> value = value;
+            
+            if(imagineNode != obj -> l -> head) {
+                if(imagineNode -> next){     
+                    imagineNode -> prev -> next = imagineNode -> next;
+                    imagineNode -> next -> prev = imagineNode -> prev;
+
+                }
+                else{
+                    imagineNode -> prev -> next  = NULL;
+                    obj -> l -> tail = imagineNode -> prev;
+                }
+                obj -> l -> head -> prev = imagineNode;
+                imagineNode -> next = obj -> l -> head;
+                obj -> l -> head = imagineNode;
+            }
+        }
+    }
+    else{
+        Node *tem = newNode(key, value);
+
+        // update the prime node of DLL
+        if (!headNode){
+            headNode = tem;
+            tailNode = headNode;
+            obj -> l -> tail = tailNode;
+        }
+        else{
+            tem -> next = headNode;
+            headNode -> prev = tem;
+            headNode = tem;
+        }
+
+        
+        hash -> table[hashFunction(key)] = tem;
+        ++(hash -> size);
+        obj -> l -> head = headNode;
+    }
+    //printDLL(obj -> l -> head);
+
     //evict the tail node in DLL 
     if((hash -> size) > (hash -> capacity)){
         Node * originTailNode = obj -> l -> tail;
         obj -> h -> table[hashFunction(originTailNode -> key)] = NULL;
         obj -> l -> tail = obj -> l -> tail -> prev; 
+        obj -> l -> tail -> next = NULL;
         free(originTailNode);
     }
+    
 }
 
 void lRUCacheFree(LRUCache* obj) {
@@ -169,23 +196,24 @@ int main(){
     LRUCache* obj = lRUCacheCreate(capacity);
     printf("lRUCacheCreate Completed\n");
 
-    int param_1 = lRUCacheGet(obj, 1);
-    printf("key: %d value: %d\n", 1, param_1);
+
+    lRUCachePut(obj, 2, 1);
+    printDLL(obj -> l -> head);
 
     lRUCachePut(obj, 1, 1);
     printDLL(obj -> l -> head);
-    lRUCachePut(obj, 2, 2);
+
+    lRUCachePut(obj, 2, 3);
+    printDLL(obj -> l -> head);
+ 
+    lRUCachePut(obj, 4, 1);
     printDLL(obj -> l -> head);
 
-    param_1 = lRUCacheGet(obj, 1);
+     int param_1 = lRUCacheGet(obj, 1);
     printf("key: %d value: %d\n", 1, param_1);
-    printDLL(obj -> l -> head);
-
-    lRUCachePut(obj, 3, 3);
-    printDLL(obj -> l -> head);
     param_1 = lRUCacheGet(obj, 2);
     printf("key: %d value: %d\n", 2, param_1);
-    
+
 
     lRUCacheFree(obj);
     return 0;
@@ -194,8 +222,6 @@ int main(){
  * Your LRUCache struct will be instantiated and called as such:
  * LRUCache* obj = lRUCacheCreate(capacity);
  * int param_1 = lRUCacheGet(obj, key);
- 
  * lRUCachePut(obj, key, value);
- 
  * lRUCacheFree(obj);
 */
