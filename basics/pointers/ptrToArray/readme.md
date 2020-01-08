@@ -66,7 +66,16 @@ ascendingArray = bubbleSort(arr, n); //Why is n necessary?
 ```
 Because `arr` as a pointer only store the address of the array.
 
+**Transfer data**
+* https://www.tutorialspoint.com/c_standard_library/c_function_strncpy.htm
 
+  The C library function `char *strncpy(char *dest, const char *src, size_t n)` copies up to `n` characters from the string pointed to, by `src` to `dest`. In a case where the length of `src` is less than that of `n`, the remainder of `dest` will be padded with `null` bytes.
+* https://www.tutorialspoint.com/c_standard_library/c_function_strcmp.htm
+
+  The C library function `int strcmp(const char *str1, const char *str2)` compares the string pointed to, by `str1` to the string pointed to by `str2`. 
+  * https://www.programiz.com/c-programming/library-function/string.h/strcmp
+    
+    The `strcmp()` function takes two strings and returns an integer. compare the 2 strings one char by one of its ASCII value.
 ## How dynamic array and static array stored in memory?
 
 * [How dynamic array and static array stored in memory?](https://stackoverflow.com/a/35445125/7583919)

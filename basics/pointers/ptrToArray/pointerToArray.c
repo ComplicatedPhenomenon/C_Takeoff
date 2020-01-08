@@ -7,12 +7,19 @@ int main(){
     char prompt[] = "Press Enter to explore:";
     char *ptrToString = prompt;
     char Pixar[3]={'s', 'o' , 's'};
-    char *name[] = {"Wall-E-1000000001","complicatephenomenon ","czfzdxx"};
+    char *name[] = {"Wall-E-1000000001","ComplicatedPhenomenon","czfzdxx"};
     char *pta;
     pta = &Pixar[0];
 
-    printf("%s\n", x);
+    printf("x = %s\n", x);
+    printf("sizeof(%s) = %lu\n", x,  sizeof(x));
+    printf("sizeof(*%s) = %lu\n", x,  sizeof(*x));
+    printf("ptrToString[%d] = %c\n", i, ptrToString[i]);
+    printf("ptrToString[%d] %% 2  =  %d\n", i, ptrToString[i]%2);
+    
     for(i = 0; i < strlen("czfzdxx, hi"); i++)printf("%c", *(x+i));
+    printf("\n");
+    for(i = 0; i < strlen("czfzdxx, hi"); i++)printf("%c", x[i]);
     printf("\n");
 
 
