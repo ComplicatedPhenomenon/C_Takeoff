@@ -15,7 +15,7 @@ free(t);
 
 
 # [`levelOrderTraversal_1.c`](levelOrderTraversal_1.c)
-When you think you know well enough about pointers, boom, here comes `BTLevelOrderTraversal.c` to improve you are wrong.
+When you think you know well enough about pointers, boom, here comes `BTLevelOrderTraversal_1.c` to improve you are wrong.
 
 Review how to implement a heap by 2 stacks to help understand the more complex usage of pointers.
 

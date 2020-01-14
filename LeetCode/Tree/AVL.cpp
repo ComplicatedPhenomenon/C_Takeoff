@@ -1,5 +1,5 @@
 /**
-	ToDo: Free the tree at last
+ * 
  **/
 #include<iostream> 
 using namespace std; 
@@ -74,14 +74,11 @@ Node* insert(Node* node, int key) {
 	else 
 		return node; 
 
-	node -> height = 1 + max(height(node -> left), 
-						height(node -> right)); 
-
+	node -> height = 1 + max(height(node -> left), height(node -> right)); 
 	int balance = getBalance(node); 
 
 	if (balance > 1 && key < node -> left -> key) 
 		return rightRotate(node); 
-
 
 	if (balance < -1 && key > node -> right -> key) 
 		return leftRotate(node); 
@@ -110,7 +107,7 @@ void freeBinaryTree(Node* root) {
     if(root != NULL) {
         freeBinaryTree(root -> left);
         freeBinaryTree(root -> right);
-        free(root);
+        delete(root);
     }
 }
 
@@ -125,15 +122,17 @@ int main() {
 	root = insert(root, 25); 
 	
 	/* The constructed AVL Tree would be 
-				30 
+				 30 
 			    / \ 
 			   20 40 
-			   / \  \ 
-		      10 25 50 
+			  / \  \ 
+		    10  25 50 
 	*/
 	cout << "Preorder traversal of the "
 			"constructed AVL tree is \n"; 
 	preOrder(root); 
-	//freeBinaryTree(root);
+	cout << endl;
+
+	freeBinaryTree(root);
 	return 0; 
 } 

@@ -18,6 +18,7 @@ The main advantage of new over `malloc()` is that new doesn't just allocate memo
 
 ### `new` and `delete`
 ### usage
+`new` will have the corresponding constructor called.
 
 ```cpp
 double* pvalue  = NULL; // Pointer initialized with null
