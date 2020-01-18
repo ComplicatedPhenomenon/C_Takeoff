@@ -119,11 +119,13 @@ struct RBNode *treeInsert(struct RBNode *root, struct RBNode *newNode){
     else{
         if (root -> key > newNode -> key) { 
             root -> left = treeInsert(root -> left, newNode); 
+            // update the parent for newNode, but how?
         }
         else{ 
             root -> right = treeInsert(root -> right, newNode); 
         }
     }
+    
     return root;
 }
 

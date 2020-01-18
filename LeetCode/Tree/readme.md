@@ -40,3 +40,22 @@ with [`Makefile`](Makefile)
 ## Reference
 * http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/
 * https://makefiletutorial.com/
+
+# Generic programming
+A common requirement when writing code is the ability to  use the identical, or nearly identical code for different data types.
+
+in `tree.h`, I define 3 functions.
+```c
+struct TreeNode * newNode(int val);
+struct AVLTreeNode* newAVLTreeNode(int val);
+
+void freeBinaryTree(struct TreeNode* root); 
+void freeAVLTree(struct AVLTreeNode* root); 
+
+int ** levelOrderBinaryTreeTranversal(struct TreeNode *root, int **numberOfElementsInEachRow, int *numberOfRows);
+int ** levelOrderAVLTreeTranversal(struct AVLTreeNode *root, int **numberOfElementsInEachRow, int *numberOfRows);
+```
+I just write the same code for multiple times.
+
+## reference
+* https://attractivechaos.wordpress.com/2008/09/02/generic-programming-in-c/

@@ -120,8 +120,7 @@ struct RBNode * insert(struct RBNode *root, struct RBNode *x) {
             }
         }
        else {
-           /* repeat the "if" part with right and left
-              exchanged */
+           /* repeat the "if" part with right and left exchanged */
            struct RBNode * y = x -> parent -> parent -> left;
            if ( y -> color == RED ) {
                /* case 1 - change the colors */
