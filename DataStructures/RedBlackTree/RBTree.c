@@ -1,5 +1,7 @@
 /**
+ * ToDo: output doesn't satisfy the property of an RB Tree
  * 
+ * reference https://brilliant.org/wiki/red-black-tree/
  **/ 
 #include<stdio.h>
 #include<stdlib.h>
@@ -26,6 +28,174 @@ struct RBNode* newRBNode(int k) {
     tem -> color = RED;
     return tem;
 }
+
+
+struct RBNode* getParent(struct RBNode* n) {
+    return !n ? NULL : n -> parent; 
+}
+
+struct RBNode* getGrandParent(struct RBNode* n) {
+    // Note that it will return NULL if this is root or child of root
+    return getParent(getParent(n));
+}
+
+struct RBNode* getSibling(struct RBNode* n) {
+    struct RBNode* p = getParent(n);
+    // No parent means no sibling.
+    if (p == NULL) return NULL;
+    return (n == p->left) ?  p->right: p->left;
+}
+
+struct RBNode* getUncle(struct RBNode* n) {
+    struct RBNode* p = getParent(n);
+    // No parent means no uncle
+    return getSibling(p);
+}
+
+struct RBNode *  rotateLeft(struct RBNode *root, struct RBNode* node) {
+    struct RBNode* sibling = node -> right;
+    node -> right = sibling -> left;
+    assert(sibling != NULL);  // Since the leaves of a RED-BLACK tree are empty,
+                          // they cannot become internal nodes.
+  
+    if (sibling -> left)
+        sibling -> left -> parent = node;
+    sibling -> parent = node -> parent;
+    if (!node -> parent)
+        root  = sibling;
+    else {
+        if (node == node -> parent -> left)
+            node -> parent -> left = sibling;
+        else
+            node -> parent -> right = sibling;
+    }
+    sibling -> left = node;
+    node -> parent = sibling;
+    return root;
+}
+
+struct RBNode * rotateRight(struct RBNode *root, struct RBNode* node) {
+    struct RBNode* sibling = node -> left;
+    node -> left = sibling -> right;
+    //struct RBNode* p = getParent(node);
+    assert(sibling != NULL);  // Since the leaves of a RED-BLACK tree are empty,
+                          // they cannot become internal nodes.
+  
+    if (sibling -> right)
+        sibling -> right -> parent = node;
+    sibling -> parent = node -> parent;
+    if (!node -> parent)
+        root  = sibling;
+    else {
+        if (node == node -> parent -> right)
+            node -> parent -> right = sibling;
+        else
+            node -> parent -> left = sibling;
+    }
+    sibling -> right = node;
+    node -> parent = sibling;
+    return root;
+}
+
+struct RBNode * insert(struct RBNode *root, struct RBNode *x) {
+    /* Insert in the tree in the usual way */
+    printf("into function insert\n");
+    
+    if (!root){
+        x -> color = BLACK;
+        root = x;
+        printf("okay: 1st insertion\n");
+        return root;
+    }
+    
+    struct RBNode *curr = root;
+    // elegant!!! the approach of inserting a node by iterative approach is elegant
+    struct RBNode *potentialParent = NULL;
+    while (curr) {
+        potentialParent = curr;
+        curr = (x -> key < curr -> key) ? curr -> left : curr -> right;
+    }
+    x -> parent = potentialParent;
+    if (x -> key < potentialParent -> key) {
+        potentialParent -> left = x;
+        printf("Complete inserting\n");
+    }
+    else {
+        potentialParent -> right = x;     
+        printf("Complete inserting\n");
+    }
+    /* Now restore the RED-BLACK property */
+    while ( (x != root) && (x -> parent -> color == RED) ) {
+        printf("into while\n");
+        if ( x -> parent == x -> parent -> parent -> left ) {
+            printf(" x -> parent == x -> parent -> parent -> left \n");
+            struct RBNode * y = x -> parent -> parent -> right;
+            if (!y) {
+                root -> color = BLACK; 
+                return root; 
+            }
+            if (y -> color == RED) {
+                printf("y -> color == RED\n");
+                /* case 1 - change the colors */
+                x -> parent -> color = BLACK;
+                y -> color = BLACK;
+                x -> parent -> parent -> color = RED;
+                /* Move x up the tree */
+                x = x -> parent -> parent;
+                printf("no need to rotate\n");
+             }
+            else {
+                /* y is a BLACK node */
+                printf("y -> color == Black\n");
+                if (x == x -> parent -> right) {
+                    printf("5, 3, 1\n");
+                    /* and x is to the right */ 
+                    /* case 2 - move x up and rotate */
+                    x = x -> parent;
+                    root = rotateLeft(root, x);
+                    printf("check");
+                }
+                /* case 3 */
+                printf("rotate\n");
+                x -> parent -> color = BLACK;
+                x -> parent -> parent -> color = RED;
+                root = rotateRight(root, x);
+            }
+        }    
+        else {
+            /* repeat the "if" part with right and left exchanged */
+            struct RBNode * y = x -> parent -> parent -> left;
+            if (!y) {
+                root -> color = BLACK;   
+                return root;
+            }
+            if (y -> color == RED) {
+                /* case 1 - change the colors */
+                x -> parent -> color = BLACK;
+                y -> color = BLACK;
+                x -> parent -> parent -> color = RED;
+                /* Move x up the tree */
+                x = x -> parent -> parent;
+             }
+            else {
+                /* y is a BLACK node */
+                if (x == x -> parent -> left) {
+                    /* and x is to the right */ 
+                    /* case 2 - move x up and rotate */
+                    x = x -> parent;
+                    root = rotateLeft(root, x);
+                }
+                /* case 3 */
+                x -> parent -> color = BLACK;
+                x -> parent -> parent -> color = RED;
+                root = rotateRight(root, x);
+            }
+        }
+    }
+    root -> color = BLACK;
+    return root;
+}
+
 
 struct QueueRBNode {
     struct RBNode *ptr;
@@ -145,7 +315,8 @@ int main(){
     int len = sizeof(a)/sizeof(a[0]);
     for (int i = 0; i < len; ++i){
         tem = newRBNode(a[i]);
-        root = treeInsert(root, tem);
+        //tem = treeInsert(a[i]);
+        root = insert(root, tem);
     }
 
     int numberOfRows = 0;
