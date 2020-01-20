@@ -1,6 +1,4 @@
 /**
- * ToDo: output doesn't satisfy the property of an RB Tree
- * 
  * reference https://brilliant.org/wiki/red-black-tree/
  **/ 
 #include<stdio.h>
@@ -8,7 +6,6 @@
 #include<assert.h>
 #define MAX 4096
 
-// Basic type definitions:
 enum color_t { BLACK, RED };
 
 struct RBNode {
@@ -52,6 +49,7 @@ struct RBNode* getUncle(struct RBNode* n) {
     return getSibling(p);
 }
 
+// rotate is likely change the root code of the tree
 struct RBNode *  rotateLeft(struct RBNode *root, struct RBNode* node) {
     struct RBNode* sibling = node -> right;
     node -> right = sibling -> left;
@@ -99,12 +97,12 @@ struct RBNode * rotateRight(struct RBNode *root, struct RBNode* node) {
 
 struct RBNode * insert(struct RBNode *root, struct RBNode *x) {
     /* Insert in the tree in the usual way */
-    printf("into function insert\n");
+    printf("into function insert.\n");
     
     if (!root){
         x -> color = BLACK;
         root = x;
-        printf("okay: 1st insertion\n");
+        printf("Accomplished 1st insertion\n");
         return root;
     }
     
@@ -128,68 +126,81 @@ struct RBNode * insert(struct RBNode *root, struct RBNode *x) {
     while ( (x != root) && (x -> parent -> color == RED) ) {
         printf("into while\n");
         if ( x -> parent == x -> parent -> parent -> left ) {
-            printf(" x -> parent == x -> parent -> parent -> left \n");
+            printf(" case like with 5, 3, then insert 2 or 4\n");
             struct RBNode * y = x -> parent -> parent -> right;
-            if (!y) {
-                root -> color = BLACK; 
-                return root; 
-            }
-            if (y -> color == RED) {
-                printf("y -> color == RED\n");
-                /* case 1 - change the colors */
-                x -> parent -> color = BLACK;
-                y -> color = BLACK;
-                x -> parent -> parent -> color = RED;
-                /* Move x up the tree */
-                x = x -> parent -> parent;
-                printf("no need to rotate\n");
-             }
-            else {
-                /* y is a BLACK node */
+            if (!y) printf("uncle node is NULL\n");
+            if(!y ) {
                 printf("y -> color == Black\n");
                 if (x == x -> parent -> right) {
-                    printf("5, 3, 1\n");
-                    /* and x is to the right */ 
+                    printf("case like :5, 3, 4\n");
                     /* case 2 - move x up and rotate */
                     x = x -> parent;
                     root = rotateLeft(root, x);
                     printf("check");
                 }
                 /* case 3 */
-                printf("rotate\n");
+                printf("case like :5, 3, 1\n");
                 x -> parent -> color = BLACK;
                 x -> parent -> parent -> color = RED;
-                root = rotateRight(root, x);
-            }
-        }    
-        else {
-            /* repeat the "if" part with right and left exchanged */
-            struct RBNode * y = x -> parent -> parent -> left;
-            if (!y) {
-                root -> color = BLACK;   
-                return root;
-            }
-            if (y -> color == RED) {
+                root = rotateRight(root, x -> parent -> parent);
+            } 
+            else if (y -> color == BLACK ) {
+                printf("y -> color == Black\n");
+                if (x == x -> parent -> right) {
+                    printf("case like :5, 3, 4\n");
+                    x = x -> parent;
+                    root = rotateLeft(root, x);
+                    printf("check");
+                }
+                printf("case like :5, 3, 1\n");
+                x -> parent -> color = BLACK;
+                x -> parent -> parent -> color = RED;
+                root = rotateRight(root, x -> parent -> parent);
+            } 
+            else {
+                printf("y -> color == RED\n");
                 /* case 1 - change the colors */
                 x -> parent -> color = BLACK;
                 y -> color = BLACK;
                 x -> parent -> parent -> color = RED;
-                /* Move x up the tree */
+                /* Move x up the tree, ensure the RB Tree's property iteratively*/
                 x = x -> parent -> parent;
-             }
-            else {
-                /* y is a BLACK node */
+                printf("no need to rotate\n");
+            }   
+  
+        }    
+        else {
+            /* repeat the "if" part with right and left exchanged */
+            printf(" case like with 5, 8, then insert 7 or 9\n");
+            struct RBNode * y = x -> parent -> parent -> left;
+            if (!y){
                 if (x == x -> parent -> left) {
-                    /* and x is to the right */ 
-                    /* case 2 - move x up and rotate */
+                    if (x){ 
                     x = x -> parent;
-                    root = rotateLeft(root, x);
+                    root = rotateRight(root, x);
+                    }
                 }
-                /* case 3 */
                 x -> parent -> color = BLACK;
                 x -> parent -> parent -> color = RED;
-                root = rotateRight(root, x);
+                root = rotateLeft(root, x -> parent -> parent);
             }
+            else if (y -> color == BLACK){
+                if (x == x -> parent -> left) {
+                    if (x){ 
+                    x = x -> parent;
+                    root = rotateRight(root, x);
+                    }
+                }
+                x -> parent -> color = BLACK;
+                x -> parent -> parent -> color = RED;
+                root = rotateLeft(root, x -> parent -> parent);
+            }
+            else {
+                x -> parent -> color = BLACK;
+                y -> color = BLACK;
+                x -> parent -> parent -> color = RED;
+                x = x -> parent -> parent;
+             }
         }
     }
     root -> color = BLACK;
@@ -287,15 +298,12 @@ struct RBNode *** levelOrder(struct RBNode *root, int **numberOfElementsInEachRo
 struct RBNode *treeInsert(struct RBNode *root, struct RBNode *newNode){
     if(root == NULL) root = newNode;
     else{
-        if (root -> key > newNode -> key) { 
+        if (root -> key > newNode -> key) 
             root -> left = treeInsert(root -> left, newNode); 
-            // update the parent for newNode, but how?
-        }
-        else{ 
+        else
             root -> right = treeInsert(root -> right, newNode); 
-        }
     }
-    
+
     return root;
 }
 
@@ -311,7 +319,7 @@ int main(){
     struct RBNode *root = NULL;
     struct RBNode *tem = NULL;
 
-    int a[] = {11, 5, 4, 15, 17, 19};
+    int a[] = {7, 5, 2, 9, 10, 11, 12, 13, 14};
     int len = sizeof(a)/sizeof(a[0]);
     for (int i = 0; i < len; ++i){
         tem = newRBNode(a[i]);
@@ -322,7 +330,8 @@ int main(){
     int numberOfRows = 0;
     int *numberOfElementsInEachRow = NULL; // pointing to a 1D array
     struct RBNode ***res = levelOrder(root, &numberOfElementsInEachRow, &numberOfRows);
-    printf("number of row: %d\n", numberOfRows );
+    printf("\033[1;31m!insertion Done.\033[0m Number of row: %d\n", numberOfRows );
+   
 
     int i, j;
     for (i = 0; i < numberOfRows; i++) {
