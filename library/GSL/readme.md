@@ -19,5 +19,5 @@ https://www.gnu.org/software/gsl/doc/html/index.html
   LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/wm/Playground/tools/gsl/lib
   export LD_LIBRARY_PATH
   ```
-# Apply gsl in a comprehensive way.
+# apply gsl in a comprehensive way
 

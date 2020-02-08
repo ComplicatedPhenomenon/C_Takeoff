@@ -15,7 +15,7 @@ It's a project mainly about introducing `C`, meanwhile, a certain amount of `CPP
   :guitar: [slate an API generator](https://github.com/lord/slate)
 
 * [x] New features on C
-  - [x] OOP
+  - [x] Object Oriented programming
   - [ ] Generic programming
 * [x] Informative
   * Basic
@@ -64,6 +64,13 @@ It's a project mainly about introducing `C`, meanwhile, a certain amount of `CPP
       - [x] Radix sort
     * [x] Search
       - [x] Binary search 
+  * Third-party library
+    - [x] Database
+      - [x] PostgreSQL
+      - [ ] redis
+    - [x] GNU Scientific Library 
+    - [x] Test framework
+      - [ ] [catch.hpp](https://github.com/catchorg/Catch2)
 
 * [ ] writing robust code
   - [ ] Debug 
