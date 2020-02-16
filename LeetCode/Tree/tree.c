@@ -111,7 +111,7 @@ int ** levelOrderBinaryTreeTranversal(struct TreeNode *root, int **numberOfEleme
      * the number of rows and columns also are specified.
      * 
      * #### how it works?
-     * ![](../../figures/implementAHeap.svg)
+     * ![](../figures/implementAHeap.svg)
      */
 
     if (!root) return NULL;

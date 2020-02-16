@@ -144,8 +144,6 @@ Functions</h2></td></tr>
 <tr class="separator:ad7f00e2c313822460791e847dcbf280f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7e070f0f3541ab6a1b6dd4908e65f0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="demo_8c.html#ad7e070f0f3541ab6a1b6dd4908e65f0c">del</a> (<a class="el" href="structHash.html">Hash</a> *h, <a class="el" href="structList.html">List</a> *l, char *key)</td></tr>
 <tr class="separator:ad7e070f0f3541ab6a1b6dd4908e65f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="demo_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
-<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad6074dd11ab3c97c8135c43aab03ae95"></a>
@@ -615,26 +613,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int main </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">List *ptrToList = list_create();
-</pre><p> printf("%ld\n", sizeof("Complicated")); char *key = "ComplicatedPhenomenon"; void *ptr = NULL; list_push(ptrToList, key, 4, ptr); list_print(ptrToList); key = "CZFZDXX"; list_push(ptrToList, key, 5, ptr); list_print(ptrToList); key = "WALLE1000000001"; list_push(ptrToList, key, 6, ptr); list_print(ptrToList); list_destroy(ptrToList);</p>
-<p><a class="el" href="structHash.html">Hash</a> *h = <a class="el" href="demo_8c.html#a73c16adbfa1d534f1562a725d8e473f1">hash_create()</a>; key = "CZFZDXX"; <a class="el" href="classNode.html">Node</a> *ptrNode = NULL; hash_add(h, key, 4, ptrNode); key = "WALLE1000000001"; hash_add(h, key, 6, ptr); key = "CZFZDXX"; hash_get(h, key); hash_destroy(h);</p>
 
 </div>
 </div>

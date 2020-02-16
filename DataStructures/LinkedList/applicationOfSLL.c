@@ -1,12 +1,14 @@
 /**
  * @file
- * \brief
- * reference: https://dev-notes.eu/2018/07/double-pointers-and-linked-list-in-c/ 
+ * \brief reference: https://dev-notes.eu/2018/07/double-pointers-and-linked-list-in-c/ 
  */
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 
+/**
+ * building blocks of a single linked list
+ */ 
 typedef struct node{
     char *name;
     struct node *next;

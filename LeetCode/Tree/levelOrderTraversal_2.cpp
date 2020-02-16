@@ -1,7 +1,6 @@
 /**
- * @brief
- * \file
- * ![](../../figures/levelOrderTraversal.svg)
+ * @file
+ * ![](../figures/levelOrderTraversal.svg)
  */ 
 #include<iostream>
 #include<vector>
