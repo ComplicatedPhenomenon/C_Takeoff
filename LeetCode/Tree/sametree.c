@@ -1,6 +1,10 @@
 /**
+ * @file
+ * \brief
  * source: https://leetcode.com/problems/same-tree/
- **/
+ * 
+ * ![](../../figures/TreeNode.svg)
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

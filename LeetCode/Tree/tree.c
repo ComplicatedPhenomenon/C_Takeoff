@@ -95,9 +95,6 @@ void *popTreeNode(struct binaryTreeQueue * queue) {
 
 int ** levelOrderBinaryTreeTranversal(struct TreeNode *root, int **numberOfElementsInEachRow, int *numberOfRows) {
     /**
-     * ~~~~~~~~~~~~~~~{.c}
-     * int ** levelOrderBinaryTreeTranversal(struct TreeNode *root, int **numberOfElementsInEachRow, int *numberOfRows) 
-     * ~~~~~~~~~~~~~~~
      * #### Parameters
      * - root
      *    
@@ -112,6 +109,9 @@ int ** levelOrderBinaryTreeTranversal(struct TreeNode *root, int **numberOfEleme
      * #### Returns
      * output as a pointer pointing to a 2D dynamic array, 
      * the number of rows and columns also are specified.
+     * 
+     * #### how it works?
+     * ![](../../figures/implementAHeap.svg)
      */
 
     if (!root) return NULL;
@@ -211,20 +211,16 @@ void *popAVLTreeNode(struct AVLQueue * queue) {
 
 int ** levelOrderAVLTreeTranversal(struct AVLTreeNode *root, int **numberOfElementsInEachRow, int *numberOfRows) {
     /**
-     * ~~~~~~~~~~~~~~~{.c}
-     * int ** levelOrderAVLTreeTranversal(struct AVLTreeNode *root, int **numberOfElementsInEachRow, int *numberOfRows)
-     * ~~~~~~~~~~~~~~~
      * #### Parameters
      * - root 
      *   
      *   a pointer pointing to the root node of this tree.
-     * 
      * - numberOfElementsInEachRow 
      * 
      *   the number of elements in each row
      * - numberOfRows 
      * 
-     *   the number of rows in this 2D array
+     *   the number of rows in this 2D array 
      * 
      * #### Returns
      * output as a pointer pointing to a 2D dynamic array, 

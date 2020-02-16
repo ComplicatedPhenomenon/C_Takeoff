@@ -1,6 +1,13 @@
 var searchData=
 [
-  ['haspathsum_24',['hasPathSum',['../pathSum_8c.html#ac8ce87ce05ac243d715d25de903843f6',1,'pathSum.c']]],
-  ['height_25',['height',['../classNode.html#a61966b207f0584aaa4773e5e1266e905',1,'Node::height()'],['../structAVLTreeNode.html#a8ed23ee086ec5d83949b2e540bb4098a',1,'AVLTreeNode::height()'],['../AVL_8cpp.html#a1b0f6dc205b22089fbdaabe923345f1d',1,'height():&#160;AVL.cpp']]],
-  ['heightdifference_26',['heightDifference',['../AVLTree_8c.html#a3c68c92ab9cc3c5846e9af2cf5d3cbf9',1,'AVLTree.c']]]
+  ['find_38',['find',['../DLL_8c.html#a787951d2b0c215b5209fda645f496905',1,'DLL.c']]],
+  ['freeavltree_39',['freeAVLTree',['../tree_8c.html#a4837fe37512143ef5f71ce42abb045d5',1,'freeAVLTree(struct AVLTreeNode *root):&#160;tree.c'],['../tree_8h.html#a4837fe37512143ef5f71ce42abb045d5',1,'freeAVLTree(struct AVLTreeNode *root):&#160;tree.c']]],
+  ['freebinarytree_40',['freeBinaryTree',['../AVL_8cpp.html#abb16703b6c7a7b400208c254416d944e',1,'freeBinaryTree(Node *root):&#160;AVL.cpp'],['../levelOrderTraversal__2_8cpp.html#ab6ec611df6523c4fe98b854784c429db',1,'freeBinaryTree(struct TreeNode *root):&#160;levelOrderTraversal_2.cpp'],['../tree_8c.html#ab6ec611df6523c4fe98b854784c429db',1,'freeBinaryTree(struct TreeNode *root):&#160;tree.c'],['../tree_8cpp.html#ab6ec611df6523c4fe98b854784c429db',1,'freeBinaryTree(struct TreeNode *root):&#160;tree.cpp'],['../tree_8h.html#ab6ec611df6523c4fe98b854784c429db',1,'freeBinaryTree(struct TreeNode *root):&#160;levelOrderTraversal_2.cpp'],['../RBTree_8c.html#a54736cdac4fef912193da51ecf22736e',1,'freeBinaryTree(struct RBNode *root):&#160;RBTree.c']]],
+  ['freelist_41',['freeList',['../LRUcache_8c.html#a604d4adbf89038670723d9baedd635d7',1,'LRUcache.c']]],
+  ['freememory_42',['freeMemory',['../applicationOfSLL_8c.html#a255a7411edf6d915462e685608832da6',1,'applicationOfSLL.c']]],
+  ['freequeue_43',['freeQueue',['../queue_8c.html#a1c443bde5fe0f4dff697fea1c39b414d',1,'queue.c']]],
+  ['freesll_44',['freeSLL',['../LeetCode_2LinkedList_2singleLinkedList_8c.html#af26437d2525f6068199b5d6e39114981',1,'freeSLL(struct listNode *head):&#160;singleLinkedList.c'],['../LeetCode_2LinkedList_2singleLinkedList_8h.html#af26437d2525f6068199b5d6e39114981',1,'freeSLL(struct listNode *head):&#160;singleLinkedList.c'],['../DataStructures_2LinkedList_2singleLinkedList_8c.html#ad317eed96dd9ecf1d938bddbfdac3d79',1,'freeSLL(listNode *head):&#160;singleLinkedList.c'],['../DataStructures_2LinkedList_2singleLinkedList_8h.html#ad317eed96dd9ecf1d938bddbfdac3d79',1,'freeSLL(listNode *head):&#160;singleLinkedList.c'],['../queue_8c.html#a94fe30189bea363d1cafa3e0c66ce8c8',1,'freeSLL(struct stackNode *head):&#160;queue.c']]],
+  ['freestack_45',['freeStack',['../ArrayStack_8c.html#a5559f37e694dcb463a3467e9a4ad2cf3',1,'ArrayStack.c']]],
+  ['front_46',['front',['../structbinaryTreeQueue.html#acf64e1556f642d9017c689fcc9db8e9c',1,'binaryTreeQueue::front()'],['../structAVLQueue.html#a33e689253574305be5ef59695b2e1b90',1,'AVLQueue::front()'],['../structQueue.html#a89bcd9a83043b3782d84f56563476daf',1,'Queue::front()']]],
+  ['free_20memory_20allocated_20from_20heap_47',['Free memory allocated from heap',['../md_LeetCode_Tree_readme.html',1,'']]]
 ];

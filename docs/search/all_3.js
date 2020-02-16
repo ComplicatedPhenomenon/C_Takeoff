@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['freeavltree_14',['freeAVLTree',['../tree_8c.html#a4837fe37512143ef5f71ce42abb045d5',1,'freeAVLTree(struct AVLTreeNode *root):&#160;tree.c'],['../tree_8h.html#a4837fe37512143ef5f71ce42abb045d5',1,'freeAVLTree(struct AVLTreeNode *root):&#160;tree.c']]],
-  ['freebinarytree_15',['freeBinaryTree',['../AVL_8cpp.html#abb16703b6c7a7b400208c254416d944e',1,'freeBinaryTree(Node *root):&#160;AVL.cpp'],['../levelOrderTraversal__2_8cpp.html#ab6ec611df6523c4fe98b854784c429db',1,'freeBinaryTree(struct TreeNode *root):&#160;levelOrderTraversal_2.cpp'],['../tree_8c.html#ab6ec611df6523c4fe98b854784c429db',1,'freeBinaryTree(struct TreeNode *root):&#160;tree.c'],['../tree_8cpp.html#ab6ec611df6523c4fe98b854784c429db',1,'freeBinaryTree(struct TreeNode *root):&#160;tree.cpp'],['../tree_8h.html#ab6ec611df6523c4fe98b854784c429db',1,'freeBinaryTree(struct TreeNode *root):&#160;levelOrderTraversal_2.cpp']]],
-  ['freesll_16',['freeSLL',['../singleLinkedList_8c.html#af26437d2525f6068199b5d6e39114981',1,'freeSLL(struct listNode *head):&#160;singleLinkedList.c'],['../singleLinkedList_8h.html#af26437d2525f6068199b5d6e39114981',1,'freeSLL(struct listNode *head):&#160;singleLinkedList.c']]],
-  ['front_17',['front',['../structbinaryTreeQueue.html#acf64e1556f642d9017c689fcc9db8e9c',1,'binaryTreeQueue::front()'],['../structAVLQueue.html#a33e689253574305be5ef59695b2e1b90',1,'AVLQueue::front()']]],
-  ['free_20memory_20allocated_20from_20heap_18',['Free memory allocated from heap',['../md_LeetCode_Tree_readme.html',1,'']]]
+  ['data_27',['data',['../classNode.html#a87c003c9f600e3fc58e6e90835f0b605',1,'Node::data()'],['../structnode.html#a2d890bb9f6af0ffd73fe79b21124c2a2',1,'node::data()'],['../structCell.html#ac45791f8c0f65e6c7d10af3a223211db',1,'Cell::data()'],['../structstackNode.html#a5965e3f2ed228ef1dec1f44aca5cc4e5',1,'stackNode::data()']]],
+  ['del_28',['del',['../demo_8c.html#ad7e070f0f3541ab6a1b6dd4908e65f0c',1,'demo.c']]],
+  ['delete_29',['delete',['../DLL_8c.html#a6e35f5389beb7d11053bb0d8c9690299',1,'DLL.c']]],
+  ['deletemaxheap_30',['deleteMaxHeap',['../heap_8c.html#a7fc8d802efb1a80f1d6ef7f863d1184a',1,'heap.c']]],
+  ['deletenode_31',['deleteNode',['../heap_8c.html#a93297c573a35bdba85699e813c7dba10',1,'heap.c']]],
+  ['demo_2ec_32',['demo.c',['../demo_8c.html',1,'']]],
+  ['dequeue_33',['deQueue',['../queue_8c.html#a719ece546231b89eb7b931a6e2101238',1,'queue.c']]],
+  ['display_34',['display',['../applicationOfSLL_8c.html#a619920e32f856408625123492ef828bd',1,'applicationOfSLL.c']]],
+  ['dll_2ec_35',['DLL.c',['../DLL_8c.html',1,'']]]
 ];

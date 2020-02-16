@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['solution_96',['Solution',['../classSolution.html',1,'']]]
+  ['maxheap_211',['maxHeap',['../structmaxHeap.html',1,'']]]
 ];

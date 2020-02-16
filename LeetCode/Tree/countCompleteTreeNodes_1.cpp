@@ -1,6 +1,8 @@
-/**
+/** 
+ * @file
+ * \brief
  * source: https://leetcode.com/problems/count-complete-tree-nodes
- **/
+ */
 #include<iostream>
 #include<cmath>
 #include"tree.h"

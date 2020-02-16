@@ -1,8 +1,3 @@
-/**
- *   Modified Date:
- *   Description:
- **/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -21,7 +16,9 @@ typedef struct{
 } maxHeap ;
 
 
-// Function to initialize the max heap with size = 0
+/**
+ * Function to initialize the max heap with size = 0
+ */
 maxHeap initMaxHeap(int n) {
     maxHeap hp ;
     hp.size = 0 ;
@@ -30,9 +27,9 @@ maxHeap initMaxHeap(int n) {
 }
 
 
-/*
-    Function to swap data within two nodes of the max heap using pointers
-*/
+/**
+ * Function to swap data within two nodes of the max heap using pointers
+ */
 void swap(node *n1, node *n2) {
     node temp = *n1 ;
     *n1 = *n2 ;

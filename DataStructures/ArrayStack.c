@@ -6,7 +6,9 @@
 #include <stdlib.h>
 #include <limits.h>
 
-// A structure to represent a stack
+/**
+ * A structure to represent a stack
+ */ 
 struct Stack {
 	int top;
 	unsigned capacity;
@@ -29,7 +31,9 @@ int isEmpty(struct Stack* stack) {
 	return stack->top == -1; 
 }
 
-// Function to add an item to stack. It increases top by 1
+/**
+ * Function to add an item to stack. It increases top by 1
+ */ 
 void push(struct Stack* stack, int item) {
 	if (isFull(stack))
 		return;

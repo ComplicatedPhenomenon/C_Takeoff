@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['freeavltree_125',['freeAVLTree',['../tree_8c.html#a4837fe37512143ef5f71ce42abb045d5',1,'freeAVLTree(struct AVLTreeNode *root):&#160;tree.c'],['../tree_8h.html#a4837fe37512143ef5f71ce42abb045d5',1,'freeAVLTree(struct AVLTreeNode *root):&#160;tree.c']]],
-  ['freebinarytree_126',['freeBinaryTree',['../AVL_8cpp.html#abb16703b6c7a7b400208c254416d944e',1,'freeBinaryTree(Node *root):&#160;AVL.cpp'],['../levelOrderTraversal__2_8cpp.html#ab6ec611df6523c4fe98b854784c429db',1,'freeBinaryTree(struct TreeNode *root):&#160;levelOrderTraversal_2.cpp'],['../tree_8c.html#ab6ec611df6523c4fe98b854784c429db',1,'freeBinaryTree(struct TreeNode *root):&#160;tree.c'],['../tree_8cpp.html#ab6ec611df6523c4fe98b854784c429db',1,'freeBinaryTree(struct TreeNode *root):&#160;tree.cpp'],['../tree_8h.html#ab6ec611df6523c4fe98b854784c429db',1,'freeBinaryTree(struct TreeNode *root):&#160;levelOrderTraversal_2.cpp']]],
-  ['freesll_127',['freeSLL',['../singleLinkedList_8c.html#af26437d2525f6068199b5d6e39114981',1,'freeSLL(struct listNode *head):&#160;singleLinkedList.c'],['../singleLinkedList_8h.html#af26437d2525f6068199b5d6e39114981',1,'freeSLL(struct listNode *head):&#160;singleLinkedList.c']]]
+  ['del_262',['del',['../demo_8c.html#ad7e070f0f3541ab6a1b6dd4908e65f0c',1,'demo.c']]],
+  ['delete_263',['delete',['../DLL_8c.html#a6e35f5389beb7d11053bb0d8c9690299',1,'DLL.c']]],
+  ['deletemaxheap_264',['deleteMaxHeap',['../heap_8c.html#a7fc8d802efb1a80f1d6ef7f863d1184a',1,'heap.c']]],
+  ['deletenode_265',['deleteNode',['../heap_8c.html#a93297c573a35bdba85699e813c7dba10',1,'heap.c']]],
+  ['dequeue_266',['deQueue',['../queue_8c.html#a719ece546231b89eb7b931a6e2101238',1,'queue.c']]],
+  ['display_267',['display',['../applicationOfSLL_8c.html#a619920e32f856408625123492ef828bd',1,'applicationOfSLL.c']]]
 ];

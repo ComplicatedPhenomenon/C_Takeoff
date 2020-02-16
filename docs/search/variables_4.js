@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['next_170',['next',['../structqueueBinaryTreeNode.html#ab51f267247930080a2a742c8208f2e56',1,'queueBinaryTreeNode::next()'],['../structAVLQueueNode.html#ac730b99fa3e610e8249f82504adfe39a',1,'AVLQueueNode::next()'],['../structListNode.html#a232112b6981e0fa380e985d199d1f7b3',1,'ListNode::next()'],['../structlistNode.html#a860785ea27fb1c044d6a59ba491dd6ab',1,'listNode::next()']]]
+  ['front_370',['front',['../structbinaryTreeQueue.html#acf64e1556f642d9017c689fcc9db8e9c',1,'binaryTreeQueue::front()'],['../structAVLQueue.html#a33e689253574305be5ef59695b2e1b90',1,'AVLQueue::front()'],['../structQueue.html#a89bcd9a83043b3782d84f56563476daf',1,'Queue::front()']]]
 ];

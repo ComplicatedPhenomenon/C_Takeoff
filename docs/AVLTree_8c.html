@@ -73,6 +73,9 @@ $(function() {
 <div class="title">AVLTree.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>gcc -Wall <a class="el" href="tree_8c.html">tree.c</a> <a class="el" href="AVLTree_8c.html" title="gcc -Wall tree.c AVLTree.c &amp;&amp; valgrind ./a.out">AVLTree.c</a> &amp;&amp; valgrind ./a.out  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="tree_8h_source.html">tree.h</a>&quot;</code><br />
@@ -86,20 +89,22 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:af082905f7eac6d03e92015146bbc1925"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AVLTree_8c.html#af082905f7eac6d03e92015146bbc1925">max</a> (int a, int b)</td></tr>
 <tr class="separator:af082905f7eac6d03e92015146bbc1925"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab85cb301f6c06fd3513cf87741283055"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AVLTree_8c.html#ab85cb301f6c06fd3513cf87741283055">getHeight</a> (struct <a class="el" href="structAVLTreeNode.html">AVLTreeNode</a> *node)</td></tr>
+<tr class="memitem:ab85cb301f6c06fd3513cf87741283055"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AVLTree_8c.html#ab85cb301f6c06fd3513cf87741283055">getHeight</a> (struct <a class="el" href="structAVLTreeNode.html">AVLTreeNode</a> *<a class="el" href="structnode.html">node</a>)</td></tr>
 <tr class="separator:ab85cb301f6c06fd3513cf87741283055"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c68c92ab9cc3c5846e9af2cf5d3cbf9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AVLTree_8c.html#a3c68c92ab9cc3c5846e9af2cf5d3cbf9">heightDifference</a> (struct <a class="el" href="structAVLTreeNode.html">AVLTreeNode</a> *node)</td></tr>
+<tr class="memitem:a3c68c92ab9cc3c5846e9af2cf5d3cbf9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AVLTree_8c.html#a3c68c92ab9cc3c5846e9af2cf5d3cbf9">heightDifference</a> (struct <a class="el" href="structAVLTreeNode.html">AVLTreeNode</a> *<a class="el" href="structnode.html">node</a>)</td></tr>
 <tr class="separator:a3c68c92ab9cc3c5846e9af2cf5d3cbf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a69a81a7c88b4e10b6aee2e3385386b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structAVLTreeNode.html">AVLTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AVLTree_8c.html#a1a69a81a7c88b4e10b6aee2e3385386b">rotateLeft</a> (struct <a class="el" href="structAVLTreeNode.html">AVLTreeNode</a> *root)</td></tr>
 <tr class="separator:a1a69a81a7c88b4e10b6aee2e3385386b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3caeb5761e981339265ee0764519a657"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structAVLTreeNode.html">AVLTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AVLTree_8c.html#a3caeb5761e981339265ee0764519a657">rotateRight</a> (struct <a class="el" href="structAVLTreeNode.html">AVLTreeNode</a> *root)</td></tr>
 <tr class="separator:a3caeb5761e981339265ee0764519a657"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c0f612565a7b812172ee866514b0049"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structAVLTreeNode.html">AVLTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AVLTree_8c.html#a7c0f612565a7b812172ee866514b0049">insert</a> (struct <a class="el" href="structAVLTreeNode.html">AVLTreeNode</a> *root, struct <a class="el" href="structAVLTreeNode.html">AVLTreeNode</a> *<a class="el" href="singleLinkedList_8h.html#aa73f59e66a5bf9f8ac618ccf77d28540">newNode</a>)</td></tr>
+<tr class="memitem:a7c0f612565a7b812172ee866514b0049"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structAVLTreeNode.html">AVLTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AVLTree_8c.html#a7c0f612565a7b812172ee866514b0049">insert</a> (struct <a class="el" href="structAVLTreeNode.html">AVLTreeNode</a> *root, struct <a class="el" href="structAVLTreeNode.html">AVLTreeNode</a> *<a class="el" href="LRUcache_8c.html#afd8566ba31215efdbdccb6e431b57ed5">newNode</a>)</td></tr>
 <tr class="separator:a7c0f612565a7b812172ee866514b0049"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AVLTree_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>gcc -Wall <a class="el" href="tree_8c.html">tree.c</a> <a class="el" href="AVLTree_8c.html" title="gcc -Wall tree.c AVLTree.c &amp;&amp; valgrind ./a.out">AVLTree.c</a> &amp;&amp; valgrind ./a.out </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a392fb874e547e582e9c66a08a1f23326"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a392fb874e547e582e9c66a08a1f23326">&#9670;&nbsp;</a></span>MAX</h2>
 
@@ -111,7 +116,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>gcc -Wall <a class="el" href="tree_8c.html">tree.c</a> <a class="el" href="AVLTree_8c.html">AVLTree.c</a> valgrind ./a.out </p>
 
 </div>
 </div>

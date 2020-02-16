@@ -1,7 +1,9 @@
 /**
- *   Modified Date: 01/14/2020
- *   Description: Approach for Level order A BST by pushing node  into a queue level by level
- **/
+ * @file
+ * \brief
+ * Modified Date: 01/14/2020
+ * Description: Approach for Level order A BST by pushing node  into a queue level by level
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include "tree.h"

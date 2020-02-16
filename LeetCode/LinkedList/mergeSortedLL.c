@@ -1,8 +1,9 @@
 /**
+ * @file
+ * \brief
  * source : https://leetcode.com/problems/merge-k-sorted-lists/
- * 
- * key point: 
- *   How to get the number of rows of an array according to the pointer refers 
+ *  	
+ * key point is how to get the number of rows of an array according to the pointer refers 
  * to this array? https://stackoverflow.com/a/492410/7583919
  * 
  * ToDo: the approach is quiet slow

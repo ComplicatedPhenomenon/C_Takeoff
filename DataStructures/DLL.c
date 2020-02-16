@@ -47,10 +47,9 @@ void delete(node *pointer, int data){
     temp->prev =  pointer;
     /*We removed the node which is next to the pointer (which is also temp) */
     free(temp);
-    /* Beacuse we deleted the node, we no longer require the memory used for it .  free() will deallocate the memory.
-     */
     return;
 }
+
 void print(node *pointer){
     if(pointer==NULL) {
         return;

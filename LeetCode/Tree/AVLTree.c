@@ -1,7 +1,8 @@
 /**
- * gcc -Wall tree.c AVLTree.c 
- * valgrind ./a.out
- **/
+ * @file
+ * \brief 
+ * gcc -Wall tree.c AVLTree.c && valgrind ./a.out
+ */
 
 #include<stdio.h>
 #include<stdlib.h>

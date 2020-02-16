@@ -1,8 +1,11 @@
-// https://stackoverflow.com/questions/766893/how-do-i-modify-a-pointer-that-has-been-passed-into-a-function-in-c
-
 /**
- * Create an array in a function.
- * call this function in main and manage with this array
+ * @file
+ * 
+ * Objects 
+ * - Create an array in a function.
+ * - call this function in main and manage with this array
+ * 
+ * reference: https://stackoverflow.com/q/766893/7583919
  **/
 #include<stdio.h>
 

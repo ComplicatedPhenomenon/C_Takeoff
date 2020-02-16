@@ -1,6 +1,9 @@
-
-/**
+/*! 
+ * @file
+ * \brief
  * source: https://leetcode.com/problems/binary-tree-paths
+ * 
+ * ```
  * Input:
  *
  *         1
@@ -10,6 +13,7 @@
  *        5
  *
  *  Output: ["1->2->5", "1->3"]
+ * ```
  */
 
 #include<iostream>

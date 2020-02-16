@@ -8,7 +8,9 @@ It's a project mainly about introducing `C`, meanwhile, a certain amount of `CPP
 
 
 # Main features
-* [ ] Documentation.
+* [x] Documentation
+
+  Make documentation for part of the code base.
 
   ❌ `Doxygen` is not an idea tool to make documentation to me, I really can't agree with its taste. (I was wrong, I didn't know what I was talking about.)
 
@@ -31,7 +33,7 @@ It's a project mainly about introducing `C`, meanwhile, a certain amount of `CPP
     GENERATE_LATEX         = NO
     ```
   - `doxygen  Doxyfile`
-   
+  - Edit code comment while checking `index.html` in a browser.
   - publish it to github pages
     
     https://goseeky.wordpress.com/2017/07/22/documentation-101-doxygen-with-github-pages/

@@ -1,9 +1,5 @@
-/*
- * print all utf-8 characters on terminal
- *
- */
-
 #include <stdio.h>
+
 
 void utf8print(unsigned int cp) {
     if (cp < 0x80)

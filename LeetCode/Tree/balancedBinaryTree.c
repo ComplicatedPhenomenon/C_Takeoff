@@ -1,27 +1,33 @@
 /**
+ * @file
+ * \brief
+ *
  * source: https://leetcode.com/problems/balanced-binary-tree 
-    a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
-
-    Input: 
-          3
-         / \
-        9  20
-      /  \
-    15   7
-    
-    Output: True 
-
-    Input: 
-          1
-         / \
-        2   2
-       / \
-      3   3
-     / \
-    4   4
-    
-    Output: False 
- **/
+ * 
+ *  A binary tree in which the depth of the two subtrees of every node never differ by more than 1.
+ * 
+ * ```
+ *   Input: 
+ *         3
+ *        / \
+ *       9  20
+ *      / \
+ *    15   7
+ *    
+ *   Output: True 
+ *
+ *   Input: 
+ *         1
+ *        / \
+ *       2   2
+ *      / \
+ *     3   3
+ *    / \
+ *   4   4
+ *   
+ *  Output: False 
+ * ```
+ */
 
 #include<stdio.h>
 #include <stdlib.h>

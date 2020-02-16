@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['reconstrucbinarytree_159',['reconstrucBinaryTree',['../classSolution.html#a2a82489ea481a980bd663c1317f0e7a5',1,'Solution']]],
-  ['reversebetween_160',['reverseBetween',['../classSolution.html#a394f9e9f58a8d0b5556358a6739e0ecb',1,'Solution']]],
-  ['rightrotate_161',['rightRotate',['../AVL_8cpp.html#acb55e67e439d3b694dc4dcb459e3bcf4',1,'AVL.cpp']]],
-  ['rotateleft_162',['rotateLeft',['../AVLTree_8c.html#a1a69a81a7c88b4e10b6aee2e3385386b',1,'AVLTree.c']]],
-  ['rotateright_163',['rotateRight',['../AVLTree_8c.html#a3caeb5761e981339265ee0764519a657',1,'AVLTree.c']]]
+  ['newavltreenode_330',['newAVLTreeNode',['../tree_8c.html#a56433eb4b0d27fe9f8e1ad0ce4ae9cf6',1,'newAVLTreeNode(int val):&#160;tree.c'],['../tree_8h.html#a56433eb4b0d27fe9f8e1ad0ce4ae9cf6',1,'newAVLTreeNode(int val):&#160;tree.c']]],
+  ['newnode_331',['newNode',['../AVL_8cpp.html#a770da11603a821bfd0fa82ac18ab9be6',1,'newNode(int key):&#160;AVL.cpp'],['../levelOrderTraversal__2_8cpp.html#a88fca17b6631a0dfb62b48288fa533ef',1,'newNode(int val):&#160;levelOrderTraversal_2.cpp'],['../tree_8c.html#a88fca17b6631a0dfb62b48288fa533ef',1,'newNode(int val):&#160;tree.c'],['../tree_8cpp.html#a88fca17b6631a0dfb62b48288fa533ef',1,'newNode(int val):&#160;tree.cpp'],['../tree_8h.html#a88fca17b6631a0dfb62b48288fa533ef',1,'newNode(int val):&#160;AVL.cpp'],['../LeetCode_2LinkedList_2singleLinkedList_8c.html#aa73f59e66a5bf9f8ac618ccf77d28540',1,'newNode(int val):&#160;singleLinkedList.c'],['../LeetCode_2LinkedList_2singleLinkedList_8h.html#aa73f59e66a5bf9f8ac618ccf77d28540',1,'newNode(int val):&#160;AVL.cpp'],['../DataStructures_2LinkedList_2singleLinkedList_8c.html#af65c2b6af991fef47fff89f973ddfa0d',1,'newNode(int val):&#160;singleLinkedList.c'],['../DataStructures_2LinkedList_2singleLinkedList_8h.html#af65c2b6af991fef47fff89f973ddfa0d',1,'newNode(int val):&#160;AVL.cpp'],['../LRUcache_8c.html#afd8566ba31215efdbdccb6e431b57ed5',1,'newNode(int key, int value):&#160;LRUcache.c']]],
+  ['newrbnode_332',['newRBNode',['../RBTree_8c.html#a1a69e111cd17f690cbf2044d2319fc9d',1,'RBTree.c']]],
+  ['node_5fcreate_333',['node_create',['../demo_8c.html#a010630005a843c883f8f63a524fb2a49',1,'demo.c']]],
+  ['node_5fdestroy_334',['node_destroy',['../demo_8c.html#abda7be3acebbe908fa12bb7b0a91e82e',1,'demo.c']]]
 ];

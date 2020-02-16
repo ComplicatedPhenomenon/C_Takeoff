@@ -1,7 +1,7 @@
-/*
+/**
+ * @file
  * You need to compile this program with the flag -lm or you will get the error
  * (.text+0x43): undefined reference to 'pow'
- *  1 byte = 8 bits
  */
 
 #include<stdio.h>

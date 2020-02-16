@@ -1,11 +1,16 @@
 /**
- *   Modified Date: 11/08/2019
- *   Description:  C Program to implement a queue using two stacks
+ * @file
+ * 
+ * Modified Date: 11/08/2019
+ * Description:  C Program to implement a queue using two stacks
  **/
  
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * basic building block of stack
+ */ 
 struct stackNode {
 	int data;
 	struct stackNode * next;
@@ -15,7 +20,9 @@ void push(struct stackNode ** topRef, int new_data);
 int pop(struct stackNode ** topRef);
 void freeSLL(struct stackNode *head);
 
-/* structure of queue having two stacks */
+/**
+ * structure of queue having two stacks 
+ */
 struct queue {
 	struct stackNode * stack1;
 	struct stackNode * stack2;
@@ -28,7 +35,9 @@ void enQueue(struct queue * q, int x) {
 	push(&q->stack1, x);
 }
 
-/* Function to deQueue an item from queue */
+/**
+ * Function to deQueue an item from queue 
+ */
 int deQueue(struct queue* q) {
 	int x;
 	if (q->stack1 == NULL && q->stack2 == NULL) {
@@ -49,7 +58,9 @@ int deQueue(struct queue* q) {
 	return x;
 }
 
-/* Function to free a stack*/
+/**
+ * Function to free a stack
+ */
 void freeQueue(struct queue *q){
 	freeSLL(q->stack1);
 	freeSLL(q->stack2);

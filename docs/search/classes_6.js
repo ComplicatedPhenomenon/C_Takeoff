@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['treenode_97',['TreeNode',['../structTreeNode.html',1,'']]]
+  ['node_212',['Node',['../classNode.html',1,'Node'],['../structnode.html',1,'node']]]
 ];

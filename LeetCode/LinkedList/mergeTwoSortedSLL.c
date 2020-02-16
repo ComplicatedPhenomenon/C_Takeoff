@@ -1,6 +1,7 @@
 /**
+ * @file
+ * \brief
  * source: https://leetcode.com/problems/merge-two-sorted-lists/
- * 
  **/
 #include<stdio.h>
 #include<stdlib.h>

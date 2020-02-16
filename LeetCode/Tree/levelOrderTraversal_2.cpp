@@ -1,8 +1,8 @@
 /**
- *   Modified Date: 11/08/2019
- *   Description:
- **/
-
+ * @brief
+ * \file
+ * ![](../../figures/levelOrderTraversal.svg)
+ */ 
 #include<iostream>
 #include<vector>
 #include<queue>

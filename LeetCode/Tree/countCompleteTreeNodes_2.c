@@ -1,7 +1,7 @@
-/**
+/*! \brief
  * source: https://leetcode.com/problems/count-complete-tree-nodes/
- * 
- **/
+ */
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['mergesortedll_2ec_108',['mergeSortedLL.c',['../mergeSortedLL_8c.html',1,'']]],
-  ['mergetwosortedsll_2ec_109',['mergeTwoSortedSLL.c',['../mergeTwoSortedSLL_8c.html',1,'']]]
+  ['iterativewayinordertraversal_2ecpp_234',['iterativeWayInorderTraversal.cpp',['../iterativeWayInorderTraversal_8cpp.html',1,'']]]
 ];
