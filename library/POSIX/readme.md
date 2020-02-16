@@ -67,3 +67,10 @@ int pthread_join(pthread_t tid, void**thread_return);
 这将该子线程的状态设置为分离的（detached），如此一来，该线程运行结束后会自动释放所有资源。
 
 [reference](https://cloud.tencent.com/developer/article/1392916)
+
+
+# why Rust has a significant performance
+
+mutable variable
+
+immutable variable

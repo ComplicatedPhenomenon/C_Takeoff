@@ -10,8 +10,14 @@ It's a project mainly about introducing `C`, meanwhile, a certain amount of `CPP
 # Main features
 * [ ] Documentation.
 
-  ❌ `Doxygen` is not an idea tool to make documentation to me, I really can't agree with its taste.
+  ❌ `Doxygen` is not an idea tool to make documentation to me, I really can't agree with its taste. (I was wrong, I didn't know what I was talking about.)
 
+  Basic procedure 
+  - `doxygen -g` 
+  - customize Doxyfile
+  - `doxygen  Doxyfile`
+
+ 
   :guitar: [slate an API generator](https://github.com/lord/slate)
 
 * [x] New features on C

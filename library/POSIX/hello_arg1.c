@@ -42,6 +42,7 @@ int main(int argc, char *argv[]){
         //taskIds[t] = t;
         printf("Creating thread %ld\n", t);
         rc = pthread_create(&threads[t], NULL, PrintHello, (void *) t);
+        //若成功则返回0，若出错则为非零。 anything that is not 0 is true
         if (rc) {
             printf("ERROR; return code from pthread_create() is %d\n", rc);
             exit(-1);

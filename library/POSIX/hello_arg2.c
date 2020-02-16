@@ -47,9 +47,9 @@ void *PrintHello(void *threadarg){
 
 int main(int argc, char *argv[]){
     pthread_t threads[NUM_THREADS];
-    int rc, t, sum;
+    int rc, t, flag;
 
-    sum=0;
+    flag=0;
     messages[0] = "English: Hello World!";
     messages[1] = "French: Bonjour, le monde!";
     messages[2] = "Spanish: Hola al mundo";
@@ -60,14 +60,14 @@ int main(int argc, char *argv[]){
     messages[7] = "Latin: Orbis, te saluto!";
 
     for(t = 0; t < NUM_THREADS; t++) {
-        sum = sum + t;
+        flag = flag + t;
         // encapsulate data in array element which has data type as struct thread_data
         thread_data_array[t].thread_id = t;
-        thread_data_array[t].sum = sum;
+        thread_data_array[t].sum = flag;
         thread_data_array[t].message = messages[t];
         printf("Creating thread %d\n", t);
         //Single thread
-        //printf("Thread %d: %s  Sum=%d\n", t, messages[t], sum);
+        //printf("Thread %d: %s  flag=%d\n", t, messages[t], flag);
 
         rc = pthread_create(&threads[t], NULL, PrintHello,  &thread_data_array[t]);
         if (rc) {

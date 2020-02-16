@@ -82,12 +82,24 @@ void *popTreeNode(struct binaryTreeQueue * queue) {
 
 int ** levelOrderBinaryTreeTranversal(struct TreeNode *root, int **numberOfElementsInEachRow, int *numberOfRows) {
     /**
-     * root: a pointer pointing to the root node of this tree.
+     * ~~~~~~~~~~~~~~~{.c}
+     * int ** levelOrderBinaryTreeTranversal(struct TreeNode *root, int **numberOfElementsInEachRow, int *numberOfRows) 
+     * ~~~~~~~~~~~~~~~
+     * #### Parameters
+     * - root
+     *    
+     *   a pointer pointing to the root node of this tree.
+     * - numberOfElementsInEachRow 
+     *  
+     *   the number of elements in each row
+     * - numberOfRows
+     *   
+     *   the number of rows in this 2D array
+     * 
+     * #### Returns
      * output as a pointer pointing to a 2D dynamic array, 
      * the number of rows and columns also are specified.
-     * numberOfRows: the number of rows in this 2D array
-     * numberOfElementsInEachRow: the number of elements in each row
-     **/
+     */
 
     if (!root) return NULL;
 
