@@ -28,6 +28,7 @@ It's a project mainly about introducing `C`, meanwhile, a certain amount of `CPP
     # Specify what to include in documentation.
     INPUT                  = LeetCode/Tree LeetCode/LinkedList
     RECURSIVE              = YES
+    GENERATE_LATEX         = NO
     ```
   - `doxygen  Doxyfile`
    

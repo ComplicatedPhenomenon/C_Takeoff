@@ -1,0 +1,1 @@
+mv docs/html/* docs/ && rm -rf docs/html/
