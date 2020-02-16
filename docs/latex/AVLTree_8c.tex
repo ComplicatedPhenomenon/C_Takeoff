@@ -1,0 +1,81 @@
+\hypertarget{AVLTree_8c}{}\doxysection{Leet\+Code/\+Tree/\+A\+V\+L\+Tree.c File Reference}
+\label{AVLTree_8c}\index{LeetCode/Tree/AVLTree.c@{LeetCode/Tree/AVLTree.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}tree.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{AVLTree_8c_a392fb874e547e582e9c66a08a1f23326}{M\+AX}}~4096
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{AVLTree_8c_af082905f7eac6d03e92015146bbc1925}{max}} (int a, int b)
+\item 
+int \mbox{\hyperlink{AVLTree_8c_ab85cb301f6c06fd3513cf87741283055}{get\+Height}} (struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}} $\ast$node)
+\item 
+int \mbox{\hyperlink{AVLTree_8c_a3c68c92ab9cc3c5846e9af2cf5d3cbf9}{height\+Difference}} (struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}} $\ast$node)
+\item 
+struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}} $\ast$ \mbox{\hyperlink{AVLTree_8c_a1a69a81a7c88b4e10b6aee2e3385386b}{rotate\+Left}} (struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}} $\ast$root)
+\item 
+struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}} $\ast$ \mbox{\hyperlink{AVLTree_8c_a3caeb5761e981339265ee0764519a657}{rotate\+Right}} (struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}} $\ast$root)
+\item 
+struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}} $\ast$ \mbox{\hyperlink{AVLTree_8c_a7c0f612565a7b812172ee866514b0049}{insert}} (struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}} $\ast$root, struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}} $\ast$\mbox{\hyperlink{singleLinkedList_8h_aa73f59e66a5bf9f8ac618ccf77d28540}{new\+Node}})
+\item 
+int \mbox{\hyperlink{AVLTree_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{AVLTree_8c_a392fb874e547e582e9c66a08a1f23326}\label{AVLTree_8c_a392fb874e547e582e9c66a08a1f23326}} 
+\index{AVLTree.c@{AVLTree.c}!MAX@{MAX}}
+\index{MAX@{MAX}!AVLTree.c@{AVLTree.c}}
+\doxysubsubsection{\texorpdfstring{MAX}{MAX}}
+{\footnotesize\ttfamily \#define M\+AX~4096}
+
+gcc -\/Wall \mbox{\hyperlink{tree_8c}{tree.\+c}} \mbox{\hyperlink{AVLTree_8c}{A\+V\+L\+Tree.\+c}} valgrind ./a.out 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{AVLTree_8c_ab85cb301f6c06fd3513cf87741283055}\label{AVLTree_8c_ab85cb301f6c06fd3513cf87741283055}} 
+\index{AVLTree.c@{AVLTree.c}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!AVLTree.c@{AVLTree.c}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily int get\+Height (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{AVLTree_8c_a3c68c92ab9cc3c5846e9af2cf5d3cbf9}\label{AVLTree_8c_a3c68c92ab9cc3c5846e9af2cf5d3cbf9}} 
+\index{AVLTree.c@{AVLTree.c}!heightDifference@{heightDifference}}
+\index{heightDifference@{heightDifference}!AVLTree.c@{AVLTree.c}}
+\doxysubsubsection{\texorpdfstring{heightDifference()}{heightDifference()}}
+{\footnotesize\ttfamily int height\+Difference (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{AVLTree_8c_a7c0f612565a7b812172ee866514b0049}\label{AVLTree_8c_a7c0f612565a7b812172ee866514b0049}} 
+\index{AVLTree.c@{AVLTree.c}!insert@{insert}}
+\index{insert@{insert}!AVLTree.c@{AVLTree.c}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}}$\ast$ insert (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}} $\ast$}]{root,  }\item[{struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}} $\ast$}]{new\+Node }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{AVLTree_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{AVLTree_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{AVLTree.c@{AVLTree.c}!main@{main}}
+\index{main@{main}!AVLTree.c@{AVLTree.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{AVLTree_8c_af082905f7eac6d03e92015146bbc1925}\label{AVLTree_8c_af082905f7eac6d03e92015146bbc1925}} 
+\index{AVLTree.c@{AVLTree.c}!max@{max}}
+\index{max@{max}!AVLTree.c@{AVLTree.c}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily int max (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{AVLTree_8c_a1a69a81a7c88b4e10b6aee2e3385386b}\label{AVLTree_8c_a1a69a81a7c88b4e10b6aee2e3385386b}} 
+\index{AVLTree.c@{AVLTree.c}!rotateLeft@{rotateLeft}}
+\index{rotateLeft@{rotateLeft}!AVLTree.c@{AVLTree.c}}
+\doxysubsubsection{\texorpdfstring{rotateLeft()}{rotateLeft()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}}$\ast$ rotate\+Left (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}} $\ast$}]{root }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{AVLTree_8c_a3caeb5761e981339265ee0764519a657}\label{AVLTree_8c_a3caeb5761e981339265ee0764519a657}} 
+\index{AVLTree.c@{AVLTree.c}!rotateRight@{rotateRight}}
+\index{rotateRight@{rotateRight}!AVLTree.c@{AVLTree.c}}
+\doxysubsubsection{\texorpdfstring{rotateRight()}{rotateRight()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}}$\ast$ rotate\+Right (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structAVLTreeNode}{A\+V\+L\+Tree\+Node}} $\ast$}]{root }\end{DoxyParamCaption})}
+

@@ -3,7 +3,11 @@
 #include"tree.h"
 #define MAX 4096
 
-struct TreeNode * newNode(int val) {  
+struct TreeNode * newNode(int val) { 
+    /**
+     * ####  Returns
+     * A pointer pointing to a newly created tree node 
+     */  
     struct TreeNode *node = (struct TreeNode *) malloc(sizeof(struct TreeNode));
     node -> val = val;  
     node -> left = NULL;  
@@ -13,6 +17,10 @@ struct TreeNode * newNode(int val) {
 
 
 struct AVLTreeNode* newAVLTreeNode(int val) {
+    /**
+     * ####  Returns
+     * A pointer pointing to a newly created AVL tree node 
+     */ 
     struct AVLTreeNode *tem = malloc(sizeof(struct AVLTreeNode));
     tem -> value = val;
     tem -> height = 1;
@@ -22,6 +30,9 @@ struct AVLTreeNode* newAVLTreeNode(int val) {
 }
 
 void freeBinaryTree(struct TreeNode* root) {
+    /**
+     * Free the binary tree
+     */
     if(root != NULL){
         freeBinaryTree(root -> left);
         freeBinaryTree(root -> right);
@@ -30,6 +41,9 @@ void freeBinaryTree(struct TreeNode* root) {
 }
 
 void freeAVLTree(struct AVLTreeNode* root) {
+    /**
+     * Free the AVL tree
+     */ 
     if(root != NULL){
         freeAVLTree(root -> left);
         freeAVLTree(root -> right);
@@ -63,7 +77,6 @@ void pushTreeNode(struct binaryTreeQueue *queue, struct TreeNode *new_val) {
 // ? struct TreeNode * popTreeNode(struct binaryTreeQueue * queue), type void can be cast to struct TreeNode.
 void *popTreeNode(struct binaryTreeQueue * queue) {
     void *ans;
-    
     if (!queue -> front) {
         printf("Poping from an empty binaryTreeQueue\n");
         ans = NULL;
@@ -149,11 +162,17 @@ int ** levelOrderBinaryTreeTranversal(struct TreeNode *root, int **numberOfEleme
 
 
 struct AVLQueueNode {
+    /**
+     * A data structure to save two pointers to AVL tree node 
+     */ 
     struct AVLTreeNode *ptr;
     struct AVLQueueNode *next;
 };
 
 struct AVLQueue{
+    /**
+     * A data stucture to save two pointes to 
+     */ 
     struct AVLQueueNode *front;
     struct AVLQueueNode *tail;
 };
@@ -192,12 +211,25 @@ void *popAVLTreeNode(struct AVLQueue * queue) {
 
 int ** levelOrderAVLTreeTranversal(struct AVLTreeNode *root, int **numberOfElementsInEachRow, int *numberOfRows) {
     /**
-     * root: a pointer pointing to the root node of this tree.
+     * ~~~~~~~~~~~~~~~{.c}
+     * int ** levelOrderAVLTreeTranversal(struct AVLTreeNode *root, int **numberOfElementsInEachRow, int *numberOfRows)
+     * ~~~~~~~~~~~~~~~
+     * #### Parameters
+     * - root 
+     *   
+     *   a pointer pointing to the root node of this tree.
+     * 
+     * - numberOfElementsInEachRow 
+     * 
+     *   the number of elements in each row
+     * - numberOfRows 
+     * 
+     *   the number of rows in this 2D array
+     * 
+     * #### Returns
      * output as a pointer pointing to a 2D dynamic array, 
      * the number of rows and columns also are specified.
-     * numberOfRows: the number of rows in this 2D array
-     * numberOfElementsInEachRow: the number of elements in each row
-     **/
+     */
 
     if (!root) return NULL;
 

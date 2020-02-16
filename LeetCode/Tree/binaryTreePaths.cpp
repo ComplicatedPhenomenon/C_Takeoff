@@ -2,15 +2,15 @@
 /**
  * source: https://leetcode.com/problems/binary-tree-paths
  * Input:
- 
-          1
-        /   \
-       2     3
-        \
-         5
-
-    Output: ["1->2->5", "1->3"]
-  **/
+ *
+ *         1
+ *       /   \
+ *      2     3
+ *       \
+ *        5
+ *
+ *  Output: ["1->2->5", "1->3"]
+ */
 
 #include<iostream>
 #include<vector>
