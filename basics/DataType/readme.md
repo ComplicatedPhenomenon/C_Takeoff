@@ -8,7 +8,7 @@ Because `unsigned int` is not the only unsigned integer type. `size_t` could be 
   * integer types
 
 | Type |Storage size|Value range|
-|-------|
+|-------|--------|------|
 |char|1byte|-128 to 12 or 0 to 255|
 |unsigned char| 1byte| 0 to 255|
 |signed char| 1byte| -128 to 127|
@@ -63,7 +63,8 @@ LC_MONETARY="en_GB.UTF-8"
 LC_NUMERIC="en_GB.UTF-8"
 LC_TIME="en_GB.UTF-8"
 LC_ALL=
-$ export LANG=$LANG.ASCIIwangmiao@wangmiaodeMacBook-Pro:~/Playground/GH/$ export | grep LANG
+$ export LANG=$LANG.ASCII
+$ export | grep LANG
 declare -x LANG="en_GB.UTF-8.ASCII"
 
 ```
