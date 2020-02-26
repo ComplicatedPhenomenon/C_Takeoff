@@ -54,10 +54,20 @@ int main(){
 
     printf("Test mergeSort\n");
     p = calloc(sizeOfArray, sizeof(int));
-
     generateAnArray(p, sizeOfArray);
     printArray(p, sizeOfArray);
     mergeSort(p, 0, 9);
+    printArray(p, sizeOfArray);
+    free(p);
+
+    printf("Test heapSort\n");
+    p = calloc(sizeOfArray, sizeof(int));
+    generateAnArray(p, sizeOfArray);
+    printArray(p, sizeOfArray);
+    int tem =  findTheKthLargestNumber(p, sizeOfArray, 2);
+    printf("second largest element in array is %d \n", tem);
+    printArray(p, sizeOfArray);
+    heapSort(p, sizeOfArray);
     printArray(p, sizeOfArray);
     free(p);
 

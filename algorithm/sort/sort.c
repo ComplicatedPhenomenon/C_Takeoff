@@ -143,3 +143,48 @@ void mergeSort(int *pointerToArray, int low, int high) {
         merging(pointerToArray, low, mid, high);
     }
 }
+
+
+#define LCHILD(x) 2 * x + 1
+#define RCHILD(x) 2 * x + 2
+#define PARENT(x) (x - 1) / 2
+
+void heapify(int *pointerToArray, int sizeOfArray, int index){
+    int largest;
+    largest = LCHILD(index) < sizeOfArray && *(pointerToArray + LCHILD(index)) > *(pointerToArray + index) ? LCHILD(index): index;
+    largest = RCHILD(index) < sizeOfArray && *(pointerToArray + RCHILD(index)) > *(pointerToArray + largest) ? RCHILD(index) : largest;
+    if (largest != index){
+        swap(pointerToArray + index, pointerToArray + largest);
+        heapify(pointerToArray, sizeOfArray, largest);  // largest may become index of an leaf code, that's why we set LCHILD(index) < sizeOfArray and ...
+    }
+}
+
+void buildMaxHeap(int *pointerToArray, size_t sizeOfArray){
+    //The elegant part is the start of i, serious bug if i has data type as size_t
+    for(int i = PARENT(sizeOfArray - 1); i >= 0; i--) {
+        heapify(pointerToArray, sizeOfArray, i);
+    }
+}
+
+void heapSort(int *pointerToArray, size_t sizeOfArray){
+    buildMaxHeap(pointerToArray, sizeOfArray);
+    printf("complete building max heap \n");
+    size_t newlen = sizeOfArray;
+    while(newlen > 1){
+        swap(pointerToArray, pointerToArray + newlen-1);
+        newlen--;
+        heapify(pointerToArray, newlen, 0);
+    }
+}
+
+int findTheKthLargestNumber(int *pointerToArray, size_t sizeOfArray, int kth) {
+    buildMaxHeap(pointerToArray, sizeOfArray);
+    int i = 1;
+    // throw away the largest for (kth -1) times
+    while(i < kth ) {
+        swap(pointerToArray, pointerToArray + sizeOfArray -1 );
+        heapify(pointerToArray, --sizeOfArray, 0);
+        i++;
+    }
+    return pointerToArray[0];
+}

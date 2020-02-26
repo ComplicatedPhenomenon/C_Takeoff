@@ -35,7 +35,7 @@ int main(){
     int tem;
 
     for(int i = 0; i < n1+n2; ++i){
-        // Make sure arrayay index won't overflow
+        // Make sure index of array won't overflow
         if(ind1 < n1 && ind2 < n2){
             tem = num1[ind1] > num2[ind2]? num2[ind2] : num1[ind1];
             mergedAB[i] = tem;
