@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['binarytreequeue_204',['binaryTreeQueue',['../structbinaryTreeQueue.html',1,'']]]
+  ['binarytreequeue_230',['binaryTreeQueue',['../structbinaryTreeQueue.html',1,'']]]
 ];

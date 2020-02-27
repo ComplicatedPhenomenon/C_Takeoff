@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['readme_409',['readme',['../md_DataStructures_LRUcache_readme.html',1,'']]],
-  ['readme_410',['readme',['../md_DataStructures_RedBlackTree_readme.html',1,'']]]
+  ['genetic_20algorithm_458',['Genetic algorithm',['../md_algorithm_GeneticAlgorithm_GeneticAlgorithm.html',1,'']]]
 ];

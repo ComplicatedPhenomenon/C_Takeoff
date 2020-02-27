@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['free_20memory_20allocated_20from_20heap_408',['Free memory allocated from heap',['../md_LeetCode_Tree_readme.html',1,'']]]
+  ['data_20structure_457',['Data structure',['../md_DataStructures_dataStructure.html',1,'']]]
 ];

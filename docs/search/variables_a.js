@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['right_380',['right',['../classNode.html#a7328862eaa6dea28018326549b3294d3',1,'Node::right()'],['../structTreeNode.html#ab36f951b4d3d53dfc2d345978900c6e2',1,'TreeNode::right()'],['../structTreeNode.html#a66ef3b5201772f36789f8da6fe46eda6',1,'TreeNode::right()'],['../structAVLTreeNode.html#a692475a5e40157f7bcdda6d6c0c398d1',1,'AVLTreeNode::right()'],['../structRBNode.html#a33dbaf2e2f358d414ad7f8b50ed2960d',1,'RBNode::right()']]],
-  ['root_381',['root',['../structList.html#a9e2f05e80bc835fdaaedb0cd698fc5c8',1,'List']]]
+  ['size_431',['size',['../structHash.html#a805819010057873dbaabdc9c5c7cf807',1,'Hash']]],
+  ['stack1_432',['stack1',['../structqueue.html#a641c7714056cfde74ef04e06848f6158',1,'queue']]],
+  ['stack2_433',['stack2',['../structqueue.html#a002eeb0e0b32166ddc7ccbb860811bbf',1,'queue']]],
+  ['storage_434',['storage',['../structHash.html#a5d80124902c04e2a7736556d6d94dd4c',1,'Hash']]]
 ];

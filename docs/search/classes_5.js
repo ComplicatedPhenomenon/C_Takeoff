@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['maxheap_210',['maxHeap',['../structmaxHeap.html',1,'']]]
+  ['node_236',['Node',['../classNode.html',1,'Node'],['../structnode.html',1,'node']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>C Training: Free memory allocated from heap</title>
+<title>C Training: Tree</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,27 +63,29 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Free memory allocated from heap </div>  </div>
+<div class="title">Tree </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>To free memory allocated from heap by </p><div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="structTreeNode.html">TreeNode</a> *t = (<span class="keyword">struct </span><a class="code" href="structTreeNode.html">TreeNode</a> *)calloc(3, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="structTreeNode.html">TreeNode</a>));</div>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md8"></a>
+Free memory allocated from heap</h1>
+<p>To free memory allocated from heap by </p><div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="structTreeNode.html">TreeNode</a> *t = (<span class="keyword">struct </span><a class="code" href="structTreeNode.html">TreeNode</a> *)calloc(3, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="structTreeNode.html">TreeNode</a>));</div>
 <div class="line">free(t);</div>
 </div><!-- fragment --><p><img src="https://www.geeksforgeeks.org/wp-content/uploads/Free-function-in-c.png" alt="" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md1"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Demo of part code from &lt;a href="sametree.c"&gt;sametree.c&lt;/a&gt;</h1>
 <p><object type="image/svg+xml" data="../../figures/TreeNode.svg" style="pointer-events: none;"></object></p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 AVL tree</h1>
 <p><img src="https://media.geeksforgeeks.org/wp-content/uploads/AVL-Insertion1-1.jpg" alt="https://www.geeksforgeeks.org/avl-tree-set-1-insertion/" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 levelOrderTraversal</h1>
 <p>When you think you know well enough about pointers, boom, here comes <code>BTLevelOrderTraversal_1.c</code> to improve you are wrong.</p>
 <p>Review how to implement a heap by 2 stacks to help understand the more complex usage of pointers.</p>
 <p><object type="image/svg+xml" data="../../figures/implementAHeap.svg" style="pointer-events: none;"></object></p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 &lt;a href="levelOrderTraversal_2.cpp"&gt;levelOrderTraversal_2.cpp&lt;/a&gt;</h1>
 <p><object type="image/svg+xml" data="../../figures/levelOrderTraversal.svg" style="pointer-events: none;"></object></p>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 &lt;a href="iterativeWayInorderTraversal.cpp"&gt;iterativeWayInorderTraversal.cpp&lt;/a&gt;</h1>
 <ul>
 <li>playing with multiple pointers dynamically isn't easy.</li>
@@ -93,20 +95,20 @@ levelOrderTraversal</h1>
 </ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Makefile</h1>
 <p>Compare to a <a href="generateABST.sh">bash script</a>, you just collect all the bash commands into a file, nothing more. it is feasible when the dependency relation is easy,</p>
 <p>with [<code>Makefile</code>](Makefile)</p><ul>
 <li>you can generate multiple executable once for all.</li>
 <li>...</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Reference</h2>
 <ul>
 <li><a href="http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/">http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/</a></li>
 <li><a href="https://makefiletutorial.com/">https://makefiletutorial.com/</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 Generic programming</h1>
 <p>A common requirement when writing code is the ability to use the identical, or nearly identical code for different data types.</p>
 <p>in <code><a class="el" href="tree_8h.html">tree.h</a></code>, I define 3 functions. </p><div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="structTreeNode.html">TreeNode</a> * <a class="code" href="AVL_8cpp.html#a770da11603a821bfd0fa82ac18ab9be6">newNode</a>(<span class="keywordtype">int</span> <a class="code" href="structTreeNode.html#a345b64c9d6ca399a45b516a1c7afd0eb">val</a>);</div>
@@ -118,7 +120,7 @@ Generic programming</h1>
 <div class="line"><span class="keywordtype">int</span> ** <a class="code" href="tree_8c.html#afba330d2d24aee4e32ae0d9e9d867e5f">levelOrderBinaryTreeTranversal</a>(<span class="keyword">struct</span> <a class="code" href="structTreeNode.html">TreeNode</a> *root, <span class="keywordtype">int</span> **numberOfElementsInEachRow, <span class="keywordtype">int</span> *numberOfRows);</div>
 <div class="line"><span class="keywordtype">int</span> ** <a class="code" href="tree_8c.html#af9878562580a31a2579831df82bc47fd">levelOrderAVLTreeTranversal</a>(<span class="keyword">struct</span> <a class="code" href="structAVLTreeNode.html">AVLTreeNode</a> *root, <span class="keywordtype">int</span> **numberOfElementsInEachRow, <span class="keywordtype">int</span> *numberOfRows);</div>
 </div><!-- fragment --><p>I just write the same code for multiple times.</p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 reference</h2>
 <ul>
 <li><a href="https://attractivechaos.wordpress.com/2008/09/02/generic-programming-in-c/">https://attractivechaos.wordpress.com/2008/09/02/generic-programming-in-c/</a> </li>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['l_373',['l',['../structLRUCache.html#a8f7e0a7e9c71cb9f4e13fe03d47ebd8f',1,'LRUCache']]],
-  ['left_374',['left',['../classNode.html#ab8c667ac8fdb120ed4c031682a9cdaee',1,'Node::left()'],['../structTreeNode.html#a5f0c005596de788acf63ca53e1b2897e',1,'TreeNode::left()'],['../structTreeNode.html#af4ab5453a9305f5620c0eb9ac360fb90',1,'TreeNode::left()'],['../structAVLTreeNode.html#a816d7cb7dfe1e245cc59b42c11a74938',1,'AVLTreeNode::left()'],['../structRBNode.html#ae79b8d4747c35c770725062f51a1a222',1,'RBNode::left()']]]
+  ['name_424',['name',['../structnode.html#aed966f72e3139510403207f828c72e97',1,'node']]],
+  ['next_425',['next',['../structqueueBinaryTreeNode.html#ab51f267247930080a2a742c8208f2e56',1,'queueBinaryTreeNode::next()'],['../structAVLQueueNode.html#ac730b99fa3e610e8249f82504adfe39a',1,'AVLQueueNode::next()'],['../structListNode.html#a232112b6981e0fa380e985d199d1f7b3',1,'ListNode::next()'],['../structlistNode.html#a860785ea27fb1c044d6a59ba491dd6ab',1,'listNode::next()'],['../classNode.html#af67b110ca1a258b793bf69d306929b22',1,'Node::next()'],['../structnode.html#a111a569ab2765add9b91c9f94cf9f063',1,'node::next()'],['../structCell.html#ab3db970956e9814c4528099a127ad5af',1,'Cell::next()'],['../structstackNode.html#a6c87733ce06cd4c7dc16767568e0f463',1,'stackNode::next()'],['../structQueueRBNode.html#a8b8c415bbf2593a9a2f182a9709ddd15',1,'QueueRBNode::next()']]]
 ];

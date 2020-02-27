@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>C Training: maxHeap Struct Reference</title>
+<title>C Training: algorithm/sort/merge2SortedList.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -60,54 +60,86 @@ $(function() {
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_692f640cc74363071c5c0e14282656e9.html">algorithm</a></li><li class="navelem"><a class="el" href="dir_9895165febf6dbdcef88d0d67845bace.html">sort</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">maxHeap Struct Reference</div>  </div>
+<div class="title">merge2SortedList.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:afa737c2fdff107e59945441537bfb431"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmaxHeap.html#afa737c2fdff107e59945441537bfb431">size</a></td></tr>
-<tr class="separator:afa737c2fdff107e59945441537bfb431"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2fda93a129e62335f9843371aafcfc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnode.html">node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmaxHeap.html#af2fda93a129e62335f9843371aafcfc1">elem</a></td></tr>
-<tr class="separator:af2fda93a129e62335f9843371aafcfc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ae5418b13a5e71db7278c69e3369f0319"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="merge2SortedList_8c.html#ae5418b13a5e71db7278c69e3369f0319">printArray</a> (int *array, int x)</td></tr>
+<tr class="separator:ae5418b13a5e71db7278c69e3369f0319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a225ad572b43148c093dd88571b2b97b2"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="merge2SortedList_8c.html#a225ad572b43148c093dd88571b2b97b2">bubbleSort</a> (int *array, int n)</td></tr>
+<tr class="separator:a225ad572b43148c093dd88571b2b97b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
-<a id="af2fda93a129e62335f9843371aafcfc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2fda93a129e62335f9843371aafcfc1">&#9670;&nbsp;</a></span>elem</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a225ad572b43148c093dd88571b2b97b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a225ad572b43148c093dd88571b2b97b2">&#9670;&nbsp;</a></span>bubbleSort()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structnode.html">node</a>* maxHeap::elem</td>
+          <td class="memname">int * bubbleSort </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>array</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="afa737c2fdff107e59945441537bfb431"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa737c2fdff107e59945441537bfb431">&#9670;&nbsp;</a></span>size</h2>
+<a id="ae5418b13a5e71db7278c69e3369f0319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5418b13a5e71db7278c69e3369f0319">&#9670;&nbsp;</a></span>printArray()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int maxHeap::size</td>
+          <td class="memname">void printArray </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>array</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>DataStructures/<a class="el" href="heap_8c.html">heap.c</a></li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

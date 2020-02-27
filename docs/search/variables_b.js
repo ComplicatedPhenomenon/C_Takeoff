@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['size_382',['size',['../structmaxHeap.html#afa737c2fdff107e59945441537bfb431',1,'maxHeap::size()'],['../structHash.html#a805819010057873dbaabdc9c5c7cf807',1,'Hash::size()']]],
-  ['stack1_383',['stack1',['../structqueue.html#a641c7714056cfde74ef04e06848f6158',1,'queue']]],
-  ['stack2_384',['stack2',['../structqueue.html#a002eeb0e0b32166ddc7ccbb860811bbf',1,'queue']]],
-  ['storage_385',['storage',['../structHash.html#a5d80124902c04e2a7736556d6d94dd4c',1,'Hash']]]
+  ['table_435',['table',['../structHash.html#a3715b18853fbd6c51c7abd7df5823ca4',1,'Hash']]],
+  ['tail_436',['tail',['../structbinaryTreeQueue.html#a6b52c2c958ce4a8203b003fab5967b84',1,'binaryTreeQueue::tail()'],['../structAVLQueue.html#a37229a093473fd5aa2a1c2cb4ce5e516',1,'AVLQueue::tail()'],['../structList.html#a23467f1903cec0d961114b547fb1fddb',1,'List::tail()'],['../structQueue.html#ab51f88c7ebb727dd6adbcd5b0132721d',1,'Queue::tail()']]],
+  ['top_437',['top',['../structStack.html#ad62fb36816185f3eef3a6f735a61f54a',1,'Stack']]]
 ];

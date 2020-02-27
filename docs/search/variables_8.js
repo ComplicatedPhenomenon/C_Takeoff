@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['name_375',['name',['../structnode.html#aed966f72e3139510403207f828c72e97',1,'node']]],
-  ['next_376',['next',['../structqueueBinaryTreeNode.html#ab51f267247930080a2a742c8208f2e56',1,'queueBinaryTreeNode::next()'],['../structAVLQueueNode.html#ac730b99fa3e610e8249f82504adfe39a',1,'AVLQueueNode::next()'],['../structListNode.html#a232112b6981e0fa380e985d199d1f7b3',1,'ListNode::next()'],['../structlistNode.html#a860785ea27fb1c044d6a59ba491dd6ab',1,'listNode::next()'],['../classNode.html#af67b110ca1a258b793bf69d306929b22',1,'Node::next()'],['../structnode.html#a111a569ab2765add9b91c9f94cf9f063',1,'node::next()'],['../structCell.html#ab3db970956e9814c4528099a127ad5af',1,'Cell::next()'],['../structstackNode.html#a6c87733ce06cd4c7dc16767568e0f463',1,'stackNode::next()'],['../structQueueRBNode.html#a8b8c415bbf2593a9a2f182a9709ddd15',1,'QueueRBNode::next()']]]
+  ['parent_426',['parent',['../structRBNode.html#a162f68810b9a84508eb5292a328a7657',1,'RBNode']]],
+  ['prev_427',['prev',['../classNode.html#aea9fefc3628c3ce98b967e8addf06e88',1,'Node::prev()'],['../structnode.html#a92deb3306828ea2e354857923911a5d1',1,'node::prev()']]],
+  ['ptr_428',['ptr',['../structqueueBinaryTreeNode.html#a275146c2b68e4fa20eeb7488d93d48cf',1,'queueBinaryTreeNode::ptr()'],['../structAVLQueueNode.html#a2ed38269cbc0f308c743f07d6b5c147e',1,'AVLQueueNode::ptr()'],['../structnode.html#a2f79f112828fd0f2e744ef33c2ce4dea',1,'node::ptr()'],['../structQueueRBNode.html#aec47e156ec8ae8074346ada0037c9e00',1,'QueueRBNode::ptr()']]]
 ];

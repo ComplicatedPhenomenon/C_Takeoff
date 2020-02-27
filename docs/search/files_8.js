@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['mergesortedll_2ec_237',['mergeSortedLL.c',['../mergeSortedLL_8c.html',1,'']]],
-  ['mergetwosortedsll_2ec_238',['mergeTwoSortedSLL.c',['../mergeTwoSortedSLL_8c.html',1,'']]]
+  ['merge2sortedlist_2ec_268',['merge2SortedList.c',['../merge2SortedList_8c.html',1,'']]],
+  ['mergesortedll_2ec_269',['mergeSortedLL.c',['../mergeSortedLL_8c.html',1,'']]],
+  ['mergetwosortedsll_2ec_270',['mergeTwoSortedSLL.c',['../mergeTwoSortedSLL_8c.html',1,'']]]
 ];
