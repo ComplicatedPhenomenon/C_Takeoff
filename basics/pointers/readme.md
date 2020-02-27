@@ -5,14 +5,14 @@ int i;
 ```
 The type of a variable determines how much space it occupies in storage and how the bit pattern stored is interpreted.
 
-# Pointers
+## Pointers
 Usage
 * 向OS申请一块内存，然后用指针处理这块内存，这块内存存储字符串等基本数据类型和结构体。
 * 获取函数的地址用于动态调用。
 * 通过指针向函数传递大块内存，这样可以不必把全部数据传递过去。
 ...等等。
 
-## The intention of inventing pointer and its usage
+### The intention of inventing pointer and its usage
 * [Why do we need pointers in C program?](https://www.quora.com/Why-do-we-need-pointers-in-a-C-program)
 * [How do function pointers work in C work?](https://stackoverflow.com/questions/840501/how-do-function-pointers-in-c-work)
 
@@ -21,7 +21,7 @@ Usage
 
 
 
-## Pointer as reference to another variable
+### Pointer as reference to another variable
 通常我们说的指针变量是指向一个整型、字符型或数组等变量.
 
 We usually use pointer as a reference to another variable. For such cases, we could argue that there is no need to expose the memory address and a programming without pointers will do fine with just references (like Java)
@@ -41,7 +41,7 @@ int main(){
 ```
 It is `call by reference`. When executing main function, it pause at `b = 4`, and go to another stack frame to execute sum function, when done, this stack frame collapse.
 
-### `NULL` pointers
+#### `NULL` pointers
 
 When a pointer is `NULL`
 
@@ -70,7 +70,7 @@ Some of the most common use cases for `NULL` are
   fun(NULL);
   ```
 
-## Pointer to refer to function
+### Pointer to refer to function
 
 而函数指针是指向函数,  函数指针可以像一般函数一样，用于调用函数、传递参数。
 But pointers are not there only for referencing existing variables, they are there to support direct interactions with hardware. For example, if you want to read data from a device in your program, you need to instruct the device to write n bytes in address a. Because of that, you need a data type that can store addresses and an operator that returns the address of a variable.
@@ -102,7 +102,7 @@ https://www.youtube.com/watch?v=LW8Rfh6TzGg
 
 
 
-## Figure out storage of string
+### Figure out storage of string
 ```c
 char *string = "hello";
 ```

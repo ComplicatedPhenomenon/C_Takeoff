@@ -188,3 +188,24 @@ int findTheKthLargestNumber(int *pointerToArray, size_t sizeOfArray, int kth) {
     }
     return pointerToArray[0];
 }
+
+
+void mergeTwoSortedArray(int* A, size_t a, int*B, size_t b, int *mergedAB){
+    int i= 0, j= 0, tem;
+    for(int k = 0; k < a + b; ++k){
+        if(i < a && j < b){
+            tem = A[i] > B[j]? B[j] : A[i];
+            mergedAB[k] = tem;
+            if(tem == B[j]) ++j;
+            else ++i;
+        }
+        else if (i == a){
+            mergedAB[k] = B[j];
+            ++j;
+        }
+        else{
+            mergedAB[k] = A[i];
+            ++i;
+        }
+    }
+}

@@ -1,5 +1,4 @@
-https://stackoverflow.com/questions/57650895/why-does-glibcs-strlen-need-to-be-so-complicated-to-run-quickly
-
+# Array vs pointer
 An array is a derived data type in C, which is constructed from fundamental data type of C language.
 
 * Array declaration
@@ -57,14 +56,14 @@ char *ptr = myarray;
 ```
 
 
-### Pass array around
+## Pass array around
 ```c
 int arr[] = {6, 3, 2, 3, 4, 5};
 size_t n = sizeof(arr)/sizeof(arr[0]);
 int *ascendingArray;
 ascendingArray = bubbleSort(arr, n); //Why is n necessary?
 ```
-Because `arr` as a pointer only store the address of the array.
+Because `arr` as a pointer only store the address of the array, when you only pass in `arr`, you won't be able to know the size of array in `bubbleSort`.
 
 **Transfer data**
 * https://www.tutorialspoint.com/c_standard_library/c_function_strncpy.htm
@@ -87,3 +86,5 @@ If you want to return some string from your function to the caller, you can dyna
 `pointerAsReturnType.c`
 
 
+## Guess how `strlen` is implemented?
+https://stackoverflow.com/a/57651888/7583919

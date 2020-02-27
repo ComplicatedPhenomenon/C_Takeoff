@@ -9,6 +9,8 @@ typedef struct nodestructure{
     int data;
     struct nodestructure * next;
 } node;
+
+
 node * head;
 void display();
 void freeMemory();

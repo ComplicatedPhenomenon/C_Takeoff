@@ -1,6 +1,4 @@
-
-* https://www.hackerearth.com/practice/algorithms/sorting
-----
+# Sorting algorithm
 Question:
 1. stable and unstable sorting
    quick sort and select sort are unstable sort.
@@ -18,7 +16,7 @@ Question:
     Bucket sort is mainly useful when the input is uniformly distributed over a range.
 
 -----
-# heap sort
+## heap sort
 `heapSort.c`
 
 original list
@@ -57,4 +55,6 @@ postOrderTraversal(0)->7->postOrderTraversal(1)->4->postOrderTraversal(3)->2->po
 
 Example of bad workflow, better to demonstrate in animation.
 
+## reference
+* https://www.hackerearth.com/practice/algorithms/sorting
 

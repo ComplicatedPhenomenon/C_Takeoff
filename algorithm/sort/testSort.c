@@ -71,5 +71,23 @@ int main(){
     printArray(p, sizeOfArray);
     free(p);
 
+    printf("Test merge 2 sorted list\n");
+    int *A = calloc(sizeOfArray, sizeof(int));
+    int *B = calloc(sizeOfArray, sizeof(int));
+    int *mergedAB  = calloc(2 * sizeOfArray, sizeof(int));
+    generateAnArray(A, sizeOfArray);
+    printArray(A, sizeOfArray);
+    bubbleSort(A, sizeOfArray);
+    printArray(A, sizeOfArray);
+    generateAnArray(B, sizeOfArray);
+    printArray(B, sizeOfArray);
+    bubbleSort(B, sizeOfArray);
+    printArray(B, sizeOfArray);
+    mergeTwoSortedArray(A, sizeOfArray, B, sizeOfArray, mergedAB);
+    printArray(mergedAB, 2*sizeOfArray);
+    free(A);
+    free(B);
+    free(mergedAB);
+
     return 0;
 }

@@ -1,3 +1,4 @@
+# Tree
 ## Free memory allocated from heap
 To free memory allocated from heap by 
 ```c

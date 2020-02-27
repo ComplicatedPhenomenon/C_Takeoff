@@ -7,6 +7,7 @@ char *getAnotherString(){
     char target[] = "Hi, ComplicatedPhenomenon";
     char *ptrToTarget =  target;
     printf("ptrToTarget                 = %p\n", ptrToTarget);
+    printf("%p\n", &target);
 
     return ptrToTarget;
 }
@@ -20,6 +21,8 @@ int main(){
 
     ptrToTarget = getAnotherString();
     printf("ptrToTarget                 = %p\n", ptrToTarget);
+    printf("ptrToTarget                 = %s\n", ptrToTarget);
+    printf("&(*ptrToTarget)             = %p\n", &(*ptrToTarget));
 
     return 0;
 }
