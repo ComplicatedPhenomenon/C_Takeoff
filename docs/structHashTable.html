@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>C Training: AVLQueueNode Struct Reference</title>
+<title>C Training: HashTable Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,42 +65,56 @@ $(function() {
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">AVLQueueNode Struct Reference</div>  </div>
+<div class="title">HashTable Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a2ed38269cbc0f308c743f07d6b5c147e"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structAVLTreeNode.html">AVLTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAVLQueueNode.html#a2ed38269cbc0f308c743f07d6b5c147e">ptr</a></td></tr>
-<tr class="separator:a2ed38269cbc0f308c743f07d6b5c147e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac730b99fa3e610e8249f82504adfe39a"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structAVLQueueNode.html">AVLQueueNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAVLQueueNode.html#ac730b99fa3e610e8249f82504adfe39a">next</a></td></tr>
-<tr class="separator:ac730b99fa3e610e8249f82504adfe39a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72da20d1e0ea57f753291a9235604cfb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNode.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHashTable.html#a72da20d1e0ea57f753291a9235604cfb">table</a> [<a class="el" href="LRUcache_8c.html#ad6074dd11ab3c97c8135c43aab03ae95">HASH_SIZE</a>]</td></tr>
+<tr class="separator:a72da20d1e0ea57f753291a9235604cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7b2a756fb5beae48601b03888235ff7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHashTable.html#ad7b2a756fb5beae48601b03888235ff7">capacity</a></td></tr>
+<tr class="separator:ad7b2a756fb5beae48601b03888235ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad732056fce42df5162c810b4dd28fca1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHashTable.html#ad732056fce42df5162c810b4dd28fca1">size</a></td></tr>
+<tr class="separator:ad732056fce42df5162c810b4dd28fca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A data structure to save two pointers to AVL tree node </p>
-</div><h2 class="groupheader">Field Documentation</h2>
-<a id="ac730b99fa3e610e8249f82504adfe39a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac730b99fa3e610e8249f82504adfe39a">&#9670;&nbsp;</a></span>next</h2>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="ad7b2a756fb5beae48601b03888235ff7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7b2a756fb5beae48601b03888235ff7">&#9670;&nbsp;</a></span>capacity</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structAVLQueueNode.html">AVLQueueNode</a>* AVLQueueNode::next</td>
+          <td class="memname">int HashTable::capacity</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a2ed38269cbc0f308c743f07d6b5c147e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ed38269cbc0f308c743f07d6b5c147e">&#9670;&nbsp;</a></span>ptr</h2>
+<a id="ad732056fce42df5162c810b4dd28fca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad732056fce42df5162c810b4dd28fca1">&#9670;&nbsp;</a></span>size</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structAVLTreeNode.html">AVLTreeNode</a>* AVLQueueNode::ptr</td>
+          <td class="memname">int HashTable::size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a72da20d1e0ea57f753291a9235604cfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72da20d1e0ea57f753291a9235604cfb">&#9670;&nbsp;</a></span>table</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNode.html">Node</a>* HashTable::table[<a class="el" href="LRUcache_8c.html#ad6074dd11ab3c97c8135c43aab03ae95">HASH_SIZE</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -108,7 +122,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>LeetCode/Tree/<a class="el" href="tree_8c.html">tree.c</a></li>
+<li>DataStructures/LRUcache/<a class="el" href="LRUcache_8c.html">LRUcache.c</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

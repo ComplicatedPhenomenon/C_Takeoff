@@ -1,4 +1,16 @@
 # Tree
+## Iterative vs recursive approach
+Which is better?
+
+No clear answer, but there are known trade-offs. 
+
+ “Mathematicians” often prefer recursive approach. ! Solutions often shorter, closer in spirit to abstract mathematical entity. ! Good recursive solutions may be more difficult to
+design and test. 
+
+ “Programmers” often
+
+prefer iterative solutions. ! Somehow, it seems more appealing to many. ! Control stays local to loop, less magical
+
 ## Free memory allocated from heap
 To free memory allocated from heap by 
 ```c

@@ -1,7 +1,12 @@
-/**
+/*!
  * @file
+ * \file RBTree.c
  * reference https://brilliant.org/wiki/red-black-tree/
- **/ 
+ * \note
+ * 1. 2 black children, in which case the black parent still has 2 children.
+ * 2. 1 black child and 1 red child, in which case the black parent now has 3 children.
+ * 3. 2 red children, in which case the black parent now has 4 children.
+ */ 
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
@@ -96,14 +101,16 @@ struct RBNode * rotateRight(struct RBNode *root, struct RBNode* node) {
     return root;
 }
 
-struct RBNode * insert(struct RBNode *root, struct RBNode *x) {
-    /* Insert in the tree in the usual way */
-    printf("into function insert.\n");
-    
+/*!
+ * \brief insert a node into a red black tree
+ * \param root a pointer pointing to the root node of the red black tree
+ * \param nodeToBeInserted the new coming node
+ * \return the root of the red black tree
+ */
+struct RBNode * insert(struct RBNode *root, struct RBNode *nodeToBeInserted) {    
     if (!root){
-        x -> color = BLACK;
-        root = x;
-        printf("Accomplished 1st insertion\n");
+        nodeToBeInserted -> color = BLACK;
+        root = nodeToBeInserted;
         return root;
     }
     
@@ -112,60 +119,54 @@ struct RBNode * insert(struct RBNode *root, struct RBNode *x) {
     struct RBNode *potentialParent = NULL;
     while (curr) {
         potentialParent = curr;
-        curr = (x -> key < curr -> key) ? curr -> left : curr -> right;
+        curr = (nodeToBeInserted -> key < curr -> key) ? curr -> left : curr -> right;
     }
-    x -> parent = potentialParent;
-    if (x -> key < potentialParent -> key) {
-        potentialParent -> left = x;
-        printf("Complete inserting\n");
-    }
-    else {
-        potentialParent -> right = x;     
-        printf("Complete inserting\n");
-    }
+
+    nodeToBeInserted -> parent = potentialParent;
+    (nodeToBeInserted -> key < potentialParent -> key) ? 
+    (potentialParent -> left = nodeToBeInserted) : (potentialParent -> right = nodeToBeInserted);     
+    
     /* Now restore the RED-BLACK property */
-    while ( (x != root) && (x -> parent -> color == RED) ) {
-        printf("into while\n");
-        if ( x -> parent == x -> parent -> parent -> left ) {
+    while ((nodeToBeInserted != root) && (nodeToBeInserted -> parent -> color == RED)) {
+       
+        if (getParent(nodeToBeInserted) == getGrandParent(nodeToBeInserted) -> left ) {
             printf(" case like with 5, 3, then insert 2 or 4\n");
-            struct RBNode * y = x -> parent -> parent -> right;
-            if (!y) printf("uncle node is NULL\n");
-            if(!y ) {
-                printf("y -> color == Black\n");
-                if (x == x -> parent -> right) {
+            struct RBNode * y = getUncle(nodeToBeInserted);
+            //uncle node is NULL
+            if(!y) {
+                if (nodeToBeInserted == getParent(nodeToBeInserted) -> right) {
                     printf("case like :5, 3, 4\n");
-                    /* case 2 - move x up and rotate */
-                    x = x -> parent;
-                    root = rotateLeft(root, x);
-                    printf("check");
+                    /* case 2 - move nodeToBeInserted up and rotate */
+                    nodeToBeInserted = nodeToBeInserted -> parent;
+                    root = rotateLeft(root, nodeToBeInserted);
                 }
                 /* case 3 */
                 printf("case like :5, 3, 1\n");
-                x -> parent -> color = BLACK;
-                x -> parent -> parent -> color = RED;
-                root = rotateRight(root, x -> parent -> parent);
+                nodeToBeInserted -> parent -> color = BLACK;
+                getGrandParent(nodeToBeInserted) -> color = RED;
+                root = rotateRight(root, getGrandParent(nodeToBeInserted));
             } 
             else if (y -> color == BLACK ) {
                 printf("y -> color == Black\n");
-                if (x == x -> parent -> right) {
+                if (nodeToBeInserted == getParent(nodeToBeInserted) -> right) {
                     printf("case like :5, 3, 4\n");
-                    x = x -> parent;
-                    root = rotateLeft(root, x);
+                    nodeToBeInserted = getParent( nodeToBeInserted);
+                    root = rotateLeft(root, nodeToBeInserted);
                     printf("check");
                 }
-                printf("case like :5, 3, 1\n");
-                x -> parent -> color = BLACK;
-                x -> parent -> parent -> color = RED;
-                root = rotateRight(root, x -> parent -> parent);
+                printf("case like :5, 3, 2\n");
+                getParent(nodeToBeInserted) -> color = BLACK;
+                getGrandParent(nodeToBeInserted) -> color = RED;
+                root = rotateRight(root, getGrandParent(nodeToBeInserted));
             } 
             else {
                 printf("y -> color == RED\n");
                 /* case 1 - change the colors */
-                x -> parent -> color = BLACK;
+                nodeToBeInserted -> parent -> color = BLACK;
                 y -> color = BLACK;
-                x -> parent -> parent -> color = RED;
-                /* Move x up the tree, ensure the RB Tree's property iteratively*/
-                x = x -> parent -> parent;
+                getGrandParent(nodeToBeInserted) -> color = RED;
+                /* Move nodeToBeInserted up the tree, ensure the RB Tree's property iteratively*/
+                nodeToBeInserted = getGrandParent(nodeToBeInserted);
                 printf("no need to rotate\n");
             }   
   
@@ -173,34 +174,34 @@ struct RBNode * insert(struct RBNode *root, struct RBNode *x) {
         else {
             /* repeat the "if" part with right and left exchanged */
             printf(" case like with 5, 8, then insert 7 or 9\n");
-            struct RBNode * y = x -> parent -> parent -> left;
+            struct RBNode * y = getGrandParent(nodeToBeInserted) -> left;
             if (!y){
-                if (x == x -> parent -> left) {
-                    if (x){ 
-                    x = x -> parent;
-                    root = rotateRight(root, x);
+                if (nodeToBeInserted == nodeToBeInserted -> parent -> left) {
+                    if (nodeToBeInserted){ 
+                    nodeToBeInserted = nodeToBeInserted -> parent;
+                    root = rotateRight(root, nodeToBeInserted);
                     }
                 }
-                x -> parent -> color = BLACK;
-                x -> parent -> parent -> color = RED;
-                root = rotateLeft(root, x -> parent -> parent);
+                nodeToBeInserted -> parent -> color = BLACK;
+                getGrandParent(nodeToBeInserted) -> color = RED;
+                root = rotateLeft(root, getGrandParent(nodeToBeInserted));
             }
             else if (y -> color == BLACK){
-                if (x == x -> parent -> left) {
-                    if (x){ 
-                    x = x -> parent;
-                    root = rotateRight(root, x);
+                if (nodeToBeInserted == nodeToBeInserted -> parent -> left) {
+                    if (nodeToBeInserted){ 
+                    nodeToBeInserted = nodeToBeInserted -> parent;
+                    root = rotateRight(root, nodeToBeInserted);
                     }
                 }
-                x -> parent -> color = BLACK;
-                x -> parent -> parent -> color = RED;
-                root = rotateLeft(root, x -> parent -> parent);
+                nodeToBeInserted -> parent -> color = BLACK;
+                getGrandParent(nodeToBeInserted) -> color = RED;
+                root = rotateLeft(root, getGrandParent(nodeToBeInserted));
             }
             else {
-                x -> parent -> color = BLACK;
+                nodeToBeInserted -> parent -> color = BLACK;
                 y -> color = BLACK;
-                x -> parent -> parent -> color = RED;
-                x = x -> parent -> parent;
+                getGrandParent(nodeToBeInserted) -> color = RED;
+                nodeToBeInserted = getGrandParent(nodeToBeInserted);
              }
         }
     }
@@ -320,7 +321,7 @@ int main(){
     struct RBNode *root = NULL;
     struct RBNode *tem = NULL;
 
-    int a[] = {7, 5, 2, 9, 10, 11, 12, 13, 14};
+    int a[] = {7, 5, 2, 9, 10, 11, 12, 13, 16, 14, 19, 17, 21, 20, 25, 23, 29};
     int len = sizeof(a)/sizeof(a[0]);
     for (int i = 0; i < len; ++i){
         tem = newRBNode(a[i]);

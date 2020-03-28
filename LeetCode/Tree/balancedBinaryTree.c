@@ -27,6 +27,23 @@
  *   
  *  Output: False 
  * ```
+ * 
+ * ## sample of debugging
+ * ```md
+ * (gdb) break main
+ * (gdb) ...
+ * (gdb) print tem.val
+ * $3 = 2
+ * (gdb) print tem
+ * $4 = (struct TreeNode *) 0x555555757260
+ * (gdb) print root
+ * $5 = (struct TreeNode *) 0x0
+ * (gdb) print root.val
+ * Cannot access memory at address 0x0
+ * (gdb) next
+ * (gdb) print root.val
+ * $6 = 2
+ * ```
  */
 
 #include<stdio.h>
@@ -34,23 +51,32 @@
 #include <stdbool.h>
 #include"tree.h"
 
-int maxDepth(struct TreeNode *root) {
+/**
+ * this recursive approach is too abstract to comprehend
+ */ 
+int maxDepth1(struct TreeNode *root) {
     if (root == NULL)
         return 0;
-    int l = maxDepth(root->left);
-    int r = maxDepth(root->right);
+    int l = maxDepth1(root->left);
+    int r = maxDepth1(root->right);
     if (l > r)
         return l + 1;
     else
         return r + 1;
 }
+/*
+int maxDepth2(struct TreeNode *root){
+
+}
+*/
+
 
 bool isBalanced(struct TreeNode *root) {
     if (root == NULL)
         return true;
     
-    int l = maxDepth(root->left);
-    int r = maxDepth(root->right);
+    int l = maxDepth1(root->left);
+    int r = maxDepth1(root->right);
     int d = l - r;
     if (d == 0 || d == 1 || d == -1) {
         if (isBalanced(root->left) && isBalanced(root->right)) {

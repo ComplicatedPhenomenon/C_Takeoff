@@ -116,8 +116,9 @@ Functions</h2></td></tr>
 <tr class="separator:a1e6f1e8a8955895ab97a8c7e6b5b8cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26576b9643fe995794bcae0a6b8e3c1e"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structRBNode.html">RBNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RBTree_8c.html#a26576b9643fe995794bcae0a6b8e3c1e">rotateRight</a> (struct <a class="el" href="structRBNode.html">RBNode</a> *root, struct <a class="el" href="structRBNode.html">RBNode</a> *<a class="el" href="structnode.html">node</a>)</td></tr>
 <tr class="separator:a26576b9643fe995794bcae0a6b8e3c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a921bc9f77769c50fd9b23910af18a3e4"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structRBNode.html">RBNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RBTree_8c.html#a921bc9f77769c50fd9b23910af18a3e4">insert</a> (struct <a class="el" href="structRBNode.html">RBNode</a> *root, struct <a class="el" href="structRBNode.html">RBNode</a> *x)</td></tr>
-<tr class="separator:a921bc9f77769c50fd9b23910af18a3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32319cf929fa3b629b23b833f4b7c3a5"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structRBNode.html">RBNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RBTree_8c.html#a32319cf929fa3b629b23b833f4b7c3a5">insert</a> (struct <a class="el" href="structRBNode.html">RBNode</a> *root, struct <a class="el" href="structRBNode.html">RBNode</a> *nodeToBeInserted)</td></tr>
+<tr class="memdesc:a32319cf929fa3b629b23b833f4b7c3a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">insert a node into a red black tree  <a href="RBTree_8c.html#a32319cf929fa3b629b23b833f4b7c3a5">More...</a><br /></td></tr>
+<tr class="separator:a32319cf929fa3b629b23b833f4b7c3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad481ead44ace2ac224583cc5926d6d14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RBTree_8c.html#ad481ead44ace2ac224583cc5926d6d14">push</a> (struct <a class="el" href="structQueue.html">Queue</a> *<a class="el" href="structqueue.html">queue</a>, struct <a class="el" href="structRBNode.html">RBNode</a> *new_val)</td></tr>
 <tr class="separator:ad481ead44ace2ac224583cc5926d6d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56cc5c6ea03d9458a27df085013b7e94"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RBTree_8c.html#a56cc5c6ea03d9458a27df085013b7e94">pop</a> (struct <a class="el" href="structQueue.html">Queue</a> *<a class="el" href="structqueue.html">queue</a>)</td></tr>
@@ -129,7 +130,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a54736cdac4fef912193da51ecf22736e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RBTree_8c.html#a54736cdac4fef912193da51ecf22736e">freeBinaryTree</a> (struct <a class="el" href="structRBNode.html">RBNode</a> *root)</td></tr>
 <tr class="separator:a54736cdac4fef912193da51ecf22736e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>reference <a href="https://brilliant.org/wiki/red-black-tree/">https://brilliant.org/wiki/red-black-tree/</a> </p><dl class="section note"><dt>Note</dt><dd><ol type="1">
+<li>2 black children, in which case the black parent still has 2 children.</li>
+<li>1 black child and 1 red child, in which case the black parent now has 3 children.</li>
+<li>2 red children, in which case the black parent now has 4 children. </li>
+</ol>
+</dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a392fb874e547e582e9c66a08a1f23326"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a392fb874e547e582e9c66a08a1f23326">&#9670;&nbsp;</a></span>MAX</h2>
 
@@ -141,7 +149,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>reference <a href="https://brilliant.org/wiki/red-black-tree/">https://brilliant.org/wiki/red-black-tree/</a> </p>
 
 </div>
 </div>
@@ -255,8 +262,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a921bc9f77769c50fd9b23910af18a3e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a921bc9f77769c50fd9b23910af18a3e4">&#9670;&nbsp;</a></span>insert()</h2>
+<a id="a32319cf929fa3b629b23b833f4b7c3a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32319cf929fa3b629b23b833f4b7c3a5">&#9670;&nbsp;</a></span>insert()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -271,7 +278,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">struct <a class="el" href="structRBNode.html">RBNode</a> *&#160;</td>
-          <td class="paramname"><em>x</em>&#160;</td>
+          <td class="paramname"><em>nodeToBeInserted</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -280,6 +287,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>insert a node into a red black tree </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root</td><td>a pointer pointing to the root node of the red black tree </td></tr>
+    <tr><td class="paramname">nodeToBeInserted</td><td>the new coming node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the root of the red black tree </dd></dl>
 
 </div>
 </div>

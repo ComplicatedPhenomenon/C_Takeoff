@@ -82,8 +82,8 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7c527ac8eab97884b0a3d630df76104b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="balancedBinaryTree_8c.html#a7c527ac8eab97884b0a3d630df76104b">maxDepth</a> (struct <a class="el" href="structTreeNode.html">TreeNode</a> *root)</td></tr>
-<tr class="separator:a7c527ac8eab97884b0a3d630df76104b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e3cbb742bcbe352eebc30f3bc7342c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="balancedBinaryTree_8c.html#a71e3cbb742bcbe352eebc30f3bc7342c">maxDepth1</a> (struct <a class="el" href="structTreeNode.html">TreeNode</a> *root)</td></tr>
+<tr class="separator:a71e3cbb742bcbe352eebc30f3bc7342c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec38b08f863e03b98bb23a41ab9fe289"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="balancedBinaryTree_8c.html#aec38b08f863e03b98bb23a41ab9fe289">isBalanced</a> (struct <a class="el" href="structTreeNode.html">TreeNode</a> *root)</td></tr>
 <tr class="separator:aec38b08f863e03b98bb23a41ab9fe289"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -109,6 +109,21 @@ Functions</h2></td></tr>
 <div class="line"> 4   4</div>
 <div class="line"> </div>
 <div class="line">Output: False </div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md0"></a>
+sample of debugging</h2>
+<div class="fragment"><div class="line">(gdb) break main</div>
+<div class="line">(gdb) ...</div>
+<div class="line">(gdb) print tem.val</div>
+<div class="line">$3 = 2</div>
+<div class="line">(gdb) print tem</div>
+<div class="line">$4 = (struct TreeNode *) 0x555555757260</div>
+<div class="line">(gdb) print root</div>
+<div class="line">$5 = (struct TreeNode *) 0x0</div>
+<div class="line">(gdb) print root.val</div>
+<div class="line">Cannot access memory at address 0x0</div>
+<div class="line">(gdb) next</div>
+<div class="line">(gdb) print root.val</div>
+<div class="line">$6 = 2</div>
 </div><!-- fragment --> </div><h2 class="groupheader">Function Documentation</h2>
 <a id="aec38b08f863e03b98bb23a41ab9fe289"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aec38b08f863e03b98bb23a41ab9fe289">&#9670;&nbsp;</a></span>isBalanced()</h2>
@@ -128,14 +143,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7c527ac8eab97884b0a3d630df76104b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c527ac8eab97884b0a3d630df76104b">&#9670;&nbsp;</a></span>maxDepth()</h2>
+<a id="a71e3cbb742bcbe352eebc30f3bc7342c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71e3cbb742bcbe352eebc30f3bc7342c">&#9670;&nbsp;</a></span>maxDepth1()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int maxDepth </td>
+          <td class="memname">int maxDepth1 </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structTreeNode.html">TreeNode</a> *&#160;</td>
           <td class="paramname"><em>root</em></td><td>)</td>
@@ -143,6 +158,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>this recursive approach is too abstract to comprehend </p>
 
 </div>
 </div>

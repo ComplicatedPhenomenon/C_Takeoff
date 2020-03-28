@@ -3,11 +3,12 @@
 #include"tree.h"
 #define MAX 4096
 
+/*!
+ * \brief  generate a new node
+ * \param val the value of the new node
+ * \return a pointer pointing to the new allocated node
+ */ 
 struct TreeNode * newNode(int val) { 
-    /**
-     * ####  Returns
-     * A pointer pointing to a newly created tree node 
-     */  
     struct TreeNode *node = (struct TreeNode *) malloc(sizeof(struct TreeNode));
     node -> val = val;  
     node -> left = NULL;  
@@ -17,10 +18,6 @@ struct TreeNode * newNode(int val) {
 
 
 struct AVLTreeNode* newAVLTreeNode(int val) {
-    /**
-     * ####  Returns
-     * A pointer pointing to a newly created AVL tree node 
-     */ 
     struct AVLTreeNode *tem = malloc(sizeof(struct AVLTreeNode));
     tem -> value = val;
     tem -> height = 1;
@@ -29,10 +26,10 @@ struct AVLTreeNode* newAVLTreeNode(int val) {
     return tem;
 }
 
+/*!
+ * \brief Free the binary tree
+ */
 void freeBinaryTree(struct TreeNode* root) {
-    /**
-     * Free the binary tree
-     */
     if(root != NULL){
         freeBinaryTree(root -> left);
         freeBinaryTree(root -> right);
@@ -41,9 +38,6 @@ void freeBinaryTree(struct TreeNode* root) {
 }
 
 void freeAVLTree(struct AVLTreeNode* root) {
-    /**
-     * Free the AVL tree
-     */ 
     if(root != NULL){
         freeAVLTree(root -> left);
         freeAVLTree(root -> right);
@@ -93,27 +87,15 @@ void *popTreeNode(struct binaryTreeQueue * queue) {
     return ans;
 }
 
+/*!
+ * \param root a pointer pointing to the root node of this tree.
+ * \param numberOfElementsInEachRow the number of elements in each row 
+ * \param numberOfRows the number of rows in this 2D array
+ * \return a pointer pointing to a 2D dynamic array, the number of rows and columns also are specified.
+ * \note how it works?
+ * ![](../figures/implementAHeap.svg)
+ */
 int ** levelOrderBinaryTreeTranversal(struct TreeNode *root, int **numberOfElementsInEachRow, int *numberOfRows) {
-    /**
-     * #### Parameters
-     * - root
-     *    
-     *   a pointer pointing to the root node of this tree.
-     * - numberOfElementsInEachRow 
-     *  
-     *   the number of elements in each row
-     * - numberOfRows
-     *   
-     *   the number of rows in this 2D array
-     * 
-     * #### Returns
-     * output as a pointer pointing to a 2D dynamic array, 
-     * the number of rows and columns also are specified.
-     * 
-     * #### how it works?
-     * ![](../figures/implementAHeap.svg)
-     */
-
     if (!root) return NULL;
 
     int **ans = calloc(MAX, sizeof(int *));
@@ -160,19 +142,16 @@ int ** levelOrderBinaryTreeTranversal(struct TreeNode *root, int **numberOfEleme
     return ans;
 }
 
-
+/*!
+ * A data structure to save two pointers to AVL tree node 
+ */ 
 struct AVLQueueNode {
-    /**
-     * A data structure to save two pointers to AVL tree node 
-     */ 
+    
     struct AVLTreeNode *ptr;
     struct AVLQueueNode *next;
 };
 
 struct AVLQueue{
-    /**
-     * A data stucture to save two pointes to 
-     */ 
     struct AVLQueueNode *front;
     struct AVLQueueNode *tail;
 };
@@ -209,24 +188,14 @@ void *popAVLTreeNode(struct AVLQueue * queue) {
     return ans;
 }
 
-int ** levelOrderAVLTreeTranversal(struct AVLTreeNode *root, int **numberOfElementsInEachRow, int *numberOfRows) {
-    /**
-     * #### Parameters
-     * - root 
-     *   
-     *   a pointer pointing to the root node of this tree.
-     * - numberOfElementsInEachRow 
-     * 
-     *   the number of elements in each row
-     * - numberOfRows 
-     * 
-     *   the number of rows in this 2D array 
-     * 
-     * #### Returns
-     * output as a pointer pointing to a 2D dynamic array, 
-     * the number of rows and columns also are specified.
-     */
 
+/*!
+ * \param root a pointer pointing to the root node of this tree.
+ * \param numberOfElementsInEachRow the number of elements in each row
+ * \param numberOfRows the number of rows in this 2D array 
+ * \return output as a pointer pointing to a 2D dynamic array, the number of rows and columns also are specified.
+ */
+int ** levelOrderAVLTreeTranversal(struct AVLTreeNode *root, int **numberOfElementsInEachRow, int *numberOfRows) {
     if (!root) return NULL;
 
     int **ans = calloc(MAX, sizeof(int *));

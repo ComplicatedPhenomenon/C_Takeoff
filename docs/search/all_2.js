@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['capacity_20',['capacity',['../structStack.html#a0c2c0c7f1d93b40c1dca5e6c104a029e',1,'Stack::capacity()'],['../structHash.html#aabe252189b1e63cc4913b1a4c3fc020b',1,'Hash::capacity()']]],
+  ['capacity_20',['capacity',['../structStack.html#a0c2c0c7f1d93b40c1dca5e6c104a029e',1,'Stack::capacity()'],['../structHashTable.html#ad7b2a756fb5beae48601b03888235ff7',1,'HashTable::capacity()']]],
   ['cell_21',['Cell',['../structCell.html',1,'']]],
   ['color_22',['color',['../structRBNode.html#a1d62adbe4e32073be789d3b2f86f6b6b',1,'RBNode']]],
   ['color_5ft_23',['color_t',['../RBTree_8c.html#a0a8ef1b5e1941b7257e545cc33405ff1',1,'RBTree.c']]],

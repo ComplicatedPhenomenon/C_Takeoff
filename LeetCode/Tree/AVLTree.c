@@ -14,8 +14,7 @@ int max(int a, int b) {
 } 
 
 int getHeight(struct AVLTreeNode* node) { 
-	if (node == NULL) 
-		return 0; 
+	if (!node) return 0; 
 	return node -> height; 
 } 
 
@@ -25,6 +24,35 @@ int heightDifference(struct AVLTreeNode* node){
 }
 
 
+/*!
+ * \note
+ * 
+ * rotate  the case like below  
+ * ```md
+ *   5
+ *    \
+ *     9
+ *      \
+ *       13
+ * ```
+ * 
+ * not 
+ * ```md
+ *   5
+ *    \
+ *     9
+ *    / 
+ *   7    
+ * ``` 
+ * and 
+ * ```md
+ *   5
+ *    \
+ *     9        
+ *    / \
+ *   7   13 
+ * ``` 
+ */
 struct AVLTreeNode * rotateLeft(struct AVLTreeNode* root){
     struct AVLTreeNode *newRoot = root -> right;
     struct AVLTreeNode *T2 = newRoot -> left;
@@ -35,9 +63,8 @@ struct AVLTreeNode * rotateLeft(struct AVLTreeNode* root){
     root -> height = max(getHeight(root -> left), getHeight(root -> right)) + 1;
     newRoot -> height = max(getHeight(newRoot ->  left), getHeight(newRoot -> right)) + 1;
     return newRoot;
-    
-
 }
+
 struct AVLTreeNode * rotateRight(struct AVLTreeNode* root){
     struct AVLTreeNode *newRoot = root -> left;
     struct AVLTreeNode *T2 = newRoot -> right;
@@ -50,15 +77,13 @@ struct AVLTreeNode * rotateRight(struct AVLTreeNode* root){
     return newRoot;
 }
 
-
 struct AVLTreeNode * insert(struct AVLTreeNode *root, struct AVLTreeNode *newNode){
-    if(!root) 
-        return newNode;
+    if(!root) return newNode;
     if (root -> value > newNode -> value) 
         root -> left = insert(root -> left, newNode); 
-    else if (root -> value < newNode -> value)  
+    else if (root -> value < newNode -> value) 
         root -> right = insert(root -> right, newNode); 
-    else
+    else 
         return root;
 
     root -> height = max(getHeight(root -> left), getHeight(root -> right)) + 1;
@@ -84,7 +109,8 @@ struct AVLTreeNode * insert(struct AVLTreeNode *root, struct AVLTreeNode *newNod
 int main(){
     struct AVLTreeNode *root = NULL;
     struct AVLTreeNode *tem = NULL;
-    int data[] = {5, 3, 1, 7, 9};
+    int data[] = {5, 1, 7, 9};
+    //int data[] = {5, 5, 3, 1, 7, 9};
     int len = sizeof(data)/sizeof(data[0]);
     for(int i = 0; i < len; ++i){
         tem = newAVLTreeNode(data[i]);

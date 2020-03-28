@@ -84,7 +84,7 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structList.html">List</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHash.html">Hash</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHashTable.html">HashTable</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLRUCache.html">LRUCache</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -105,8 +105,8 @@ Functions</h2></td></tr>
 <tr class="separator:afd8566ba31215efdbdccb6e431b57ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ae77bb85236ed48fb2cbcdfdb6b6c6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LRUcache_8c.html#a9ae77bb85236ed48fb2cbcdfdb6b6c6e">printDLL</a> (<a class="el" href="classNode.html">Node</a> *head)</td></tr>
 <tr class="separator:a9ae77bb85236ed48fb2cbcdfdb6b6c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a604d4adbf89038670723d9baedd635d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LRUcache_8c.html#a604d4adbf89038670723d9baedd635d7">freeList</a> (<a class="el" href="classNode.html">Node</a> *head)</td></tr>
-<tr class="separator:a604d4adbf89038670723d9baedd635d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c3ddd2f2a648245897892ccfb39d820"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LRUcache_8c.html#a9c3ddd2f2a648245897892ccfb39d820">freeDLL</a> (<a class="el" href="classNode.html">Node</a> *head)</td></tr>
+<tr class="separator:a9c3ddd2f2a648245897892ccfb39d820"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a624da4d0666dd45764c36dea8299cc03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structLRUCache.html">LRUCache</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LRUcache_8c.html#a624da4d0666dd45764c36dea8299cc03">lRUCacheCreate</a> (int capacity)</td></tr>
 <tr class="separator:a624da4d0666dd45764c36dea8299cc03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbfdd52056f8121f8e3c3639aa8e48f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LRUcache_8c.html#adbfdd52056f8121f8e3c3639aa8e48f2">hashFunction</a> (int key)</td></tr>
@@ -118,7 +118,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ae0ff95f61f0ccaf62daaa74c564b9fc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LRUcache_8c.html#ae0ff95f61f0ccaf62daaa74c564b9fc0">lRUCacheFree</a> (<a class="el" href="structLRUCache.html">LRUCache</a> *obj)</td></tr>
 <tr class="separator:ae0ff95f61f0ccaf62daaa74c564b9fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>source: <a href="https://leetcode.com/problems/lru-cache/">https://leetcode.com/problems/lru-cache/</a></p>
+<p><object type="image/svg+xml" data="https://www.interviewcake.com/images/svgs/lru_cache__doubly_linked_list.svg?bust=204" style="pointer-events: none;"></object></p>
+<p>What if the key is greater than HASH_SIZE, there exists confliction, what will happens then?</p>
+<p>Clearly, my code doesn't put this case into consideration, so I need to make HASH_SIZE as large as possible </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad6074dd11ab3c97c8135c43aab03ae95"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad6074dd11ab3c97c8135c43aab03ae95">&#9670;&nbsp;</a></span>HASH_SIZE</h2>
 
@@ -130,8 +135,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>source: <a href="https://leetcode.com/problems/lru-cache/">https://leetcode.com/problems/lru-cache/</a> ["LRUCache","put","put","put","put","get","get"] [[2],[2,1],[1,1],[2,3],[4,1],[1],[2]] Expected: [null,null,null,null,null,-1,3]</p>
-<p>ToDo: wrong answer still </p>
 
 </div>
 </div>
@@ -151,14 +154,14 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a604d4adbf89038670723d9baedd635d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a604d4adbf89038670723d9baedd635d7">&#9670;&nbsp;</a></span>freeList()</h2>
+<a id="a9c3ddd2f2a648245897892ccfb39d820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c3ddd2f2a648245897892ccfb39d820">&#9670;&nbsp;</a></span>freeDLL()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void freeList </td>
+          <td class="memname">void freeDLL </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classNode.html">Node</a> *&#160;</td>
           <td class="paramname"><em>head</em></td><td>)</td>
@@ -184,6 +187,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>hashFunction convert the key to a specifc index, which you can use to access the corresponding value in the array </p>
 
 </div>
 </div>
@@ -202,6 +206,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Initialize the data structure of <code><a class="el" href="structLRUCache.html">LRUCache</a></code>, which includes</p><ul>
+<li><code><a class="el" href="structList.html">List</a></code> part, which again includes 2 parts</li>
+<li><code><a class="el" href="structHashTable.html">HashTable</a></code> part, which again include 3 parts </li>
+</ul>
 
 </div>
 </div>
@@ -248,6 +256,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>If the key is in the LRU cache, return the corresponding value, return -1 otherwise, meanwhile, adjust the position of items in <a class="el" href="structLRUCache.html">LRUCache</a> </p>
 
 </div>
 </div>
@@ -282,6 +291,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>When you put a pair of key and value, update the DLL(both the order and total number of nodes) and hashtable </p>
 
 </div>
 </div>
@@ -328,6 +338,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Display the <code>double linked list</code> from head node to tail node </p>
 
 </div>
 </div>

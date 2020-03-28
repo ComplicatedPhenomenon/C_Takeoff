@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lrucahce_459',['LRUcahce',['../md_DataStructures_LRUcache_LRUcahce.html',1,'']]]
+  ['lru_20cache_463',['LRU cache',['../md_DataStructures_LRUcache_LRUcache.html',1,'']]]
 ];
